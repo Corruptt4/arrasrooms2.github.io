@@ -1,5 +1,5 @@
 {
-  "host": "localhost",
+  "host": "invented-indigo-giant.glitch.me",
   "servesStatic": true,
   "port": 3000,
   "networkUpdateFactor": 24,
