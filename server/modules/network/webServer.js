@@ -28,13 +28,13 @@ server.get("/lib/json/gamemodeData.json", function(request, response) {
         gameMode: c.gameModeName,
         players: views.length,
         code: [c.MODE, c.MODE === "ffa" ? "f" : c.TEAMS, c.secondaryGameMode].join("-"),
-        ip: c.host + ":" + c.port
+        ip: c.host //+ ":" + c.port
     }));
 });
 server.get("/serverData.json", function(request, response) {
     response.json({
         ok: true,
-        ip: c.host + ":" + c.port
+        ip: c.host //+ ":" + c.port
     });
 });
 server.ws("/", sockets.connect);
