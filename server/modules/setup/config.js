@@ -9,11 +9,11 @@ goog.require('goog.structs.QuadTree');
 
 const defaults = require("../../config.json");
 
-const gamemode = "2TDM"; // keep it as ffa
+const gamemode = "FFA"; // keep it as ffa
 
 const gamemodes = {
     "FFA": {
-        BOTS: 9
+        //BOTS: 9
     }, // "defaults" is already FFA.
     "Open TDM": {
         MODE: "tdm",

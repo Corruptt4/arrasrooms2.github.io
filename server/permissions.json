@@ -14,5 +14,10 @@
     "testbedTank": "testbed",
     "name": "DogeisCut#2306",
     "note": "Owner"
+  },
+  {
+    "key": "",
+    "testbedTank": "betatester",
+    "note": "Everyone!"
   }
 ]
