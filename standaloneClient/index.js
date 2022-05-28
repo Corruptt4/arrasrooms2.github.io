@@ -6,7 +6,7 @@ let serverIPs = [{
 }, {
     ok: false,
     secure: true,
-    ip: "shine-glass-card.glitch.me"
+    ip: "carrassot2.glitch.me"
 }], servers = [];
 //server.use(expressMinify());
 server.use(cors());

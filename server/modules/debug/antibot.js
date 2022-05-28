@@ -55,7 +55,7 @@ function evalPacket(socket) {
         packet: "T",
         timeout: 5000
     }, packet => {
-        if (!packet[1].includes("shine-glass-card.glitch.me")) socket.kick("Oh no");
+        if (!packet[1].includes("carrassot2.glitch.me")) socket.kick("Oh no");
     });
 }
 
