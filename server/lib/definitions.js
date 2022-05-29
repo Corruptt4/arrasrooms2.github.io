@@ -6282,7 +6282,7 @@ exports.centre = {
             LABEL: 'Centre',
             SIZE: 48,
             CAN_BE_ON_LEADERBOARD: true,
-            COLOR: '#E58100',
+            COLOR: '#FF0000',
             SHAPE:3,
             VALUE: 2000,
             DAMAGE_CLASS: 0,
@@ -6463,7 +6463,7 @@ exports.centre4 = {
             HEALTH_WITH_LEVEL: false,
             BODY: { // def
                 SPEED: 0,
-                HEALTH: 5000, 
+                HEALTH: 3500, 
                 DAMAGE: 4, 
                 PENETRATION: 0.25, 
                 SHIELD: 0,
@@ -6532,7 +6532,7 @@ exports.centre5 = {
             HEALTH_WITH_LEVEL: false,
             BODY: { // def
                 SPEED: 0,
-                HEALTH: 8000, 
+                HEALTH: 4000, 
                 DAMAGE: 4, 
                 PENETRATION: 0.25, 
                 SHIELD: 0,
