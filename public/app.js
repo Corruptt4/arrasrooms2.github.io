@@ -631,7 +631,7 @@ import * as socketStuff from "./lib/socketInit.js";
     // Entity drawing (this is a function that makes a function)
     const drawEntity = (() => {
         // Sub-drawing functions
-        function drawPoly(context, centerX, centerY, radius, sides, angle = 0, fill = true) {
+        function drawPoly(context, centerX, centerY, radius, sides, angle = 0, fill = true, dipMulti = 1) {
             angle += (sides % 2) ? 0 : Math.PI / sides;
             // Start drawing
             context.beginPath();
@@ -658,8 +658,8 @@ import * as socketStuff from "./lib/socketInit.js";
                     var theta = (i + 1) / sides * 2 * Math.PI;
                     var htheta = (i + 0.5) / sides * 2 * Math.PI;
                     var c = {
-                        x: centerX + radius * dip*10 * Math.cos(htheta + angle),
-                        y: centerY + radius * dip*10 * Math.sin(htheta + angle),
+                        x: centerX + radius * dip * dipMulti * Math.cos(htheta + angle),
+                        y: centerY + radius * dip * dipMulti * Math.sin(htheta + angle),
                     };
                     var p = {
                         x: centerX + radius * Math.cos(theta + angle),
@@ -765,7 +765,7 @@ import * as socketStuff from "./lib/socketInit.js";
             // Draw body
             context.globalAlpha = 1;
             setColor(context, mixColors(getColor(instance.color), render.status.getColor(), render.status.getBlend()));
-            drawPoly(context, xx, yy, drawSize / m.size * m.realSize, m.shape, rot);
+            drawPoly(context, xx, yy, drawSize / m.size * m.realSize, m.shape, rot, m.dip);
             // Draw turrets above us
             if (source.turrets.length === m.turrets.length) {
                 for (let i = 0; i < m.turrets.length; i++) {

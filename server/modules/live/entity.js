@@ -770,6 +770,10 @@ class Entity {
             this.shape = typeof set.SHAPE === 'number' ? set.SHAPE : 0
             this.shapeData = set.SHAPE;
         }
+        if (set.DIP != null) {
+            this.dip = typeof set.DIP === 'number' ? set.DIP : 1
+            this.dipData = set.DIP;
+        }
         if (set.COLOR != null) {
             this.color = set.COLOR;
         }

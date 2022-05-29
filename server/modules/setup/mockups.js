@@ -23,6 +23,7 @@ let mockupJsonData = (() => {
             y: rounder(e.y),
             color: e.color,
             shape: e.shapeData,
+            dip: e.dipData,
             size: rounder(e.size),
             realSize: rounder(e.realSize),
             facing: rounder(e.facing),

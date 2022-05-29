@@ -6684,7 +6684,8 @@ exports.tagMode = {
 exports.teaser = {
     PARENT: [exports.genericTank],
     LABEL: 'Teaser',
-    SHAPE: 600,
+    SHAPE: 6,
+    DIP: 10,
   FACING_TYPE: 'locksFacing',
    BODY: {
         FOV: 1.12,
