@@ -6037,7 +6037,7 @@ exports.centre5 = {
             ],
            
       };
-exports.centre5 = makeAuto(exports.centre5, "Centre Level 5", { type: exports.anni, size:11, } );
+exports.centre5 = makeAuto(exports.centre5, "Centre Level 5", { type: exports.centre2, size:11, } );
 
 exports.mazeWall = {
     PARENT: [exports.obstacle],
