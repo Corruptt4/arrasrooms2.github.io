@@ -1185,6 +1185,10 @@ class Entity {
                 this.maxSpeed = this.topSpeed;
                 this.damp = 0.05;
                 break;
+            case "extremeaccel":
+                this.maxSpeed = this.topSpeed;
+                this.damp = -0.2;
+                break;
             case 'motor':
                 this.maxSpeed = 0;
                 if (this.topSpeed) {
