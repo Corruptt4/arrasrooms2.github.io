@@ -5973,8 +5973,7 @@ exports.centre4 = makeAuto(exports.centre4, "Centre Level 4", { type: exports.ce
 
 exports.centre5 = {
             PARENT: [exports.centre],
-            BROADCAST_MESSAGE: 'The Centre (Level 5) has been slain! (Impressive!)',
-            BROADCAST_MESSAGE: 'The Centre has been reset to level 1!',
+            BROADCAST_MESSAGE: 'The Centre (Level 5) has been slain! (Impressive!)\nThe Centre has been reset to level 1!',
             LABEL: 'Centre Level 5',
             VALUE: 100000,
             SHAPE: 6,
@@ -6038,7 +6037,7 @@ exports.centre5 = {
             ],
            
       };
-exports.centre5 = makeAuto(exports.centre5, "Centre Level 5", { type: exports.auto5, size:11, } );
+exports.centre5 = makeAuto(exports.centre5, "Centre Level 5", { type: exports.octo, size:11, } );
 
 exports.mazeWall = {
     PARENT: [exports.obstacle],
@@ -6046,6 +6045,32 @@ exports.mazeWall = {
     SHAPE: 4,
     LABEL: "Wall"
 };
+
+ exports.mazeWallShooter = {
+                PARENT: [exports.genericTank],
+                DANGER: 7,
+                LABEL: 'Maze Wall Shooter',
+                STAT_NAMES: statnames.generic,
+                BODY: {
+                    SPEED: base.SPEED * 0.75,
+                    FOV: base.FOV * 1.15,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   5,    11,      1,     10.5,     0,      0,      0,   ], 
+                    }, {
+                    POSITION: [   3,    14,      1,     15.5,     0,      0,      0,   ], 
+                    }, {
+                    POSITION: [   2,    14,     1.3,     18,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            MAX_CHILDREN: 6,
+                            SHOOT_SETTINGS: combineStats([g.trap, g.block]),
+                            TYPE: exports.pillbox,        
+                            SYNCS_SKILLS: true,   
+                        }, }, {                            
+                    POSITION: [   4,    14,      1,      8,      0,      0,      0,   ]
+                    }
+                ],
+            };
 
 // UPGRADE PATHS
 exports.testbed.UPGRADES_TIER_1 = [exports.basic, exports.betatester,exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest,exports.arenaCloser];
