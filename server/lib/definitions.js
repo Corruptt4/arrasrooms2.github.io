@@ -6037,7 +6037,7 @@ exports.centre5 = {
             ],
            
       };
-exports.centre5 = makeAuto(exports.centre5, "Centre Level 5", { type: exports.octo, size:11, } );
+exports.centre5 = makeAuto(exports.centre5, "Centre Level 5", { type: exports.anni, size:11, } );
 
 exports.mazeWall = {
     PARENT: [exports.obstacle],
@@ -6062,9 +6062,8 @@ exports.mazeWall = {
                     }, {
                     POSITION: [   2,    14,     1.3,     18,      0,      0,      0,   ], 
                         PROPERTIES: {
-                            MAX_CHILDREN: 6,
                             SHOOT_SETTINGS: combineStats([g.trap, g.block]),
-                            TYPE: exports.pillbox,        
+                            TYPE: exports.mazeWall,        
                             SYNCS_SKILLS: true,   
                         }, }, {                            
                     POSITION: [   4,    14,      1,      8,      0,      0,      0,   ]
@@ -6073,7 +6072,7 @@ exports.mazeWall = {
             };
 
 // UPGRADE PATHS
-exports.testbed.UPGRADES_TIER_1 = [exports.basic, exports.betatester,exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest,exports.arenaCloser];
+exports.testbed.UPGRADES_TIER_1 = [exports.basic, exports.betatester,exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest,exports.arenaCloser, exports.mazeWallShooter];
 exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer];
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 
