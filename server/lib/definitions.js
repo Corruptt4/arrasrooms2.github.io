@@ -1474,7 +1474,7 @@ exports.basic = {
 
         exports.betatester = {
             PARENT: [exports.genericTank],
-            LABEL: 'Beta Tester',
+            LABEL: 'More Tanks',
             RESET_UPGRADES: true,
             SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
             LEVEL: -1,
@@ -6921,7 +6921,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5]
 
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper, exports.betatester];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket];

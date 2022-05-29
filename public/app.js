@@ -1672,7 +1672,7 @@ import * as socketStuff from "./lib/socketInit.js";
                     let xxx = 0;
                     let yo = y;
                     let ticker = 0;
-                    let emptyticker = false;
+                    let emptyticker = 0.9;
                     upgradeSpin += 0.01;
                     let colorIndex = 10;
                     let i = 0;
@@ -1682,10 +1682,10 @@ import * as socketStuff from "./lib/socketInit.js";
                         global.clickables.upgrade.place(i++, x, y, len, height);
                         // Draw box
                         ctx.globalAlpha = 0.5;
-                        ctx.fillStyle = getColor((colorIndex > 15 ? colorIndex - 16 : colorIndex));
+                        ctx.fillStyle = "#ff0000"//getColor((colorIndex > 15 ? colorIndex - 16 : colorIndex));
                         drawGuiRect(x, y, len, height);
                         ctx.globalAlpha = 0.1;
-                        ctx.fillStyle = getColor(-10 + colorIndex++);
+                        ctx.fillStyle = "#ff0000"//getColor(-10 + colorIndex++);
                         drawGuiRect(x, y, len, height * 0.6);
                         ctx.fillStyle = color.black;
                         drawGuiRect(x, y + height * 0.6, len, height * 0.4);
@@ -1697,15 +1697,16 @@ import * as socketStuff from "./lib/socketInit.js";
                             xx = x + 0.5 * len - scale * position.middle.x * Math.cos(upgradeSpin),
                             yy = y + 0.5 * height - scale * position.middle.x * Math.sin(upgradeSpin);
                         drawEntity(xx, yy, picture, 1, 1, scale / picture.size, upgradeSpin, true);
-                        // Tank name
-                        text.upgradeNames[i - 1].draw(picture.name, x + 0.9 * len / 2, y + height - 6, height / 8 - 3, color.guiwhite, 'center');
                         // Upgrade key
                         if (getClassUpgradeKey(ticker)!=""){
                         text.upgradeKeys[i - 1].draw('[' + getClassUpgradeKey(ticker) + ']', x + len - 4, y + height - 6, height / 8 - 3, color.guiwhite, 'right');
-                        emptyticker = false;
+                        emptyticker = 0.9;
                         } else {
-                          emptyticker = true;
+                          emptyticker = 1;
                         }
+                        // Tank name
+                        text.upgradeNames[i - 1].draw(picture.name, x + emptyticker * len / 2, y + height - 6, height / 8 - 3, color.guiwhite, 'center');
+                        //idk
                         ctx.strokeStyle = color.black;
                         ctx.globalAlpha = 1;
                         ctx.lineWidth = 3;
@@ -1760,7 +1761,7 @@ import * as socketStuff from "./lib/socketInit.js";
                 });
                 txt = txt.slice(0, -4) + '.';
             } else {
-                txt += '🤷 Well that was kinda dumb huh';
+                txt += '🤷 Wah happen???';
             }
             return txt;
         };
