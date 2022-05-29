@@ -5734,6 +5734,7 @@ exports.centre = {
             BROADCAST_MESSAGE: 'The Centre has been slain!',
             LABEL: 'Centre',
             SIZE: 48,
+            CAN_BE_ON_LEADERBOARD: true,
             COLOR: '#E58100',
             SHAPE:3,
             VALUE: 2000,
@@ -6072,9 +6073,12 @@ exports.mazeWall = {
             };
 
 // UPGRADE PATHS
-exports.testbed.UPGRADES_TIER_1 = [exports.basic, exports.betatester,exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest,exports.arenaCloser, exports.mazeWallShooter];
+exports.testbed.UPGRADES_TIER_1 = [exports.basic, exports.betatester,exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest,exports.arenaCloser, exports.mazeWallShooter, exports.centre];
 exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer];
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
+
+exports.centre.UPGRADES_TIER_1 = [exports.centre2,exports.centre3,exports.centre4,exports.centre5]
+
 
 exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper];
 
