@@ -92,7 +92,7 @@ h3 {
 
 h4 {
     font-size: small;
-    color: #8ABC3F;
+    color: #cc5016;
     text-align: center;
 }
 
@@ -192,7 +192,7 @@ div {
 }
 
 .serverSelector tr.selected {
-    color: #8ABC3F;
+    color: #cc5016;
     cursor: default;
 }
 
@@ -313,12 +313,12 @@ update {
     color: white;
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-    background: #B9E87E;
+    background: #FF7700;
     border: 0;
-    border-bottom: 2px solid #8ABC3F;
+    border-bottom: 2px solid #cc5016;
     cursor: pointer;
-    -webkit-box-shadow: inset 0 -2px #8ABC3F;
-    box-shadow: inset 0 -2px #8ABC3F;
+    -webkit-box-shadow: inset 0 -2px #cc5016;
+    box-shadow: inset 0 -2px #cc5016;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -327,7 +327,7 @@ update {
 #startButton:active,
 #startButton:hover {
     top: 1px;
-    background: #8ABC3F;
+    background: #cc5016;
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
