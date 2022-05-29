@@ -1711,7 +1711,7 @@ import * as socketStuff from "./lib/socketInit.js";
                         ctx.globalAlpha = 1;
                         ctx.lineWidth = 3;
                         drawGuiRect(x, y, len, height, true); // Border
-                        if (++ticker % 3 === 0) {
+                        if (++ticker % 5 === 0) {
                             x = xStart;
                             y += height + internalSpacing;
                         } else {

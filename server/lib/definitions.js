@@ -1475,27 +1475,6 @@ exports.basic = {
         exports.betatester = {
             PARENT: [exports.genericTank],
             LABEL: 'More Tanks',
-            RESET_UPGRADES: true,
-            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-            LEVEL: -1,
-        SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-          INVISIBLE: [],
-    BODY: {
-        ACCELERATION: 1,
-        SPEED: 0,
-        HEALTH: 1,
-        RESIST: 1,
-        SHIELD: 0,
-        REGEN: 0,
-        DAMAGE: 1,
-        PENETRATION: 1,
-        RANGE: 0,
-        FOV: 2,
-        DENSITY: 1,
-        STEALTH: 1,
-        PUSHABILITY: 1,        
-        HETERO: 2,
-    },  
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
@@ -1539,270 +1518,78 @@ exports.basic = {
 exports.testbed2 = {
             PARENT: [exports.genericTank],
             LABEL: 'Misc',
-            RESET_UPGRADES: true,
-            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-            LEVEL: -1,
-          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-          INVISIBLE: [],
-    BODY: {
-        ACCELERATION: 1,
-        SPEED: 0,
-        HEALTH: 1,
-        RESIST: 1,
-        SHIELD: 0,
-        REGEN: 0,
-        DAMAGE: 1,
-        PENETRATION: 1,
-        RANGE: 0,
-        FOV: 2,
-        DENSITY: 1,
-        STEALTH: 1,
-        PUSHABILITY: 1,        
-        HETERO: 2,
-    },    
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                    TYPE: exports.bullet,
-                }, }, 
+                }, 
             ],
         };
 
 exports.testbed3 = {
             PARENT: [exports.genericTank],
             LABEL: 'Bosses',
-            RESET_UPGRADES: true,
-            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-            LEVEL: -1,
-          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-          INVISIBLE: [],
-    BODY: {
-        ACCELERATION: 1,
-        SPEED: 0,
-        HEALTH: 1,
-        RESIST: 1,
-        SHIELD: 0,
-        REGEN: 0,
-        DAMAGE: 1,
-        PENETRATION: 1,
-        RANGE: 0,
-        FOV: 2,
-        DENSITY: 1,
-        STEALTH: 1,
-        PUSHABILITY: 1,        
-        HETERO: 2,
-    },    
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                    TYPE: exports.bullet,
-                }, }, 
+                }, 
             ],
         };
 
 exports.testbed4 = {
             PARENT: [exports.genericTank],
             LABEL: 'Polygons',
-            RESET_UPGRADES: true,
-            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-            LEVEL: -1,
-          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-          INVISIBLE: [],
-    BODY: {
-        ACCELERATION: 1,
-        SPEED: 0,
-        HEALTH: 1,
-        RESIST: 1,
-        SHIELD: 0,
-        REGEN: 0,
-        DAMAGE: 1,
-        PENETRATION: 1,
-        RANGE: 0,
-        FOV: 2,
-        DENSITY: 1,
-        STEALTH: 1,
-        PUSHABILITY: 1,        
-        HETERO: 2,
-    },    
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                    TYPE: exports.bullet,
-                }, }, 
+                }, 
             ],
         };
 
 exports.testbed5 = {
             PARENT: [exports.genericTank],
-            LABEL: 'Custom',
-            RESET_UPGRADES: true,
-            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-            LEVEL: -1,
-          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-          INVISIBLE: [],
-    BODY: {
-        ACCELERATION: 1,
-        SPEED: 0,
-        HEALTH: 1,
-        RESIST: 1,
-        SHIELD: 0,
-        REGEN: 0,
-        DAMAGE: 1,
-        PENETRATION: 1,
-        RANGE: 0,
-        FOV: 2,
-        DENSITY: 1,
-        STEALTH: 1,
-        PUSHABILITY: 1,        
-        HETERO: 2,
-    },    
+            LABEL: 'Custom (Dev)', 
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                    TYPE: exports.bullet,
-                }, }, 
+                }, 
             ],
         };
 exports.testbed6 = {
             PARENT: [exports.genericTank],
             LABEL: 'Green Varients',
-            RESET_UPGRADES: true,
-            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-            LEVEL: -1,
-          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-          INVISIBLE: [],
-    BODY: {
-        ACCELERATION: 1,
-        SPEED: 0,
-        HEALTH: 1,
-        RESIST: 1,
-        SHIELD: 0,
-        REGEN: 0,
-        DAMAGE: 1,
-        PENETRATION: 1,
-        RANGE: 0,
-        FOV: 2,
-        DENSITY: 1,
-        STEALTH: 1,
-        PUSHABILITY: 1,        
-        HETERO: 2,
-    },    
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                    TYPE: exports.bullet,
-                }, }, 
+                }, 
             ],
         };
 
 exports.testbed7 = {
             PARENT: [exports.genericTank],
             LABEL: 'Ammo',
-            RESET_UPGRADES: true,
-            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-            LEVEL: -1,
-          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-          INVISIBLE: [],
-    BODY: {
-        ACCELERATION: 1,
-        SPEED: 0,
-        HEALTH: 1,
-        RESIST: 1,
-        SHIELD: 0,
-        REGEN: 0,
-        DAMAGE: 1,
-        PENETRATION: 1,
-        RANGE: 0,
-        FOV: 2,
-        DENSITY: 1,
-        STEALTH: 1,
-        PUSHABILITY: 1,        
-        HETERO: 2,
-    },    
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                    TYPE: exports.bullet,
-                }, }, 
+                }, 
             ],
         };
 exports.testbed8 = {
             PARENT: [exports.genericTank],
             LABEL: 'Ammo 2',
-            RESET_UPGRADES: true,
-            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-            LEVEL: -1,
-          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-          INVISIBLE: [],
-    BODY: {
-        ACCELERATION: 1,
-        SPEED: 0,
-        HEALTH: 1,
-        RESIST: 1,
-        SHIELD: 0,
-        REGEN: 0,
-        DAMAGE: 1,
-        PENETRATION: 1,
-        RANGE: 0,
-        FOV: 2,
-        DENSITY: 1,
-        STEALTH: 1,
-        PUSHABILITY: 1,        
-        HETERO: 2,
-    },    
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                    TYPE: exports.bullet,
-                }, }, 
+                }, 
             ],
         };
 
 exports.testbed9 = {
             PARENT: [exports.genericTank],
             LABEL: 'Custom Bosses',
-            RESET_UPGRADES: true,
-            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
-            LEVEL: -1,
-          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-          INVISIBLE: [],
-    BODY: {
-        ACCELERATION: 1,
-        SPEED: 0,
-        HEALTH: 1,
-        RESIST: 1,
-        SHIELD: 0,
-        REGEN: 0,
-        DAMAGE: 1,
-        PENETRATION: 1,
-        RANGE: 0,
-        FOV: 2,
-        DENSITY: 1,
-        STEALTH: 1,
-        PUSHABILITY: 1,        
-        HETERO: 2,
-    },    
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                    TYPE: exports.bullet,
-                }, }, 
+                }, 
             ],
         };
             exports.single = {
@@ -6907,7 +6694,7 @@ exports.teaser = {
 };
 
 // UPGRADE PATHS
-exports.testbed.UPGRADES_TIER_1 = [exports.basic, exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,];//exports.testbed7];
+exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,];//exports.testbed7];
 exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.teaser];
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator]
@@ -6921,7 +6708,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5]
 
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper, exports.betatester];
+exports.basic.UPGRADES_TIER_1 = [exports.betatester, exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper,];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket];
