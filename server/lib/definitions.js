@@ -183,6 +183,7 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   noshudder:  [1, 1, 0.01, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   halfhealth:  [1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1],
+  whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
   
 };
 
@@ -5205,27 +5206,6 @@ exports.nestKeeper = {
 //     }),
 // };
 
-// exports.basic = {
-//     PARENT: [exports.genericTank],
-//     LABEL: 'Basic',
-//     //CONTROLLERS: ['nearestDifferentMaster'],
-//     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-//         POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
-//         PROPERTIES: {
-//             SHOOT_SETTINGS: combineStats([g.basic]),
-//             TYPE: exports.bullet,
-//             LABEL: '',                  // def
-//             STAT_CALCULATOR: 0,         // def
-//             WAIT_TO_CYCLE: false,       // def
-//             AUTOFIRE: false,            // def
-//             SYNCS_SKILLS: false,        // def         
-//             MAX_CHILDREN: 0,            // def  
-//             ALT_FIRE: false,            // def 
-//             NEGATIVE_RECOIL: false,     // def
-//         }, }, 
-//     ],
-// };
-
 exports.octoblock = {
     PARENT: [exports.block],
     SHAPE: -8,
@@ -6888,9 +6868,47 @@ exports.tagMode = {
     LABEL: "Players"
 };
 
+// exports.basic = {
+//     PARENT: [exports.genericTank],
+//     LABEL: 'Basic',
+//     //CONTROLLERS: ['nearestDifferentMaster'],
+//     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+//         POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+//         PROPERTIES: {
+//             SHOOT_SETTINGS: combineStats([g.basic]),
+//             TYPE: exports.bullet,
+//             LABEL: '',                  // def
+//             STAT_CALCULATOR: 0,         // def
+//             WAIT_TO_CYCLE: false,       // def
+//             AUTOFIRE: false,            // def
+//             SYNCS_SKILLS: false,        // def         
+//             MAX_CHILDREN: 0,            // def  
+//             ALT_FIRE: false,            // def 
+//             NEGATIVE_RECOIL: false,     // def
+//         }, }, 
+//     ],
+// };
+
+exports.teaser = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Teaser',
+    //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  16,     10,      1.4,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic,g.anni,g.destroy,g.pound,g.swarm,g.battle,g.carrier,g.whatthe]),
+            TYPE: exports.swarm,
+            LABEL: 'Front Swarmer',      
+            STAT_CALCULATOR: gunCalcNames.swarm, 
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  11,     14,      1,      0,      0,      90,      0,   ], 
+           }, 
+    ],
+};
+
 // UPGRADE PATHS
 exports.testbed.UPGRADES_TIER_1 = [exports.basic, exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,];//exports.testbed7];
-exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer];
+exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.teaser];
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator]
 exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.testbed9];
