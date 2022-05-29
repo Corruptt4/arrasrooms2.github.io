@@ -1,15 +1,15 @@
 {
-    "name": "arras.io",
-    "theme_color": "#8abc3f",
+    "name": "carrassot",
+    "theme_color": "#ff7700",
     "background_color": "#484948",
-    "description": "Arras.io is a fan-made sequel of diep.io! Survive and shoot at others while keeping your own tank alive!",
+    "description": "carrassot is a mod of arras.io, it adds new custom tanks and a boss to fight at the center!",
     "orientation": "landscape",
     "start_url": "/",
     "scope": "/",
     "display": "fullscreen",
     "icons": [{
-        "src": "https://arras.io/favicon/96x96.png",
-        "sizes": "96x96",
+        "src": "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrassot.png?v=1653855270220",
+        "sizes": "192x192",
         "type": "image/png"
     }]
 }
