@@ -771,7 +771,7 @@ class Entity {
             this.shapeData = set.SHAPE;
         }
         if (set.DIPMULTI != null) {
-            this.dipMulti = typeof set.DIPMULTI === 'number' ? set.DIP : 1
+            this.dipMulti = typeof set.DIPMULTI === 'number' ? set.DIPMULTI : 1
             this.dipMultiData = set.DIPMULTI;
         }
         if (set.COLOR != null) {
