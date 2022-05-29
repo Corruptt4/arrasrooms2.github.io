@@ -1777,9 +1777,10 @@ import * as socketStuff from "./lib/socketInit.js";
                 xx = global.screenWidth / 2 - scale * position.middle.x * 0.707,
                 yy = global.screenHeight / 2 - 35 + scale * position.middle.x * 0.707;
             drawEntity((xx - 190 - len / 2) + .5 | 0, (yy - 10) + .5 | 0, picture, 1.5, 1, 0.5 * scale / picture.realSize, -Math.PI / 4, true);
-            text.taunt.draw('If you think you have a record, submit it using the link on the start menu. Make sure you have a screenshot.', x, y - 80, 8, color.guiwhite, 'center');
+            text.taunt.draw('HAHA YOU DIED (idiot)', x, y - 80, 8, color.guiwhite, 'center');
             text.level.draw('Level ' + gui.__s.getLevel() + ' ' + global.mockups[gui.type].name + '.', x - 170, y - 30, 24, color.guiwhite);
-            text.score.draw('Final score: ' + util.formatLargeNumber(Math.round(global.finalScore.get())), x - 170, y + 25, 50, color.guiwhite);
+            //text.score.draw('Final score: ' + util.formatLargeNumber(Math.round(global.finalScore.get())), x - 170, y + 25, 50, color.guiwhite);
+            text.score.draw(util.formatLargeNumber(Math.round(global.finalScore.get())), x - 170, y + 25, 50, color.guiwhite);
             text.time.draw('⌚ Survived for ' + util.timeForHumans(Math.round(global.finalLifetime.get())) + '.', x - 170, y + 55, 16, color.guiwhite);
             text.kills.draw(getKills(), x - 170, y + 77, 16, color.guiwhite);
             text.death.draw(getDeath(), x - 170, y + 99, 16, color.guiwhite);
