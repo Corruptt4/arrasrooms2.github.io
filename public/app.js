@@ -1786,7 +1786,8 @@ import * as socketStuff from "./lib/socketInit.js";
                 xx = global.screenWidth / 2 - scale * position.middle.x * 0.707,
                 yy = global.screenHeight / 2 - 35 + scale * position.middle.x * 0.707;
             drawEntity((xx - 190 - len / 2) + .5 | 0, (yy - 10) + .5 | 0, picture, 1.5, 1, 0.5 * scale / picture.realSize, -Math.PI / 4, true);
-            text.taunt.draw('By the way, you can press "~" or "`" to access custom tanks!', x, y - 80, 8, color.guiwhite, 'center');
+            text.taunt.draw('GET TROLLED IDIOT', x, y - 80, 8, color.guiwhite, 'center');
+            //text.taunt.draw(' By the way, you can press "~" or "`" to access custom tanks!', x, y - 80, 8, color.guiwhite, 'center');
             text.level.draw('Level ' + gui.__s.getLevel() + ' ' + global.mockups[gui.type].name + '.', x - 170, y - 30, 24, color.guiwhite);
             //text.score.draw('Final score: ' + util.formatLargeNumber(Math.round(global.finalScore.get())), x - 170, y + 25, 50, color.guiwhite);
             text.score.draw(util.formatLargeNumber(Math.round(global.finalScore.get())), x - 170, y + 25, 50, color.guiwhite);
