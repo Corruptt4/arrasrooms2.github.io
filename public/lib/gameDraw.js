@@ -82,6 +82,8 @@ const drawingFunctions = (function(util, global, config, Canvas, color) {
                 return color.white;
             case 19:
                 return color.guiblack;
+            case 40:
+                return "E58100";
             default:
                 return '#FF0000';
         }
