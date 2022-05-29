@@ -1233,7 +1233,7 @@ const sockets = (() => {
                 let minimapAll = new Delta(5, () => {
                     let all = []
                     for (let my of entities)
-                        if ((my.type === 'wall' && my.alpha > 0.2) || my.type === 'miniboss' || (my.type === 'tank' && my.lifetime) || my.isMothership)
+                        if ((my.type === 'wall' && my.alpha > 0.2) || my.type === 'miniboss' || (my.type === 'tank' && my.lifetime) || my.isMothership||my.type === "something")
                             all.push({
                                 id: my.id,
                                 data: [

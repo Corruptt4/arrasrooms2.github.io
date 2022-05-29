@@ -395,6 +395,49 @@ const maintainloop = (() => {
             }
         }
     })();
+  
+    //code added by DogeisCut, made by Max Nest#8441
+    //it stopped working for some reason
+    let spawnSomething = (() => {
+        let timer = 30*5;
+        let next = 0;
+      console.log(timer);
+        return census => {
+            if (timer >= 30 * 5) {
+              timer = 0;
+              let spot = room.center();
+              let o = new Entity(spot);
+              next++
+              switch (next) {
+                case 1:
+                  o.define(Class.centre);
+                  sockets.broadcast("The Centre (Level 1) has spawned!");
+                  break;
+                case 2:
+                  o.define(Class.centre2);
+                  sockets.broadcast("The Centre (Level 2) has spawned!");
+                  break;
+                case 3:
+                  o.define(Class.centre3);
+                  sockets.broadcast("The Centre (Level 3) has spawned!");
+                  break;
+                case 4:
+                  o.define(Class.centre4);
+                  sockets.broadcast("The Centre (Level 4) has spawned!");
+                  break;
+                case 5:
+                  o.define(Class.centre5);
+                  sockets.broadcast("The Centre (Level 5) has spawned!");
+                  next=0;
+                  break;
+                default:
+                  o.define(Class.arenaCloser);
+                  sockets.broadcast("The Centre (Level 1) has spawned!");
+                  break;
+              }
+            } else if (!census.something) timer++;
+        };
+    })();
 
     function spawnBot(TEAM = null) {
         let set = ran.choose(botSets);
@@ -474,8 +517,9 @@ const maintainloop = (() => {
                 crasher: 0,
                 miniboss: 0,
                 tank: 0,
+                something: 0,
                 mothership: 0,
-                sanctuary: 0
+                sanctuary: 0,
             };
             let npcs = entities.map(function npcCensus(instance) {
                 if (instance.isSanctuary) {
@@ -496,6 +540,7 @@ const maintainloop = (() => {
             // Spawning
             spawnCrasher(census);
             spawnBosses(census);
+            spawnSomething(census);
             // Bots
             if (bots.length < c.BOTS && !global.arenaClosed) bots.push(spawnBot(global.nextTagBotTeam || null));
             // Remove dead ones

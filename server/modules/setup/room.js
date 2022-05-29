@@ -206,6 +206,13 @@ room.gaussType = function(type, clustering) {
     return location;
 };
 
+room.center = () => {
+      return {
+        x: room.width / 2,
+        y: room.height / 2,
+      };
+    };
+
 for (let type of room.cellTypes) room.findType(type);
 
 room.nestFoodAmount = 1.5 * Math.sqrt(room.nest.length) / room.xgrid / room.ygrid;
