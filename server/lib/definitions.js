@@ -6685,7 +6685,7 @@ exports.teaser = {
     PARENT: [exports.genericTank],
     LABEL: 'Teaser',
     SHAPE: 6,
-    DIP: 10,
+    DIPMULTI: 10,
   FACING_TYPE: 'locksFacing',
    BODY: {
         FOV: 1.12,

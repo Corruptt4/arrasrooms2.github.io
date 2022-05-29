@@ -192,6 +192,7 @@ const util = (function() {
                 },
                 facing: mockup.facing,
                 shape: mockup.shape,
+                dipMulti: mockup.dipMulti,
                 name: mockup.name,
                 score: 0,
                 tiggle: 0,
