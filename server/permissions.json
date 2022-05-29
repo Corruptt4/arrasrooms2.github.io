@@ -1,13 +1,5 @@
 [
   {
-    "key": "TOKEN_DEV_fjhsdfhf_DEV_TOKEN",
-    "discordID": "889989767557693580",
-    "nameColor": "#AA0000",
-    "testbedTank": "testbed",
-    "name": "Oblivion#4800",
-    "note": "Mistik, please leave this as a contributor token since I did kinda put a lot of work into this :slight-sweat:"
-  },
-  {
     "key": "TOKEN_DEV_BALLS123123123123214_DEV_TOKEN",
     "discordID": "269281036687507456",
     "nameColor": "#FFFF00",
@@ -17,6 +9,9 @@
   },
   {
     "key": "",
+    "discordID": "",
+    "nameColor": "#FFFFFF",
+    "name": "",
     "testbedTank": "betatester",
     "note": "Everyone!"
   }
