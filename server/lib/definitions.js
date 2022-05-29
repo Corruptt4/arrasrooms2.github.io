@@ -1531,20 +1531,6 @@ exports.basic = {
                 }, }, 
             ],
         };
-            exports.single = {
-                PARENT: [exports.genericTank],
-                LABEL: 'Single',
-                //CONTROLLERS: ['nearestDifferentMaster'],
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                            TYPE: exports.bullet,
-                        }, },  {
-                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
-                    }
-                ],
-            };  
 
 exports.testbed2 = {
             PARENT: [exports.genericTank],
@@ -1579,20 +1565,6 @@ exports.testbed2 = {
                 }, }, 
             ],
         };
-            exports.single = {
-                PARENT: [exports.genericTank],
-                LABEL: 'Single',
-                //CONTROLLERS: ['nearestDifferentMaster'],
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                            TYPE: exports.bullet,
-                        }, },  {
-                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
-                    }
-                ],
-            };  
 
 exports.testbed3 = {
             PARENT: [exports.genericTank],
@@ -1627,20 +1599,6 @@ exports.testbed3 = {
                 }, }, 
             ],
         };
-            exports.single = {
-                PARENT: [exports.genericTank],
-                LABEL: 'Single',
-                //CONTROLLERS: ['nearestDifferentMaster'],
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                            TYPE: exports.bullet,
-                        }, },  {
-                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
-                    }
-                ],
-            };  
 
 exports.testbed4 = {
             PARENT: [exports.genericTank],
@@ -1675,20 +1633,6 @@ exports.testbed4 = {
                 }, }, 
             ],
         };
-            exports.single = {
-                PARENT: [exports.genericTank],
-                LABEL: 'Single',
-                //CONTROLLERS: ['nearestDifferentMaster'],
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                            TYPE: exports.bullet,
-                        }, },  {
-                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
-                    }
-                ],
-            };  
 
 exports.testbed5 = {
             PARENT: [exports.genericTank],
@@ -1723,21 +1667,6 @@ exports.testbed5 = {
                 }, }, 
             ],
         };
-            exports.single = {
-                PARENT: [exports.genericTank],
-                LABEL: 'Single',
-                //CONTROLLERS: ['nearestDifferentMaster'],
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                            TYPE: exports.bullet,
-                        }, },  {
-                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
-                    }
-                ],
-            };  
-
 exports.testbed6 = {
             PARENT: [exports.genericTank],
             LABEL: 'Green Varients',
@@ -1771,24 +1700,43 @@ exports.testbed6 = {
                 }, }, 
             ],
         };
-            exports.single = {
-                PARENT: [exports.genericTank],
-                LABEL: 'Single',
-                //CONTROLLERS: ['nearestDifferentMaster'],
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  19,     8,      1,      0,      0,      0,      0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                            TYPE: exports.bullet,
-                        }, },  {
-                    POSITION: [  5.5,    8,    -1.8,    6.5,     0,      0,      0,   ],                         
-                    }
-                ],
-            };  
 
 exports.testbed7 = {
             PARENT: [exports.genericTank],
             LABEL: 'Ammo',
+            RESET_UPGRADES: true,
+            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+            LEVEL: -1,
+          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
+          INVISIBLE: [],
+    BODY: {
+        ACCELERATION: 1,
+        SPEED: 0,
+        HEALTH: 1,
+        RESIST: 1,
+        SHIELD: 0,
+        REGEN: 0,
+        DAMAGE: 1,
+        PENETRATION: 1,
+        RANGE: 0,
+        FOV: 2,
+        DENSITY: 1,
+        STEALTH: 1,
+        PUSHABILITY: 1,        
+        HETERO: 2,
+    },    
+            TURRETS: [],
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
+                    TYPE: exports.bullet,
+                }, }, 
+            ],
+        };
+exports.testbed8 = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Ammo 2',
             RESET_UPGRADES: true,
             SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
             LEVEL: -1,
@@ -6898,15 +6846,16 @@ exports.tagMode = {
 };
 
 // UPGRADE PATHS
-exports.testbed.UPGRADES_TIER_1 = [exports.basic, exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,exports.testbed6,exports.testbed7];
+exports.testbed.UPGRADES_TIER_1 = [exports.basic, exports.betatester, exports.testbed5, exports.testbed2];//,exports.testbed3,];//exports.testbed4];//exports.testbed7];
 exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer];
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator]
-exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.centre];
-exports.testbed4.UPGRADES_TIER_1 = [exports.hugePentagon, exports.bigPentagon, exports.pentagon, exports.triangle, exports.square, exports.egg, exports.greenpentagon, exports.gem, exports.obstacle, exports.babyObstacle, exports.crasher, exports.trapTurret, exports.sentrySwarm]
+//exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.centre];
+//exports.testbed4.UPGRADES_TIER_1 = [exports.hugePentagon, exports.bigPentagon, exports.pentagon, exports.triangle, exports.square, exports.egg, exports.greenpentagon, exports.gem, exports.obstacle, exports.babyObstacle, exports.crasher, exports.trapTurret, exports.sentrySwarm,exports.testbed6]
 exports.testbed5.UPGRADES_TIER_1 = [exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest, exports.mazeWallShooter]
-exports.testbed7.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle, exports.greensquare]
-exports.testbed8.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
+//exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle, exports.greensquare]
+//exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
+//exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
 
 exports.centre.UPGRADES_TIER_1 = [exports.centre2,exports.centre3,exports.centre4,exports.centre5]
 
