@@ -175,6 +175,10 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   moredamge:            [1,     1,     1,      1,      1,      2,      1,      1,      1,      1,      1,      1,      1], 
   
+  damage4health:            [1,     1,     1,      1,      0.5,      2,      1,      1,      1,      1,      1,      1,      1], 
+  
+  health4damage:            [1,     1,     1,      1,      2,      0.5,      1,      1,      1,      1,      1,      1,      1], 
+  
   lessspeed:            [1,     1,     1,      1,      1,      1,      1,      0.6,    0.6,    1,      1,      1,      1], 
    
   archer:               [0.1,   0.5,   1,      1,      1.5,      0.03, 1.5,      2,      2,      3,      1,      1,      1], 
@@ -1474,7 +1478,7 @@ exports.basic = {
 
         exports.betatester = {
             PARENT: [exports.genericTank],
-            LABEL: 'More Tanks',
+            LABEL: 'Custom',
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
@@ -6679,11 +6683,15 @@ exports.tagMode = {
 exports.teaser = {
     PARENT: [exports.genericTank],
     LABEL: 'Teaser',
+  FACING_TYPE: 'locksFacing',
+   BODY: {
+        FOV: 1.12,
+    },    
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  16,     10,      1.4,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic,g.anni,g.destroy,g.pound,g.swarm,g.battle,g.carrier,g.whatthe,g.doublereload,g.doublereload]),
+            SHOOT_SETTINGS: combineStats([g.basic,g.anni,g.destroy,g.pound,g.swarm,g.battle,g.carrier,g.whatthe,g.doublereload,g.doublereload,g.health4damage]),
             TYPE: exports.swarm,
             LABEL: 'Front Swarmer',      
             STAT_CALCULATOR: gunCalcNames.swarm, 
