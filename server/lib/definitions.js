@@ -6896,7 +6896,7 @@ exports.teaser = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  16,     10,      1.4,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic,g.anni,g.destroy,g.pound,g.swarm,g.battle,g.carrier,g.whatthe]),
+            SHOOT_SETTINGS: combineStats([g.basic,g.anni,g.destroy,g.pound,g.swarm,g.battle,g.carrier,g.whatthe,g.doublereload]),
             TYPE: exports.swarm,
             LABEL: 'Front Swarmer',      
             STAT_CALCULATOR: gunCalcNames.swarm, 

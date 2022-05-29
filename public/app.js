@@ -1659,7 +1659,7 @@ import * as socketStuff from "./lib/socketInit.js";
                         case 7:
                             return 'l';
                         default:
-                            return "N/A";
+                            return "";
                         }
                     };
                     let internalSpacing = 8;
@@ -1672,6 +1672,7 @@ import * as socketStuff from "./lib/socketInit.js";
                     let xxx = 0;
                     let yo = y;
                     let ticker = 0;
+                    let emptyticker = false;
                     upgradeSpin += 0.01;
                     let colorIndex = 10;
                     let i = 0;
@@ -1699,7 +1700,12 @@ import * as socketStuff from "./lib/socketInit.js";
                         // Tank name
                         text.upgradeNames[i - 1].draw(picture.name, x + 0.9 * len / 2, y + height - 6, height / 8 - 3, color.guiwhite, 'center');
                         // Upgrade key
+                        if (getClassUpgradeKey(ticker)!=""){
                         text.upgradeKeys[i - 1].draw('[' + getClassUpgradeKey(ticker) + ']', x + len - 4, y + height - 6, height / 8 - 3, color.guiwhite, 'right');
+                        emptyticker = false;
+                        } else {
+                          emptyticker = true;
+                        }
                         ctx.strokeStyle = color.black;
                         ctx.globalAlpha = 1;
                         ctx.lineWidth = 3;
