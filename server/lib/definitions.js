@@ -5734,7 +5734,7 @@ exports.centre = {
             BROADCAST_MESSAGE: 'The Centre has been slain!',
             LABEL: 'Centre',
             SIZE: 48,
-            COLOR: 40,
+            COLOR: '#E58100',
             SHAPE:3,
             VALUE: 2000,
             DAMAGE_CLASS: 0,
