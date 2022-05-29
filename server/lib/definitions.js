@@ -5695,6 +5695,7 @@ exports.torpedo = {
 
 exports.balli = {
     PARENT: [exports.genericTank],
+    FACING_TYPE: 'locksFacing',
     LABEL: 'Ballistic',
               BODY: {
                 FOV: base.FOV * 1.15,
@@ -6683,6 +6684,7 @@ exports.tagMode = {
 exports.teaser = {
     PARENT: [exports.genericTank],
     LABEL: 'Teaser',
+    SHAPE: 600,
   FACING_TYPE: 'locksFacing',
    BODY: {
         FOV: 1.12,

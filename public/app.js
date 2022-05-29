@@ -658,8 +658,8 @@ import * as socketStuff from "./lib/socketInit.js";
                     var theta = (i + 1) / sides * 2 * Math.PI;
                     var htheta = (i + 0.5) / sides * 2 * Math.PI;
                     var c = {
-                        x: centerX + radius * dip * Math.cos(htheta + angle),
-                        y: centerY + radius * dip * Math.sin(htheta + angle),
+                        x: centerX + radius * dip*10 * Math.cos(htheta + angle),
+                        y: centerY + radius * dip*10 * Math.sin(htheta + angle),
                     };
                     var p = {
                         x: centerX + radius * Math.cos(theta + angle),
