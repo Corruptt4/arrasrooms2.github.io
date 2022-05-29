@@ -52,7 +52,7 @@ const skillSet = (() => {
     };
 })();
 
-const g = { // Gun info here 
+const g = { // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
   trap: [39, 1, .25, .65, 1.025, .325, 1.1, 4.9, 1, 1.125, 1, 15, 3],
     swarm: [27, .25, .05, .4, .9, .235, .65, 3.5, 1, 1, 1.25, 5, 1.25],
     drone: [66, .25, .1, .6, 5, .295, 1, 2.35, 1, 1, 1, .1, 1.1],
@@ -180,6 +180,9 @@ const g = { // Gun info here
   archer:               [0.1,   0.5,   1,      1,      1.5,      0.03, 1.5,      2,      2,      3,      1,      1,      1], 
   
   norecoil:             [1,     0,   1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1], 
+  
+  noshudder:  [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  noshudder:  [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   
 };
 
@@ -6276,7 +6279,8 @@ exports.centre = {
             SHAPE:3,
             VALUE: 2000,
             DAMAGE_CLASS: 0,
-            ACCEPTS_SCORE: false,
+            ACCEPTS_SCORE: true,
+            HEALTH_WITH_LEVEL: false,
             TYPE: "something",
             SKILL: skillSet({ 
                 rld: 1,
