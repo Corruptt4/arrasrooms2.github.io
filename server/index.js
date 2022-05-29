@@ -399,7 +399,7 @@ const maintainloop = (() => {
     //code added by DogeisCut, made by Max Nest#8441
     //it stopped working for some reason
     let spawnSomething = (() => {
-        let timer = 30*1;
+        let timer = 60*1;
         let next = 0;
       console.log(timer);
         return census => {

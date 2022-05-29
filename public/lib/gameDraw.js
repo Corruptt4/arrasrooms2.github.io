@@ -116,6 +116,8 @@ const drawingFunctions = (function(util, global, config, Canvas, color) {
                 return color.pink;
             case 'nest':
                 return (real) ? color.purple : color.lavender;
+            case 'cent':
+                return "#ff0000"
             case 'dom0':
                 return color.gold;
             default:

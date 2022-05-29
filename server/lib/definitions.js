@@ -6298,7 +6298,7 @@ exports.centre = {
             }),
             BODY: { // def
                 SPEED: 0,
-                HEALTH: 1000, 
+                HEALTH: 2000, 
                 DAMAGE: 4, 
                 PENETRATION: 0.25, 
                 SHIELD: 2,
@@ -6369,7 +6369,7 @@ exports.centre2 = {
             HEALTH_WITH_LEVEL: false,
             BODY: { // def
                 SPEED: 0,
-                HEALTH: 2000, 
+                HEALTH: 2500, 
                 DAMAGE: 4, 
                 PENETRATION: 0.25, 
                 SHIELD: 2,
