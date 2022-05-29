@@ -181,8 +181,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   norecoil:             [1,     0,   1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1], 
   
-  noshudder:  [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-  noshudder:  [1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  noshudder:  [1, 1, 0.01, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  halfhealth:  [1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1],
   
 };
 
@@ -6268,6 +6268,13 @@ exports.archer = {
     ],
 };
 
+exports.dominationBody = {
+    LABEL: "",
+    CONTROLLERS: ["dontTurnDominator"],
+    COLOR: 9,
+    SHAPE: 6,
+    INDEPENDENT: true
+};
 
 exports.centre = {
             PARENT: [exports.genericTank],
@@ -6305,21 +6312,21 @@ exports.centre = {
             GUNS: [          {/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      60,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      180,      0.33333, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      -60,      0.66666, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
@@ -6372,21 +6379,21 @@ exports.centre2 = {
             },GUNS: [          {/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      60,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      180,      0.33333, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      -60,      0.66666, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
@@ -6417,21 +6424,21 @@ exports.centre3 = {
             }, GUNS: [          {/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      60,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      180,      0.33333, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      -60,      0.66666, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
@@ -6464,42 +6471,42 @@ exports.centre4 = {
             },GUNS: [          {/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      60,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      180,      0.33333, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      -60,      0.66666, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.drone, {VALUE: 300, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, }, {/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     12,     1,     0,     0,      0,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
+                            SHOOT_SETTINGS: combineStats([g.noshudder, g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
                             TYPE: exports.bullet, STAT_CALCULATOR: gunCalcNames.bullet,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     12,     1,     0,     0,      120,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
+                            SHOOT_SETTINGS: combineStats([g.noshudder, g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
                             TYPE: exports.bullet, STAT_CALCULATOR: gunCalcNames.bullet,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     12,     1,     0,     0,      240,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
+                            SHOOT_SETTINGS: combineStats([g.noshudder, g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
                             TYPE: exports.bullet, STAT_CALCULATOR: gunCalcNames.bullet,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
@@ -6532,42 +6539,42 @@ exports.centre5 = {
             },GUNS: [          {/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      60,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.turreteddrone, {VALUE: 600, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 15,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      180,      0.33333, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                             TYPE: [exports.turreteddrone, {VALUE: 600, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 15,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     15,     0.6,     0,     0,      -60,      0.66666, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.halfhealth, g.drone, g.mini, g.halfrange,g.norecoil,g.halfsize,g.doublereload]),
                            TYPE: [exports.turreteddrone, {VALUE: 600, HEALTH_WITH_LEVEL: false,}], STAT_CALCULATOR: gunCalcNames.drone,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 15,
                         }, },  {/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     12,     1,     0,     0,      0,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
+                            SHOOT_SETTINGS: combineStats([g.noshudder, g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
                             TYPE: exports.bullet, STAT_CALCULATOR: gunCalcNames.bullet,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     12,     1,     0,     0,      120,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
+                            SHOOT_SETTINGS: combineStats([g.noshudder, g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
                             TYPE: exports.bullet, STAT_CALCULATOR: gunCalcNames.bullet,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
                         }, },{/*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */ 
                     POSITION: [     12,     12,     1,     0,     0,      240,      0, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
+                            SHOOT_SETTINGS: combineStats([g.noshudder, g.pound, g.destroy, g.anni,g.norecoil,g.morespeed,g.halfreload,g.halfreload,g.morespeed,g.morespeed,g.halfreload,g.halfreload,g.morespeed]),
                             TYPE: exports.bullet, STAT_CALCULATOR: gunCalcNames.bullet,
                             AUTOFIRE: true,  
                             MAX_CHILDREN: 40,
@@ -6671,13 +6678,7 @@ exports.mothership = {
         return e;
     })()
 };
-exports.dominationBody = {
-    LABEL: "",
-    CONTROLLERS: ["dontTurnDominator"],
-    COLOR: 9,
-    SHAPE: 6,
-    INDEPENDENT: true
-};
+
 exports.dominator = {
     PARENT: [exports.genericTank],
     LABEL: "Dominator",
