@@ -1,6 +1,7 @@
-# Update (05/29/2022): DONUTS!!!!
+# Update (05/29/2022): DONUTS!!!! (mmmm yummy mmmmmmm)
 - NEW DONUT SHAPE!
   - no tanks or shapes actually use it yet but its there!
+  - i mean there is a donut basic if you want.
 - Stars
   - a rare star shaped polygon worth 40,000 points!
   - more is planned with it like temporary invincibility when destroyed!
@@ -14,6 +15,8 @@
 # Update (05/29/2022): new stuff
 - New tank: Teaser
 - Everyone are no longer beta testers
+  - not that it matters since someone can steal any key they want
+    - i probably shouldn't have said that
 - Updated Upgrade UI look
   - It's now red, no longer displays [N/A] and can hold more tanks.
 
