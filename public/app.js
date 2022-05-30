@@ -703,13 +703,43 @@ import * as socketStuff from "./lib/socketInit.js";
                   context.rotate(-angle);
                   context.translate(-centerX, -centerY);
                   return;
-            } else if (sides === 2001) { //Waffz Image (added by dogeiscut wow who wouldve guessed)
+            } else if (sides === 2001) { //Waffz Image (added by dogeiscut)
                   
-                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/pfp_circle.png?v=1653890617509" 
+                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/waffz.png?v=1653891306773" 
                   context.translate(centerX, centerY);
                   context.rotate(angle);
                   context.drawImage(drawing, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
                   context.rotate(-angle);
+                  context.translate(-centerX, -centerY);
+                  return;
+            } else if (sides === 2002) { //Farmer (added by dogeiscut)
+                  let fillcolor = context.fillStyle;
+                let strokecolor = context.strokeStyle;
+                radius += context.lineWidth / 4;
+                context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
+                context.fillStyle = strokecolor;
+                context.fill();
+                context.closePath();
+                context.beginPath();
+                context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
+                context.fillStyle = fillcolor;
+                context.fill();
+                context.closePath();
+                
+                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/farmhat.png?v=1653891725301" 
+                  context.translate(centerX, centerY+10);
+                  context.rotate(0);
+                  context.drawImage(drawing, -radius*4 / 2, -radius*4 / 2, radius*4, radius*4);
+                  context.rotate(-0);
+                  context.translate(-centerX, -(centerY+10));
+                  return;
+            } else if (sides === 2003) { //carrot Image (added by dogeiscut wow who wouldve guessed)
+                  
+                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrot.png?v=1653891904530" 
+                  context.translate(centerX, centerY);
+                  context.rotate(angle+45);
+                  context.drawImage(drawing, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
+                  context.rotate(-(angle+45));
                   context.translate(-centerX, -centerY);
                   return;
             } else if (sides > 0) { // Polygon

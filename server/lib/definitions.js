@@ -5738,10 +5738,10 @@ exports.dogeTest = {
     }),
     SIZE: 24,
     BODY: {
-        FOV: 5,
+        FOV: 3,
         HEALTH: 999999999,
         DAMAGE: 999999999,
-        SPEED: 20
+        SPEED: 40
     },
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -5764,7 +5764,7 @@ exports.waffzTest = {
     PARENT: [exports.genericTank],
     LABEL: 'Waffz_The_Pancake',
     DANGER: 99999,
-    SHAPE: 2000,
+    SHAPE: 2001,
     HAS_NO_RECOIL: true,
     COLOR: 36,
     SKILL: skillSet({ 
@@ -5774,10 +5774,10 @@ exports.waffzTest = {
     }),
     SIZE: 24,
     BODY: {
-        FOV: 5,
+        FOV: 3,
         HEALTH: 999999999,
         DAMAGE: 999999999,
-        SPEED: 20
+        SPEED: 40
     },
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
