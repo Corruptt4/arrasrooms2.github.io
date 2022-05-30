@@ -1,3 +1,5 @@
+# Update (05/29/2022): bugs are hurting my brain
+- Screen flies away whe
 # Update (05/29/2022): DONUTS!!!! (mmmm yummy mmmmmmm)
 - NEW DONUT SHAPE!
   - no tanks or shapes actually use it yet but its there!
