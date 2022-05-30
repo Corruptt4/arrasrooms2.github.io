@@ -1837,7 +1837,7 @@ import * as socketStuff from "./lib/socketInit.js";
             clearScreen(mixColors(color.red, color.guiblack, 0.3), 0.25);
             let shift = animations.disconnected.get();
             ctx.translate(0, -shift * global.screenHeight);
-            text.disconnected.draw('💀 Disconnected. (probably updating dont panic) 💀', global.screenWidth / 2, global.screenHeight / 2, 30, color.guiwhite, 'center');
+            text.disconnected.draw('💀 Disconnected. (server update/restart) 💀', global.screenWidth / 2, global.screenHeight / 2, 30, color.guiwhite, 'center');
             text.message.draw(global.message, global.screenWidth / 2, global.screenHeight / 2 + 30, 15, color.orange, 'center');
             ctx.translate(0, shift * global.screenHeight);
         };

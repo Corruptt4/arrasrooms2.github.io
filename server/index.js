@@ -587,7 +587,7 @@ const maintainloop = (() => {
             ], ["scale", 4], 2000),
             new FoodType("Rare Food", [
                 Class.gem, Class.greensquare, Class.greentriangle,
-                Class.greenpentagon
+                Class.greenpentagon, Class.star
             ], ["scale", 5], 1),
             new FoodType("Nest Food", [
                 Class.pentagon, Class.bigPentagon, Class.hugePentagon, Class.greenpentagon

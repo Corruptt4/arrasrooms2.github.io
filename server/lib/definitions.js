@@ -6049,7 +6049,7 @@ exports.extremeaccelbullet = {
   PARENT: [exports.bullet],
   MOTION_TYPE: 'extremeaccel',
   SHAPE: -3,
-  DIPMULTI: 10,
+  DIPMULTI: 0.01,
 }
 
 exports.archer = {
@@ -6706,8 +6706,29 @@ exports.teaser = {
     ],
 };
 
+exports.star = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 6
+    },
+    LABEL: "Super Star",
+    VALUE: 40000,
+    SHAPE: -5,
+    DIPMULTI: 0.2,
+    SIZE: 16,
+    COLOR: 3,
+    BODY: {
+        DAMAGE: 1.5 * basePolygonDamage,
+        DENSITY: 8,
+        HEALTH: 10 * basePolygonHealth,
+        RESIST: 1.25,
+        PENETRATION: 1.1
+    },
+    DRAW_HEALTH: true
+};
+
 // UPGRADE PATHS
-exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,];//exports.testbed7];
+exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
 exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.teaser];
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
