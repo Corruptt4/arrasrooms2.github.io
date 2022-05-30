@@ -1692,12 +1692,12 @@ import * as socketStuff from "./lib/socketInit.js";
                     let ticker = 0;
                     let emptyticker = 0.9;
                     upgradeSpin += 0.01;
-                    let colorIndex = 10;
+                    //let colorIndex = 10;
                     let i = 0;
                     gui.upgrades.forEach(function drawAnUpgrade(model) {
                         if (y > yo) yo = y;
                         xxx = x;
-                        global.clickables.upgrade.place(i++, x, y, len, height);
+                        global.clickables.upgrade.place(0, x, y, len, height);
                         // Draw box
                         ctx.globalAlpha = 0.5;
                         ctx.fillStyle = "#ff0000"//getColor((colorIndex > 15 ? colorIndex - 16 : colorIndex));
