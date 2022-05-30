@@ -401,9 +401,8 @@ const maintainloop = (() => {
     let spawnSomething = (() => {
         let timer = 60*1;
         let next = 0;
-      console.log(timer);
         return census => {
-            if (timer >= 30 * 1) {
+            if (timer >= 60 * 1) {
               timer = 0;
               let spot = room.center();
               let o = new Entity(spot);

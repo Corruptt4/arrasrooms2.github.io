@@ -16,7 +16,6 @@ let mockupJsonData = (() => {
     }
     // Define mocking up functions
     function getMockup(e, positionInfo) {
-      console.log("FUCKING BALLS" + e.dipMultiData)
         return {
             index: e.index,
             name: e.label,

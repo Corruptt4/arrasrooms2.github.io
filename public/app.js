@@ -631,7 +631,7 @@ import * as socketStuff from "./lib/socketInit.js";
     // Entity drawing (this is a function that makes a function)
     const drawEntity = (() => {
         // Sub-drawing functions
-        function drawPoly(context, centerX, centerY, radius, sides, angle = 0, fill = true, dipMultih = 1) {
+        function drawPoly(context, centerX, centerY, radius, sides, angle = 0, dipMultih = 1, fill = true) {
             angle += (sides % 2) ? 0 : Math.PI / sides;
             // Start drawing
             context.beginPath();
