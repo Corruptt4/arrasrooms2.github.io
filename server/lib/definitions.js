@@ -5012,7 +5012,8 @@ exports.nestKeeper = {
 exports.octoblock = {
     PARENT: [exports.block],
     SHAPE: -8,
-                LABEL: 'Octo Tank',
+                LABEL: 'Octo Block',
+                CUSTOM: true,
                 DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [  18,     4,      1,      0,      0,      0,      0,   ], 
@@ -5069,6 +5070,7 @@ exports.octoblock = {
 exports.supertest = {
     PARENT: [exports.genericTank],
     LABEL: 'Octolauncher',
+    CUSTOM: true,
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  18,     16,      0.5,      0,      0,      0,      0,   ], 
@@ -5084,6 +5086,7 @@ exports.supertest = {
 exports.weenus = {
     PARENT: [exports.genericTank],
     LABEL: 'Weiner',
+    CUSTOM: true,
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  99999,     8,      1,      0,      0,      0,      0,   ], 
@@ -5106,6 +5109,7 @@ exports.weenus = {
 exports.ball = {
     PARENT: [exports.genericTank],
     LABEL: 'BIG BALL',
+    CUSTOM: true,
     NAME: 'BIG BALL',
     SKILL_CAP: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     //INVISIBLE: [0.08, 0.03],
@@ -5134,6 +5138,7 @@ exports.saw = {
         LEVEL: 3,
     },
     LABEL: 'Sawblade',
+    CUSTOM: true,
     SHAPE: -16,
     DIPMULTI: 0.3,
     DANGER: 7,
@@ -5153,6 +5158,7 @@ exports.saw = {
 exports.indust = {
     PARENT: [exports.genericTank],
     LABEL: 'Industrialist',
+    CUSTOM: true,
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  18,     16,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
@@ -5175,6 +5181,7 @@ exports.indust = {
 exports.bender5 = {
 PARENT: [exports.genericTank],
 LABEL: '',
+CUSTOM: true,
 COLOR: 5,
 SHAPE: 4,
 TURRETS: [{
@@ -5187,6 +5194,7 @@ COLOR: 5
 exports.bender4 = {
 PARENT: [exports.genericTank],
 LABEL: '',
+CUSTOM: true,
 COLOR: 13,
 SHAPE: 4,
 TURRETS: [{
@@ -5198,6 +5206,7 @@ TYPE: exports.bender5,
 exports.bender3 = {
 PARENT: [exports.genericTank],
 LABEL: '',
+CUSTOM: true,
 COLOR: 13,
 SHAPE: 4,
 TURRETS: [{
@@ -5209,6 +5218,7 @@ TYPE: exports.bender4,
 exports.bender2 = {
 PARENT: [exports.genericTank],
 LABEL: '',
+CUSTOM: true,
 COLOR: 13,
 SHAPE: 4,
 TURRETS: [{
@@ -5220,6 +5230,7 @@ TYPE: exports.bender3,
 exports.bender1 = {
 PARENT: [exports.genericTank],
 LABEL: '',
+CUSTOM: true,
 COLOR: 13,
 SHAPE: 4,
 TURRETS: [{
@@ -5232,12 +5243,14 @@ TYPE: exports.bender2,
 exports.leftball = {
 PARENT: [exports.genericTank],
 LABEL: 'Left Nut',
+CUSTOM: true,
 COLOR: 13,
 SHAPE: 0,
 };
 exports.rightball = {
 PARENT: [exports.genericTank],
 LABEL: 'Right Nut',
+CUSTOM: true,
 COLOR: 13,
 SHAPE: 0,
 };
@@ -5245,6 +5258,7 @@ SHAPE: 0,
 exports.bender = {
 PARENT: [exports.genericTank],
 LABEL: 'Time to take a piss',
+CUSTOM: true,
 COLOR: 13,
 FACING_TYPE: 'locksFacing',
 SHAPE:  0,
@@ -5269,12 +5283,14 @@ TYPE: exports.rightball,
 
 exports.invissymbol = {
     PARENT: [exports.genericTank],
+    CUSTOM: true,
     LABEL: '',
     SHAPE: 0
 };
 
 exports.invisblock = {
         PARENT: [exports.block],
+        CUSTOM: true,
         INVISIBLE: [0.08, 0.03],
                   TURRETS: [{
             POSITION: [10, 0, 0, 0, 360, 1, ],
@@ -5285,6 +5301,7 @@ exports.invisblock = {
 exports.miner = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Miner',
+                CUSTOM: true,
                 BODY: {
                     DENSITY: base.DENSITY * 0.6,
                     SPEED: base.SPEED * 0.8,
@@ -5321,6 +5338,7 @@ exports.imposter = {
             }],
             INVISIBLE: [0.06, 0.01],
             LABEL: 'Imposter',
+            CUSTOM: true,
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
@@ -5333,6 +5351,7 @@ exports.imposter = {
 exports.nap = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Kidnapper',
+                CUSTOM: true,
                 DANGER: 7,
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.7,
@@ -5367,6 +5386,7 @@ exports.nap = {
 exports.furnace = {
         PARENT: [exports.genericTank],
         LABEL: 'Furnace',
+        CUSTOM: true,
         GUNS: [ {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [    15,     4,     1.4,     8,      0,      0,      0,   ],  
             },  {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -5380,6 +5400,7 @@ exports.furnace = {
 
 exports.traptrapper = {
     LABEL: 'Trap Trapper',
+    CUSTOM: true,
     TYPE: 'trap',
     ACCEPTS_SCORE: false,
     SHAPE: 3, 
@@ -5420,6 +5441,7 @@ exports.traptrapper = {
             exports.dumptruck = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Dumptruck',
+                CUSTOM: true,
                 BODY: {
                     DENSITY: base.DENSITY * 0.6,
                     SPEED: base.SPEED * 0.8,
@@ -5445,6 +5467,7 @@ exports.omega = {
                     ACCELERATION: base.ACCEL * 0.75,
                 },
                 LABEL: 'Ω',
+                CUSTOM: true,
                 DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [ 20,     20,     2,      0,      0,      0,      0,   ],
@@ -5457,6 +5480,7 @@ exports.omega = {
 
 exports.explosivetrap = {
     LABEL: 'Trap',
+    CUSTOM: true,
     TYPE: 'trap',
     ACCEPTS_SCORE: false,
     SHAPE: -3, 
@@ -5478,6 +5502,7 @@ exports.explosivetrap = {
 exports.exploder = {
     PARENT: [exports.genericTank],
     LABEL: 'Exploder',
+    CUSTOM: true,
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [  15,     8,      1,      0,      0,      0,      0,   ], 
@@ -5676,6 +5701,7 @@ exports.exploder = {
 exports.torpedo = {
     //faster torpedo = more damage
     LABEL: 'Torpedo',
+    CUSTOM: true,
     TYPE: 'bullet',
     ACCEPTS_SCORE: false,
     BODY: {
@@ -5710,6 +5736,7 @@ exports.balli = {
     PARENT: [exports.genericTank],
     FACING_TYPE: 'locksFacing',
     LABEL: 'Ballistic',
+    CUSTOM: true,
               BODY: {
                 FOV: base.FOV * 1.15,
             },
@@ -5728,6 +5755,7 @@ exports.balli = {
 exports.dogeTest = {
     PARENT: [exports.genericTank],
     LABEL: 'DogeisCut',
+    CUSTOM: true,
     DANGER: 99999,
     SHAPE: 2000,
     HAS_NO_RECOIL: true,
@@ -5764,6 +5792,7 @@ exports.dogeTest = {
 exports.waffzTest = {
     PARENT: [exports.genericTank],
     LABEL: 'Waffz_The_Pancake',
+    CUSTOM: true,
     DANGER: 99999,
     SHAPE: 2001,
     HAS_NO_RECOIL: true,
@@ -5800,6 +5829,7 @@ exports.waffzTest = {
 
 exports.bubbleSpike = {
   SHAPE:0,
+    CUSTOM: true,
       GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
@@ -5810,6 +5840,7 @@ exports.bubbleSpike = {
 };
 exports.bubble = {
     LABEL: 'Bubble',
+    CUSTOM: true,
     SHAPE: -6,
     DIPMULTI: 2,
     TYPE: 'bullet',
@@ -5845,6 +5876,7 @@ exports.bubble = {
 exports.gen = {
     PARENT: [exports.genericTank],
     LABEL: 'Generator',
+    CUSTOM: true,
     MAX_CHILDREN: 3,
               BODY: {
                 SPEED: base.SPEED * 0.8,
@@ -5911,6 +5943,7 @@ exports.arenaCloser = {
 exports.scturret = {
         PARENT: [exports.genericTank],
         LABEL: '',
+        CUSTOM: true,
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [  15,     8,      1,      0,     5.5,     0,      0,   ], 
             PROPERTIES: {
@@ -5928,6 +5961,7 @@ exports.scturret = {
 exports.scattergun = {
         PARENT: [exports.genericTank],
         LABEL: 'Scattergun',
+        CUSTOM: true,
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [  15,     8,      1,      0,     5.5,     0,      0,   ], 
             PROPERTIES: {
@@ -5949,6 +5983,7 @@ exports.scattergun = {
 
 exports.lance = {
     LABEL: 'Lance',
+    CUSTOM: true,
     TYPE: 'bullet',
     SHAPE: [[]],
     ACCEPTS_SCORE: false,
@@ -5971,6 +6006,7 @@ exports.lance = {
 exports.lancer = {
     PARENT: [exports.genericTank],
     LABEL: 'Lancer',
+    CUSTOM: true,
     //SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
     STAT_NAMES: statnames.lance, //reload is lance density, bullet speed is lance reach
     BODY: {
@@ -5995,6 +6031,7 @@ exports.lancer = {
 exports.trilance = { 
             PARENT: [exports.genericTank],
             LABEL: 'Tri-Lancer',
+            CUSTOM: true,
             DANGER: 6,
             STAT_NAMES: statnames.lance,
             BODY: {
@@ -6018,6 +6055,7 @@ exports.trilance = {
 exports.knife = {
     PARENT: [exports.genericTank],
     LABEL: 'Knife',
+    CUSTOM: true,
     STAT_NAMES: statnames.lance,
     BODY: {
         SPEED: base.SPEED * 1.5,
@@ -6027,7 +6065,7 @@ exports.knife = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  15,     0.1,   -150,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.lance,g.lance]),
+            SHOOT_SETTINGS: combineStats([g.lance,g.lance,g.halfspeed]),
             TYPE: exports.lance,
             LABEL: 'Lance',
             AUTOFIRE: true,
@@ -6041,6 +6079,7 @@ exports.knife = {
 exports.sword = {
     PARENT: [exports.genericTank],
     LABEL: 'Sword',
+    CUSTOM: true,
     STAT_NAMES: statnames.lance,
     BODY: {
         SPEED: base.SPEED * 2,
@@ -6064,6 +6103,7 @@ exports.sword = {
 exports.invislancer = {
     PARENT: [exports.genericTank],
     LABEL: 'Murderer',
+    CUSTOM: true,
     //SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
     STAT_NAMES: statnames.lance, //reload is lance density, bullet speed is lance reach
   TURRETS: [{
@@ -6094,6 +6134,7 @@ exports.invislancer = {
 
 exports.extremeaccelbullet = {
   PARENT: [exports.bullet],
+  CUSTOM: true,
   MOTION_TYPE: 'extremeaccel',
   SHAPE: -3,
   DIPMULTI: 0.01,
@@ -6102,6 +6143,7 @@ exports.extremeaccelbullet = {
 exports.archer = {
     PARENT: [exports.genericTank],
     LABEL: 'Archer',
+    CUSTOM: true,
     BODY: {
       FOV: base.FOV * 1.3,
     },
@@ -6137,6 +6179,7 @@ exports.centre = {
             PARENT: [exports.genericTank],
             BROADCAST_MESSAGE: 'The Centre has been slain!',
             LABEL: 'Centre',
+            CUSTOM: true,
             SIZE: 48,
             CAN_BE_ON_LEADERBOARD: true,
             COLOR: '#FF0000',
@@ -6204,6 +6247,7 @@ exports.centre = {
 exports.noRecoilAutoTurret = {
     PARENT: [exports.genericTank],
     LABEL: 'Turret',
+    CUSTOM: true,
     BODY: {
         FOV: 0.8
     },
@@ -6222,6 +6266,7 @@ exports.centre2 = {
             PARENT: [exports.centre],
             BROADCAST_MESSAGE: 'The Centre (Level 2) has been slain!',
             LABEL: 'Centre Level 2',
+            CUSTOM: true,
             VALUE: 4000,
             HEALTH_WITH_LEVEL: false,
             BODY: { // def
@@ -6268,6 +6313,7 @@ exports.centre3 = {
             PARENT: [exports.centre],
             BROADCAST_MESSAGE: 'The Centre (Level 3) has been slain!',
             LABEL: 'Centre Level 3',
+            CUSTOM: true,
             VALUE: 6000,
             HEALTH_WITH_LEVEL: false,
             BODY: { // def
@@ -6315,6 +6361,7 @@ exports.centre4 = {
             PARENT: [exports.centre],
             BROADCAST_MESSAGE: 'The Centre (Level 4) has been slain!',
             LABEL: 'Centre Level 4',
+            CUSTOM: true,
             VALUE: 8000,
             SHAPE: 6,
             HEALTH_WITH_LEVEL: false,
@@ -6384,6 +6431,7 @@ exports.centre5 = {
             PARENT: [exports.centre],
             BROADCAST_MESSAGE: 'The Centre (Level 5) has been slain! (Impressive!)\nThe Centre has been reset to level 1!',
             LABEL: 'Centre Level 5',
+            CUSTOM: true,
             VALUE: 100000,
             SHAPE: 6,
             HEALTH_WITH_LEVEL: false,
@@ -6735,6 +6783,7 @@ exports.tagMode = {
 exports.teaser = {
     PARENT: [exports.genericTank],
     LABEL: 'Teaser',
+    CUSTOM: true,
   FACING_TYPE: 'locksFacing',
    BODY: {
         FOV: 1.12,
@@ -6759,6 +6808,7 @@ exports.star = {
         LEVEL: 6
     },
     LABEL: "Super Star",
+    CUSTOM: true,
     VALUE: 40000,
     SHAPE: -5,
     DIPMULTI: 0.2,
@@ -6777,6 +6827,7 @@ exports.star = {
 
 exports.donutBullet = {
     LABEL: 'Donut Bullet',
+    CUSTOM: true,
     TYPE: 'bullet',
     SHAPE: 1000,
     ACCEPTS_SCORE: false,
@@ -6799,6 +6850,7 @@ exports.donutBullet = {
 exports.donutbasic = {
     PARENT: [exports.genericTank],
     LABEL: 'Donut Basic',
+    CUSTOM: true,
     SHAPE: 1000,
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -6820,6 +6872,7 @@ exports.donutbasic = {
 
 exports.redDot = {
             LABEL: '',
+            CUSTOM: true,
             SHAPE:0,
             SIZE:11,
             COLOR:12,
@@ -6830,6 +6883,7 @@ exports.redDot = {
 
 exports.explosive = {
     LABEL: 'Explosive',
+    CUSTOM: true,
     TYPE: 'bullet',
     MOTION_TYPE: 'explode',
     ACCEPTS_SCORE: false,
@@ -6857,6 +6911,7 @@ exports.demoman = {
                 ACCELERATION: base.ACCEL * 0.75,
             },
             LABEL: 'Demolitionist',
+            CUSTOM: true,
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  5,     15,      0,      0,     360,  1], 
                     TYPE: exports.redDot,
@@ -6873,6 +6928,7 @@ exports.demoman = {
 
 exports.carrot = {
     LABEL: 'Carrot',
+    CUSTOM: true,
     SHAPE: 2003,
     TYPE: 'bullet',
     ACCEPTS_SCORE: false,
@@ -6895,6 +6951,7 @@ exports.carrot = {
 exports.farmer = {
     PARENT: [exports.genericTank],
     LABEL: 'Farmer',
+    CUSTOM: true,
     SHAPE: 2002,
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -6916,6 +6973,7 @@ exports.farmer = {
 
 exports.explosivesmall = {
     LABEL: 'Small Explosive',
+    CUSTOM: true,
     TYPE: 'bullet',
     MOTION_TYPE: 'explodesmall',
     ACCEPTS_SCORE: false,
@@ -6981,6 +7039,7 @@ exports.poprocks = {
 
 exports.explosiveDrone = {
     LABEL: 'Explosive Drone',
+    CUSTOM: true,
     TYPE: 'drone',
     ACCEPTS_SCORE: false,
     DANGER: 2,
@@ -7015,12 +7074,13 @@ exports.explosiveDrone = {
 };
 
 // UPGRADE PATHS
+
+//testbed/betatester stuff
 exports.testbed.UPGRADES_TIER_1 = [/*exports.oldbetatester,*/exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
 //exports.betatester2.UPGRADES_TIER_1 = [exports.oldbetatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
 
-exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
 exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.testbed9];
 exports.testbed4.UPGRADES_TIER_1 = [exports.hugePentagon, exports.bigPentagon, exports.pentagon, exports.triangle, exports.square, exports.egg, exports.greenpentagon, exports.gem, exports.obstacle, exports.babyObstacle, exports.crasher, exports.trapTurret, exports.sentrySwarm,exports.testbed6]
@@ -7032,48 +7092,56 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5]
 
 
-exports.basic.UPGRADES_TIER_1 = [/*exports.oldbetatester,*/ exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper,];
 
-    exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa];
-        exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket];
-        exports.double.UPGRADES_TIER_3 = [exports.tripletwin, exports.split, exports.autodouble, exports.bentdouble];
-        exports.bent.UPGRADES_TIER_3 = [exports.penta, exports.spread, exports.benthybrid, exports.bentdouble, exports.triple];
-        exports.gunner.UPGRADES_TIER_3 = [exports.autogunner, exports.nailgun, exports.auto4, exports.machinegunner, exports.guntrap, exports.hurricane, exports.overgunner];
 
-    exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini, exports.rifle];
-        exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack];
-        exports.assassin.UPGRADES_TIER_3 = [exports.falcon, exports.ranger, exports.stalker, exports.autoass];
-        exports.hunter.UPGRADES_TIER_3 = [exports.preda, exports.poach, exports.sidewind, exports.dual];
-        exports.mini.UPGRADES_TIER_3 = [exports.stream, exports.nailgun, exports.hybridmini, exports.minitrap];
-        exports.rifle.UPGRADES_TIER_3 = [exports.musket];
 
-    exports.machine.UPGRADES_TIER_2 = [exports.artillery, exports.mini, exports.gunner];
-        exports.machine.UPGRADES_TIER_3 = [exports.spray];
 
-    exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap, exports.tritrap];
-        exports.auto3.UPGRADES_TIER_3 = [exports.auto5, exports.heavy3, exports.auto4, exports.banshee];
-        exports.hexa.UPGRADES_TIER_3 = [exports.octo, exports.hurricane, exports.hexatrap];
-        exports.tri.UPGRADES_TIER_3 = [exports.fighter, exports.booster, exports.falcon, exports.bomber, exports.autotri, exports.brutalizer, exports.eagle];
+//Tanks
 
-    exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer, exports.lilfact];
-        exports.director.UPGRADES_TIER_3 = [exports.manager];
-        exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress];
-        exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact];
-        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive];  
-        exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer];
 
-    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery];
-        exports.pound.UPGRADES_TIER_3 = [exports.shotgun2, exports.eagle];
-        exports.artillery.UPGRADES_TIER_3 = [exports.mortar, exports.spread, exports.skimmer, exports.twister];
-        exports.destroy.UPGRADES_TIER_3 = [exports.conq, exports.anni, exports.hybrid, exports.construct, exports.hiveshooter];
+    exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
+        exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
+        exports.double.UPGRADES_TIER_3 = [exports.tripletwin, exports.split, exports.autodouble, exports.bentdouble/*custom*/];
+        exports.bent.UPGRADES_TIER_3 = [exports.penta, exports.spread, exports.benthybrid, exports.bentdouble, exports.triple/*custom*/];
+        exports.gunner.UPGRADES_TIER_3 = [exports.autogunner, exports.nailgun, exports.auto4, exports.machinegunner, exports.guntrap, exports.hurricane, exports.overgunner/*custom*/,exports.poprocks];
 
-    exports.trapper.UPGRADES_TIER_2 = [exports.builder, exports.tritrap, exports.flanktrap];
-        exports.trapper.UPGRADES_TIER_3 = [exports.minitrap, exports.overtrap];
-        exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq];
-        exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap];
-        exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect];
+    exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini, exports.rifle/*custom*/];
+        exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack/*custom*/];
+        exports.assassin.UPGRADES_TIER_3 = [exports.falcon, exports.ranger, exports.stalker, exports.autoass/*custom*/];
+        exports.hunter.UPGRADES_TIER_3 = [exports.preda, exports.poach, exports.sidewind, exports.dual/*custom*/];
+        exports.mini.UPGRADES_TIER_3 = [exports.stream, exports.nailgun, exports.hybridmini, exports.minitrap/*custom*/];
+        exports.rifle.UPGRADES_TIER_3 = [exports.musket]/*custom*/;
 
-    exports.basic.UPGRADES_TIER_2 = [exports.smash];
-        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine];
+    exports.machine.UPGRADES_TIER_2 = [exports.artillery, exports.mini, exports.gunner/*custom*/];
+        exports.machine.UPGRADES_TIER_3 = [exports.spray/*custom*/];
 
-        exports.basic.UPGRADES_TIER_3 = [exports.single];
+    exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap, exports.tritrap/*custom*/];
+        exports.auto3.UPGRADES_TIER_3 = [exports.auto5, exports.heavy3, exports.auto4, exports.banshee/*custom*/];
+        exports.hexa.UPGRADES_TIER_3 = [exports.octo, exports.hurricane, exports.hexatrap/*custom*/];
+        exports.tri.UPGRADES_TIER_3 = [exports.fighter, exports.booster, exports.falcon, exports.bomber, exports.autotri, exports.brutalizer, exports.eagle/*custom*/];
+
+    exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer, exports.lilfact/*custom*/];
+        exports.director.UPGRADES_TIER_3 = [exports.manager/*custom*/];
+        exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress/*custom*/];
+        exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/];
+        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/];  
+        exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/];
+
+    exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery/*custom*/];
+        exports.pound.UPGRADES_TIER_3 = [exports.shotgun2, exports.eagle/*custom*/];
+        exports.artillery.UPGRADES_TIER_3 = [exports.mortar, exports.spread, exports.skimmer, exports.twister/*custom*/];
+        exports.destroy.UPGRADES_TIER_3 = [exports.conq, exports.anni, exports.hybrid, exports.construct, exports.hiveshooter/*custom*/];
+
+    exports.trapper.UPGRADES_TIER_2 = [exports.builder, exports.tritrap, exports.flanktrap/*custom*/];
+        exports.trapper.UPGRADES_TIER_3 = [exports.minitrap, exports.overtrap/*custom*/];
+        exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq/*custom*/];
+        exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
+        exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
+    
+    exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
+
+    exports.basic.UPGRADES_TIER_2 = [exports.smash/*custom*/];
+        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine/*custom*/];
+
+        exports.basic.UPGRADES_TIER_3 = [exports.single/*custom*/];

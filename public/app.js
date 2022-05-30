@@ -1367,8 +1367,20 @@ import * as socketStuff from "./lib/socketInit.js";
                             ay = global.screenHeight / 2 + (y - full.height / 2) * tileSize,
                             size = tileSize;
                         if (ax < -50 || ax + size - 50 > global.screenWidth) continue;
+                        let fill = "#ffffff"
+                        if (picture.custom==true){
+                          fill = "#ff7777"
+                        } else {
+                          fill = "#ffffff"
+                        }
+                        let angle = -Math.PI / 4,
+                            picture = util.getEntityImageFromMockup(index, 10),
+                            position = global.mockups[index].position,
+                            scale = (0.8 * size) / position.axis,
+                            xx = ax + 0.5 * size - scale * position.middle.x * Math.cos(angle),
+                            yy = ay + 0.5 * size - scale * position.middle.x * Math.sin(angle);
                         ctx.globalAlpha = 0.75;
-                        ctx.fillStyle = getColor(10);
+                        ctx.fillStyle = fill//getColor(10);
                         drawGuiRect(ax, ay, size, size);
                         ctx.globalAlpha = 0.15;
                         ctx.fillStyle = getColor(0);
@@ -1376,12 +1388,6 @@ import * as socketStuff from "./lib/socketInit.js";
                         ctx.fillStyle = color.black;
                         drawGuiRect(ax, ay + size * 0.6, size, size * 0.4);
                         ctx.globalAlpha = 1;
-                        let angle = -Math.PI / 4,
-                            picture = util.getEntityImageFromMockup(index, 10),
-                            position = global.mockups[index].position,
-                            scale = (0.8 * size) / position.axis,
-                            xx = ax + 0.5 * size - scale * position.middle.x * Math.cos(angle),
-                            yy = ay + 0.5 * size - scale * position.middle.x * Math.sin(angle);
                         drawEntity(xx, yy, picture, 0.5, 1,
                             (scale / picture.size) * 2, angle, true);
                         ctx.strokeStyle = color.black;
