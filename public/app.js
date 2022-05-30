@@ -1,3 +1,5 @@
+//dipmulti code added by Dogeiscut
+
 import {
     util
 } from "./lib/util.js";
@@ -645,7 +647,6 @@ import * as socketStuff from "./lib/socketInit.js";
                 context.closePath();
                 context.beginPath();
                 context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
-                context.arc(centerX, centerY, (radius - context.lineWidth / 4)/2, 0, 2 * Math.PI, true);
                 context.fillStyle = fillcolor;
                 context.fill();
                 context.closePath();
@@ -674,7 +675,23 @@ import * as socketStuff from "./lib/socketInit.js";
                         x = centerX + radius * 1.1 * Math.cos(180 / 6 + theta + angle + 0.385),
                         y = centerY + radius * 1.1 * Math.sin(180 / 6 + theta + angle + 0.385);
                     context.lineTo(x, y);
-                }
+                } 
+            }  else if (sides === 1000) { //Donut (added by dogeiscut)
+                  let fillcolor = context.fillStyle;
+                  let strokecolor = context.strokeStyle;
+                  radius += context.lineWidth / 4;
+                  context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
+                  context.arc(centerX, centerY, radius/2 - context.lineWidth / 4, 0, 2 * Math.PI, true);
+                  context.fillStyle = strokecolor;
+                  context.fill();
+                  context.closePath();
+                  context.beginPath();
+                  context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
+                  context.arc(centerX, centerY, radius/2 + context.lineWidth / 4, 0, 2 * Math.PI, true);
+                  context.fillStyle = fillcolor;
+                  context.fill();
+                  context.closePath();
+                  return;
             } else if (sides > 0) { // Polygon
                 for (let i = 0; i < sides; i++) {
                     let theta = (i / sides) * 2 * Math.PI;

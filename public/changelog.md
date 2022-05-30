@@ -1,3 +1,10 @@
+# Update (05/29/2022): DONUTS!!!!
+- NEW DONUT SHAPE!
+  - no tanks or shapes actually use it yet but its there!
+- Stars
+  - a rare star shaped polygon worth 40,000 points!
+  - more is planned with it like temporary invincibility when destroyed!
+
 # Update (05/29/2022): misery
 - Spent probably 30 minutes adding shape dip for more unique shapes
   - You may notice that some tanks already have these new shapes!

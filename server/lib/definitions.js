@@ -6728,9 +6728,31 @@ exports.star = {
     GIVE_KILL_MESSAGE: true
 };
 
+exports.donutbasic = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Donut Basic',
+    SHAPE: 1000,
+    //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  16,     8,      1,      4,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: [exports.bullet, {SHAPE: 1000,}],
+            LABEL: '',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: false,            // def 
+            NEGATIVE_RECOIL: false,     // def
+        }, }, 
+    ],
+};
+
 // UPGRADE PATHS
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
-exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.teaser];
+exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.teaser,exports.donutbasic];
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
 exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.testbed9];
