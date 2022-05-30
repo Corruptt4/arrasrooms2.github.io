@@ -1,3 +1,7 @@
+# Update (05/29/2022): New tank!
+- New tank: Demolitionist
+  -Launches explosive bullets that expand and destroy all in their path
+
 # Update (05/29/2022): New plans
 - There are plans to actually put these custom tanks as branches of existing tanks
   - So I may hopefully not have to even fix the aforementioned bug
@@ -22,6 +26,7 @@
 
 # Update (05/29/2022): new stuff
 - New tank: Teaser
+  - A swarmer type 
 - Everyone are no longer beta testers
   - not that it matters since someone can steal any key they want
     - i probably shouldn't have said that
@@ -30,3 +35,5 @@
 
 # Update (05/29/2022): hi
 - game exists now
+- some custom tanks
+- funny boss at center

@@ -1186,16 +1186,15 @@ class Entity {
         }
         switch (this.motionType) {
             case "explode":
-                //added by dogeiscut
+                this.maxSpeed = this.topSpeed;
+                this.damp = 0.05;
                 this.timer += 1
-            if (this.timer==30) {
-            this.SIZE += 1000; 
-            }
-            if (this.timer>60) {
-            this.maxSpeed = 0;
-            this.damp = 1;
-            }
-            break;
+                if (this.timer>30) {
+                    this.SIZE += (200 - this.SIZE)/2;
+                    this.maxSpeed = 0;
+                    this.damp = 1;
+                }
+                break;
             case "grow":
                 this.SIZE += 2;
                 break;

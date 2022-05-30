@@ -6789,13 +6789,41 @@ exports.redDot = {
             INDEPENDENT: true,
 };
 
-exports.testerTank = {
+
+
+exports.explosive = {
+    LABEL: 'Explosive',
+    TYPE: 'bullet',
+    MOTION_TYPE: 'explode',
+    ACCEPTS_SCORE: false,
+    BODY: {
+        PENETRATION: 1,
+        SPEED: 3.75,
+        RANGE: 90,
+        DENSITY: 1.25,
+        HEALTH: 0.33 * wepHealthFactor,
+        DAMAGE: 4 * wepDamageFactor,
+        PUSHABILITY: 0.3,
+    },
+  TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  0,     0,      0,      0,     360,  1], 
+                    TYPE: exports.redDot,
+                        },
+            ],
+    FACING_TYPE: 'smoothWithMotion',
+    CAN_GO_OUTSIDE_ROOM: true,
+    HITS_OWN_TYPE: 'never',
+    // DIE_AT_LOW_SPEED: true,
+    DIE_AT_RANGE: true,
+};
+
+exports.demoman = {
             PARENT: [exports.genericTank],
             DANGER: 6,
             BODY: {
                 ACCELERATION: base.ACCEL * 0.75,
             },
-            LABEL: 'Test Tank',
+            LABEL: 'Demolitionist',
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  5,     15,      0,      0,     360,  1], 
                     TYPE: exports.redDot,
@@ -6805,7 +6833,7 @@ exports.testerTank = {
                 POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy]),
-                    TYPE: exports.bullet,
+                    TYPE: exports.explosive,
                 }, },
             ],
         };
@@ -6814,7 +6842,7 @@ exports.testerTank = {
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
-exports.betatester2.UPGRADES_TIER_1 = [exports.betatester, exports.teaser,exports.donutbasic,exports.testerTank]
+exports.betatester2.UPGRADES_TIER_1 = [exports.betatester, exports.teaser,exports.donutbasic,exports.demoman]
 
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
