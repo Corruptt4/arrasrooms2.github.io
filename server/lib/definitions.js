@@ -6709,7 +6709,7 @@ exports.teaser = {
 exports.star = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 5
+        LEVEL: 6
     },
     LABEL: "Super Star",
     VALUE: 40000,
