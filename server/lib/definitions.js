@@ -6848,7 +6848,7 @@ exports.donutBullet = {
     DIE_AT_RANGE: true,
 };
 
-exports.donutbasic = {
+exports.donut = {
     PARENT: [exports.genericTank],
     LABEL: 'Donut Basic',
     CUSTOM: true,
@@ -7076,18 +7076,17 @@ exports.explosiveDrone = {
 
 exports.reskins = {
     PARENT: [exports.genericTank],
-    LABEL: 'Re-skins',
+    LABEL: 'Basic Re-skins',
     CUSTOM: true,
-  //CONTROLLERS: ['nearestDifferentMaster'],
-    // GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-    //     POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
-    //     PROPERTIES: {
-    //         SHOOT_SETTINGS: combineStats([g.basic]),
-    //         TYPE: exports.bullet,
-    //     }, }, 
-    //     {POSITION: [  12,     8,      0.01,      0,      0,      5,      0,   ], },
-    //     {POSITION: [  12,     8,      0.01,      0,      0,      -5,      0,   ], },
-    // ],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+        }, }, 
+        {POSITION: [  13,     8,      0.01,      0,      0,      25,      0,   ], },
+        {POSITION: [  13,     8,      0.01,      0,      0,      -25,      0,   ], },
+    ],
 };
 
 // UPGRADE PATHS
@@ -7108,14 +7107,12 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 
 exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5]
 
-exports.reskins.UPGRADES_TIER_1 = [exports.farmer, /*exports.donutBasic*/];
-
 
 
 
 //Tanks
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer, exports.reskins];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
@@ -7157,6 +7154,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
     
     exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
+
+    exports.reskins.UPGRADES_TIER_2 = [exports.farmer, exports.donut];
 
     exports.basic.UPGRADES_TIER_2 = [exports.smash/*custom*/];
         exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine/*custom*/];
