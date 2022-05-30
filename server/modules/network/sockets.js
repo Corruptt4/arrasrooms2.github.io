@@ -717,7 +717,7 @@ const sockets = (() => {
                             oo.push(o.points);
                         }
                         if (o.upgrades != null) {
-                            oo[0] += 0x0010;
+                            oo[0] += 0x0400;
                             oo.push(o.upgrades.length, ...o.upgrades);
                         }
                         if (o.statsdata != null) {

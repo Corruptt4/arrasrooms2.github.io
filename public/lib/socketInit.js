@@ -635,7 +635,7 @@ let {
                             accel: index & 0x0080,
                             skills: index & 0x0040,
                             statsdata: index & 0x0020,
-                            upgrades: index & 0x0010,
+                            upgrades: index & 0x0400,
                             points: index & 0x0008,
                             score: index & 0x0004,
                             label: index & 0x0002,
