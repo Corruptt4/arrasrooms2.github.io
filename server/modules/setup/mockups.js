@@ -24,6 +24,7 @@ let mockupJsonData = (() => {
             color: e.color,
             shape: e.shapeData,
             dipMulti: e.dipMultiData,
+            custom: e.customValue,
             size: rounder(e.size),
             realSize: rounder(e.realSize),
             facing: rounder(e.facing),

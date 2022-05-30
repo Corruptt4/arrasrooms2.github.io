@@ -1746,39 +1746,36 @@ import * as socketStuff from "./lib/socketInit.js";
                     let ticker = 0;
                     let emptyticker = 0.9;
                     let fill = "#ffffff"
+                    let name = 
                     upgradeSpin += 0.01;
                     //let colorIndex = 10;
                     let i = 0;
                     gui.upgrades.forEach(function drawAnUpgrade(model) {
-                        if (y > yo) yo = y;
-                        xxx = x;
-                        global.clickables.upgrade.place(i++, x, y, len, height);
-                        // Draw box
-                        if (picture.name.startsWith("[cu]")){
-                        }
-                        ctx.globalAlpha = 0.5;
-                        //
-                        ctx.fillStyle = "#ff0000"//getColor((colorIndex > 15 ? colorIndex - 16 : colorIndex));
-                        //} else {
-                        //ctx.fillStyle = "#ffffff"
-                        //}
-                        drawGuiRect(x, y, len, height);
-                        ctx.globalAlpha = 0.1;
-                        //if (picture.name.startsWith("[cu]")){
-                        ctx.fillStyle = "#ff0000"//getColor(-10 + colorIndex++);
-                        //} else {
-                        //ctx.fillStyle = "#ffffff"
-                        //}
-                        drawGuiRect(x, y, len, height * 0.6);
-                        ctx.fillStyle = color.black;
-                        drawGuiRect(x, y + height * 0.6, len, height * 0.4);
-                        ctx.globalAlpha = 1;
                         // Find offset location with rotation
                         let picture = util.getEntityImageFromMockup(model, gui.color),
                             position = global.mockups[model].position,
                             scale = 0.6 * len / position.axis,
                             xx = x + 0.5 * len - scale * position.middle.x * Math.cos(upgradeSpin),
                             yy = y + 0.5 * height - scale * position.middle.x * Math.sin(upgradeSpin);
+                        if (y > yo) yo = y;
+                        xxx = x;
+                        global.clickables.upgrade.place(i++, x, y, len, height);
+                        // Draw box
+                        if (picture.customValue){
+                          fill = "#ff7777"
+                        } else {
+                          fill = "#ffffff"
+                        }
+                        ctx.globalAlpha = 0.5;
+                        ctx.fillStyle = fill//getColor((colorIndex > 15 ? colorIndex - 16 : colorIndex));
+                        drawGuiRect(x, y, len, height);
+                        ctx.globalAlpha = 0.1;
+                        ctx.fillStyle = fill//getColor(-10 + colorIndex++);
+                        drawGuiRect(x, y, len, height * 0.6);
+                        ctx.fillStyle = color.black;
+                        drawGuiRect(x, y + height * 0.6, len, height * 0.4);
+                        ctx.globalAlpha = 1;
+                        
                         drawEntity(xx, yy, picture, 1, 1, scale / picture.size, upgradeSpin, true);
                         // Upgrade key
                         if (getClassUpgradeKey(ticker)!=""){
@@ -1789,12 +1786,6 @@ import * as socketStuff from "./lib/socketInit.js";
                         }
                       
                         text.upgradeNames[i - 1].draw(picture.name, x + emptyticker * len / 2, y + height - 6, height / 8 - 3, color.guiwhite, 'center');
-                        // Tank name
-                        // if (picture.name.includes("[cu]")){
-                        //   text.upgradeNames[i - 1].draw(picture.name.replace('[cu]',''), x + emptyticker * len / 2, y + height - 6, height / 8 - 3, color.guiwhite, 'center');
-                        // } else {
-                        //   text.upgradeNames[i - 1].draw(picture.name, x + emptyticker * len / 2, y + height - 6, height / 8 - 3, color.guiwhite, 'center');
-                        // }
                         //idk
                         ctx.strokeStyle = color.black;
                         ctx.globalAlpha = 1;

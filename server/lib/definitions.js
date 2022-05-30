@@ -6938,7 +6938,8 @@ exports.explosivesmall = {
 
 exports.poprocks = {
             PARENT: [exports.genericTank],
-            LABEL: '[cu]Poprocks',
+            LABEL: 'Poprocks',
+            CUSTOM: true,
             DANGER: 6,
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  1.5,    9.5,   7.25,    0,     360,  1], 

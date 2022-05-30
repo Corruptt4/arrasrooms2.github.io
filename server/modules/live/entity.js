@@ -889,6 +889,9 @@ class Entity {
         if (set.DANGER != null) {
             this.dangerValue = set.DANGER;
         }
+        if (set.CUSTOM != null) {
+            this.customValue = set.CUSTOM;
+        }
         if (set.VARIES_IN_SIZE != null) {
             this.settings.variesInSize = set.VARIES_IN_SIZE;
             this.squiggle = (this.settings.variesInSize) ? ran.randomRange(0.8, 1.2) : 1;
