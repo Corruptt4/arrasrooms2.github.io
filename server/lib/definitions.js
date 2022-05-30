@@ -6938,7 +6938,7 @@ exports.explosivesmall = {
 
 exports.poprocks = {
             PARENT: [exports.genericTank],
-            LABEL: 'Poprocks',
+            LABEL: '[cu]Poprocks',
             DANGER: 6,
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  1.5,    9.5,   7.25,    0,     360,  1], 
@@ -7031,7 +7031,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5]
 
 
-exports.basic.UPGRADES_TIER_1 = [exports.oldbetatester, exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper,];
+exports.basic.UPGRADES_TIER_1 = [exports.poprocks,exports.oldbetatester, exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper,];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket];

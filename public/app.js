@@ -1745,6 +1745,7 @@ import * as socketStuff from "./lib/socketInit.js";
                     let yo = y;
                     let ticker = 0;
                     let emptyticker = 0.9;
+                    let fill = "#ffffff"
                     upgradeSpin += 0.01;
                     //let colorIndex = 10;
                     let i = 0;
@@ -1753,11 +1754,21 @@ import * as socketStuff from "./lib/socketInit.js";
                         xxx = x;
                         global.clickables.upgrade.place(i++, x, y, len, height);
                         // Draw box
+                        if (picture.name.startsWith("[cu]")){
+                        }
                         ctx.globalAlpha = 0.5;
+                        //
                         ctx.fillStyle = "#ff0000"//getColor((colorIndex > 15 ? colorIndex - 16 : colorIndex));
+                        //} else {
+                        //ctx.fillStyle = "#ffffff"
+                        //}
                         drawGuiRect(x, y, len, height);
                         ctx.globalAlpha = 0.1;
+                        //if (picture.name.startsWith("[cu]")){
                         ctx.fillStyle = "#ff0000"//getColor(-10 + colorIndex++);
+                        //} else {
+                        //ctx.fillStyle = "#ffffff"
+                        //}
                         drawGuiRect(x, y, len, height * 0.6);
                         ctx.fillStyle = color.black;
                         drawGuiRect(x, y + height * 0.6, len, height * 0.4);
@@ -1776,8 +1787,14 @@ import * as socketStuff from "./lib/socketInit.js";
                         } else {
                           emptyticker = 1;
                         }
-                        // Tank name
+                      
                         text.upgradeNames[i - 1].draw(picture.name, x + emptyticker * len / 2, y + height - 6, height / 8 - 3, color.guiwhite, 'center');
+                        // Tank name
+                        // if (picture.name.includes("[cu]")){
+                        //   text.upgradeNames[i - 1].draw(picture.name.replace('[cu]',''), x + emptyticker * len / 2, y + height - 6, height / 8 - 3, color.guiwhite, 'center');
+                        // } else {
+                        //   text.upgradeNames[i - 1].draw(picture.name, x + emptyticker * len / 2, y + height - 6, height / 8 - 3, color.guiwhite, 'center');
+                        // }
                         //idk
                         ctx.strokeStyle = color.black;
                         ctx.globalAlpha = 1;
