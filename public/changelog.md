@@ -1,3 +1,7 @@
+# Update (05/30/2022): New... shapes?
+- Images can now be imported for tanks! No tanks use this
+currently aside for some DEV ONLY ones.
+
 # Update (05/29/2022): New tank!
 - New tank: Demolitionist
   -Launches explosive bullets that expand and destroy all in their path

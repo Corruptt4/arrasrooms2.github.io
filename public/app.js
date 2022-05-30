@@ -694,9 +694,18 @@ import * as socketStuff from "./lib/socketInit.js";
                   context.closePath();
 
                   return;
-            } else if (sides === 2000) { //Explosion Image (added by dogeiscut)
+            } else if (sides === 2000) { //Dogeiscut Image (added by dogeiscut wow who wouldve guessed)
                   
-                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/explosion.png?v=1653890449433" 
+                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/pfp_circle.png?v=1653890617509" 
+                  context.translate(centerX, centerY);
+                  context.rotate(angle);
+                  context.drawImage(drawing, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
+                  context.rotate(-angle);
+                  context.translate(-centerX, -centerY);
+                  return;
+            } else if (sides === 2001) { //Waffz Image (added by dogeiscut wow who wouldve guessed)
+                  
+                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/pfp_circle.png?v=1653890617509" 
                   context.translate(centerX, centerY);
                   context.rotate(angle);
                   context.drawImage(drawing, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);

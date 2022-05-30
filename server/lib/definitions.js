@@ -5728,7 +5728,43 @@ exports.dogeTest = {
     PARENT: [exports.genericTank],
     LABEL: 'DogeisCut',
     DANGER: 99999,
-    SHAPE: 5,
+    SHAPE: 2000,
+    HAS_NO_RECOIL: true,
+    COLOR: 36,
+    SKILL: skillSet({ 
+    hlt: 100000,
+    dam: 100000,
+    spd: 100000,
+    }),
+    SIZE: 24,
+    BODY: {
+        FOV: 5,
+        HEALTH: 999999999,
+        DAMAGE: 999999999,
+        SPEED: 20
+    },
+    //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      2,      9999,      9999,      9999,      100,      2,      1,      9999,      0.00001,      0]]),
+            TYPE: exports.bullet,
+            LABEL: 'Cleaner',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: false,            // def 
+            NEGATIVE_RECOIL: false,     // def
+        }, }, 
+    ],
+};
+exports.waffzTest = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Waffz_The_Pancake',
+    DANGER: 99999,
+    SHAPE: 2000,
     HAS_NO_RECOIL: true,
     COLOR: 36,
     SKILL: skillSet({ 
@@ -6844,7 +6880,7 @@ exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,e
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
 exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.testbed9];
 exports.testbed4.UPGRADES_TIER_1 = [exports.hugePentagon, exports.bigPentagon, exports.pentagon, exports.triangle, exports.square, exports.egg, exports.greenpentagon, exports.gem, exports.obstacle, exports.babyObstacle, exports.crasher, exports.trapTurret, exports.sentrySwarm,exports.testbed6]
-exports.testbed5.UPGRADES_TIER_1 = [exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest, exports.mazeWallShooter]
+exports.testbed5.UPGRADES_TIER_1 = [exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest, exports.waffzTest, exports.mazeWallShooter]
 exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle, exports.greensquare]
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
