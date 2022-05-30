@@ -169,8 +169,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
     charge:             [5,    1.4,   0.1,    1,      1,      0.75,   1,      -4.5,    1,   0.1,      1,      180,     1], 
   
   morerange:            [1,     1,     1,      1,      1,      1,      1,      1,      1,      2,      1,      1,      1], 
-  
-  lance:                [1,     0,     0.01,   5,      4,      2,      2,      1,      0,      0.2,    2,      0.001,  1],  
+                    // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+  lance:                [1,     0,             0.01,                8,    2,     0.5,        2,        1,      0,        0.2,      2,            0.001,              1],  
   
   morehealth:           [1,     1,     1,      1,      2,      1,      2,      1,      1,      1,      1,      1,      1], 
   
@@ -1477,7 +1477,7 @@ exports.basic = {
     ],
 };
 
-        exports.betatester = {
+        exports.oldbetatester = {
             PARENT: [exports.genericTank],
             LABEL: 'Custom',
             INVISIBLE: [],
@@ -7014,10 +7014,10 @@ exports.explosiveDrone = {
 };
 
 // UPGRADE PATHS
-exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
+exports.testbed.UPGRADES_TIER_1 = [/*exports.oldbetatester,*/exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
 
-exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
-exports.betatester2.UPGRADES_TIER_1 = [exports.betatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
+//exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
+//exports.betatester2.UPGRADES_TIER_1 = [exports.oldbetatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
 
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
@@ -7031,7 +7031,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5]
 
 
-exports.basic.UPGRADES_TIER_1 = [exports.betatester, exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper,];
+exports.basic.UPGRADES_TIER_1 = [exports.oldbetatester, exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper,];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket];

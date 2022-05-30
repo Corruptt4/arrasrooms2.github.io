@@ -918,6 +918,8 @@ const sockets = (() => {
                     // Mark it as spawned
                     socket.status.hasSpawned = true;
                     body.sendMessage('You have spawned! Welcome to the game.');
+                    body.sendMessage('Remember you can hold T to see the upgrade tree!');
+                    body.sendMessage('Custom tanks have a red background!');
                     body.sendMessage('You will be invulnerable until you move or shoot.');
                     //body.sendMessage('Press the "~" key or "`" key to access custom tanks!');
                     // Move the client camera
