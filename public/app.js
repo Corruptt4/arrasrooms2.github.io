@@ -711,7 +711,7 @@ import * as socketStuff from "./lib/socketInit.js";
                   waff.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/waffz.png?v=1653891306773" 
                   context.translate(centerX, centerY);
                   context.rotate(angle);
-                  context.drawImage(waff, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
+                  context.drawImage(waff, -radius*4 / 2, -radius*4 / 2, radius*4, radius*4);
                   context.rotate(-angle);
                   context.translate(-centerX, -centerY);
                   return;
@@ -738,11 +738,11 @@ import * as socketStuff from "./lib/socketInit.js";
                   return;
             } else if (sides === 2003) { //carrot Image (added by dogeiscut)
                   
-                  carrot.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrot.png?v=1653891904530" 
+                  carrot.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrot.png?v=1653892900639" 
                   context.translate(centerX, centerY);
-                  context.rotate(angle-50);
-                  context.drawImage(carrot, -radius*4 / 2, -radius*4 / 2, radius*4, radius*4);
-                  context.rotate(-(angle-50));
+                  context.rotate(angle);
+                  context.drawImage(carrot, -radius*5 / 2, -radius*5 / 2, radius*5, radius*5);
+                  context.rotate(-angle);
                   context.translate(-centerX, -centerY);
               
                   return;

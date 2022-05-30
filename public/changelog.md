@@ -1,4 +1,8 @@
 # Update (05/30/2022): New... shapes?
+- New Tank: Farmer
+  - Its a Basic reskin to demonstrate the image shapes!
+
+# Update (05/30/2022): New... shapes?
 - Images can now be imported for tanks! No tanks use this
 currently aside for some DEV ONLY ones.
 
