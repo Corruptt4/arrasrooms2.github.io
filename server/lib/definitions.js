@@ -6828,7 +6828,7 @@ exports.demoman = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy]),
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.tonsmorrecoil]),
                     TYPE: exports.explosive,
                 }, },
             ],
