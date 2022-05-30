@@ -5123,8 +5123,8 @@ exports.saw = {
         LEVEL: 3,
     },
     LABEL: 'Sawblade',
-    SHAPE: -8,
-    DIPMULTI: 0.2,
+    SHAPE: -16,
+    DIPMULTI: 0.3,
     DANGER: 7,
     MOTION_TYPE: 'motor', 
     FACING_TYPE: 'toTarget',
@@ -6770,6 +6770,28 @@ exports.donutbasic = {
         }, }, 
     ],
 };
+
+exports.redDot = {
+            SHAPE:0,
+            SIZE:11,
+            COLOR:12
+        };
+
+exports.uuuuuuuu = {
+            PARENT: [exports.genericTank],
+            DANGER: 6,
+            BODY: {
+                ACCELERATION: base.ACCEL * 0.75,
+            },
+            LABEL: '',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy]),
+                    TYPE: exports.bullet,
+                }, },
+            ],
+        };
 
 // UPGRADE PATHS
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
