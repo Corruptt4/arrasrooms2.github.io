@@ -1,7 +1,4 @@
 const config = {
-    starting: {
-      tank: Class.basic
-    },
     graphical: {
         screenshotMode: false,
         borderChunk: 5,

@@ -424,21 +424,6 @@ import * as socketStuff from "./lib/socketInit.js";
             config.graphical.darkBorders = config.graphical.neon = true;
             break;
         }
-      
-      switch (document.getElementById('optReskin').value) {
-        case 'normal':
-            config.starting.tank =  Class.basic;
-            break;
-        case 'donut':
-            config.starting.tank = Class.donut;
-            break;
-        case 'sharp':
-            config.starting.tank = Class.sharp;
-            break;
-        case 'farmer':
-            config.starting.tank = Class.farmer;
-            break;
-        }
         util.submitToLocalStorage('optColors');
         let a = document.getElementById('optColors').value;
         color = color[(a === '') ? 'normal' : a];
