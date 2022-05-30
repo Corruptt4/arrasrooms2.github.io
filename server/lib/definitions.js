@@ -6709,13 +6709,13 @@ exports.teaser = {
 exports.star = {
     PARENT: [exports.food],
     FOOD: {
-        LEVEL: 6
+        LEVEL: 5
     },
     LABEL: "Super Star",
     VALUE: 40000,
     SHAPE: -5,
     DIPMULTI: 0.2,
-    SIZE: 16,
+    SIZE: 7,
     COLOR: 3,
     BODY: {
         DAMAGE: 1.5 * basePolygonDamage,
@@ -6724,7 +6724,8 @@ exports.star = {
         RESIST: 1.25,
         PENETRATION: 1.1
     },
-    DRAW_HEALTH: true
+    DRAW_HEALTH: true,
+    GIVE_KILL_MESSAGE: true
 };
 
 // UPGRADE PATHS
