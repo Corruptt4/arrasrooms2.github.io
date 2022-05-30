@@ -134,6 +134,7 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
     muchmorerecoil: [1, 1.35, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     lotsmorrecoil: [1, 1.8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     tonsmorrecoil: [1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    doublerecoil: [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     doublereload: [.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     morereload: [.75, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     halfreload: [2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -6864,7 +6865,7 @@ exports.demoman = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.tonsmorrecoil]),
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.doublerecoil, g.morespeed]),
                     TYPE: exports.explosive,
                 }, },
             ],
@@ -6913,11 +6914,53 @@ exports.farmer = {
     ],
 };
 
+exports.poprocks = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Poprocks',
+            DANGER: 6,
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  2.5,    9.5,   7.25,    0,     360,  1], 
+                TYPE: exports.redDot,
+              },{       /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  2.5,    9.5,  -7.25,    0,     360,  1], 
+                TYPE: exports.redDot,
+              },{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  2.5,    13.5,   3.75,    0,     360,  1], 
+                TYPE: exports.redDot,
+              },{       /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  2.5,    13.5,  -3.75,    0,     360,  1], 
+                TYPE: exports.redDot,
+              },
+            ],
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  12,    3.5,     1,      0,     7.25,    0,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.explosive,
+                    }, }, { 
+                POSITION: [  12,    3.5,     1,      0,    -7.25,    0,     0.75, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.explosive,
+                    }, }, { 
+                POSITION: [  16,    3.5,     1,      0,     3.75,    0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.explosive,
+                    }, }, { 
+                POSITION: [  16,    3.5,     1,      0,    -3.75,    0,     0.25, ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+                        TYPE: exports.explosive,
+                    }, }, 
+            ],
+        };
+
 // UPGRADE PATHS
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
-exports.betatester2.UPGRADES_TIER_1 = [exports.betatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer]
+exports.betatester2.UPGRADES_TIER_1 = [exports.betatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
 
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
