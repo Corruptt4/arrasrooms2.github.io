@@ -1479,6 +1479,7 @@ exports.basic = {
         exports.betatester = {
             PARENT: [exports.genericTank],
             LABEL: 'Custom',
+            INVISIBLE: [],
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
@@ -5122,8 +5123,8 @@ exports.saw = {
         LEVEL: 3,
     },
     LABEL: 'Sawblade',
-    SHAPE: -18,
-    DIP: -2,
+    SHAPE: -8,
+    DIPMULTI: 0.2,
     DANGER: 7,
     MOTION_TYPE: 'motor', 
     FACING_TYPE: 'toTarget',
@@ -5762,7 +5763,8 @@ exports.bubbleSpike = {
 };
 exports.bubble = {
     LABEL: 'Bubble',
-    SHAPE: -0,
+    SHAPE: 4,
+    DIPMULTI: 2,
     TYPE: 'bullet',
     FACING_TYPE: 'autospin',
     ACCEPTS_SCORE: false,
@@ -6046,7 +6048,8 @@ exports.invislancer = {
 exports.extremeaccelbullet = {
   PARENT: [exports.bullet],
   MOTION_TYPE: 'extremeaccel',
-  SHAPE: [[0.3,-0.3],[0.3,-0.7],[1,0.0],[0.3,0.7],[0.3,0.3],[-1,0.3],[-1,-0.3]],
+  SHAPE: -3,
+  DIPMULTI: 10,
 }
 
 exports.archer = {
