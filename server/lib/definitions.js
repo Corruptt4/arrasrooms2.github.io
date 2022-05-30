@@ -7112,7 +7112,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //Tanks
 
-//exports.supertest,
+//,
 
 exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace];
 
@@ -7134,7 +7134,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
 
     exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap, exports.tritrap/*custom*/];
         exports.auto3.UPGRADES_TIER_3 = [exports.auto5, exports.heavy3, exports.auto4, exports.banshee/*custom*/];
-        exports.hexa.UPGRADES_TIER_3 = [exports.octo, exports.hurricane, exports.hexatrap/*custom*/];
+        exports.hexa.UPGRADES_TIER_3 = [exports.octo, exports.hurricane, exports.hexatrap/*custom*/, exports.supertest];
         exports.tri.UPGRADES_TIER_3 = [exports.fighter, exports.booster, exports.falcon, exports.bomber, exports.autotri, exports.brutalizer, exports.eagle/*custom*/];
 
     exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer, exports.lilfact/*custom*/];
@@ -7151,7 +7151,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
 
     exports.trapper.UPGRADES_TIER_2 = [exports.builder, exports.tritrap, exports.flanktrap/*custom*/];
         exports.trapper.UPGRADES_TIER_3 = [exports.minitrap, exports.overtrap/*custom*/, exports.exploder];
-        exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq/*custom*/,exports.gen,exports.dumptruck,exports.miner,exports.indust];
+        exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq/*custom*/,exports.gen,exports.dumptruck,exports.miner,exports.indust,exports.supertest];
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
     
