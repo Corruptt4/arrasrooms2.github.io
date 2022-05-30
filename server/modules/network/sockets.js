@@ -7,8 +7,11 @@ require('google-closure-library');
 goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
+require('../../../public/lib/config');
+
 const permissions = require("../../permissions.json");
 const getIP = require("forwarded-for");
+
 
 const sockets = (() => {
     let clients = [],
@@ -840,7 +843,7 @@ const sockets = (() => {
                         body = new Entity(loc);
                         body.protect();
                         body.isPlayer = true;
-                        body.define(sconfig.starting.tank); // Start as a basic tank
+                        body.define(Class.basic); // Start as a basic tank
                         body.name = name; // Define the name
                         if (socket.permissions && socket.permissions.nameColor) {
                             body.nameColor = socket.permissions.nameColor;
