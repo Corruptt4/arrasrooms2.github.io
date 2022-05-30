@@ -22,5 +22,13 @@
     "testbedTank": "testbed",
     "name": "Max Nest#8441",
     "note": "stole a dev key so you can have your own"
+  },
+  {
+    "key": "",
+    "discordID": "",
+    "nameColor": "#FFFFFF",
+    "name": "",
+    "testbedTank": "basic",
+    "note": "Everyone!"
   }
 ]
