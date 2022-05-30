@@ -6951,7 +6951,7 @@ exports.carrot = {
 
 exports.farmer = {
     PARENT: [exports.genericTank],
-    LABEL: 'Farmer',
+    LABEL: 'Farmer Basic',
     CUSTOM: true,
     SHAPE: 2002,
     //CONTROLLERS: ['nearestDifferentMaster'],
@@ -7076,7 +7076,7 @@ exports.explosiveDrone = {
 
 exports.reskins = {
     PARENT: [exports.genericTank],
-    LABEL: 'Basic Re-skins',
+    LABEL: 'Sharp Basic',
     CUSTOM: true,
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
@@ -7100,7 +7100,7 @@ exports.testbed.UPGRADES_TIER_1 = [/*exports.oldbetatester,*/exports.basic, expo
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
 exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.testbed9];
 exports.testbed4.UPGRADES_TIER_1 = [exports.hugePentagon, exports.bigPentagon, exports.pentagon, exports.triangle, exports.square, exports.egg, exports.greenpentagon, exports.gem, exports.obstacle, exports.babyObstacle, exports.crasher, exports.trapTurret, exports.sentrySwarm,exports.testbed6]
-exports.testbed5.UPGRADES_TIER_1 = [exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest, exports.waffzTest, exports.mazeWallShooter, exports.reskins]
+exports.testbed5.UPGRADES_TIER_1 = [exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest, exports.waffzTest, exports.mazeWallShooter, exports.reskins, exports.farmer, exports.donut]
 exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle, exports.greensquare]
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
@@ -7112,7 +7112,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //Tanks
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer, exports.reskins];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
@@ -7155,7 +7155,9 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
     
     exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 
-    exports.reskins.UPGRADES_TIER_2 = [exports.farmer, exports.donut];
+    exports.reskins.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
+    exports.farmer.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
+    exports.donut.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
 
     exports.basic.UPGRADES_TIER_2 = [exports.smash/*custom*/];
         exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine/*custom*/];

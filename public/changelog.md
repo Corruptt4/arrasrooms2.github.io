@@ -1,3 +1,11 @@
+# Update (05/30/2022): Everything is not broken
+- I fixed it! Still no reskins however, im looking
+for a good way to implement those.
+
+# Update (05/30/2022): i broke evrythgin
+- No more reskins, play button stopped working
+- i am panicing
+
 # Update (05/30/2022): Reskins
 - Press ` to access the reskins now!
 

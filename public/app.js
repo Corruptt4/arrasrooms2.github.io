@@ -313,19 +313,12 @@ import * as socketStuff from "./lib/socketInit.js";
         util.retrieveFromLocalStorage('optColors');
         util.retrieveFromLocalStorage('optNoPointy');
         util.retrieveFromLocalStorage('optBorders');
-      
-        util.retrieveFromLocalStorage('optReskin');
-      
         // Set default theme
         if (document.getElementById('optColors').value === '') {
             document.getElementById('optColors').value = 'normal';
         }
         if (document.getElementById('optBorders').value === '') {
             document.getElementById('optBorders').value = 'normal';
-        }
-      
-        if (document.getElementById('optReskin').value === '') {
-            document.getElementById('optReskin').value = 'normal';
         }
         // Game start stuff
         document.getElementById('startButton').onclick = () => startGame();
