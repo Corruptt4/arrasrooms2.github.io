@@ -8,11 +8,11 @@
 
 # Update (05/30/2022): New... shapes?
 - Images can now be imported for tanks! No tanks use this
-currently aside for some DEV ONLY ones.
+  - currently aside for some DEV ONLY ones.
 
 # Update (05/29/2022): New tank!
 - New tank: Demolitionist
-  -Launches explosive bullets that expand and destroy all in their path
+  - Launches explosive bullets that expand and destroy all in their path
 
 # Update (05/29/2022): New plans
 - There are plans to actually put these custom tanks as branches of existing tanks
@@ -21,11 +21,10 @@ currently aside for some DEV ONLY ones.
 # Update (05/29/2022): bugs hurty my brain
 - Screen flies away when more than 16 tanks are in the upgrade menu
   - There will be a page 2 tank until I can fix this
-- a
-  
+
 # Update (05/29/2022): DONUTS!!!! (mmmm yummy mmmmmmm)
 - NEW DONUT SHAPE!
-  - No tanks or shapes actually use it yet but its there!
+ - No tanks or shapes actually use it yet but its there!
   - I mean there is a donut basic if you want.
 - Stars
   - A rare star shaped polygon worth 40,000 points!
@@ -39,7 +38,7 @@ currently aside for some DEV ONLY ones.
 
 # Update (05/29/2022): new stuff
 - New tank: Teaser
-  - A swarmer type 
+  - A swarmer type tank that slowly launches powerful drones
 - Everyone are no longer beta testers
   - not that it matters since someone can steal any key they want
     - i probably shouldn't have said that
