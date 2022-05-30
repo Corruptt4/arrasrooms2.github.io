@@ -6941,10 +6941,10 @@ exports.poprocks = {
             LABEL: 'Poprocks',
             DANGER: 6,
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  2.5,    9.5,   7.25,    0,     360,  1], 
+                POSITION: [  1.5,    9.5,   7.25,    0,     360,  1], 
                 TYPE: exports.redDot,
               },{       /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  2.5,    9.5,  -7.25,    0,     360,  1], 
+                POSITION: [  1.5,    9.5,  -7.25,    0,     360,  1], 
                 TYPE: exports.redDot,
               },{ /*  SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  2.5,    13.5,   3.75,    0,     360,  1], 
@@ -6977,6 +6977,41 @@ exports.poprocks = {
                     }, }, 
             ],
         };
+
+exports.explosiveDrone = {
+    LABEL: 'Explosive Drone',
+    TYPE: 'drone',
+    ACCEPTS_SCORE: false,
+    DANGER: 2,
+    CONTROL_RANGE: 0,
+    SHAPE: -3,
+    DIPMULTI: 5,
+    MOTION_TYPE: 'explodesmall',
+    FACING_TYPE: 'smoothToTarget',
+    CONTROLLERS: [
+        'nearestDifferentMaster',
+        'canRepel',
+        'mapTargetToGoal',
+        'hangOutNearMaster'
+    ],
+    AI: { BLIND: true, },
+    BODY: {
+        PENETRATION: 1.2,
+        PUSHABILITY: 0.6,
+        ACCELERATION: 0.05,
+        HEALTH: 0.6 * wepHealthFactor,
+        DAMAGE: 1.25 * wepDamageFactor,
+        SPEED: 3.8,
+        RANGE: 90,
+        DENSITY: 0.03,
+        RESIST: 1.5,
+        FOV: 0.8,
+    },
+    HITS_OWN_TYPE: 'hard',
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    BUFF_VS_FOOD: true,
+};
 
 // UPGRADE PATHS
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];

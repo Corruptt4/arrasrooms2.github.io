@@ -1,4 +1,8 @@
-# Update (05/30/2022): New... shapes?
+# Update (05/30/2022): mmmm poprocks mmm tasty (yum mmmm yummy)
+- New Tank: Poprocks
+  - A gunner based tanks that shoots smaller explosives!
+
+# Update (05/30/2022): New... tank?
 - New Tank: Farmer
   - Its a Basic reskin to demonstrate the image shapes!
 
@@ -17,6 +21,7 @@ currently aside for some DEV ONLY ones.
 # Update (05/29/2022): bugs hurty my brain
 - Screen flies away when more than 16 tanks are in the upgrade menu
   - There will be a page 2 tank until I can fix this
+- a
   
 # Update (05/29/2022): DONUTS!!!! (mmmm yummy mmmmmmm)
 - NEW DONUT SHAPE!

@@ -1198,7 +1198,7 @@ class Entity {
                 break;
           case "explodesmall":
             //custom
-                console.log(this.range)
+                //console.log(this.range)
                 this.maxSpeed = this.topSpeed;
                 this.damp = 0.05;
                 this.timer += 1
