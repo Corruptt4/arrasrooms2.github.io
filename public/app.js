@@ -313,12 +313,19 @@ import * as socketStuff from "./lib/socketInit.js";
         util.retrieveFromLocalStorage('optColors');
         util.retrieveFromLocalStorage('optNoPointy');
         util.retrieveFromLocalStorage('optBorders');
+      
+        util.retrieveFromLocalStorage('optReskin');
+      
         // Set default theme
         if (document.getElementById('optColors').value === '') {
             document.getElementById('optColors').value = 'normal';
         }
         if (document.getElementById('optBorders').value === '') {
             document.getElementById('optBorders').value = 'normal';
+        }
+      
+        if (document.getElementById('optReskin').value === '') {
+            document.getElementById('optReskin').value = 'normal';
         }
         // Game start stuff
         document.getElementById('startButton').onclick = () => startGame();
@@ -415,6 +422,21 @@ import * as socketStuff from "./lib/socketInit.js";
             break;
         case 'neon':
             config.graphical.darkBorders = config.graphical.neon = true;
+            break;
+        }
+      
+      switch (document.getElementById('optReskin').value) {
+        case 'normal':
+            config.starting.tank =  Class.basic;
+            break;
+        case 'donut':
+            config.starting.tank = Class.donut;
+            break;
+        case 'sharp':
+            config.starting.tank = Class.sharp;
+            break;
+        case 'farmer':
+            config.starting.tank = Class.farmer;
             break;
         }
         util.submitToLocalStorage('optColors');
