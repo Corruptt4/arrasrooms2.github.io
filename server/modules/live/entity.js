@@ -1186,11 +1186,24 @@ class Entity {
         }
         switch (this.motionType) {
             case "explode":
+            //custom
                 this.maxSpeed = this.topSpeed;
                 this.damp = 0.05;
                 this.timer += 1
-                if (this.timer>30) {
+                if (this.range<=25) {
                     this.SIZE += (200 - this.SIZE)/2;
+                    this.maxSpeed = 0;
+                    this.damp = 1;
+                }
+                break;
+          case "explodesmall":
+            //custom
+                console.log(this.range)
+                this.maxSpeed = this.topSpeed;
+                this.damp = 0.05;
+                this.timer += 1
+                if (this.range<=10) {
+                    this.SIZE += (150 - this.SIZE)/2;
                     this.maxSpeed = 0;
                     this.damp = 1;
                 }

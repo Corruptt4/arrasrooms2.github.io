@@ -6914,6 +6914,28 @@ exports.farmer = {
     ],
 };
 
+exports.explosivesmall = {
+    LABEL: 'Small Explosive',
+    TYPE: 'bullet',
+    MOTION_TYPE: 'explodesmall',
+    ACCEPTS_SCORE: false,
+    BODY: {
+        PENETRATION: 1,
+        SPEED: 3.75,
+        RANGE: 90,
+        DENSITY: 1.25,
+        HEALTH: 0.33 * wepHealthFactor,
+        DAMAGE: 4 * wepDamageFactor,
+        PUSHABILITY: 0.3,
+    },
+    //TURRETS: [{ POSITION: [  5,     0,      0,      0,     360,  1], TYPE: exports.redDot,},],
+    FACING_TYPE: 'smoothWithMotion',
+    CAN_GO_OUTSIDE_ROOM: true,
+    HITS_OWN_TYPE: 'never',
+    // DIE_AT_LOW_SPEED: true,
+    DIE_AT_RANGE: true,
+};
+
 exports.poprocks = {
             PARENT: [exports.genericTank],
             LABEL: 'Poprocks',
@@ -6936,22 +6958,22 @@ exports.poprocks = {
                 POSITION: [  12,    3.5,     1,      0,     7.25,    0,     0.5,  ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
-                        TYPE: exports.explosive,
+                        TYPE: exports.explosivesmall,
                     }, }, { 
                 POSITION: [  12,    3.5,     1,      0,    -7.25,    0,     0.75, ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
-                        TYPE: exports.explosive,
+                        TYPE: exports.explosivesmall,
                     }, }, { 
                 POSITION: [  16,    3.5,     1,      0,     3.75,    0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
-                        TYPE: exports.explosive,
+                        TYPE: exports.explosivesmall,
                     }, }, { 
                 POSITION: [  16,    3.5,     1,      0,    -3.75,    0,     0.25, ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
-                        TYPE: exports.explosive,
+                        TYPE: exports.explosivesmall,
                     }, }, 
             ],
         };
