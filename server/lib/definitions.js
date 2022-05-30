@@ -6870,11 +6870,54 @@ exports.demoman = {
             ],
         };
 
+exports.carrot = {
+    LABEL: 'Carrot',
+    SHAPE: 2003,
+    TYPE: 'bullet',
+    ACCEPTS_SCORE: false,
+    BODY: {
+        PENETRATION: 1,
+        SPEED: 3.75,
+        RANGE: 90,
+        DENSITY: 1.25,
+        HEALTH: 0.33 * wepHealthFactor,
+        DAMAGE: 4 * wepDamageFactor,
+        PUSHABILITY: 0.3,
+    },
+    FACING_TYPE: 'smoothWithMotion',
+    CAN_GO_OUTSIDE_ROOM: true,
+    HITS_OWN_TYPE: 'never',
+    // DIE_AT_LOW_SPEED: true,
+    DIE_AT_RANGE: true,
+};
+
+exports.farmer = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Farmer',
+    SHAPE: 2002,
+    //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.carrot,
+            LABEL: '',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: false,            // def 
+            NEGATIVE_RECOIL: false,     // def
+        }, }, 
+    ],
+};
+
 // UPGRADE PATHS
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
-exports.betatester2.UPGRADES_TIER_1 = [exports.betatester, exports.teaser,exports.donutbasic,exports.demoman]
+exports.betatester2.UPGRADES_TIER_1 = [exports.betatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer]
 
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]

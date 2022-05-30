@@ -630,7 +630,10 @@ import * as socketStuff from "./lib/socketInit.js";
         ctx.closePath();
         ctx.stroke();
     }
-  let drawing = new Image() 
+  let cut = new Image() 
+   let waff = new Image() 
+    let farm = new Image() 
+     let carrot = new Image() 
     // Entity drawing (this is a function that makes a function)
     const drawEntity = (() => {
         // Sub-drawing functions
@@ -696,19 +699,19 @@ import * as socketStuff from "./lib/socketInit.js";
                   return;
             } else if (sides === 2000) { //Dogeiscut Image (added by dogeiscut wow who wouldve guessed)
                   
-                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/pfp_circle.png?v=1653890617509" 
+                  cut.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/pfp_circle.png?v=1653890617509" 
                   context.translate(centerX, centerY);
                   context.rotate(angle);
-                  context.drawImage(drawing, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
+                  context.drawImage(cut, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
                   context.rotate(-angle);
                   context.translate(-centerX, -centerY);
                   return;
             } else if (sides === 2001) { //Waffz Image (added by dogeiscut)
                   
-                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/waffz.png?v=1653891306773" 
+                  waff.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/waffz.png?v=1653891306773" 
                   context.translate(centerX, centerY);
                   context.rotate(angle);
-                  context.drawImage(drawing, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
+                  context.drawImage(waff, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
                   context.rotate(-angle);
                   context.translate(-centerX, -centerY);
                   return;
@@ -726,21 +729,22 @@ import * as socketStuff from "./lib/socketInit.js";
                 context.fill();
                 context.closePath();
                 
-                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/farmhat.png?v=1653891725301" 
-                  context.translate(centerX, centerY+10);
+                  farm.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/farmhat.png?v=1653891725301" 
+                  context.translate(centerX, centerY-radius*1.1);
                   context.rotate(0);
-                  context.drawImage(drawing, -radius*4 / 2, -radius*4 / 2, radius*4, radius*4);
+                  context.drawImage(farm, -radius*3 / 2, -radius*3 / 2, radius*3, radius*3);
                   context.rotate(-0);
-                  context.translate(-centerX, -(centerY+10));
+                  context.translate(-centerX, -(centerY-radius*1.1));
                   return;
-            } else if (sides === 2003) { //carrot Image (added by dogeiscut wow who wouldve guessed)
+            } else if (sides === 2003) { //carrot Image (added by dogeiscut)
                   
-                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrot.png?v=1653891904530" 
+                  carrot.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrot.png?v=1653891904530" 
                   context.translate(centerX, centerY);
-                  context.rotate(angle+45);
-                  context.drawImage(drawing, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
-                  context.rotate(-(angle+45));
+                  context.rotate(angle-50);
+                  context.drawImage(carrot, -radius*4 / 2, -radius*4 / 2, radius*4, radius*4);
+                  context.rotate(-(angle-50));
                   context.translate(-centerX, -centerY);
+              
                   return;
             } else if (sides > 0) { // Polygon
                 for (let i = 0; i < sides; i++) {
