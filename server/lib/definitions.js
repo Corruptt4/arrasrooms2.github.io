@@ -6728,16 +6728,37 @@ exports.star = {
     GIVE_KILL_MESSAGE: true
 };
 
+exports.donutBullet = {
+    LABEL: 'Donut Bullet',
+    TYPE: 'bullet',
+    SHAPE: 1000,
+    ACCEPTS_SCORE: false,
+    BODY: {
+        PENETRATION: 1,
+        SPEED: 3.75,
+        RANGE: 90,
+        DENSITY: 1.25,
+        HEALTH: 0.33 * wepHealthFactor,
+        DAMAGE: 4 * wepDamageFactor,
+        PUSHABILITY: 0.3,
+    },
+    FACING_TYPE: 'smoothWithMotion',
+    CAN_GO_OUTSIDE_ROOM: true,
+    HITS_OWN_TYPE: 'never',
+    // DIE_AT_LOW_SPEED: true,
+    DIE_AT_RANGE: true,
+};
+
 exports.donutbasic = {
     PARENT: [exports.genericTank],
     LABEL: 'Donut Basic',
     SHAPE: 1000,
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  16,     8,      1,      4,      0,      0,      0,   ], 
+        POSITION: [  10,     8,      1,      8,      0,      0,      0,  ], 
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic]),
-            TYPE: [exports.bullet, {SHAPE: 1000,}],
+            TYPE: exports.donutBullet,
             LABEL: '',                  // def
             STAT_CALCULATOR: 0,         // def
             WAIT_TO_CYCLE: false,       // def
