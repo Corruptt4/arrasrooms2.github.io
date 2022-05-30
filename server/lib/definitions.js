@@ -6772,18 +6772,25 @@ exports.donutbasic = {
 };
 
 exports.redDot = {
+            LABEL: '',
             SHAPE:0,
             SIZE:11,
-            COLOR:12
-        };
+            COLOR:12,
+            INDEPENDENT: true,
+};
 
-exports.uuuuuuuu = {
+exports.testerTank = {
             PARENT: [exports.genericTank],
             DANGER: 6,
             BODY: {
                 ACCELERATION: base.ACCEL * 0.75,
             },
-            LABEL: '',
+            LABEL: 'Test Tank',
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  5,     15,      0,      0,     360,  1], 
+                    TYPE: exports.redDot,
+                        },
+            ],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
@@ -6795,7 +6802,7 @@ exports.uuuuuuuu = {
 
 // UPGRADE PATHS
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
-exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.teaser,exports.donutbasic];
+exports.betatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.teaser,exports.donutbasic,exports.testerTank];
 exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
 exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.testbed9];
