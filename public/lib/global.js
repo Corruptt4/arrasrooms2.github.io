@@ -126,7 +126,7 @@ const global = {
         })();
         return {
             stat: Region(10),
-            upgrade: Region(16),
+            upgrade: Region(1024),
             hover: Region(1),
             skipUpgrades: Region(1),
         };
