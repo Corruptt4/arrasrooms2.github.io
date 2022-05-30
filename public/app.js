@@ -678,28 +678,30 @@ import * as socketStuff from "./lib/socketInit.js";
                     context.lineTo(x, y);
                 } 
             }  else if (sides === 1000) { //Donut (added by dogeiscut)
-                  // let fillcolor = context.fillStyle;
-                  // let strokecolor = context.strokeStyle;
-                  // radius += context.lineWidth / 4;
-                  // context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
-                  // context.arc(centerX, centerY, radius/2 - context.lineWidth / 4, 0, 2 * Math.PI, true);
-                  // context.fillStyle = strokecolor;
-                  // context.fill();
-                  // context.closePath();
-                  // context.beginPath();
-                  // context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
-                  // context.arc(centerX, centerY, radius/2 + context.lineWidth / 4, 0, 2 * Math.PI, true);
-                  // context.fillStyle = fillcolor;
-                  // context.fill();
-                  // context.closePath();
+                  let fillcolor = context.fillStyle;
+                  let strokecolor = context.strokeStyle;
+                  radius += context.lineWidth / 4;
+                  context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
+                  context.arc(centerX, centerY, radius/2 - context.lineWidth / 4, 0, 2 * Math.PI, true);
+                  context.fillStyle = strokecolor;
+                  context.fill();
+                  context.closePath();
+                  context.beginPath();
+                  context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
+                  context.arc(centerX, centerY, radius/2 + context.lineWidth / 4, 0, 2 * Math.PI, true);
+                  context.fillStyle = fillcolor;
+                  context.fill();
+                  context.closePath();
+
+                  return;
+            } else if (sides === 2000) { //Explosion Image (added by dogeiscut)
                   
-                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrassot96x96.png?v=1653855833916" 
+                  drawing.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/explosion.png?v=1653890449433" 
                   context.translate(centerX, centerY);
-                  context.rotate(10* (180/pi));
-                  context.drawImage(image, -width / 2, -height / 2, width, height);
-                  context.rotate(-* (180/pi));
+                  context.rotate(angle);
+                  context.drawImage(drawing, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
+                  context.rotate(-angle);
                   context.translate(-centerX, -centerY);
-                  context.drawImage(drawing,centerX-radius/2,centerY-radius/2,radius,radius);
                   return;
             } else if (sides > 0) { // Polygon
                 for (let i = 0; i < sides; i++) {
