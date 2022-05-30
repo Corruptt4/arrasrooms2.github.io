@@ -5122,7 +5122,8 @@ exports.saw = {
         LEVEL: 3,
     },
     LABEL: 'Sawblade',
-    SHAPE: -6,
+    SHAPE: -18,
+    DIP: -2,
     DANGER: 7,
     MOTION_TYPE: 'motor', 
     FACING_TYPE: 'toTarget',
@@ -6684,8 +6685,6 @@ exports.tagMode = {
 exports.teaser = {
     PARENT: [exports.genericTank],
     LABEL: 'Teaser',
-    SHAPE: 6,
-    DIPMULTI: 10,
   FACING_TYPE: 'locksFacing',
    BODY: {
         FOV: 1.12,
