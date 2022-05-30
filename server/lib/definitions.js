@@ -6805,11 +6805,7 @@ exports.explosive = {
         DAMAGE: 4 * wepDamageFactor,
         PUSHABILITY: 0.3,
     },
-  TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  0,     0,      0,      0,     360,  1], 
-                    TYPE: exports.redDot,
-                        },
-            ],
+    //TURRETS: [{ POSITION: [  5,     0,      0,      0,     360,  1], TYPE: exports.redDot,},],
     FACING_TYPE: 'smoothWithMotion',
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: 'never',
