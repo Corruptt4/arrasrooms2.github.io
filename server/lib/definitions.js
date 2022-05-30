@@ -5763,7 +5763,7 @@ exports.bubbleSpike = {
 };
 exports.bubble = {
     LABEL: 'Bubble',
-    SHAPE: 4,
+    SHAPE: -6,
     DIPMULTI: 2,
     TYPE: 'bullet',
     FACING_TYPE: 'autospin',
