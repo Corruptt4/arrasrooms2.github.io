@@ -842,16 +842,16 @@ const sockets = (() => {
                         body.isPlayer = true;
                         //body.define(Class.basic); // Start as a basic tank
                       
-                        if (name.includes("donut")) {
+                        if (name.includes("[donut]")) {
                             body.define(Class.donut); // easter eggs :)
-                          } else if (name.includes("farm")) {
+                          } else if (name.includes("[farm]")) {
                             body.define(Class.farmer); 
-                          } else if (name.includes("sharp")) {
-                            body.define(Class.donut); 
+                          } else if (name.includes("[sharp]")) {
+                            body.define(Class.reskins); 
                           } else {
                             body.define(Class.basic);// Start as a basic tank
                           }
-                        body.name = name; // Define the name
+                        body.name = name.replace("[donut]","").replace("[farm]","").replace("[sharp]",""); // Define the name
                         if (socket.permissions && socket.permissions.nameColor) {
                             body.nameColor = socket.permissions.nameColor;
                             socket.talk("z", body.nameColor);

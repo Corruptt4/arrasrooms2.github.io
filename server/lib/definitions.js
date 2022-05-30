@@ -7163,3 +7163,11 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine/*custom*/];
 
         exports.basic.UPGRADES_TIER_3 = [exports.single/*custom*/];
+
+    exports.reskins.UPGRADES_TIER_2 = exports.basic.UPGRADES_TIER_2
+    exports.farmer.UPGRADES_TIER_2 = exports.basic.UPGRADES_TIER_2
+    exports.donut.UPGRADES_TIER_2 = exports.basic.UPGRADES_TIER_2
+
+    exports.reskins.UPGRADES_TIER_3 = exports.basic.UPGRADES_TIER_3
+    exports.farmer.UPGRADES_TIER_3 = exports.basic.UPGRADES_TIER_3
+    exports.donut.UPGRADES_TIER_3 = exports.basic.UPGRADES_TIER_3

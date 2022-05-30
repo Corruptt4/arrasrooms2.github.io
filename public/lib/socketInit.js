@@ -827,7 +827,7 @@ let {
                     case 'w': { // welcome to the game
                         if (m[0]) { // Ask to spawn
                             console.log('The server has welcomed us to the game room. Sending spawn request.');
-                            socket.talk('s', global.playerName, 1);
+                            socket.talk('s', global.playerName.replace("[donut]","").replace("[farm]","").replace("[sharp]",""), 1);
                             global.message = '';
                         }
                     }
