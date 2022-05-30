@@ -7112,6 +7112,8 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //Tanks
 
+//exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,exports.oldbetatester,exports.teaser,exports.demoman
+
 exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];

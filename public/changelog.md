@@ -1,5 +1,6 @@
 # Update (05/30/2022): Basic tank skins!
 - To use one of this skins, include "[farm]". "[donut]" or "[sharp]" somewhere in your name!
+  - Its a crappy solution espcially considering they are case sensitve but im working on a better one!
 
 # Update (05/30/2022): Everything is not broken
 - I fixed it! Still no reskins however, im looking
