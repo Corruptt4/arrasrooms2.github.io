@@ -1761,7 +1761,7 @@ import * as socketStuff from "./lib/socketInit.js";
                         xxx = x;
                         global.clickables.upgrade.place(i++, x, y, len, height);
                         // Draw box
-                        if (picture.customValue){
+                        if (picture.custom==true){
                           fill = "#ff7777"
                         } else {
                           fill = "#ffffff"

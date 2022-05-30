@@ -1126,6 +1126,7 @@ class Entity {
             size: this.size,
             rsize: this.realSize,
             dipMulti: this.dipMulti,
+            custom: this.custom,          
             status: 1,
             health: this.health.display(),
             shield: this.shield.display(),

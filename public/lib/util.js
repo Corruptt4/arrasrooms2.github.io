@@ -166,6 +166,7 @@ const util = (function() {
                 vy: 0,
                 size: mockup.size,
                 realSize: mockup.realSize,
+                custom: mockup.custom,
                 color: color,
                 render: {
                     status: {
