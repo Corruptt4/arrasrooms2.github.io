@@ -1347,7 +1347,7 @@ import * as socketStuff from "./lib/socketInit.js";
                     ctx.globalAlpha = 0.5;
                     ctx.fillStyle = color.guiwhite;
                     ctx.fillRect(0, 0, innerWidth, innerHeight);
-                    let text = "Use the arrow keys to navigate the class tree. Press T again to close it.";
+                    let text = "Use the arrow keys to navigate the class tree. Press T again to close it. Custom tanks are marked in red.";
                     ctx.font = "20px Ubuntu";
                     let w = ctx.measureText(text).width;
                     ctx.globalAlpha = 1;
@@ -1367,18 +1367,18 @@ import * as socketStuff from "./lib/socketInit.js";
                             ay = global.screenHeight / 2 + (y - full.height / 2) * tileSize,
                             size = tileSize;
                         if (ax < -50 || ax + size - 50 > global.screenWidth) continue;
-                        let fill = "#ffffff"
-                        if (picture.custom==true){
-                          fill = "#ff7777"
-                        } else {
-                          fill = "#ffffff"
-                        }
                         let angle = -Math.PI / 4,
                             picture = util.getEntityImageFromMockup(index, 10),
                             position = global.mockups[index].position,
                             scale = (0.8 * size) / position.axis,
                             xx = ax + 0.5 * size - scale * position.middle.x * Math.cos(angle),
                             yy = ay + 0.5 * size - scale * position.middle.x * Math.sin(angle);
+                        let fill = "#ffffff"
+                        if (picture.custom==true){
+                          fill = "#ff7777"
+                        } else {
+                          fill = "#ffffff"
+                        }
                         ctx.globalAlpha = 0.75;
                         ctx.fillStyle = fill//getColor(10);
                         drawGuiRect(ax, ay, size, size);
