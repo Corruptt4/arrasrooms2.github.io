@@ -1488,7 +1488,7 @@ exports.basic = {
         };
 exports.betatester2 = {
             PARENT: [exports.genericTank],
-            LABEL: 'Page 2',
+            LABEL: 'Custom 2',
             INVISIBLE: [],
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */

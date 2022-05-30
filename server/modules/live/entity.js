@@ -599,6 +599,8 @@ class Entity {
         this.collisionArray = [];
         this.invuln = false;
         this.alpha = 1;
+      //this is something dogeiscut added for movement
+        this.timer = 0;
         this.invisible = [0, 0];
         this.antiNaN = (function(me) {
             let nansInARow = 0;
@@ -1183,14 +1185,30 @@ class Entity {
             this.damp = 100;
         }
         switch (this.motionType) {
+            case "explode":
+                //added by dogeiscut
+                this.timer += 1
+            if (this.timer==30) {
+            this.SIZE += 1000; 
+            }
+            if (this.timer>60) {
+            this.maxSpeed = 0;
+            this.damp = 1;
+            }
+            break;
             case "grow":
-                this.SIZE += 5;
+                this.SIZE += 2;
                 break;
             case 'glide':
                 this.maxSpeed = this.topSpeed;
                 this.damp = 0.05;
                 break;
+            case "accel":
+                this.maxSpeed = this.topSpeed;
+                this.damp = -0.05;
+                break;
             case "extremeaccel":
+                //added by dogeiscut
                 this.maxSpeed = this.topSpeed;
                 this.damp = -0.2;
                 break;

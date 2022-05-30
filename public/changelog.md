@@ -1,12 +1,18 @@
-# Update (05/29/2022): bugs are hurting my brain
-- Screen flies away whe
+# Update (05/29/2022): New plans
+- There are plans to actually put these custom tanks as branches of existing tanks
+  - So I may hopefully not have to even fix the aforementioned bug
+
+# Update (05/29/2022): bugs hurty my brain
+- Screen flies away when more than 16 tanks are in the upgrade menu
+  - There will be a page 2 tank until I can fix this
+  
 # Update (05/29/2022): DONUTS!!!! (mmmm yummy mmmmmmm)
 - NEW DONUT SHAPE!
-  - no tanks or shapes actually use it yet but its there!
-  - i mean there is a donut basic if you want.
+  - No tanks or shapes actually use it yet but its there!
+  - I mean there is a donut basic if you want.
 - Stars
-  - a rare star shaped polygon worth 40,000 points!
-  - more is planned with it like temporary invincibility when destroyed!
+  - A rare star shaped polygon worth 40,000 points!
+  - More is planned with it like temporary invincibility when destroyed!
 
 # Update (05/29/2022): misery
 - Spent probably 30 minutes adding shape dip for more unique shapes
