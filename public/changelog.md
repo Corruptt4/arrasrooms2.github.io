@@ -1,7 +1,9 @@
-# Update (05/30/2022): new tanky!!!!!
+# Update (05/31/2022): new tanky!!!!!
 - New Tank: Cloner!
   - A factory based tank that shoots 2 larger drones designed to look like your fellow tanks.
-  - Untested so could be OP lol.
+  - Untested so could be OP lol
+- Updated/Nerfed the Archer
+  - Renamed it to Crossbow
 
 # Update (05/30/2022): Basic tank skins!
 - To use one of this skins, include "[farm]". "[donut]" or "[sharp]" somewhere in your name!

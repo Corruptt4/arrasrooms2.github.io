@@ -6143,22 +6143,23 @@ exports.extremeaccelbullet = {
   PARENT: [exports.bullet],
   CUSTOM: true,
   MOTION_TYPE: 'extremeaccel',
+  LABEL: 'Bolt',
   SHAPE: -3,
-  DIPMULTI: 0.01,
+  DIPMULTI: 0.0000001,
 }
 
 exports.archer = {
     PARENT: [exports.genericTank],
-    LABEL: 'Archer',
+    LABEL: 'Crossbow',
     CUSTOM: true,
     BODY: {
       FOV: base.FOV * 1.3,
     },
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  18,     8,      0.5,      0,      0,      0,      0,   ], 
+        POSITION: [  18,     8*2,      0.5,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic,g.pound,g.destroy,g.lessreload,g.archer,g.halfreload]),
+            SHOOT_SETTINGS: combineStats([g.basic,g.pound,g.destroy,g.lessreload,g.archer,g.halfreload,g.lessreload,g.halfsize]),
             TYPE: exports.extremeaccelbullet,
             LABEL: '',                  // def
             STAT_CALCULATOR: 0,         // def
@@ -6169,7 +6170,7 @@ exports.archer = {
             ALT_FIRE: false,            // def 
             NEGATIVE_RECOIL: false,     // def
         }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  2,     15,      0.5,      12,      0,      0,      0,   ], 
+        POSITION: [  2,     15/2,      2,      12,      0,      0,      0,   ], 
         }, 
     ],
 };
