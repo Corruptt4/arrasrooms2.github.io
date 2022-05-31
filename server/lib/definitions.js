@@ -7089,6 +7089,33 @@ exports.reskins = {
     ],
 };
 
+exports.cloner = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Cloner',
+                CUSTOM: true,
+                DANGER: 7,
+                STAT_NAMES: statnames.drone,
+                BODY: {
+                    SPEED: base.SPEED * 0.8,
+                    FOV: 1.1,
+                },
+                MAX_CHILDREN: 1,
+                GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   8,     20-3,      1,      6.5,   0,      0,      0,   ], 
+                        }, {
+                    POSITION: [   2,     20,      1,      15.5,   0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic,g.factory]),
+                            TYPE: exports.minion,
+                            STAT_CALCULATOR: gunCalcNames.drone,                        
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,   
+                        }, }, {                        
+                    POSITION: [   4,     20,      1,      8,      0,      0,      0,   ], 
+                    }
+                ],
+            };
+
 // UPGRADE PATHS
 
 //testbed/betatester stuff
@@ -7140,7 +7167,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
     exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer, exports.lilfact/*custom*/];
         exports.director.UPGRADES_TIER_3 = [exports.manager/*custom*/];
         exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress/*custom*/,exports.teaser];
-        exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/];
+        exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/,exports.cloner];
         exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/];  
         exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/];
 

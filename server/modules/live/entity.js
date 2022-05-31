@@ -1213,7 +1213,7 @@ class Entity {
                 }
                 break;
             case "grow":
-                this.SIZE += 2;
+                this.SIZE += 0.5;
                 break;
             case 'glide':
                 this.maxSpeed = this.topSpeed;
