@@ -188,7 +188,9 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   noshudder:  [1, 1, 0.01, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   halfhealth:  [1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1],
-  whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  
+  halfstats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
   
 };
 
@@ -7089,6 +7091,45 @@ exports.reskins = {
     ],
 };
 
+exports.tankMinion = {
+    PARENT: [exports.basic],
+    LABEL: 'Tank Minion', 
+    TYPE: 'minion',
+    DAMAGE_CLASS: 0,
+    HITS_OWN_TYPE: 'hardWithBuffer',
+    FACING_TYPE: 'smoothToTarget',
+    BODY: { // def
+        ACCELERATION: base.ACCEL,
+        SPEED: base.SPEED/3,
+        HEALTH: base.HEALTH/3, 
+        DAMAGE: base.DAMAGE/2, 
+        PENETRATION: base.PENETRATION/2, 
+        SHIELD: base.SHIELD/2,
+        REGEN: base.REGEN/2,
+        FOV: base.FOV/2,
+        DENSITY: base.DENSITY,
+        PUSHABILITY: 0.9,
+        HETERO: 3,
+    },
+    AI: {
+        BLIND: true,
+    },
+    DRAW_HEALTH: true,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    GIVE_KILL_MESSAGE: true,
+    CONTROLLERS: [
+        'nearestDifferentMaster', 'mapAltToFire', 'minion', 'canRepel', 'hangOutNearMaster'],
+    //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic,g.halfstats]),
+            WAIT_TO_CYCLE: true,
+            TYPE: exports.bullet,
+        }, }, 
+    ],
+};
+
 exports.cloner = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Cloner',
@@ -7105,13 +7146,13 @@ exports.cloner = {
                         }, {
                     POSITION: [   2,     20,      1,      15.5,   0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic,g.factory]),
-                            TYPE: exports.minion,
+                            SHOOT_SETTINGS: combineStats([g.blank,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload]),
+                            TYPE: exports.tankMinion,
                             STAT_CALCULATOR: gunCalcNames.drone,                        
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,   
                         }, }, {                        
-                    POSITION: [   4,     20,      1,      8,      0,      0,      0,   ], 
+                    POSITION: [   10,     20,      1,      2,      0,      0,      0,   ], 
                     }
                 ],
             };
