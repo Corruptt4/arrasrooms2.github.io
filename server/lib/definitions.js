@@ -182,7 +182,7 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   lessspeed:            [1,     1,     1,      1,      1,      1,      1,      0.6,    0.6,    1,      1,      1,      1], 
                          // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
-  archer:               [      0.1,   0.5,             1,                1,    1.5,   0.03,       5,        2,        2,      1,        1,        1,                      1], 
+  archer:               [      0.1,   0.5,             1,                1,    1.5,   0.03,       5,        2,        2,      0.25,        1,        1,                      1], 
   
   norecoil:             [1,     0,   1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1], 
   
@@ -191,7 +191,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   
   halfstats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
-  halfnerf: [2, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 2, 1, 1, 1]
+  halfnerf: [2, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 2, 1, 1, 1],
+  clonerbuff: [0.7, 1, 1, 1, 0.8, 0.7, 2, 2, 2, 1, 1, 1, 1]
   
 };
 
@@ -6146,7 +6147,7 @@ exports.extremeaccelbullet = {
   LABEL: 'Bolt',
   SHAPE: -3,
   //DIPMULTI: 0.0000001,
-  DIPMULTI: -1,
+  DIPMULTI: -2,
 }
 
 exports.archer = {
@@ -7130,7 +7131,7 @@ exports.tankMinion = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic,g.halfnerf]),
+            SHOOT_SETTINGS: combineStats([g.basic,g.halfnerf,g.clonerbuff]),
             WAIT_TO_CYCLE: true,
             TYPE: exports.bullet,
         }, }, 
@@ -7153,7 +7154,7 @@ exports.cloner = {
                         }, {
                     POSITION: [   2,     20,      1,      15.5,   0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.blank,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload]),
+                            SHOOT_SETTINGS: combineStats([g.blank,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload]),
                             TYPE: exports.tankMinion,
                             STAT_CALCULATOR: gunCalcNames.drone,                        
                             AUTOFIRE: true,
