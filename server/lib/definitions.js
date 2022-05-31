@@ -426,7 +426,8 @@ exports.egg = {
 };
 exports.greenpentagon = {
     PARENT: [exports.food],
-    LABEL: "Pentagon",
+    LABEL: "Shiny Pentagon",
+    GIVE_KILL_MESSAGE: true,
     VALUE: 3e4,
     SHAPE: 5,
     SIZE: 16,
@@ -445,7 +446,8 @@ exports.greenpentagon = {
 };
 exports.greentriangle = {
     PARENT: [exports.food],
-    LABEL: "Triangle",
+    LABEL: "Shiny Triangle",
+    GIVE_KILL_MESSAGE: true,
     VALUE: 7e3,
     SHAPE: 3,
     SIZE: 9,
@@ -464,7 +466,8 @@ exports.greentriangle = {
 };
 exports.greensquare = {
     PARENT: [exports.food],
-    LABEL: "Square",
+    LABEL: "Shiny Square",
+    GIVE_KILL_MESSAGE: true,
     VALUE: 2e3,
     SHAPE: 4,
     SIZE: 10,
@@ -484,6 +487,7 @@ exports.greensquare = {
 exports.gem = {
     PARENT: [exports.food],
     LABEL: "Gem",
+    GIVE_KILL_MESSAGE: true,
     VALUE: 2e3,
     SHAPE: 6,
     SIZE: 5,
@@ -6152,9 +6156,9 @@ exports.archer = {
     },
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+        POSITION: [  18,     8,      0.5,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic,g.pound,g.destroy,g.lessreload,g.archer]),
+            SHOOT_SETTINGS: combineStats([g.basic,g.pound,g.destroy,g.lessreload,g.archer,g.halfreload]),
             TYPE: exports.extremeaccelbullet,
             LABEL: '',                  // def
             STAT_CALCULATOR: 0,         // def
@@ -6165,7 +6169,7 @@ exports.archer = {
             ALT_FIRE: false,            // def 
             NEGATIVE_RECOIL: false,     // def
         }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  2,     15,      1,      12,      0,      0,      0,   ], 
+        POSITION: [  2,     15,      0.5,      12,      0,      0,      0,   ], 
         }, 
     ],
 };
@@ -7141,7 +7145,7 @@ exports.cloner = {
                     SPEED: base.SPEED * 0.8,
                     FOV: 1.1,
                 },
-                MAX_CHILDREN: 3,
+                MAX_CHILDREN: 2,
                 GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   8,     20-3,      1,      6.5,   0,      0,      0,   ], 
                         }, {

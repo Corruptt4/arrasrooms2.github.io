@@ -1,26 +1,5 @@
 [
   {
-    "key": "TOKEN_DEV_BALLS123123323123214_DEV_TOKEN",
-    "discordID": "269281036687507456",
-    "nameColor": "#FFFF00",
-    "testbedTank": "testbed",
-    "name": "DogeisCut#2306",
-    "note": "Owner"
-  }, 
-  {
-    "key": "TOKEN_DEV_BALLS56756786786_DEV_TOKEN",
-    "discordID": "388157850263748611",
-    "nameColor": "#00FF00",
-    "testbedTank": "testbed",
-    "name": "Waffz_The_Pancake#2744",
-    "note": "Co-Owner"
-  },
-  {
-    "key": "TOKEN_DEV_fbnh845g89ehgn_DEV_TOKEN",
-    "discordID": "980585357039009832",
-    "nameColor": "#FFFF77",
-    "testbedTank": "testbed",
-    "name": "Max Nest#8441",
-    "note": "stole a dev key so you can have your own"
+    "hey": "looking for something? :)"
   }
 ]
