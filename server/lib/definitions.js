@@ -169,7 +169,7 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
     charge:             [5,    1.4,   0.1,    1,      1,      0.75,   1,      -4.5,    1,   0.1,      1,      180,     1], 
   
   morerange:            [1,     1,     1,      1,      1,      1,      1,      1,      1,      2,      1,      1,      1], 
-                    // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+                        // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
   lance:                [1,     0,             0.01,                8,    1,     0.1,        3,        1,      0,        0.2,      2,            0.001,              1],  
   
   morehealth:           [1,     1,     1,      1,      2,      1,      2,      1,      1,      1,      1,      1,      1], 
@@ -181,8 +181,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   health4damage:            [1,     1,     1,      1,      2,      0.5,      1,      1,      1,      1,      1,      1,      1], 
   
   lessspeed:            [1,     1,     1,      1,      1,      1,      1,      0.6,    0.6,    1,      1,      1,      1], 
-   
-  archer:               [0.1,   0.5,   1,      1,      1.5,      0.03, 1.5,      2,      2,      3,      1,      1,      1], 
+                         // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+  archer:               [      0.1,   0.5,             1,                1,    1.5,   0.03,       5,        2,        2,      1,        1,        1,                      1], 
   
   norecoil:             [1,     0,   1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1], 
   
@@ -6145,7 +6145,8 @@ exports.extremeaccelbullet = {
   MOTION_TYPE: 'extremeaccel',
   LABEL: 'Bolt',
   SHAPE: -3,
-  DIPMULTI: 0.0000001,
+  //DIPMULTI: 0.0000001,
+  DIPMULTI: -1,
 }
 
 exports.archer = {
