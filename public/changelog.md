@@ -1,10 +1,13 @@
 # Update (05/30/2022): Basic tank skins!
 - To use one of this skins, include "[farm]". "[donut]" or "[sharp]" somewhere in your name!
   - Its a crappy solution espcially considering they are case sensitve but im working on a better one!
+  - [farm] Gives your tank a farmer hat and makes it shoot carrots!
+  - [donut] turns it into a donut!
+  - [sharp] isnt that interesting and will be removed  (or at least re-used for another tank)
+- There are plans to make this apply to more than just the basic!
 
 # Update (05/30/2022): Everything is not broken
-- I fixed it! Still no reskins however, im looking
-for a good way to implement those.
+- I fixed it! Still no reskins however, im looking for a good way to implement those.
 
 # Update (05/30/2022): i broke evrythgin
 - No more reskins, play button stopped working
@@ -13,7 +16,7 @@ for a good way to implement those.
 # Update (05/30/2022): Reskins
 - Press ` to access the reskins now!
 
-# Update (05/30/2022): mmmm poprocks mmm tasty (yum mmmm yummy)
+# Update (05/30/2022): tree
 - Started work on moving the tanks to existing upgrade trees
   - You can press t now, to acsess it
   - Not sure what to do about basic reskins.
