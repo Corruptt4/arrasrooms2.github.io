@@ -190,7 +190,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   halfhealth:  [1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1],
   whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   
-  halfstats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
+  halfstats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
+  halfnerf: [2, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 2, 1, 1, 1]
   
 };
 
@@ -7101,7 +7102,7 @@ exports.tankMinion = {
     BODY: { // def
         ACCELERATION: base.ACCEL,
         SPEED: base.SPEED/3,
-        HEALTH: base.HEALTH/3, 
+        HEALTH: base.HEALTH/4, 
         DAMAGE: base.DAMAGE/2, 
         PENETRATION: base.PENETRATION/2, 
         SHIELD: base.SHIELD/2,
@@ -7123,7 +7124,7 @@ exports.tankMinion = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic,g.halfstats]),
+            SHOOT_SETTINGS: combineStats([g.basic,g.halfnerf]),
             WAIT_TO_CYCLE: true,
             TYPE: exports.bullet,
         }, }, 
@@ -7140,7 +7141,7 @@ exports.cloner = {
                     SPEED: base.SPEED * 0.8,
                     FOV: 1.1,
                 },
-                MAX_CHILDREN: 1,
+                MAX_CHILDREN: 3,
                 GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   8,     20-3,      1,      6.5,   0,      0,      0,   ], 
                         }, {

@@ -1,3 +1,7 @@
+# Update (05/30/2022): new tanky!!!!!
+- New Tank: Cloner!
+  - A factory based tank that shoots 
+
 # Update (05/30/2022): Basic tank skins!
 - To use one of this skins, include "[farm]". "[donut]" or "[sharp]" somewhere in your name!
   - Its a crappy solution espcially considering they are case sensitve but im working on a better one!
