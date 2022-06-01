@@ -7165,6 +7165,34 @@ exports.cloner = {
                 ],
             };
 
+  exports.aitank = {
+    PARENT: [exports.genericTank],
+    LABEL: 'AI generated tank',
+    DANGER: 7,
+    BODY: {
+      ACCELERATION: base.ACCEL * 0.8,
+      SPEED: base.SPEED * 0.8,
+      HEALTH: base.HEALTH * 1.5,
+      DAMAGE: base.DAMAGE * 1.5,
+      PENETRATION: base.PENETRATION * 1.5,
+      SHIELD: base.SHIELD * 1.5,
+      REGEN: base.REGEN * 1.5,
+      FOV: base.FOV * 1.5,
+      DENSITY: base.DENSITY * 1.5,
+      PUSHABILITY: 0.9,
+      HETERO: 3,
+    },
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [  17,     9,      1,      0,      0,      0,      0,   ],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload,g.halfreload]),
+        TYPE: exports.bullet,
+      }, }, {
+      POSITION: [  13,     8,      0.01,      0,      0,      25,      0,   ], },
+      {POSITION: [  13,     8,      0.01,      0,      0,      -25,      0,   ], },
+    ],
+  };
+
 // UPGRADE PATHS
 
 //testbed/betatester stuff
@@ -7190,7 +7218,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //,
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace,exports.aitank];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
