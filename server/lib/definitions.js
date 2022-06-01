@@ -7148,7 +7148,7 @@ exports.cloner = {
                     SPEED: base.SPEED * 0.8,
                     FOV: 1.1,
                 },
-                MAX_CHILDREN: 2,
+                MAX_CHILDREN: 3,
                 GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   8,     20-3,      1,      6.5,   0,      0,      0,   ], 
                         }, {
