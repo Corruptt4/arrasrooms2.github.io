@@ -7169,6 +7169,7 @@ exports.cloner = {
     PARENT: [exports.genericTank],
     LABEL: 'AI generated tank',
     DANGER: 7,
+    CUSTOM: true,
     BODY: {
       ACCELERATION: base.ACCEL * 0.8,
       SPEED: base.SPEED * 0.8,
@@ -7195,19 +7196,41 @@ exports.cloner = {
 
 exports.tank = {
    PARENT: [exports.genericTank],
-   LABEL: 'Tank',
+   LABEL: 'TESTDEBUG',
+   CUSTOM: true,
    GUNS: [ {
-         POSITION: [ 19, 13, 2, 0, 0, 0, 0, ],
+         POSITION: [ 50, 5, 1, 0, 5, 0, 0, ],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.trap,
+      }, }, {
+         POSITION: [ 50, 5, 1, 0, -5, 0, 0.2, ],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.bullet,
+      }, }, {
+         POSITION: [ 50, 5, 1, 0, -3, 0, 0.4, ],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.bullet,
+      }, }, {
+         POSITION: [ 50, 5, 1, 0, 3, 0, 0.6, ],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.bullet,
+      }, }, {
+         POSITION: [ 50, 5, 1, 0, 0, 0, 0.8, ],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.bullet,
+      }, }, {
+         POSITION: [ 15, 15, 1.5, 0, 0, 0, 0, ],
       }, {
-         POSITION: [ 19, 13, 0.0001, 0, 0, -60, 0, ],
+         POSITION: [ 15, 15, 0.0001, 0, 0, -135, 0, ],
       }, {
-         POSITION: [ 19, 13, 0.0001, 0, 0, 60, 0, ],
+         POSITION: [ 15, 15, 0.0001, 0, 0, 135, 0, ],
       }, {
-         POSITION: [ 15, 13, 0.0001, 0, 0, -45, 0, ],
-      }, {
-         POSITION: [ 15, 13, 0.0001, 0, 0, 45, 0, ],
-      }, {
-         POSITION: [ 8, 16, 0.0001, 8, 0, 0, 0, ],
+         POSITION: [ 15, 15, 0.0001, 0, 0, 180, 0, ],
       }, 
    ],
 };
