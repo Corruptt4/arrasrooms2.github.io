@@ -7202,7 +7202,7 @@ exports.tank = {
          POSITION: [ 50, 5, 1, 0, 5, 0, 0, ],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic]),
-        TYPE: exports.trap,
+        TYPE: exports.bullet,
       }, }, {
          POSITION: [ 50, 5, 1, 0, -5, 0, 0.2, ],
       PROPERTIES: {
@@ -7236,6 +7236,127 @@ exports.tank = {
 };
 
 
+exports.stupidTank = {
+   PARENT: [exports.genericTank],
+   LABEL: 'Stupid Tank',
+   CUSTOM: true,
+   GUNS: [ {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+      }, {
+         POSITION: [ 18, 8, 1, 0, 0, 45, 0, ],
+      }, {
+         POSITION: [ 18, 8, 1, 0, 0, 90, 0, ],
+      }, {
+         POSITION: [ 18, 8, 1, 0, 0, 135, 0, ],
+      }, {
+         POSITION: [ 18, 8, 1, 0, 0, -180, 0, ],
+      }, {
+         POSITION: [ 18, 8, 1, 0, 0, -135, 0, ],
+      }, {
+         POSITION: [ 18, 8, 1, 0, 0, -90, 0, ],
+      }, {
+         POSITION: [ 18, 8, 1, 0, 0, -45, 0, ],
+      }, {
+         POSITION: [ 21, 5, 1, 0, 0, -22.5, 0, ],
+      }, {
+         POSITION: [ 21, 5, 1, 0, 0, -67.5, 0, ],
+      }, {
+         POSITION: [ 21, 5, 1, 0, 0, -112.5, 0, ],
+      }, {
+         POSITION: [ 21, 5, 1, 0, 0, -157.5, 0, ],
+      }, {
+         POSITION: [ 21, 5, 1, 0, 0, 157.5, 0, ],
+      }, {
+         POSITION: [ 21, 5, 1, 0, 0, 112.5, 0, ],
+      }, {
+         POSITION: [ 21, 5, 1, 0, 0, 67.5, 0, ],
+      }, {
+         POSITION: [ 21, 5, 1, 0, 0, 22.5, 0, ],
+      }, {
+         POSITION: [ 3, 11, 0.1, 24, 0, 0, 0, ],
+      }, {
+         POSITION: [ 3, 11, 0.1, 24, 0, -45, 0, ],
+      }, {
+         POSITION: [ 3, 11, 0.1, 24, 0, -90, 0, ],
+      }, {
+         POSITION: [ 3, 11, 0.1, 24, 0, -135, 0, ],
+      }, {
+         POSITION: [ 3, 11, 0.1, 24, 0, 180, 0, ],
+      }, {
+         POSITION: [ 3, 11, 0.1, 24, 0, 135, 0, ],
+      }, {
+         POSITION: [ 3, 11, 0.1, 24, 0, 90, 0, ],
+      }, {
+         POSITION: [ 3, 11, 0.1, 24, 0, 45, 0, ],
+      }, {
+         POSITION: [ 5, 11, -0.0001, 32, 0, 22.5, 0, ],
+      }, {
+         POSITION: [ 5, 11, -0.0001, 32, 0, -22.5, 0, ],
+      }, {
+         POSITION: [ 5, 11, -0.0001, 32, 0, -67.5, 0, ],
+      }, {
+         POSITION: [ 5, 11, -0.0001, 32, 0, -112.5, 0, ],
+      }, {
+         POSITION: [ 5, 11, -0.0001, 32, 0, -157.5, 0, ],
+      }, {
+         POSITION: [ 5, 11, -0.0001, 32, 0, 157.5, 0, ],
+      }, {
+         POSITION: [ 5, 11, -0.0001, 32, 0, 112.5, 0, ],
+      }, {
+         POSITION: [ 5, 11, -0.0001, 32, 0, 67.5, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, 0, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, -30, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, -60, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, -90, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, -120, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, -150, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, -180, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, 150, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, 120, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, 90, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, 60, 0, ],
+      }, {
+         POSITION: [ 6, 11, 2, 40, 0, 30, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, -15, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, -45, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, -75, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, -105, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, -135, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, -165, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, 165, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, 135, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, 105, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, 75, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, 45, 0, ],
+      }, {
+         POSITION: [ 6, 22, 0.5, 50, 0, 15, 0, ],
+      }, 
+   ],
+};
+
+
 
 // UPGRADE PATHS
 
@@ -7262,7 +7383,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //,
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace, exports.tank];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace, exports.stupidTank];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
