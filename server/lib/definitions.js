@@ -2260,6 +2260,7 @@ exports.landmine = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Predator',
                 DANGER: 7,
+                CONTROLLERS: ['canZoom'],
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.7,
                     SPEED: base.SPEED * 0.85,

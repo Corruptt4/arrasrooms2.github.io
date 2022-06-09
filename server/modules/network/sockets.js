@@ -1073,7 +1073,7 @@ const sockets = (() => {
                                 else if (player.body.photo) {
                                     // Update camera position and motion
                                     camera.x = player.body.photo.x;
-                                    camera.y = player.body.photo.y;
+camera.y = player.body.photo.y;
                                     camera.vx = player.body.photo.vx;
                                     camera.vy = player.body.photo.vy;
                                     // Get what we should be able to see     
