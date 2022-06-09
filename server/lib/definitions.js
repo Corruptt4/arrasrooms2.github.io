@@ -7489,9 +7489,9 @@ exports.BALLSBALLSBALLS = {
    PARENT: [exports.genericTank],
    LABEL: 'Tank',
    GUNS: [ {
-         POSITION: [ 18, 8, 1, 11, 13, 15, 0, ],
+         POSITION: [ 18, 8, 1, 11, -13, 15, 0, ],
          }, {
-         POSITION: [ 18, 8, 1, 11, 13, 0, 0, ],
+         POSITION: [ 18, 8, 1, 11, -13, 0, 0, ],
          }, {
          POSITION: [ 18, 8, 1, 0, 0, 90, 0, ],
          }, 
