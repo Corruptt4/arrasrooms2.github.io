@@ -7485,6 +7485,21 @@ exports.all = {
 };
 
 
+exports.BALLSBALLSBALLS = {
+   PARENT: [exports.genericTank],
+   LABEL: 'Tank',
+   GUNS: [ {
+         POSITION: [ 18, 8, 1, 11, 13, 15, 0, ],
+         }, {
+         POSITION: [ 18, 8, 1, 11, 13, 0, 0, ],
+         }, {
+         POSITION: [ 18, 8, 1, 0, 0, 90, 0, ],
+         }, 
+     ],
+};
+
+
+
 
 
 // UPGRADE PATHS
@@ -7512,7 +7527,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //,
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace,exports.all];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace,exports.BALLSBALLSBALLS];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
