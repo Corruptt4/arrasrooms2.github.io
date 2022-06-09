@@ -7359,6 +7359,7 @@ exports.stupidTank = {
 exports.all = {
    PARENT: [exports.genericTank],
    LABEL: 'ALL',
+   CUSTOM: true,
    GUNS: [ {
          POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
          PROPERTIES: {
@@ -7511,7 +7512,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //,
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace,exports.all];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
