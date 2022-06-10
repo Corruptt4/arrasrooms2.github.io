@@ -7826,7 +7826,7 @@ exports.collector = {
                 STAT_NAMES: statnames.necro,
                 BODY: {
                     ACCELERATION: base.ACCEL * 0.7,
-                    SPEED: base.SPEED * 0.8,
+                    SPEED: base.SPEED * 1.2,
                     FOV: base.FOV * 1.15,
                 },
                 SHAPE: 4,
@@ -7835,7 +7835,7 @@ exports.collector = {
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   5,     12,    0.8,     8,      0,     90,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.halfreload]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.lessreload]),
                             TYPE: exports.cumchip,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
@@ -7843,7 +7843,7 @@ exports.collector = {
                         }, }, {
                     POSITION: [   5,     12,    0.8,     8,      0,     270,    0.5,  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.halfreload]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.lessreload]),
                             TYPE: exports.sunchip,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
@@ -7851,7 +7851,7 @@ exports.collector = {
                         }, }, {
                     POSITION: [   5,     12,    0.8,     8,      0,      0,     0.25, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.halfreload]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.lessreload]),
                             TYPE: exports.bumchip,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
@@ -7861,8 +7861,66 @@ exports.collector = {
                         }, }, {
                     POSITION: [   5,     12,    0.8,     8,      0,     180,    0.75  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.halfreload]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.lessreload]),
                             TYPE: exports.dumbchip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            MAX_CHILDREN: 4,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                            LABEL: 'Guard', 
+                        }, },
+                    ],
+            };
+
+exports.autocumchip = {
+    PARENT: [exports.autosunchip],
+    SHAPE: 0,
+};
+
+exports.eggmacer = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Eggmancer',
+                DANGER: 7,
+                STAT_NAMES: statnames.necro,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.7,
+                    SPEED: base.SPEED * 0.8,
+                    FOV: base.FOV * 1.15,
+                },
+                SHAPE: 4,
+                FACING_TYPE: 'autospin',
+                MAX_CHILDREN: 50,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   5,     12,    1.2,     8,      0,     90,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.doublereload]),
+                            TYPE: exports.cumchip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                        }, }, {
+                    POSITION: [   5,     12,    1.2,     8,      0,     270,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.doublereload]),
+                            TYPE: exports.cumchip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                        }, }, {
+                    POSITION: [   5,     12,    1.2,     8,      0,      0,     0.25, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.doublereload]),
+                            TYPE: exports.autocumchip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            MAX_CHILDREN: 4,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                            LABEL: 'Guard',
+                        }, }, {
+                    POSITION: [   5,     12,    1.2,     8,      0,     180,    0.75  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.doublereload]),
+                            TYPE: exports.autocumchip,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             MAX_CHILDREN: 4,
