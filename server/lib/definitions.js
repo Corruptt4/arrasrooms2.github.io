@@ -7772,9 +7772,9 @@ exports.overmancer = {
                 SPEED: base.SPEED * 0.9,
                 FOV: base.FOV * 1.1,
             },
-            SHAPE:64,
+            SHAPE:6,
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [   5,     12,    1.2,     8,      0,     0,      0,   ], 
+                POSITION: [   5,     12,    1.2,     10,      0,     0,      0,   ], 
                     PROPERTIES: {
                         SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
                         TYPE: exports.sunchip,
@@ -7783,7 +7783,7 @@ exports.overmancer = {
                         STAT_CALCULATOR: gunCalcNames.necro,
                         MAX_CHILDREN: 7,
                     }, },{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [   6,     11,    1.2,     8,      0,     125,     0,   ], 
+                    POSITION: [   6,     11,    1.2,     8,      0,     -120,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.over, g.meta]),
                             TYPE: exports.drone,
@@ -7793,7 +7793,7 @@ exports.overmancer = {
                             WAIT_TO_CYCLE: true,  
                             MAX_CHILDREN: 3,   
                         }, }, {
-                    POSITION: [   6,     11,    1.2,     8,      0,     235,     0,   ], 
+                    POSITION: [   6,     11,    1.2,     8,      0,     120,     0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.over, g.meta]),
                             TYPE: exports.drone,
@@ -7801,7 +7801,7 @@ exports.overmancer = {
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.drone,
                             WAIT_TO_CYCLE: true,     
-                            MAX_CHILDREN: 2,   
+                            MAX_CHILDREN: 3,   
                         }, },
                 ],
 }
