@@ -7806,6 +7806,72 @@ exports.overmancer = {
                 ],
 }
 
+exports.cumchip = {
+    PARENT: [exports.sunchip],
+    SHAPE: 0,
+};
+exports.bumchip = {
+    PARENT: [exports.sunchip],
+    SHAPE: 3,
+};
+exports.dumbchip = {
+    PARENT: [exports.sunchip],
+    SHAPE: 5,
+};
+
+exports.collector = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Collector',
+                DANGER: 7,
+                STAT_NAMES: statnames.necro,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.7,
+                    SPEED: base.SPEED * 0.8,
+                    FOV: base.FOV * 1.15,
+                },
+                SHAPE: 4,
+                FACING_TYPE: 'autospin',
+                MAX_CHILDREN: 14,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   5,     12,    0.8,     8,      0,     90,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.halfreload]),
+                            TYPE: exports.cumchip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                        }, }, {
+                    POSITION: [   5,     12,    0.8,     8,      0,     270,    0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.halfreload]),
+                            TYPE: exports.sunchip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                        }, }, {
+                    POSITION: [   5,     12,    0.8,     8,      0,      0,     0.25, ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.halfreload]),
+                            TYPE: exports.bumchip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            MAX_CHILDREN: 4,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                            LABEL: 'Guard',
+                        }, }, {
+                    POSITION: [   5,     12,    0.8,     8,      0,     180,    0.75  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.halfreload]),
+                            TYPE: exports.dumbchip,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            MAX_CHILDREN: 4,
+                            STAT_CALCULATOR: gunCalcNames.necro,
+                            LABEL: 'Guard', 
+                        }, },
+                    ],
+            };
+
 
 
 // UPGRADE PATHS
@@ -7861,7 +7927,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress/*custom*/,exports.teaser];
         exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/,exports.cloner];
         exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/,exports.overmancer];  
-        exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/,exports.overmancer];
+        exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/,exports.overmancer,exports.collector];
 
     exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery/*custom*/];
         exports.pound.UPGRADES_TIER_3 = [exports.shotgun2, exports.eagle/*custom*/];
