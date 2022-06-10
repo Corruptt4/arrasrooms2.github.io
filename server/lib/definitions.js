@@ -7619,6 +7619,149 @@ exports.hiveSpammer = {
      ],
 };
 
+exports.theOneshot = {
+   PARENT: [exports.genericTank],
+   LABEL: 'The Oneshot',
+   SHAPE: 6,
+   COLOR: 4,
+   CUSTOM: true,
+   GUNS: [ {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.casing,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.flare,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.swarm,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bee,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.autoswarm,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.accelbullet,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.growbullet,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.trap,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.block,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.boomerang,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.drone,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.sunchip,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.autosunchip,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.invissunchip,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.gunchip,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.missile,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.twistmissile,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hypermissile,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.snake,
+            ALT_FIRE: true,
+         }, }, {
+         POSITION: [ 9, 6, 0.0001, 7, 0, -22.5, 0, ],
+         }, {
+         POSITION: [ 9, 6, 0.0001, 7, 0, 22.5, 0, ],
+         }, {
+         POSITION: [ 5, 6, 0.0001, 7, 0, -45, 0, ],
+         }, {
+         POSITION: [ 5, 6, 0.0001, 7, 0, 45, 0, ],
+         }, {
+         POSITION: [ 10, 6, 0.0001, 7, 0, 0, 0, ],
+         }, {
+         POSITION: [ 10, 6, 0.0001, 7, 0, 0, 0, ],
+         }, 
+     ],
+};
+
+
 
 // UPGRADE PATHS
 
@@ -7631,7 +7774,7 @@ exports.testbed.UPGRADES_TIER_1 = [/*exports.oldbetatester,*/exports.basic, expo
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
 exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.testbed9];
 exports.testbed4.UPGRADES_TIER_1 = [exports.hugePentagon, exports.bigPentagon, exports.pentagon, exports.triangle, exports.square, exports.egg, exports.greenpentagon, exports.gem, exports.obstacle, exports.babyObstacle, exports.crasher, exports.trapTurret, exports.sentrySwarm,exports.testbed6]
-exports.testbed5.UPGRADES_TIER_1 = [exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest, exports.waffzTest, exports.mazeWallShooter, exports.reskins, exports.farmer, exports.donut, exports.hiveSpammer]
+exports.testbed5.UPGRADES_TIER_1 = [exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest, exports.waffzTest, exports.mazeWallShooter, exports.reskins, exports.farmer, exports.donut, exports.hiveSpammer, exports.theOneshot]
 exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle, exports.greensquare]
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
