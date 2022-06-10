@@ -7934,50 +7934,64 @@ exports.droneSpammer = {
     PARENT: [exports.genericTank],
     LABEL: 't',
     DANGER: 7,
-    MAX_CHILDREN: 50,
+    STAT_NAMES: statnames.drone,
+    MAX_CHILDREN: 200,
     GUNS: [{
         /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [12, 6, 0.8, 0, 0, 0, 0, ],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 30, 0.5, ],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 60, 0.25, ],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 90, 0.75, ],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 120, 0, ],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 150, 0.5, ],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 180, 0.25, ],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
-           STAT_CALCULATOR: gunCalcNames.drone,
+            STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 210, 0.75, ],
@@ -7985,6 +7999,7 @@ exports.droneSpammer = {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 240, 0, ],
@@ -7992,6 +8007,7 @@ exports.droneSpammer = {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 270, 0.5, ],
@@ -7999,6 +8015,7 @@ exports.droneSpammer = {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 300, 0.25, ],
@@ -8006,6 +8023,7 @@ exports.droneSpammer = {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 330, 0.75, ],
@@ -8013,6 +8031,7 @@ exports.droneSpammer = {
             SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.drone,
+            AUTOFIRE: true,
         },
     }, ],
 };
