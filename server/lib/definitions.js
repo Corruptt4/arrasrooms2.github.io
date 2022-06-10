@@ -7952,7 +7952,7 @@ exports.droneSpammer = {
         /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [12, 6, 0.8, 0, 0, 0, 0, ],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.halfreload, g.halfreload]),
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.doublereload, g.doublereload]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.sDrone,
             AUTOFIRE: true,
@@ -7960,7 +7960,7 @@ exports.droneSpammer = {
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 30, 0.5, ],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.halfreload, g.halfreload]),
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.doublereload, g.doublereload]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.sDrone,
             AUTOFIRE: true,
@@ -7968,7 +7968,7 @@ exports.droneSpammer = {
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 60, 0.25, ],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.halfreload, g.halfreload]),
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.doublereload, g.doublereload]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.sDrone,
             AUTOFIRE: true,
@@ -7976,7 +7976,7 @@ exports.droneSpammer = {
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 90, 0.75, ],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.halfreload, g.halfreload]),
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.doublereload, g.doublereload]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.sDrone,
             AUTOFIRE: true,
@@ -7984,7 +7984,7 @@ exports.droneSpammer = {
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 120, 0, ],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.halfreload, g.halfreload]),
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.doublereload, g.doublereload]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.sDrone,
             AUTOFIRE: true,
@@ -7992,7 +7992,7 @@ exports.droneSpammer = {
     }, {
         POSITION: [12, 6, 0.8, 0, 0, 150, 0.5, ],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.doublereload, g.halfreload]),
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane, g.doublereload, g.doublereload]),
             STAT_CALCULATOR: gunCalcNames.drone,
             TYPE: exports.sDrone,
             AUTOFIRE: true,
