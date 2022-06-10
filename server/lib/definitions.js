@@ -7499,6 +7499,33 @@ exports.BALLSBALLSBALLS = {
 };
 
 
+exports.radar = {
+   PARENT: [exports.genericTank],
+   LABEL: 'Radar',
+   GUNS: [ {
+         POSITION: [ 18, 8, 1, 0, 0, -54.73698827040275, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.flank]),
+            TYPE: exports.block,
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 54.73698827040275, 0.2, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.flank]),
+            TYPE: exports.block,
+         }, }, {
+         POSITION: [ 2, 8, 1.5, 17, 0, -53.74616226255521, 0, ],
+         }, {
+         POSITION: [ 2, 8, 1.5, 17, 0, 53.74616226255521, 0, ],
+         }, {
+         POSITION: [ 13, 7, 1, 7, 0, 0, 0.9, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            TYPE: exports.bullet,
+         }, }, 
+     ],
+};
+
+
 
 
 
@@ -7527,7 +7554,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //,
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace,exports.BALLSBALLSBALLS];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.lancer,exports.furnace];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
@@ -7564,7 +7591,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
 
     exports.trapper.UPGRADES_TIER_2 = [exports.builder, exports.tritrap, exports.flanktrap/*custom*/];
         exports.trapper.UPGRADES_TIER_3 = [exports.minitrap, exports.overtrap/*custom*/, exports.exploder];
-        exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq/*custom*/,exports.gen,exports.dumptruck,exports.miner,exports.indust,exports.supertest];
+        exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq/*custom*/,exports.gen,exports.dumptruck,exports.miner,exports.indust,exports.supertest,exports.radar];
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
     
