@@ -7502,6 +7502,7 @@ exports.BALLSBALLSBALLS = {
 exports.radar = {
    PARENT: [exports.genericTank],
    LABEL: 'Radar',
+   CUSTOM: true,
    GUNS: [ {
          POSITION: [ 18, 8, 1, 0, 0, -54.73698827040275, 0, ],
          PROPERTIES: {
