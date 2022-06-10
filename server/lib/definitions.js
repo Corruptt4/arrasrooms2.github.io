@@ -7930,6 +7930,93 @@ exports.eggmacer = {
                     ],
             };
 
+exports.droneSpammer = {
+    PARENT: [exports.genericTank],
+    LABEL: 't',
+    DANGER: 7,
+    MAX_CHILDREN: 50,
+    GUNS: [{
+        /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [12, 6, 0.8, 0, 0, 0, 0, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 30, 0.5, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 60, 0.25, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 90, 0.75, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 120, 0, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 150, 0.5, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 180, 0.25, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+           STAT_CALCULATOR: gunCalcNames.drone,
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 210, 0.75, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 240, 0, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 270, 0.5, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 300, 0.25, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
+            TYPE: exports.drone,
+        },
+    }, {
+        POSITION: [12, 6, 0.8, 0, 0, 330, 0.75, ],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.twin, g.puregunner, g.hurricane]),
+            STAT_CALCULATOR: gunCalcNames.drone,
+            TYPE: exports.drone,
+        },
+    }, ],
+};
+
 
 
 // UPGRADE PATHS
@@ -7984,7 +8071,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.director.UPGRADES_TIER_3 = [exports.manager/*custom*/];
         exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress/*custom*/,exports.teaser];
         exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/,exports.cloner];
-        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/,exports.overmancer];  
+        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/,exports.overmancer,exports.droneSpammer];
         exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/,exports.overmancer,exports.collector,exports.eggmacer];
 
     exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery/*custom*/];
