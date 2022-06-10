@@ -7761,41 +7761,50 @@ exports.theOneshot = {
      ],
 };
 
-exports.overseer = {
+exports.overmancer = {
             PARENT: [exports.genericTank],
-            LABEL: 'Overseer',  
+            LABEL: 'Overmancer',
             DANGER: 6,
-            SHAPE: 4,
             CUSTOM: true,
             STAT_NAMES: statnames.drone,
             BODY: {
-                ACCELERATION: base.ACCEL * 0.75,
+                ACCELERATION: base.ACCEL * 0.7,
                 SPEED: base.SPEED * 0.9,
                 FOV: base.FOV * 1.1,
             },
+            SHAPE:64,
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [   6,     12,    1.2,     8,      0,     90,      0,   ], 
+                POSITION: [   5,     12,    1.2,     8,      0,     0,      0,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
-                        TYPE: exports.drone,
+                        SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
+                        TYPE: exports.sunchip,
                         AUTOFIRE: true,
                         SYNCS_SKILLS: true,
-                        STAT_CALCULATOR: gunCalcNames.drone,
-                        WAIT_TO_CYCLE: true,   
-                        MAX_CHILDREN: 8,
-                    }, }, {
-                POSITION: [   6,     12,    1.2,     8,      0,    270,      0,   ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
-                        TYPE: exports.drone,
-                        AUTOFIRE: true,
-                        SYNCS_SKILLS: true,
-                        STAT_CALCULATOR: gunCalcNames.drone,
-                        WAIT_TO_CYCLE: true,     
-                        MAX_CHILDREN: 8,
-                    }, },
-            ],
-        };
+                        STAT_CALCULATOR: gunCalcNames.necro,
+                        MAX_CHILDREN: 7,
+                    }, },{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   6,     11,    1.2,     8,      0,     125,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.meta]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,  
+                            MAX_CHILDREN: 3,   
+                        }, }, {
+                    POSITION: [   6,     11,    1.2,     8,      0,     235,     0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.meta]),
+                            TYPE: exports.drone,
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,
+                            STAT_CALCULATOR: gunCalcNames.drone,
+                            WAIT_TO_CYCLE: true,     
+                            MAX_CHILDREN: 2,   
+                        }, },
+                ],
+}
 
 
 
@@ -7851,8 +7860,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.director.UPGRADES_TIER_3 = [exports.manager/*custom*/];
         exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress/*custom*/,exports.teaser];
         exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/,exports.cloner];
-        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/];  
-        exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/];
+        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/,exports.overmancer];  
+        exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/,exports.overmancer];
 
     exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery/*custom*/];
         exports.pound.UPGRADES_TIER_3 = [exports.shotgun2, exports.eagle/*custom*/];
