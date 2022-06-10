@@ -7527,7 +7527,97 @@ exports.radar = {
 };
 
 
-
+exports.hiveSpammer = {
+   PARENT: [exports.genericTank],
+   LABEL: 'Hive Spammer',
+   CUSTOM: true,
+   GUNS: [ {
+         POSITION: [ 18, 8, 1, 0, 0, -24, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 24, 0.0625, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, -63, 0.125, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 63, 0.1875, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, -103.5, 0.25, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 103.5, 0.3125, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, -148.5, 0.375, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 148.5, 0.4375, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 179.5, 0.5, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, -179.5, 0.5625, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 0.5, 0.625, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, -0.5, 0.6875, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, -89.5, 0.75, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, {
+         POSITION: [ 18, 8, 1, 0, 0, 89.5, 0.8125, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.hive,
+            LABEL: 'Hive Spammer',
+         }, }, 
+     ],
+};
 
 
 // UPGRADE PATHS
@@ -7541,7 +7631,7 @@ exports.testbed.UPGRADES_TIER_1 = [/*exports.oldbetatester,*/exports.basic, expo
 exports.testbed2.UPGRADES_TIER_1 = [exports.arenaCloser, exports.mothership, exports.dominator, exports.dominationBody, exports.destroyerDominator, exports.gunnerDominator, exports.trapperDominator,]
 exports.testbed3.UPGRADES_TIER_1 = [exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.elite_battleship, exports.palisade, exports.skimboss, exports.summoner, exports.nestKeeper, exports.testbed9];
 exports.testbed4.UPGRADES_TIER_1 = [exports.hugePentagon, exports.bigPentagon, exports.pentagon, exports.triangle, exports.square, exports.egg, exports.greenpentagon, exports.gem, exports.obstacle, exports.babyObstacle, exports.crasher, exports.trapTurret, exports.sentrySwarm,exports.testbed6]
-exports.testbed5.UPGRADES_TIER_1 = [exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest, exports.waffzTest, exports.mazeWallShooter, exports.reskins, exports.farmer, exports.donut]
+exports.testbed5.UPGRADES_TIER_1 = [exports.weenus,exports.ball,exports.bender,exports.omega,exports.dogeTest, exports.waffzTest, exports.mazeWallShooter, exports.reskins, exports.farmer, exports.donut, exports.hiveSpammer]
 exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle, exports.greensquare]
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
