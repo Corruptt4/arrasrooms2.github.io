@@ -7887,7 +7887,7 @@ exports.eggmacer = {
                     SPEED: base.SPEED * 0.8,
                     FOV: base.FOV * 1.15,
                 },
-                SHAPE: 4,
+                SHAPE: 1000,
                 FACING_TYPE: 'autospin',
                 MAX_CHILDREN: 50,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -7898,6 +7898,7 @@ exports.eggmacer = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.necro,
+                            MAX_CHILDREN: 1,
                         }, }, {
                     POSITION: [   5,     12,    1.2,     8,      0,     270,    0.5,  ], 
                         PROPERTIES: {
@@ -7906,25 +7907,28 @@ exports.eggmacer = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.necro,
+                            MAX_CHILDREN: 1,
                         }, }, {
                     POSITION: [   5,     12,    1.2,     8,      0,      0,     0.25, ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.doublereload]),
-                            TYPE: exports.autocumchip,
+                            TYPE: exports.cumchip,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             MAX_CHILDREN: 4,
                             STAT_CALCULATOR: gunCalcNames.necro,
+                            MAX_CHILDREN: 1,
                             LABEL: 'Guard',
                         }, }, {
                     POSITION: [   5,     12,    1.2,     8,      0,     180,    0.75  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.doublereload]),
-                            TYPE: exports.autocumchip,
+                            TYPE: exports.cumchip,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             MAX_CHILDREN: 4,
                             STAT_CALCULATOR: gunCalcNames.necro,
+                            MAX_CHILDREN: 1,
                             LABEL: 'Guard', 
                         }, },
                     ],
@@ -7985,7 +7989,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress/*custom*/,exports.teaser];
         exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/,exports.cloner];
         exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/,exports.overmancer];  
-        exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/,exports.overmancer,exports.collector];
+        exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/,exports.overmancer,exports.collector,exports.eggmacer];
 
     exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery/*custom*/];
         exports.pound.UPGRADES_TIER_3 = [exports.shotgun2, exports.eagle/*custom*/];
