@@ -7761,6 +7761,42 @@ exports.theOneshot = {
      ],
 };
 
+exports.overseer = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Overseer',  
+            DANGER: 6,
+            SHAPE: 4,
+            CUSTOM: true,
+            STAT_NAMES: statnames.drone,
+            BODY: {
+                ACCELERATION: base.ACCEL * 0.75,
+                SPEED: base.SPEED * 0.9,
+                FOV: base.FOV * 1.1,
+            },
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [   6,     12,    1.2,     8,      0,     90,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                        TYPE: exports.drone,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        WAIT_TO_CYCLE: true,   
+                        MAX_CHILDREN: 8,
+                    }, }, {
+                POSITION: [   6,     12,    1.2,     8,      0,    270,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                        TYPE: exports.drone,
+                        AUTOFIRE: true,
+                        SYNCS_SKILLS: true,
+                        STAT_CALCULATOR: gunCalcNames.drone,
+                        WAIT_TO_CYCLE: true,     
+                        MAX_CHILDREN: 8,
+                    }, },
+            ],
+        };
+
 
 
 // UPGRADE PATHS
