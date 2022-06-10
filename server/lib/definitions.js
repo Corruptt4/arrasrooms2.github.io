@@ -7898,7 +7898,6 @@ exports.eggmacer = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.necro,
-                            MAX_CHILDREN: 1,
                         }, }, {
                     POSITION: [   5,     12,    1.2,     8,      0,     270,    0.5,  ], 
                         PROPERTIES: {
@@ -7907,28 +7906,25 @@ exports.eggmacer = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             STAT_CALCULATOR: gunCalcNames.necro,
-                            MAX_CHILDREN: 1,
                         }, }, {
                     POSITION: [   5,     12,    1.2,     8,      0,      0,     0.25, ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.doublereload]),
                             TYPE: exports.cumchip,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             MAX_CHILDREN: 4,
                             STAT_CALCULATOR: gunCalcNames.necro,
-                            MAX_CHILDREN: 1,
                             LABEL: 'Guard',
                         }, }, {
                     POSITION: [   5,     12,    1.2,     8,      0,     180,    0.75  ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.weak, g.doublereload, g.doublereload]),
+                            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.doublereload]),
                             TYPE: exports.cumchip,
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,
                             MAX_CHILDREN: 4,
                             STAT_CALCULATOR: gunCalcNames.necro,
-                            MAX_CHILDREN: 1,
                             LABEL: 'Guard', 
                         }, },
                     ],
