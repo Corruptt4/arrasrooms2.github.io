@@ -64,7 +64,11 @@ const botSets = [{ // Smasher Ram Bots
     ai: "bot",
     build: [3, 8, 8, 8, 7, 0, 3, 3, 0, 7],
     startClass: "director"
-}];
+}, {
+    ai: "bot",
+    build: [6, 8, 8, 8, 5, 0, 5, 5, 0, 2],
+    startClass: "furnace"
+},];
 for (let build of botBuilds) botSets.push({ // All the builds that bots have.
     ai: "bot",
     build: build,

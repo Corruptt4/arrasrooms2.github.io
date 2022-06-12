@@ -6763,7 +6763,7 @@ exports.ramBot = {
         SIZE: 10
     },
     NAME: "ai_",
-    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "minion", "fleeAtLowHealth"],
+    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth"],
     AI: {
         STRAFE: true
     }
