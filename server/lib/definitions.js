@@ -6763,6 +6763,7 @@ exports.ramBot = {
         SIZE: 10
     },
     NAME: "ai_",
+    MOTION_TYPE: 'chase',
     CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth"],
     AI: {
         STRAFE: true
@@ -8161,6 +8162,31 @@ for (let i = 0; i < 6; i++) {
    }
   )
 }
+
+exports.healFruit = {
+    PARENT: [exports.food],
+    FOOD: {
+        LEVEL: 0
+    },
+    LABEL: "Heal Fruit",
+    CUSTOM: true,
+    VALUE: 40000,
+    SHAPE: -6,
+    DIPMULTI: 3,
+    DAMAGE_CLASS: 0,
+    SIZE: 5,
+    COLOR: 2,
+    BODY: {
+        DAMAGE: -1000,
+        DENSITY: 8,
+        HEALTH: 10 * basePolygonHealth,
+        RESIST: 1.25,
+        PENETRATION: 1.1,
+        HETERO: -1000,
+    },
+    DRAW_HEALTH: true,
+    GIVE_KILL_MESSAGE: true
+};
 
 
 // UPGRADE PATHS
