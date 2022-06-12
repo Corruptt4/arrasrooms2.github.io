@@ -173,6 +173,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
                         // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
   lance:                [1,     0,             0.01,                8,    1,     0.1,        3,        1,      0,        0.2,      2,            0.001,              1],  
   
+  lancereal:           [0.085, 0, 1, 1, 0.05, 17.575, 1.777, 0.088, 1, 0.05, 1, 12, 1],
+  
   morehealth:           [1,     1,     1,      1,      2,      1,      2,      1,      1,      1,      1,      1,      1], 
   
   moredamge:            [1,     1,     1,      1,      1,      2,      1,      1,      1,      1,      1,      1,      1], 
@@ -5994,155 +5996,34 @@ exports.scattergun = {
 };
 
 exports.lance = {
-    LABEL: 'Lance',
-    CUSTOM: true,
-    TYPE: 'bullet',
-    SHAPE: [[]],
-    ACCEPTS_SCORE: false,
-    BODY: {
-        PENETRATION: 1,
-        SPEED: 3.75,
-        RANGE: 90,
-        DENSITY: 1.25,
-        HEALTH: 0.33 * wepHealthFactor,
-        DAMAGE: 4 * wepDamageFactor,
-        PUSHABILITY: 0.3,
-    },
-    FACING_TYPE: 'smoothWithMotion',
-    CAN_GO_OUTSIDE_ROOM: true,
-    HITS_OWN_TYPE: 'never',
-    // DIE_AT_LOW_SPEED: true,
-    DIE_AT_RANGE: true,
+    PARENT: [exports.bullet],
+    LABEL: '',
+    DRAW_SELF: false,
 };
 
 exports.lancer = {
     PARENT: [exports.genericTank],
     LABEL: 'Lancer',
     CUSTOM: true,
-    //SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-    STAT_NAMES: statnames.lance, //reload is lance density, bullet speed is lance reach
-    BODY: {
-        SPEED: base.SPEED * 2,
-        FOV: base.FOV * 1.1,
-    },
-    //CONTROLLERS: ['nearestDifferentMaster'],
-    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  18,     0.1,   -150,      0,      0,      0,      0,   ], 
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.lance]),
-            TYPE: exports.lance,
-            LABEL: 'Lance',
-            AUTOFIRE: true,
-        }, }, 
-           { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  25,     0.1,   -180,      0,      0,      0,      0,   ], 
-        }, 
-    ],
-};
-
-exports.trilance = { 
-            PARENT: [exports.genericTank],
-            LABEL: 'Tri-Lancer',
-            CUSTOM: true,
-            DANGER: 6,
-            STAT_NAMES: statnames.lance,
-            BODY: {
-              SPEED: base.SPEED * 2,
-              FOV: base.FOV * 1.1,
-            },
-            FACING_TYPE: 'autospin',
-            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  11,     8,      0,      0,     190, 0], 
-                    TYPE: exports.lancer,
-                        }, {
-                POSITION: [  11,     8,      0,     120,    190, 0], 
-                    TYPE: exports.lancer,
-                        }, {
-                POSITION: [  11,     8,      0,     240,    190, 0], 
-                    TYPE: exports.lancer,
-                        },
-            ],
-        };
-
-exports.knife = {
-    PARENT: [exports.genericTank],
-    LABEL: 'Knife',
-    CUSTOM: true,
     STAT_NAMES: statnames.lance,
     BODY: {
-        SPEED: base.SPEED * 1.5,
+        SPEED: base.SPEED * 1.2,
         FOV: base.FOV * 1.1,
     },
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  15,     0.1,   -150,      0,      0,      0,      0,   ], 
+        POSITION: [  0,     8,   0,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.lance,g.lance,g.halfspeed]),
+            SHOOT_SETTINGS: combineStats([g.lancereal]),
             TYPE: exports.lance,
             LABEL: 'Lance',
             AUTOFIRE: true,
         }, }, 
            { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  20,     0.1,   -200,      0,      0,      0,      0,   ], 
+        POSITION: [  18,     8,   0.00001,      0,      0,      0,      0,   ], 
         }, 
     ],
 };
-
-exports.sword = {
-    PARENT: [exports.genericTank],
-    LABEL: 'Sword',
-    CUSTOM: true,
-    STAT_NAMES: statnames.lance,
-    BODY: {
-        SPEED: base.SPEED * 2,
-        FOV: base.FOV * 1.1,
-    },
-    //CONTROLLERS: ['nearestDifferentMaster'],
-    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  18+10,     0.1,   -150,      0,      0,      0,      0,   ], 
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.lance,g.morespeed]),
-            TYPE: exports.lance,
-            LABEL: 'Lance',
-            AUTOFIRE: true,
-        }, }, 
-           { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  25+10,     0.1,   -180,      0,      0,      0,      0,   ], 
-        }, 
-    ],
-};
-
-exports.invislancer = {
-    PARENT: [exports.genericTank],
-    LABEL: 'Murderer',
-    CUSTOM: true,
-    //SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
-    STAT_NAMES: statnames.lance, //reload is lance density, bullet speed is lance reach
-  TURRETS: [{
-            /** SIZE     X       Y     ANGLE    ARC */
-            POSITION: [10, 0, 0, 0, 360, 1, ],
-            TYPE: exports.invissymbol,
-            }],
-            INVISIBLE: [0.06, 0.01],
-    BODY: {
-        SPEED: base.SPEED * 2,
-        FOV: base.FOV * 1.1,
-    },
-    //CONTROLLERS: ['nearestDifferentMaster'],
-    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  18,     0.1,   -150,      0,      0,      0,      0,   ], 
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.lance]),
-            TYPE: exports.lance,
-            LABEL: 'Lance',
-            AUTOFIRE: true,
-        }, }, 
-           { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  25,     0.1,   -180,      0,      0,      0,      0,   ], 
-        }, 
-    ],
-};
-
 
 exports.extremeaccelbullet = {
   PARENT: [exports.bullet],
@@ -8288,7 +8169,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
     
-    exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
+    //exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 
     exports.furnace.UPGRADES_TIER_2 = [exports.firestorm, exports.quadFlare];
         exports.firestorm.UPGRADES_TIER_3 = [exports.rocket, exports.firegun];
