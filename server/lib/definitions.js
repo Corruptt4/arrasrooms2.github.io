@@ -8175,7 +8175,7 @@ exports.healFruit = {
     DIPMULTI: 3,
     DAMAGE_CLASS: 0,
     SIZE: 5,
-    COLOR: 14,
+    COLOR: 12,
     BODY: {
         DAMAGE: -1000,
         DENSITY: 8,

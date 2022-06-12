@@ -559,7 +559,7 @@ const maintainloop = (() => {
     // The big food function
     const makefood = (() => {
         class FoodType {
-            constructor(groupName, types, chances, chance, isNestFood = false) {
+            constructor(groupName, types, chances, chance, isNestFood = false, isCentreFood = false) {
                 if (chances[0] === "scale") {
                     const scale = chances[1];
                     chances = [];
@@ -575,6 +575,7 @@ const maintainloop = (() => {
                 this.chances = chances;
                 this.chance = chance;
                 this.isNestFood = isNestFood;
+                this.isCentreFood = isCentreFood;
             }
             choose() {
                 return this.types[ran.chooseChance(...this.chances)];
@@ -585,9 +586,14 @@ const maintainloop = (() => {
                 Class.egg, Class.square, Class.triangle,
                 Class.pentagon, Class.bigPentagon
             ], ["scale", 4], 2000),
+          
             new FoodType("Misc Food", [
                 Class.healFruit
             ], ["scale", 4], 500),
+            new FoodType("Centre Food", [
+                Class.healFruit
+            ], ["scale", 4], 1500, false, true),
+          
             new FoodType("Rare Food", [
                 Class.gem, Class.greensquare, Class.greentriangle,
                 Class.greenpentagon
@@ -598,10 +604,14 @@ const maintainloop = (() => {
                 Class.alphaNonagon, Class.alphaDecagon, Class.icosagon*/ // Commented out because stats aren't done yet.
             ], ["scale", 4], 1, true)
         ];
-        function getFoodType(isNestFood = false) {
+        function getFoodType(isNestFood = false, isCentreFood = false) {
             const possible = [[], []];
             for (let i = 0; i < types.length; i ++) {
                 if (types[i].isNestFood == isNestFood) {
+                    possible[0].push(i);
+                    possible[1].push(types[i].chance);
+                }
+                if (types[i].isCentreFood == isCentreFood) {
                     possible[0].push(i);
                     possible[1].push(types[i].chance);
                 }
@@ -652,6 +662,10 @@ const maintainloop = (() => {
         function spawnNestFood() {
             let shape = spawnShape(room.randomType("nest"), getFoodType(true));
             shape.isNestFood = true;
+        }
+        function spawnCentreFood() {
+            let shape = spawnShape(room.randomType("cent"), getFoodType(false,true));
+            shape.isCentreFood = true;
         }
         return () => {
             const maxFood = Math.sqrt(c.FOOD_AMOUNT) + Math.sqrt(room.width * room.height) / c.FOOD_AMOUNT * views.length;
