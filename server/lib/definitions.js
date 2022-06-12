@@ -8064,6 +8064,35 @@ exports.healFruit = {
     GIVE_KILL_MESSAGE: true
 };
 
+exports.firestorm = {
+   PARENT: [exports.genericTank],
+   LABEL: 'Firestorm',
+   GUNS: [ {
+         POSITION: [ 15, 4, 1.4, 6, 0, -30, 0, ],
+         }, {
+         POSITION: [ 15, 4, 1.4, 6, 0, 30, 0, ],
+         }, {
+         POSITION: [ 10, 15, 0.6, 6, 0, -30, 0.66666, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
+            TYPE: exports.flare,
+         }, }, {
+         POSITION: [ 10, 15, 0.6, 6, 0, 30, 0.66666, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
+            TYPE: exports.flare,
+         }, }, {
+         POSITION: [ 15, 4, 1.4, 8, 0, 0, 0, ],
+         }, {
+         POSITION: [ 10, 15, 0.6, 8, 0, 0, 0.33333, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
+            TYPE: exports.flare,
+         }, }, 
+     ],
+};
+
+
 
 // UPGRADE PATHS
 
@@ -8132,6 +8161,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
     
     exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
+
+    exports.furnace.UPGRADES_TIER_2 = [exports.firestorm];
 
     exports.reskins.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
     exports.farmer.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
