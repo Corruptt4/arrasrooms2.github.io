@@ -181,8 +181,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   health4damage:            [1,     1,     1,      1,      2,      0.5,      1,      1,      1,      1,      1,      1,      1], 
   
-  lessspeed:            [1,     1,     1,      1,      1,      1,      1,      0.6,    0.6,    1,      1,      1,      1], 
-                         // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+  lessspeed:            [1,     1,     1,      1,      1,      1,      1,      0.6,    0.6,    1,      1,      1,      1],
+  // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
   archer:               [      0.1,   0.5,             1,                1,    1.5,   0.03,       5,        2,        2,      0.25,        1,        1,                      1], 
   
   norecoil:             [1,     0,   1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1], 
@@ -190,6 +190,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   noshudder:  [1, 1, 0.01, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   halfhealth:  [1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1],
   whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  
+  minionswarmer: [0.4, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1],
   
   halfstats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
   halfnerf: [2, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 2, 1, 1, 1],
@@ -8083,6 +8085,7 @@ exports.swarmminion = {
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.minion]),
             WAIT_TO_CYCLE: true,
+            AUTOFIRE: true,
             TYPE: exports.bullet,
         }, }, 
     ],
@@ -8093,7 +8096,7 @@ exports.virus = {
    PARENT: [exports.genericTank],
    LABEL: 'Virus',
    CUSTOM: true,
-   STAT_NAMES: statnames.drone,
+   STAT_NAMES: statnames.swarm,
    BODY: {
        SPEED: base.SPEED * 0.8,
        ACCELERATION: base.ACCEL * 0.5,
@@ -8106,11 +8109,9 @@ exports.virus = {
          }, {
          POSITION: [ 3, 12, 0.8, 18, 0, 0, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory, g.swarm, g.battle, g.carrier, g.thirdreload, g.thirdreload, g.whatthe]),
+            SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory, g.swarm, g.battle, g.carrier, g.thirdreload, g.minionswarmer, g.whatthe]),
             TYPE: exports.swarmminion,
-            STAT_CALCULATOR: gunCalcNames.drone,                        
-            AUTOFIRE: true,
-            SYNCS_SKILLS: true,  
+            STAT_CALCULATOR: gunCalcNames.swarm,
          }, }, 
      ],
 };
