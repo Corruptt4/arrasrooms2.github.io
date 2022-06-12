@@ -5998,7 +5998,7 @@ exports.scattergun = {
 exports.lance = {
     PARENT: [exports.bullet],
     LABEL: '',
-    DRAW_SELF: false,
+    //DRAW_SELF: false,
 };
 
 exports.lancer = {
@@ -6012,15 +6012,15 @@ exports.lancer = {
     },
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  0,     8,   0,      0,      0,      0,      0,   ], 
+        POSITION: [  16,     0,   1,      8,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.lancereal]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.lancereal]),
             TYPE: exports.lance,
             LABEL: 'Lance',
             AUTOFIRE: true,
         }, }, 
            { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  18,     8,   0.00001,      0,      0,      0,      0,   ], 
+        POSITION: [  18,     12,   0.00001,      8,      0,      0,      0,   ], 
         }, 
     ],
 };
