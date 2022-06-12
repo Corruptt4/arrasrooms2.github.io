@@ -549,7 +549,7 @@ const maintainloop = (() => {
             // Slowly upgrade them
             loopThrough(bots, function(o) {
                 if (o.skill.level < 45) {
-                    o.skill.score += 35;
+                    o.skill.score += 2600;
                     o.skill.maintain();
                 }
                 if (o.upgrades.length && Math.random() > 0.5) o.upgrade(Math.floor(Math.random() * o.upgrades.length));
