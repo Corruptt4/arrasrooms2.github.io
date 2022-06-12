@@ -5998,6 +5998,7 @@ exports.scattergun = {
 exports.lance = {
     PARENT: [exports.bullet],
     LABEL: '',
+    SIZE: 18/2,
     //DRAW_SELF: false,
 };
 
@@ -6007,12 +6008,12 @@ exports.lancer = {
     CUSTOM: true,
     STAT_NAMES: statnames.lance,
     BODY: {
-        SPEED: base.SPEED * 1.2,
+        SPEED: base.SPEED * 1.1,
         FOV: base.FOV * 1.1,
     },
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  16,     0,   1,      8,      0,      0,      0,   ], 
+        POSITION: [  18,     0,   1,      8,      0,      0,      0,   ], 
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.lancereal]),
             TYPE: exports.lance,
