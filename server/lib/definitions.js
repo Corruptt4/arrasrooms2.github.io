@@ -8050,6 +8050,69 @@ exports.droneSpammer = {
 };
 
 
+exports.swarmminion = {
+    PARENT: [exports.swarm],
+    LABEL: 'Infector', 
+    TYPE: 'minion',
+    DAMAGE_CLASS: 0,
+    HITS_OWN_TYPE: 'hardWithBuffer',
+    FACING_TYPE: 'smoothToTarget',
+    BODY: {
+        FOV: 0.5,
+        SPEED: 3,
+        ACCELERATION: 0.4,
+        HEALTH: 5,
+        SHIELD: 0,
+        DAMAGE: 1.2,
+        RESIST: 1,
+        PENETRATION: 1,
+        DENSITY: 0.4,
+    },
+    AI: {
+        BLIND: true,
+    },
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    GIVE_KILL_MESSAGE: false,
+    //CONTROLLERS: [
+    //    'nearestDifferentMaster', 'mapAltToFire', 'minion', 'canRepel', 'hangOutNearMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.minion]),
+            WAIT_TO_CYCLE: true,
+            TYPE: exports.bullet,
+        }, }, 
+    ],
+};
+
+
+exports.virus = {
+   PARENT: [exports.genericTank],
+   LABEL: 'Virus',
+   STAT_NAMES: statnames.drone,
+   BODY: {
+       SPEED: base.SPEED * 0.8,
+       ACCELERATION: base.ACCEL * 0.5,
+       FOV: 1.1,
+   },
+   GUNS: [ {
+         POSITION: [ 19, 15, 0.7, 0, 0, 0, 0, ],
+         }, {
+         POSITION: [ 9, 17, 0.7, 4, 0, 0, 0, ],
+         }, {
+         POSITION: [ 3, 12, 0.8, 18, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory]),
+            TYPE: exports.swarmminion,
+            MAX_CHILDREN: 4,
+            STAT_CALCULATOR: gunCalcNames.drone,                        
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,  
+         }, }, 
+     ],
+};
+
 
 // UPGRADE PATHS
 
@@ -8102,7 +8165,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
     exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer, exports.lilfact/*custom*/];
         exports.director.UPGRADES_TIER_3 = [exports.manager/*custom*/];
         exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress/*custom*/,exports.teaser];
-        exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/,exports.cloner];
+        exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/,exports.cloner,exports.virus];
         exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/,exports.overmancer,exports.droneSpammer];
         exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/,exports.overmancer,exports.collector,exports.eggmacer];
 
