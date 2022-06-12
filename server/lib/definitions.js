@@ -8097,17 +8097,17 @@ exports.rocket = {
    PARENT: [exports.genericTank],
    LABEL: 'Rocket',
    GUNS: [ {
-         POSITION: [ 15, 4, 1.4, 6, 0, -45+180, 0, ],
+         POSITION: [ 15, 4, 1.4, 2, 0, -15+180, 0, ],
          }, {
-         POSITION: [ 15, 4, 1.4, 6, 0, 45+180, 0, ],
+         POSITION: [ 15, 4, 1.4, 2, 0, 15+180, 0, ],
          }, {
-         POSITION: [ 10, 15, 0.6, 6, 0, -45+180, 0., ],
+         POSITION: [ 10, 15, 0.6, 2, 0, -15+180, 0., ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.thruster]),
             TYPE: exports.flare,
             LABEL: gunCalcNames.thruster,
          }, }, {
-         POSITION: [ 10, 15, 0.6, 6, 0, 45+180, 0.5, ],
+         POSITION: [ 10, 15, 0.6, 2, 0, 15+180, 0.5, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.thruster]),
             TYPE: exports.flare,
@@ -8118,7 +8118,25 @@ exports.rocket = {
                         SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.trifront, g.tonsmorrecoil]),
                         TYPE: exports.bullet,
                         LABEL: 'Front',
-                    }, },
+                    }, },{
+         POSITION: [ 15, 4, 1.4, 2, 0, 0+180, 0, ],
+         },
+     ],
+};
+
+exports.quadflare = {
+   PARENT: [exports.genericTank],
+   LABEL: 'Quadflare',
+   GUNS: [ {
+         POSITION: [ 15, 4, 1.4, 6, 0, -30, 0, ],
+         }, {
+         POSITION: [ 15, 4, 1.4, 6, 0, 30, 0, ],
+         }, {
+         POSITION: [ 10, 15, 0.6, 6, 0, -30, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
+            TYPE: exports.flare,
+         }, }, 
      ],
 };
 
