@@ -2862,7 +2862,6 @@ exports.drive = {
                     FOV: base.FOV * 1.15,
                 },
                 SHAPE: 4,
-                FACING_TYPE: 'autospin',
                 MAX_CHILDREN: 14,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   5,     12,    1.2,     8,      0,     90,      0,   ], 
@@ -7838,7 +7837,6 @@ exports.collector = {
                     FOV: base.FOV * 1.15,
                 },
                 SHAPE: 4,
-                FACING_TYPE: 'autospin',
                 MAX_CHILDREN: 14,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   5,     12,    0.8,     8,      0,     90,      0,   ], 
@@ -7897,7 +7895,6 @@ exports.eggmacer = {
                     FOV: base.FOV * 1.15,
                 },
                 SHAPE: 1000,
-                FACING_TYPE: 'autospin',
                 MAX_CHILDREN: 50,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                     POSITION: [   5,     12,    1.2,     8,      0,     90,      0,   ], 
@@ -8122,16 +8119,26 @@ exports.accelSymbol = {
     COLOR:  9,
     SHAPE: 1000,
     CUSTOM: true,
+    INDEPENDENT: true,
+};
+exports.accelSymbol2 = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    COLOR:  9,
+    SHAPE: 4,
+    CUSTOM: true,
+    INDEPENDENT: true,
 };
 
 exports.accelerator = {
             PARENT: [exports.genericTank],
             LABEL: 'Accelerator',
             CUSTOM: true,
+            FACING_TYPE: 'autospin',
             DANGER: 6,
             BODY: {
-                SPEED: base.SPEED * 1.4,
-                ACCELERATION: base.ACCEL * 1.1,
+                SPEED: base.SPEED * 1.6,
+                ACCELERATION: base.ACCEL * 1.6,
                 FOV: base.FOV * 1.05,
                 DENSITY: base.DENSITY * 2,
             },
@@ -8146,6 +8153,14 @@ exports.accelerator = {
             SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
             STAT_NAMES: statnames.smasher,
         };
+for (let i = 0; i < 6; i++) {
+  exports.accelerator.TURRETS.push(
+   {
+     POSITION: [  3,   6,      0,      (360/6)*i,     360,  1,], 
+     TYPE: exports.accelSymbol2,
+   }
+  )
+}
 
 
 // UPGRADE PATHS
