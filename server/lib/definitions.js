@@ -8142,6 +8142,7 @@ exports.accelerator = {
                 ACCELERATION: base.ACCEL * 1.6,
                 FOV: base.FOV * 1.05,
                 DENSITY: base.DENSITY * 2,
+                REGEN: base.REGEN * 30
             },
             TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  21.5,   0,      0,      0,     360,  0,], 
