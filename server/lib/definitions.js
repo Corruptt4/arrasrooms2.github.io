@@ -144,6 +144,7 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
     bitlessspeed: [1, 1, 1, 1, 1, 1, 1, .93, .93, 1, 1, 1, 1],
     slow: [1, 1, 1, 1, 1, 1, 1, .7, .7, 1, 1, 1, 1],
     halfspeed: [1, 1, 1, 1, 1, 1, 1, .5, .5, 1, 1, 1, 1],
+    thirdreload: [0.3, 1, 1, 1, 1, 1, 1, 1, .5, 1, 1, 1, 1],
     notdense: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, .1, 1, 1],
     halfrange: [1, 1, 1, 1, 1, 1, 1, 1, 1, .5, 1, 1, 1],
     fake: [1, 1, 1, 1e-5, 1e-4, 1, 1, 1e-5, 2, 0, 1, 1, 1],
@@ -8057,10 +8058,11 @@ exports.swarmminion = {
     DAMAGE_CLASS: 0,
     HITS_OWN_TYPE: 'hardWithBuffer',
     FACING_TYPE: 'smoothToTarget',
+    SHAPE: 0,
     BODY: {
         FOV: 0.5,
-        SPEED: 3,
-        ACCELERATION: 0.4,
+        SPEED: 6,
+        ACCELERATION: 0.8,
         HEALTH: 5,
         SHIELD: 0,
         DAMAGE: 1.2,
@@ -8090,6 +8092,7 @@ exports.swarmminion = {
 exports.virus = {
    PARENT: [exports.genericTank],
    LABEL: 'Virus',
+   CUSTOM: true,
    STAT_NAMES: statnames.drone,
    BODY: {
        SPEED: base.SPEED * 0.8,
@@ -8103,9 +8106,8 @@ exports.virus = {
          }, {
          POSITION: [ 3, 12, 0.8, 18, 0, 0, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory]),
+            SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory, g.swarm, g.battle, g.carrier, g.thirdreload, g.thirdreload, g.whatthe]),
             TYPE: exports.swarmminion,
-            MAX_CHILDREN: 4,
             STAT_CALCULATOR: gunCalcNames.drone,                        
             AUTOFIRE: true,
             SYNCS_SKILLS: true,  
