@@ -37,6 +37,8 @@ let {
                         return ['Body Damage', 'Max Health', 'Placement Speed', 'Trap Health', 'Trap Penetration', 'Trap Damage', 'Reload', 'Movement Speed', 'Shield Regeneration', 'Shield Capacity'];
                     case 6:
                         return ['Body Damage', 'Max Health', 'Weapon Speed', 'Weapon Health', 'Weapon Penetration', 'Weapon Damage', 'Reload', 'Movement Speed', 'Shield Regeneration', 'Shield Capacity'];
+                    case 6:
+                        return ['Body Damage', 'Max Health', 'Lance Range', 'Weapon Health', 'Weapon Penetration', 'Weapon Damage', 'Lance Density', 'Movement Speed', 'Shield Regeneration', 'Shield Capacity'];
                     default:
                         return ['Body Damage', 'Max Health', 'Bullet Speed', 'Bullet Health', 'Bullet Penetration', 'Bullet Damage', 'Reload', 'Movement Speed', 'Shield Regeneration', 'Shield Capacity'];
                 }

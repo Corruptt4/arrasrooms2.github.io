@@ -4446,7 +4446,8 @@ exports.sentry = {
     BODY: {
         FOV: 0.5,
         ACCEL: 0.006,
-        DAMAGE: base.DAMAGE * 2,
+        DAMAGE: base.DAMAGE,
+        HEALTH: base.HEALTH * 0.3,
         SPEED: base.SPEED * 0.5,
     },
     MOTION_TYPE: 'motor',
