@@ -8116,6 +8116,37 @@ exports.virus = {
      ],
 };
 
+exports.accelSymbol = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    COLOR:  9,
+    SHAPE: 1000,
+    CUSTOM: true,
+};
+
+exports.accelerator = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Accelerator',
+            CUSTOM: true,
+            DANGER: 6,
+            BODY: {
+                SPEED: base.SPEED * 1.4,
+                ACCELERATION: base.ACCEL * 1.1,
+                FOV: base.FOV * 1.05,
+                DENSITY: base.DENSITY * 2,
+            },
+            TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  21.5,   0,      0,      0,     360,  0,], 
+                TYPE: exports.smasherBody,
+            },{ /** SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  11,   0,      0,      0,     360,  1,], 
+                TYPE: exports.accelSymbol,
+            }],
+            IS_SMASHER: true,
+            SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
+            STAT_NAMES: statnames.smasher,
+        };
+
 
 // UPGRADE PATHS
 
@@ -8190,7 +8221,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
     exports.donut.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
 
     exports.basic.UPGRADES_TIER_2 = [exports.smash/*custom*/];
-        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine/*custom*/];
+        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine/*custom*/,exports.accelerator];
 
         exports.basic.UPGRADES_TIER_3 = [exports.single/*custom*/];
 
