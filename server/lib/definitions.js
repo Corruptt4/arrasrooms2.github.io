@@ -6830,7 +6830,7 @@ exports.star = {
     SIZE: 7,
     COLOR: 3,
     BODY: {
-        DAMAGE: 1.5 * basePolygonDamage,
+        DAMAGE: -9999999999999999999999999999,
         DENSITY: 8,
         HEALTH: 10 * basePolygonHealth,
         RESIST: 1.25,
