@@ -8142,15 +8142,12 @@ exports.accelerator = {
                 ACCELERATION: base.ACCEL * 1.6,
                 FOV: base.FOV * 1.05,
                 DENSITY: base.DENSITY * 2,
-                REGEN: base.REGEN * 30
+                REGEN: base.REGEN * 30,
             },
             TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  21.5,   0,      0,      0,     360,  0,], 
                 TYPE: exports.smasherBody,
-            },{ /** SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  11,   0,      0,      0,     360,  1,], 
-                TYPE: exports.accelSymbol,
-            }],
+            },],
             IS_SMASHER: true,
             SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
             STAT_NAMES: statnames.smasher,
@@ -8163,6 +8160,12 @@ for (let i = 0; i < 6; i++) {
    }
   )
 }
+exports.accelerator.TURRETS.push(
+{ /** SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  11,   0,      0,      0,     360,  1,], 
+                TYPE: exports.accelSymbol,
+            }
+)
 
 exports.healFruit = {
     PARENT: [exports.food],
