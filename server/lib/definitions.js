@@ -6038,7 +6038,7 @@ exports.extremeaccelbullet = {
 
 exports.archer = {
     PARENT: [exports.genericTank],
-    LABEL: 'Crossbow',
+    LABEL: 'Archer',
     CUSTOM: true,
     BODY: {
       FOV: base.FOV * 1.3,

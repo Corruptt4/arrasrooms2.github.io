@@ -1,3 +1,7 @@
+# Update (05/31/2022): a
+- changed it back to archer cause theres already a crossbow lol
+- like 8 new tanks im too lazy to list here
+
 # Update (05/31/2022): new tanky!!!!!
 - New Tank: Cloner!
   - A factory based tank that shoots 3 larger drones designed to look like your fellow tanks.
