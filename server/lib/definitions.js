@@ -6021,7 +6021,7 @@ exports.lancer = {
             AUTOFIRE: true,
         }, }, 
            { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  2.5,  0.03,   -55,      8,      0,      0,      0,   ], 
+        POSITION: [  18,     12,   0.00001,      8,      0,      0,      0,   ], 
         }, 
     ],
 };
