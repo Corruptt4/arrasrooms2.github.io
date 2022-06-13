@@ -7952,23 +7952,16 @@ exports.dualFlare = {
    LABEL: 'Dual Flare',
    CUSTOM: true,
    GUNS: [ {
-         POSITION: [ 15, 4, 1.4, 6, 0, -30, 0, ],
+         POSITION: [ 15, 4, 1.4, 6, -5, 0, 0, ],
          }, {
-         POSITION: [ 15, 4, 1.4, 6, 0, 30, 0, ],
+         POSITION: [ 15, 4, 1.4, 6, 5, 0, 0, ],
          }, {
-         POSITION: [ 10, 15, 0.6, 6, 0, -30, 0, ],
+         POSITION: [ 15, 10, 0.6, 0, -5, 0, 0, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin]),
             TYPE: exports.flare,
          }, }, {
-         POSITION: [ 10, 15, 0.6, 6, 0, 30, 0.66666, ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin]),
-            TYPE: exports.flare,
-         }, }, {
-         POSITION: [ 15, 4, 1.4, 8, 0, 0, 0, ],
-         }, {
-         POSITION: [ 10, 15, 0.6, 8, 0, 0, 0.33333, ],
+         POSITION: [ 15, 10, 0.6, 0, 5, 0, 0.5, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin]),
             TYPE: exports.flare,
