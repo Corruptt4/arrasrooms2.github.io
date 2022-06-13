@@ -7947,6 +7947,35 @@ exports.healFruit = {
     GIVE_KILL_MESSAGE: true
 };
 
+exports.dualFlare = {
+   PARENT: [exports.genericTank],
+   LABEL: 'Dual Flare',
+   CUSTOM: true,
+   GUNS: [ {
+         POSITION: [ 15, 4, 1.4, 6, 0, -30, 0, ],
+         }, {
+         POSITION: [ 15, 4, 1.4, 6, 0, 30, 0, ],
+         }, {
+         POSITION: [ 10, 15, 0.6, 6, 0, -30, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin]),
+            TYPE: exports.flare,
+         }, }, {
+         POSITION: [ 10, 15, 0.6, 6, 0, 30, 0.66666, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin]),
+            TYPE: exports.flare,
+         }, }, {
+         POSITION: [ 15, 4, 1.4, 8, 0, 0, 0, ],
+         }, {
+         POSITION: [ 10, 15, 0.6, 8, 0, 0, 0.33333, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin]),
+            TYPE: exports.flare,
+         }, }, 
+     ],
+};
+
 exports.firestorm = {
    PARENT: [exports.genericTank],
    LABEL: 'Firestorm',
@@ -7973,39 +8002,6 @@ exports.firestorm = {
             SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
             TYPE: exports.flare,
          }, }, 
-     ],
-};
-
-
-exports.rocket = {
-   PARENT: [exports.genericTank],
-   LABEL: 'Rocket',
-   CUSTOM: true,
-   GUNS: [ {
-         POSITION: [ 15, 4, 1.4, 2, 0, -15+180, 0, ],
-         }, {
-         POSITION: [ 15, 4, 1.4, 2, 0, 15+180, 0, ],
-         }, {
-         POSITION: [ 10, 15, 0.6, 2, 0, -15+180, 0., ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.thruster]),
-            TYPE: exports.flare,
-            LABEL: gunCalcNames.thruster,
-         }, }, {
-         POSITION: [ 10, 15, 0.6, 2, 0, 15+180, 0.5, ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.thruster]),
-            TYPE: exports.flare,
-            LABEL: gunCalcNames.thruster,
-         }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.trifront, g.tonsmorrecoil]),
-                        TYPE: exports.bullet,
-                        LABEL: 'Front',
-                    }, },{
-         POSITION: [ 15, 4, 1.4, 2, 0, 0+180, 0, ],
-         },
      ],
 };
 
@@ -8047,7 +8043,7 @@ exports.quadFlare = {
 
 exports.hexaFlare = {
    PARENT: [exports.genericTank],
-   LABEL: 'Hexa Flare',
+   LABEL: 'Forest Fire',
    CUSTOM: true,
    GUNS: [ 
      ],
@@ -8068,39 +8064,6 @@ exports.hexaFlare.GUNS.push(
 )
 }
 
-exports.firegun = {
-   PARENT: [exports.genericTank],
-   LABEL: 'Fire Gunner',
-   CUSTOM: true,
-   GUNS: [ {
-         POSITION: [ 15, 4, 1.4, 6, 0, -30, 0, ],
-         }, {
-         POSITION: [ 15, 4, 1.4, 6, 0, 30, 0, ],
-         }, {
-         POSITION: [ 10, 15, 0.6, 6, 0, -30, 0, ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
-            TYPE: exports.flare,
-         }, }, {
-         POSITION: [ 10, 15, 0.6, 6, 0, 30, 0.66666, ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
-            TYPE: exports.flare,
-         }, }, {
-                    POSITION: [  19,     2,      1,      0,    -2.5,     0,      0,   ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.slow, g.flank, g.lotsmorrecoil]),
-                            TYPE: exports.bullet,
-                        }, }, {
-                    POSITION: [  19,     2,      1,      0,     2.5,     0,     0.5,  ], 
-                        PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.slow, g.flank, g.lotsmorrecoil]),
-                            TYPE: exports.bullet,
-                        }, }, {
-                    POSITION: [  12,    11,      1,      0,      0,      0,      0,   ],
-                        },
-     ],
-};
 
 
 
@@ -8172,8 +8135,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
     
     //exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
 
-    exports.furnace.UPGRADES_TIER_2 = [exports.firestorm, exports.quadFlare];
-        exports.firestorm.UPGRADES_TIER_3 = [exports.rocket, exports.firegun];
+    exports.furnace.UPGRADES_TIER_2 = [exports.dualFlare, exports.quadFlare];
+        exports.dualFlare.UPGRADES_TIER_3 = [exports.firestorm, exports.hexaFlare];
         exports.quadFlare.UPGRADES_TIER_3 = [exports.hexaFlare];
 
     exports.reskins.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
