@@ -8143,6 +8143,7 @@ exports.bouble = {
    SHAPE: 0,
    LABEL: 'Bouble',
    INDEPENDENT: true, 
+   PERSISTS_AFTER_DEATH: true, 
    SHOOT_ON_DEATH: true,
    CUSTOM: true,
    FACING_TYPE: 'autospin',
@@ -8157,16 +8158,19 @@ exports.bouble = {
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic]),
             TYPE: exports.trap,
+            SHOOT_ON_DEATH: true,
          }, }, {
          POSITION: [ 4, 8, 2, 14, 0, -180, 0, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic]),
             TYPE: exports.trap,
+            SHOOT_ON_DEATH: true,
          }, }, {
          POSITION: [ 4, 8, 2, 14, 0, 60, 0, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic]),
             TYPE: exports.trap,
+            SHOOT_ON_DEATH: true,
          }, }, 
      ],
 };
