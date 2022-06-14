@@ -1578,6 +1578,7 @@ class Entity {
         }
       } 
       })
+      }
         if (this.isDead()) {
             if (this.onDead) this.onDead();
             if (c.TAG && (this.isPlayer || this.isBot)) tagDeathEvent(this);

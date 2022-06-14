@@ -8138,59 +8138,59 @@ exports.hexaFlare.GUNS.push(
 // };
 
 
-exports.bouble = {
-   PARENT: [exports.block],
-   SHAPE: 0,
-   LABEL: 'Bouble',
-   INDEPENDENT: true, 
-   PERSISTS_AFTER_DEATH: true, 
-   SHOOT_ON_DEATH: true,
-   CUSTOM: true,
-   FACING_TYPE: 'autospin',
-   GUNS: [ {
-         POSITION: [ 15, 8, 1, 0, 0, -60, 0, ],
-         }, {
-         POSITION: [ 15, 8, 1, 0, 0, 60, 0, ],
-         }, {
-         POSITION: [ 15, 8, 1, 0, 0, -180, 0, ],
-         }, {
-         POSITION: [ 4, 8, 2, 14, 0, -60, 0, ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
-            TYPE: exports.trap,
-            SHOOT_ON_DEATH: true,
-         }, }, {
-         POSITION: [ 4, 8, 2, 14, 0, -180, 0, ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
-            TYPE: exports.trap,
-            SHOOT_ON_DEATH: true,
-         }, }, {
-         POSITION: [ 4, 8, 2, 14, 0, 60, 0, ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
-            TYPE: exports.trap,
-            SHOOT_ON_DEATH: true,
-         }, }, 
-     ],
-};
+// exports.bouble = {
+//    PARENT: [exports.block],
+//    SHAPE: 0,
+//    LABEL: 'Bouble',
+//    INDEPENDENT: true, 
+//    PERSISTS_AFTER_DEATH: true, 
+//    SHOOT_ON_DEATH: true,
+//    CUSTOM: true,
+//    FACING_TYPE: 'autospin',
+//    GUNS: [ {
+//          POSITION: [ 15, 8, 1, 0, 0, -60, 0, ],
+//          }, {
+//          POSITION: [ 15, 8, 1, 0, 0, 60, 0, ],
+//          }, {
+//          POSITION: [ 15, 8, 1, 0, 0, -180, 0, ],
+//          }, {
+//          POSITION: [ 4, 8, 2, 14, 0, -60, 0, ],
+//          PROPERTIES: {
+//             SHOOT_SETTINGS: combineStats([g.basic]),
+//             TYPE: exports.trap,
+//             SHOOT_ON_DEATH: true,
+//          }, }, {
+//          POSITION: [ 4, 8, 2, 14, 0, -180, 0, ],
+//          PROPERTIES: {
+//             SHOOT_SETTINGS: combineStats([g.basic]),
+//             TYPE: exports.trap,
+//             SHOOT_ON_DEATH: true,
+//          }, }, {
+//          POSITION: [ 4, 8, 2, 14, 0, 60, 0, ],
+//          PROPERTIES: {
+//             SHOOT_SETTINGS: combineStats([g.basic]),
+//             TYPE: exports.trap,
+//             SHOOT_ON_DEATH: true,
+//          }, }, 
+//      ],
+// };
 
-exports.ghtdrgdhhtdg = {
-   PARENT: [exports.genericTank],
-   LABEL: 'ftgntfhtdh',
-   CUSTOM: true,
-   GUNS: [ {
-         POSITION: [ 23, 10, 1, 0, 0, 0, 0, ],
-         }, {
-         POSITION: [ 14, 8, 2, 0, 0, 0, 0, ],
-         }, {
-         POSITION: [ 4, 13, 0.1, 23, 0, 0, 0, ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap]),
-            TYPE: exports.bouble,
-         }, }, 
-     ],
-};
+// exports.ghtdrgdhhtdg = {
+//    PARENT: [exports.genericTank],
+//    LABEL: 'ftgntfhtdh',
+//    CUSTOM: true,
+//    GUNS: [ {
+//          POSITION: [ 23, 10, 1, 0, 0, 0, 0, ],
+//          }, {
+//          POSITION: [ 14, 8, 2, 0, 0, 0, 0, ],
+//          }, {
+//          POSITION: [ 4, 13, 0.1, 23, 0, 0, 0, ],
+//          PROPERTIES: {
+//             SHOOT_SETTINGS: combineStats([g.trap]),
+//             TYPE: exports.bouble,
+//          }, }, 
+//      ],
+// };
 
 
 
@@ -8220,7 +8220,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //,
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.ghtdrgdhhtdg];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
