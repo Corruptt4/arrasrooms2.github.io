@@ -8057,25 +8057,34 @@ exports.hexaFlare.GUNS.push(
 )
 }
 
+exports.mace = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Mace',
+            DANGER: 6,
+            BODY: {
+                FOV: base.FOV * 1.05,
+                DENSITY: base.DENSITY * 2,
+            },
+            TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  21.5,   0,      0,      0,     360,  0,], 
+                TYPE: exports.smasherBody,
+            }],
+            IS_SMASHER: true,
+            SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
+            STAT_NAMES: statnames.smasher,
+        };
+
 exports.maceChain1 = {
    PARENT: [exports.genericTank],
    LABEL: 'Mace Chain',
    CUSTOM: true,
-   GUNS: [ {
-         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
-         }, 
-     ],
 };
 exports.maceChain2 = {
    PARENT: [exports.genericTank],
    LABEL: 'Mace Chain',
    CUSTOM: true,
-   GUNS: [ {
-         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
-         }, 
-     ],
     TURRETS: [{         /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  12,     24,      0,      0,     360,  0], 
+                POSITION: [  20,     24,      0,      0,     360,  0], 
                     TYPE: exports.maceChain1,
                         },
             ]
@@ -8084,12 +8093,8 @@ exports.maceChain3 = {
    PARENT: [exports.genericTank],
    LABEL: 'Mace Chain',
    CUSTOM: true,
-   GUNS: [ {
-         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
-         }, 
-     ],
   TURRETS: [{         /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  12,     24,      0,      0,     360,  0], 
+                POSITION: [  20,     24,      0,      0,     360,  0], 
                     TYPE: exports.maceChain2,
                         },
             ]
@@ -8098,12 +8103,8 @@ exports.maceChain4 = {
    PARENT: [exports.genericTank],
    LABEL: 'Mace Chain',
    CUSTOM: true,
-   GUNS: [ {
-         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
-         }, 
-     ],
   TURRETS: [{         /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  12,     24,      0,      0,     360,  0], 
+                POSITION: [  20,     24,      0,      0,     360,  0], 
                     TYPE: exports.maceChain3,
                         },
             ]
@@ -8112,23 +8113,19 @@ exports.maceChain5 = {
    PARENT: [exports.genericTank],
    LABEL: 'Mace Chain',
    CUSTOM: true,
-   GUNS: [ {
-         POSITION: [ 18, 8, 1, 0, 0, 0, 0, ],
-         }, 
-     ],
   TURRETS: [{         /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  12,     24,      0,      0,     360,  0], 
+                POSITION: [  20,     24,      0,      0,     360,  0], 
                     TYPE: exports.maceChain4,
                         },
             ]
 };
 
-exports.mace = {
+exports.brute = {
    PARENT: [exports.genericTank],
-   LABEL: 'Mace',
+   LABEL: 'Brute',
    CUSTOM: true,
   TURRETS: [{         /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  10,     24,      0,      0,     360,  0], 
+                POSITION: [  5,     12,      0,      0,     360,  0], 
                     TYPE: exports.maceChain5,
                         },
             ]
