@@ -8061,23 +8061,29 @@ exports.mace = {
             PARENT: [exports.genericTank],
             LABEL: 'Mace',
             DANGER: 6,
-            BODY: {
-                FOV: base.FOV * 1.05,
-                DENSITY: base.DENSITY * 2,
-            },
             TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  21.5,   0,      0,      0,     360,  0,], 
                 TYPE: exports.smasherBody,
             }],
-            IS_SMASHER: true,
-            SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
-            STAT_NAMES: statnames.smasher,
+            GUNS: [ {
+         POSITION: [ 0, 20, 1, 20, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.lancereal]),
+            TYPE: exports.bullet,
+            AUTOFIRE: true,
+         }, }, 
+     ],
         };
 
 exports.maceChain1 = {
    PARENT: [exports.genericTank],
    LABEL: 'Mace Chain',
    CUSTOM: true,
+   TURRETS: [{         /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  40,     24,      0,      0,     360,  0], 
+                    TYPE: exports.mace,
+                        },
+            ]
 };
 exports.maceChain2 = {
    PARENT: [exports.genericTank],
@@ -8159,7 +8165,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //,
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.mace,exports.furnace];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, exports.brute,exports.furnace];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
@@ -8201,7 +8207,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
     
     //exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
-      exports.mace.UPGRADES_TIER_2 = [];
+      exports.brute.UPGRADES_TIER_2 = [];
 
     exports.furnace.UPGRADES_TIER_2 = [exports.dualFlare, exports.quadFlare];
         exports.dualFlare.UPGRADES_TIER_3 = [exports.firestorm, exports.hexaFlare];
