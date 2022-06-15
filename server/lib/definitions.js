@@ -8398,6 +8398,29 @@ exports.delivery = {
                ]
             };
 
+exports.rod = {
+   PARENT: [exports.genericTank],
+   LABEL: 'Rod',
+   SHAPE: 1,
+   GUNS: [ {
+         POSITION: [ 13, 7, 1, 0, 0, 0, 0, ],
+         }, {
+         POSITION: [ 13, 7, 1, 0, 0, 180, 0, ],
+         }, {
+         POSITION: [ 4, 7, 1.5, 13, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+         }, }, {
+         POSITION: [ 4, 7, 1.5, 13, 0, 180, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+         }, }, 
+     ],
+};
+
+
 
 // UPGRADE PATHS
 
