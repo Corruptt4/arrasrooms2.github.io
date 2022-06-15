@@ -8196,12 +8196,63 @@ exports.autoTurretWeak = {
     PARENT: [exports.genericTank],
     LABEL: 'Turret',
     BODY: {
-        FOV: 0.8
+        FOV: 2
     },
     COLOR: 16,
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  22,    10,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak]),
+                TYPE: exports.bullet,
+            }, },
+    ],
+};
+
+exports.autoTurretWeak2 = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Turret',
+    BODY: {
+        FOV: 2
+    },
+    COLOR: 16,
+    //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  22,    10,      1,      0,      0,      0,      0.25,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak]),
+                TYPE: exports.bullet,
+            }, },
+    ],
+};
+
+exports.autoTurretWeak3 = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Turret',
+    BODY: {
+        FOV: 2
+    },
+    COLOR: 16,
+    //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  22,    10,      1,      0,      0,      0,      0.5,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak]),
+                TYPE: exports.bullet,
+            }, },
+    ],
+};
+
+exports.autoTurretWeak4 = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Turret',
+    BODY: {
+        FOV: 2
+    },
+    COLOR: 16,
+    //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  22,    10,      1,      0,      0,      0,      0.75,   ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak]),
                 TYPE: exports.bullet,
@@ -8234,9 +8285,18 @@ exports.superTank = {
                     POSITION: [  12,    11,      1,      0,      0,      0,      0,   ],
                         },
                 ],
-                TURRETS: [{         /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [  40,     8,      0,      0,     360,  0], 
-                       TYPE: exports.autoTurretWeak,
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     8,      0,      45,     360,      1], 
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     8,      0,      45+90,     360,      1], 
+                       TYPE: [exports.autoTurretWeak2, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     8,      0,      45+180,     360,      1], 
+                       TYPE: [exports.autoTurretWeak3, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     8,      0,      45+270,     360,      1], 
+                       TYPE: [exports.autoTurretWeak4, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
                   },
                ]
             };
@@ -8268,7 +8328,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //,
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.superTank];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
