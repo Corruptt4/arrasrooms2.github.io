@@ -8212,57 +8212,6 @@ exports.autoTurretWeak = {
     ],
 };
 
-exports.autoTurretWeak2 = {
-    PARENT: [exports.genericTank],
-    LABEL: 'Turret',
-    BODY: {
-        FOV: 2
-    },
-    COLOR: 16,
-    //CONTROLLERS: ['nearestDifferentMaster'],
-    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  22,    10,      1,      0,      0,      0,      0.25,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak]),
-                TYPE: exports.bullet,
-            }, },
-    ],
-};
-
-exports.autoTurretWeak3 = {
-    PARENT: [exports.genericTank],
-    LABEL: 'Turret',
-    BODY: {
-        FOV: 2
-    },
-    COLOR: 16,
-    //CONTROLLERS: ['nearestDifferentMaster'],
-    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  22,    10,      1,      0,      0,      0,      0.5,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak]),
-                TYPE: exports.bullet,
-            }, },
-    ],
-};
-
-exports.autoTurretWeak4 = {
-    PARENT: [exports.genericTank],
-    LABEL: 'Turret',
-    BODY: {
-        FOV: 2
-    },
-    COLOR: 16,
-    //CONTROLLERS: ['nearestDifferentMaster'],
-    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  22,    10,      1,      0,      0,      0,      0.75,   ], 
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak]),
-                TYPE: exports.bullet,
-            }, },
-    ],
-};
-
 exports.superTank = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Super Tank',
@@ -8271,7 +8220,7 @@ exports.superTank = {
                 SHAPE: 4,
                 STAT_NAMES: statnames.generic,
                 BODY: {
-                    ACCELERATION: base.ACCEL * 0.75,
+                    ACCELERATION: base.ACCEL * 1.2,
                     SPEED: base.SPEED * 1.2,
                     FOV: base.FOV * 1.1,
                 },
@@ -8294,18 +8243,63 @@ exports.superTank = {
                        TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
                   },{       /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  5,     8,      0,      45+90,     360,      1], 
-                       TYPE: [exports.autoTurretWeak2, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
                   },{       /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  5,     8,      0,      45+180,     360,      1], 
-                       TYPE: [exports.autoTurretWeak3, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
                   },{       /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  5,     8,      0,      45+270,     360,      1], 
-                       TYPE: [exports.autoTurretWeak4, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
                   },
                ]
             };
 
 exports.autoSuperTank = makeAuto(exports.superTank)
+
+exports.radio = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Radio',
+                DANGER: 7,
+                CUSTOM: true,
+                SHAPE: 4,
+                STAT_NAMES: statnames.generic,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 1.4,
+                    SPEED: base.SPEED * 1.4,
+                    FOV: base.FOV * 1.2,
+                },
+                GUNS: [],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     8,      8,      0,     360,      1], 
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  8,     8,      0,      0,     360,      1], 
+                       TYPE: [exports.autoTurret, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  8,     0,      8,      0,     360,      1], 
+                       TYPE: [exports.autoTurret, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     0,      0,      0,     360,      1], 
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     -8,      -8,    0,     360,      1], 
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  8,     -8,      0,     0,     360,      1], 
+                       TYPE: [exports.autoTurret, { CONTROLLERS: ['nearestDifferentMaster'],}],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  8,     0,      -8,     0,     360,      1], 
+                       TYPE: [exports.autoTurret, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     -8,      8,     0,     360,      1], 
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     8,      -8,     0,     360,      1], 
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },
+               ]
+            };
+
 
 // UPGRADE PATHS
 
@@ -8373,7 +8367,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
 
-    exports.superTank.UPGRADES_TIER_2 = [exports.autoSuperTank];
+    exports.superTank.UPGRADES_TIER_2 = [exports.autoSuperTank, exports.radio];
     
     //exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
     //exports.brute.UPGRADES_TIER_2 = [];
