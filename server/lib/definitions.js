@@ -8192,6 +8192,54 @@ exports.hexaFlare.GUNS.push(
 //      ],
 // };
 
+exports.autoTurretWeak = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Turret',
+    BODY: {
+        FOV: 0.8
+    },
+    COLOR: 16,
+    //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  22,    10,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak]),
+                TYPE: exports.bullet,
+            }, },
+    ],
+};
+
+exports.superTank = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Super Tank',
+                DANGER: 7,
+                SHAPE: 4,
+                STAT_NAMES: statnames.generic,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.75,
+                    SPEED: base.SPEED * 1.2,
+                    FOV: base.FOV * 1.1,
+                },
+                GUNS: [ {
+                    POSITION: [  19,     2,      1,      0,    -2.5,     0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.slow, g.flank, g.lotsmorrecoil]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     2,      1,      0,     2.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.slow, g.flank, g.lotsmorrecoil]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,    11,      1,      0,      0,      0,      0,   ],
+                        },
+                ],
+                TURRETS: [{         /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  40,     8,      0,      0,     360,  0], 
+                       TYPE: exports.autoTurretWeak,
+                  },
+               ]
+            };
 
 
 
