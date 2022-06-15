@@ -8399,7 +8399,7 @@ exports.delivery = {
             };
 
 exports.rod = {
-   PARENT: [exports.block],
+   PARENT: [exports.trap],
    LABEL: 'Rod',
    SHAPE: [[]],
    FACING_TYPE: "turnWithSpeed",
@@ -8410,13 +8410,13 @@ exports.rod = {
          }, {
          POSITION: [ 4, 7, 1.5, 13, 0, 0+90, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morespeed, g.morereload]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morespeed, g.lessreload]),
             TYPE: exports.bullet,
             AUTOFIRE: true,
          }, }, {
          POSITION: [ 4, 7, 1.5, 13, 0, 180+90, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morespeed, g.morereload]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morespeed, g.lessreload]),
             TYPE: exports.bullet,
             AUTOFIRE: true,
          }, }, 
