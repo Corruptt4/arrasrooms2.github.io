@@ -8459,6 +8459,8 @@ exports.hotrod = {
                ]
             };
 
+exports.turretedrod = makeAuto(exoir)
+
 exports.punishment = {
                 PARENT: [exports.genericTank],
                 LABEL: 'punishment',
