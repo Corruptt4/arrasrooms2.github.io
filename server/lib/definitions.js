@@ -8332,6 +8332,72 @@ exports.radio = {
                ]
             };
 
+exports.deliveryDisk = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Delivery Disk',
+                DANGER: 7,
+                COLOR: 16,
+                STAT_NAMES: statnames.swarm,
+                CONTROLLERS: ['spin'], 
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.75,
+                    FOV: base.FOV * 1.3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   7,    7.5,    0.6,     7,      0,      -60,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,   
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,      0,      60,    1/3,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,    
+                        }, }, {
+                    POSITION: [   7,    7.5,    0.6,     7,      0,      180,    2/3,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                            TYPE: exports.autoswarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,    
+                        }, }, 
+                ],
+            };
+
+exports.delivery = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Delivery',
+                DANGER: 7,
+                CUSTOM: true,
+                SHAPE: 4,
+                STAT_NAMES: statnames.generic,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 1.1,
+                    SPEED: base.SPEED * 1,
+                    FOV: base.FOV * 1.1,
+                },
+                GUNS: [ {
+                    POSITION: [  19,     2,      1,      0,    -2.5,     0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.slow, g.flank, g.lotsmorrecoil]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  19,     2,      1,      0,     2.5,     0,     0.5,  ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.slow, g.flank, g.lotsmorrecoil]),
+                            TYPE: exports.bullet,
+                        }, }, {
+                    POSITION: [  12,    11,      1,      0,      0,      0,      0,   ],
+                        },
+                ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  11,     0,      0,      0,      360,     1], 
+                       TYPE: exports.deliveryDisk,
+                  },
+               ]
+            };
+
 
 // UPGRADE PATHS
 
@@ -8400,7 +8466,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
  
     exports.miniBase.UPGRADES_TIER_2 = [exports.superTank]
-        exports.superTank.UPGRADES_TIER_3 = [exports.autoSuperTank, exports.radio];
+        exports.superTank.UPGRADES_TIER_3 = [exports.autoSuperTank, exports.radio, exports.delivery];
     
     //exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
     //exports.brute.UPGRADES_TIER_2 = [];

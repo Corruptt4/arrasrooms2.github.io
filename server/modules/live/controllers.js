@@ -45,6 +45,27 @@ ioTypes.slowSpin = class extends IO {
         };
     }
 }
+//dogeiscut
+ ioTypes.quickSpin = class extends IO {
+    constructor(b) {
+        super(b);
+        this.a = 0;
+    }
+    think(input) {
+        this.a += 0.1;
+        let offset = 0;
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle;
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset)
+            },
+            main: true
+        };
+    }
+}
 ioTypes.reverseSlowSpin = class extends IO {
     constructor(body) {
         super(body)
