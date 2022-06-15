@@ -146,6 +146,8 @@ exports.chooseBotName = () => {
         'X-Ray',
         'doxxed: 143.45.254.21',
         'Photographic Evidence',
+        '[AI] [AI] [AI] [AI] [AI] ',
+        '',
     ]);
 };
 

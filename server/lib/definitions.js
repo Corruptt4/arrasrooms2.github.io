@@ -8217,7 +8217,7 @@ exports.miniBase = {
                 LABEL: 'Minibase',
                 DANGER: 7,
                 CUSTOM: true,
-                SHAPE: 4,
+                SHAPE: 6,
                 STAT_NAMES: statnames.generic,
                 BODY: {
                     ACCELERATION: base.ACCEL * 1.2,
@@ -8348,19 +8348,19 @@ exports.deliveryDisk = {
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.autoswarm,
-                            STAT_CALCULATOR: gunCalcNames.swarm,   
+                            STAT_CALCULATOR: gunCalcNames.bee,   
                         }, }, {
                     POSITION: [   7,    7.5,    0.6,     7,      0,      60,    1/3,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.autoswarm,
-                            STAT_CALCULATOR: gunCalcNames.swarm,    
+                            STAT_CALCULATOR: gunCalcNames.bee,    
                         }, }, {
                     POSITION: [   7,    7.5,    0.6,     7,      0,      180,    2/3,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
                             TYPE: exports.autoswarm,
-                            STAT_CALCULATOR: gunCalcNames.swarm,    
+                            STAT_CALCULATOR: gunCalcNames.bee,    
                         }, }, 
                 ],
             };
