@@ -6636,7 +6636,7 @@ exports.bot = {
     BODY: {
         SIZE: 10
     },
-    NAME: "ai_",
+    NAME: "[AI] ",
     CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "minion", "fleeAtLowHealth"],
     AI: {
         STRAFE: true
@@ -6648,7 +6648,7 @@ exports.ramBot = {
     BODY: {
         SIZE: 10
     },
-    NAME: "ai_",
+    NAME: "[AI] ",
     MOTION_TYPE: 'chase',
     CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth"],
     AI: {
@@ -7944,7 +7944,7 @@ exports.healFruit = {
         HEALTH: 0.5 * basePolygonHealth,
         RESIST: 1.25,
         PENETRATION: 1.1,
-        HETERO: -1000,
+        //HETERO: -1000,
     },
     DRAW_HEALTH: true,
     GIVE_KILL_MESSAGE: true

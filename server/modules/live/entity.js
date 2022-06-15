@@ -1632,7 +1632,7 @@ class Entity {
                     // Only if we give messages
                     if (dothISendAText) {
                         if (name=="a Heal Fruit"){
-                         instance.sendMessage('You were healed to max health!'); 
+                         instance.sendMessage('You were healed to max health! (Unless you shot it...)'); 
                         } else {
                         instance.sendMessage('You killed ' + name + ((killers.length > 1) ? ' (with some help).' : '.'));
                         }
