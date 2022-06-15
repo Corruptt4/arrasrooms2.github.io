@@ -8482,7 +8482,17 @@ exports.autohotrod = {
                ]
             };
 
-exports.turretedrod = makeAuto(exports.rod)
+exports.man = {
+   PARENT: [exports.trap],
+   LABEL: 'Man',
+   BODY: {
+                    HEALTH: base.HEALTH * 0.2
+                },
+   SHAPE: [[]],
+   FACING_TYPE: "turnWithSpeed",
+};
+
+exports.man = makeAuto(exports.man)
 
 exports.hotdrive = {
                 PARENT: [exports.genericTank],
@@ -8502,7 +8512,7 @@ exports.hotdrive = {
          POSITION: [ 2, 21, 0.8, 15, 0, 0, 0, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.trap]),
-            TYPE: exports.turretedrod,
+            TYPE: exports.man,
          }, }, 
      ],
                 TURRETS: [{
