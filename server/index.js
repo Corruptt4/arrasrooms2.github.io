@@ -539,7 +539,7 @@ const maintainloop = (() => {
             // Spawning
             spawnCrasher(census);
             spawnBosses(census);
-            spawnSomething(census);
+            //spawnSomething(census);
             // Bots
             if (bots.length < c.BOTS && !global.arenaClosed) bots.push(spawnBot(global.nextTagBotTeam || null));
             // Remove dead ones

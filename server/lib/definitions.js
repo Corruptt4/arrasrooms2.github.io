@@ -6633,6 +6633,7 @@ exports.trapperDominator = {
 exports.bot = {
     AUTO_UPGRADE: "random",
     FACING_TYPE: "looseToTarget",
+    //COLOR: 12,
     BODY: {
         SIZE: 10
     },
@@ -6645,6 +6646,7 @@ exports.bot = {
 exports.ramBot = {
     AUTO_UPGRADE: "random",
     FACING_TYPE: "looseToTarget",
+    //COLOR: 12,
     BODY: {
         SIZE: 10
     },
