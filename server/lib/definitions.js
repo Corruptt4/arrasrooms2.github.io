@@ -8412,13 +8412,13 @@ exports.rod = {
          }, {
          POSITION: [ 4, 7, 1.5, 13, 0, 0+90, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morespeed, g.lessreload]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morerange, g.morespeed, g.morereload, g.morereload, g.morereload, g.morereload]),
             TYPE: exports.bullet,
             AUTOFIRE: true,
          }, }, {
          POSITION: [ 4, 7, 1.5, 13, 0, 180+90, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morespeed, g.lessreload]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morerange, g.morespeed, g.morereload, g.morereload, g.morereload, g.morereload]),
             TYPE: exports.bullet,
             AUTOFIRE: true,
          }, }, 
