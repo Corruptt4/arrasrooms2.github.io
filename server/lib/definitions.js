@@ -8446,6 +8446,29 @@ exports.hotrod = {
             TYPE: exports.rod,
          }, }, 
      ],
+            };
+
+exports.autohotrod = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Auto-Hotrod',
+                DANGER: 7,
+                CUSTOM: true,
+                SHAPE: 6,
+                STAT_NAMES: statnames.generic,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 1.2,
+                    SPEED: base.SPEED * 1.2,
+                    FOV: base.FOV * 1.1,
+                },
+                GUNS: [ {
+         POSITION: [ 9, 17, 1.2, 5, 0, 0, 0, ],
+         }, {
+         POSITION: [ 2, 21, 0.8, 15, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap]),
+            TYPE: exports.rod,
+         }, }, 
+     ],
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  5,     8,      0,      -60,     360,      1], 
                        TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
@@ -8459,7 +8482,37 @@ exports.hotrod = {
                ]
             };
 
-exports.turretedrod = makeAuto(exoir)
+exports.turretedrod = makeAuto(exports.rod)
+
+exports.hotdrive = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Hotdrive',
+                DANGER: 7,
+                CUSTOM: true,
+                SHAPE: 6,
+                STAT_NAMES: statnames.generic,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 1.2,
+                    SPEED: base.SPEED * 1.2,
+                    FOV: base.FOV * 1.1,
+                },
+                GUNS: [ {
+         POSITION: [ 9, 17, 1.2, 5, 0, 0, 0, ],
+         }, {
+         POSITION: [ 2, 21, 0.8, 15, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap]),
+            TYPE: exports.turretedrod,
+         }, }, 
+     ],
+                TURRETS: [{
+        /** SIZE     X       Y     ANGLE    ARC */
+        POSITION: [10, 0, 0, 0, 360, 1, ],
+        TYPE: exports.drivesymbol,
+    }
+               ]
+            };
+
 
 exports.punishment = {
                 PARENT: [exports.genericTank],
@@ -8546,6 +8599,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
  
     exports.miniBase.UPGRADES_TIER_2 = [exports.superTank, exports.hotrod]
         exports.superTank.UPGRADES_TIER_3 = [exports.autoSuperTank, exports.radio, exports.delivery];
+        exports.hotrod.UPGRADES_TIER_3 = [exports.autohotrod, exports.hotdrive];
     
     //exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
     //exports.brute.UPGRADES_TIER_2 = [];
