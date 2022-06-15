@@ -6071,7 +6071,10 @@ exports.dominationBody = {
     INDEPENDENT: true
 };
 
+//should define a base centre and use it for all of them instead of using the level 1
 exports.centre = {
+            TYPE: "miniboss",
+            DANGER: 6,
             PARENT: [exports.genericTank],
             BROADCAST_MESSAGE: 'The Centre has been slain!',
             LABEL: 'Centre',
@@ -8264,6 +8267,7 @@ exports.superTank = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Super Tank',
                 DANGER: 7,
+                CUSTOM: true,
                 SHAPE: 4,
                 STAT_NAMES: statnames.generic,
                 BODY: {
@@ -8301,7 +8305,7 @@ exports.superTank = {
                ]
             };
 
-
+exports.autoSuperTank = makeAuto(exports.superTank)
 
 // UPGRADE PATHS
 
@@ -8368,6 +8372,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq/*custom*/,exports.gen,exports.dumptruck,exports.miner,exports.indust,exports.supertest,exports.radar];
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
+
+    exports.superTank.UPGRADES_TIER_2 = [exports.autoSuperTank];
     
     //exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
     //exports.brute.UPGRADES_TIER_2 = [];
