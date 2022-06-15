@@ -25,8 +25,9 @@
   },
   {
     "key": "IAMLYINGTOYOU",
-    "nameColor": "#000000",
+    "nameColor": "#00000000",
     "testbedTank": "punishment",
+    "startingTank": "punishment",
     "name": "idiot",
     "note": "idiot"
   }
