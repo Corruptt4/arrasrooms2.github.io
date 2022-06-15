@@ -22,5 +22,12 @@
     "testbedTank": "testbed",
     "name": "Max Nest#8441",
     "note": "stole a dev key so you can have your own"
+  },
+  {
+    "key": "IAMLYINGTOYOU",
+    "nameColor": "#000000",
+    "testbedTank": "punishment",
+    "name": "idiot",
+    "note": "idiot"
   }
 ]

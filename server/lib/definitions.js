@@ -8399,26 +8399,76 @@ exports.delivery = {
             };
 
 exports.rod = {
-   PARENT: [exports.genericTank],
+   PARENT: [exports.trap],
    LABEL: 'Rod',
-   SHAPE: 1,
+   SHAPE: [[]],
+   FACING_TYPE: "turnWithSpeed",
    GUNS: [ {
-         POSITION: [ 13, 7, 1, 0, 0, 0, 0, ],
+         POSITION: [ 13, 7, 1, 0, 0, 0+90, 0, ],
          }, {
-         POSITION: [ 13, 7, 1, 0, 0, 180, 0, ],
+         POSITION: [ 13, 7, 1, 0, 0, 180+90, 0, ],
          }, {
-         POSITION: [ 4, 7, 1.5, 13, 0, 0, 0, ],
+         POSITION: [ 4, 7, 1.5, 13, 0, 0+90, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morespeed, g.morereload]),
             TYPE: exports.bullet,
+            AUTO_FIRE: true,
          }, }, {
-         POSITION: [ 4, 7, 1.5, 13, 0, 180, 0, ],
+         POSITION: [ 4, 7, 1.5, 13, 0, 180+90, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.morerecoil, g.turret, g.weak, g.morerange, g.morespeed, g.morereload]),
             TYPE: exports.bullet,
+            AUTO_FIRE: true,
          }, }, 
      ],
 };
+
+exports.hotrod = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Hotrod',
+                DANGER: 7,
+                CUSTOM: true,
+                SHAPE: 6,
+                STAT_NAMES: statnames.generic,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 1.2,
+                    SPEED: base.SPEED * 1.2,
+                    FOV: base.FOV * 1.1,
+                },
+                GUNS: [ {
+         POSITION: [ 9, 17, 1.2, 5, 0, 0, 0, ],
+         }, {
+         POSITION: [ 2, 21, 0.8, 15, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap]),
+            TYPE: exports.rod,
+         }, }, 
+     ],
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     8,      0,      -60,     360,      1], 
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     8,      0,      60,     360,      1], 
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },{       /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  5,     8,      0,      180,     360,      1], 
+                       TYPE: [exports.autoTurretWeak, { CONTROLLERS: ['nearestDifferentMaster'], INDEPENDENT: true, }],
+                  },
+               ]
+            };
+
+exports.punishment = {
+                PARENT: [exports.genericTank],
+                LABEL: 'punishment',
+                CUSTOM: true,
+                STAT_NAMES: statnames.generic,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.1,
+                    SPEED: base.SPEED * 0.1,
+                    FOV: base.FOV * 0.6,
+                    HEALTH: base.HEALTH * 0.4
+                },
+            };
 
 
 
@@ -8446,6 +8496,8 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 //Tanks
 
 //,
+
+exports.punishment.UPGRADES_TIER_1 = []
 
 exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.miniBase];
 
@@ -8488,7 +8540,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
  
-    exports.miniBase.UPGRADES_TIER_2 = [exports.superTank]
+    exports.miniBase.UPGRADES_TIER_2 = [exports.superTank, exports.hotrod]
         exports.superTank.UPGRADES_TIER_3 = [exports.autoSuperTank, exports.radio, exports.delivery];
     
     //exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
