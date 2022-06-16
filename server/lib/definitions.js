@@ -189,6 +189,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   norecoil:             [1,     0,   1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1], 
   
+  flare:             [1,     1,   1,      1,      0.7,      1,      1,      1,      1,      1,      1,      1,      1], 
+  
   noshudder:  [1, 1, 0.01, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   halfhealth:  [1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1],
   whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -7963,12 +7965,12 @@ exports.dualFlare = {
          }, {
          POSITION: [ 15, 10, 0.6, 0, -5, 0, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.flare]),
             TYPE: exports.flare,
          }, }, {
          POSITION: [ 15, 10, 0.6, 0, 5, 0, 0.5, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.flare]),
             TYPE: exports.flare,
          }, }, 
      ],
@@ -7985,19 +7987,19 @@ exports.firestorm = {
          }, {
          POSITION: [ 10, 15, 0.6, 6, 0, -30, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent, g.flare]),
             TYPE: exports.flare,
          }, }, {
          POSITION: [ 10, 15, 0.6, 6, 0, 30, 0.66666, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent, g.flare]),
             TYPE: exports.flare,
          }, }, {
          POSITION: [ 15, 4, 1.4, 8, 0, 0, 0, ],
          }, {
          POSITION: [ 10, 15, 0.6, 8, 0, 0, 0.33333, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.twin, g.bent, g.flare]),
             TYPE: exports.flare,
          }, }, 
      ],
@@ -8012,14 +8014,14 @@ exports.quadFlare = {
          }, {
          POSITION: [ 10, 15, 0.6, 6, 0, 0, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.flare]),
             TYPE: exports.flare,
          }, },  {
          POSITION: [ 15, 4, 1.4, 6, 0, 90, 0, ],
          }, {
          POSITION: [ 10, 15, 0.6, 6, 0, 90, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.flare]),
             TYPE: exports.flare,
          }, },  {
          POSITION: [ 15, 4, 1.4, 6, 0, 180, 0.5, ],
@@ -8056,7 +8058,7 @@ exports.hexaFlare.GUNS.push(
          }, {
          POSITION: [ 10, 11, 0.6, 4, 0, (360/6)*i, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.flank, g.flare]),
             TYPE: exports.flare,
          }, },  
 )
