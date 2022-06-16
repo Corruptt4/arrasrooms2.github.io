@@ -607,6 +607,13 @@ exports.swarm = {
         LABEL: 'Drone',
         HITS_OWN_TYPE: 'hardWithBuffer',
     };
+exports.autobee = {
+        PARENT: [exports.autoswarm],
+        PERSISTS_AFTER_DEATH: true, 
+        SHAPE: 4, 
+        LABEL: 'Drone',
+        HITS_OWN_TYPE: 'hardWithBuffer',
+    };
     exports.autoswarm = {
         PARENT: [exports.swarm],
         AI: { FARMER: true, },
@@ -8351,20 +8358,20 @@ exports.deliveryDisk = {
                     POSITION: [   7,    7.5,    0.6,     7,      0,      -60,      0,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
-                            TYPE: exports.autoswarm,
-                            STAT_CALCULATOR: gunCalcNames.bee,   
+                            TYPE: exports.autobee,
+                            STAT_CALCULATOR: gunCalcNames.swarm,   
                         }, }, {
                     POSITION: [   7,    7.5,    0.6,     7,      0,      60,    1/3,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
-                            TYPE: exports.autoswarm,
-                            STAT_CALCULATOR: gunCalcNames.bee,    
+                            TYPE: exports.autobee,
+                            STAT_CALCULATOR: gunCalcNames.swarm,    
                         }, }, {
                     POSITION: [   7,    7.5,    0.6,     7,      0,      180,    2/3,  ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
-                            TYPE: exports.autoswarm,
-                            STAT_CALCULATOR: gunCalcNames.bee,    
+                            TYPE: exports.autobee,
+                            STAT_CALCULATOR: gunCalcNames.swarm,    
                         }, }, 
                 ],
             };
