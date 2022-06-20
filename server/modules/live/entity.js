@@ -83,9 +83,8 @@ class Gun {
             this.negRecoil = (info.PROPERTIES.NEGATIVE_RECOIL == null) ?
                 false : info.PROPERTIES.NEGATIVE_RECOIL;
             this.destroyOldestChild = info.PROPERTIES.DESTROY_OLDEST_CHILD == null ? false : info.PROPERTIES.DESTROY_OLDEST_CHILD;
-            if (info.PROPERTIES.COLOR != null && info.PROPERTIES != null) {
-                this.color = info.PROPERTIES.COLOR
-            }
+            this.color = (info.PROPERTIES.COLOR == null) ?
+                this.color : info.PROPERTIES.COLOR;
             this.shootOnDeath = (info.PROPERTIES.SHOOT_ON_DEATH == null) ?
                 false : info.PROPERTIES.SHOOT_ON_DEATH;
         }

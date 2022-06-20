@@ -607,17 +607,17 @@ exports.swarm = {
         LABEL: 'Drone',
         HITS_OWN_TYPE: 'hardWithBuffer',
     };
+    exports.autoswarm = {
+        PARENT: [exports.swarm],
+        AI: { FARMER: true, },
+        INDEPENDENT: true,
+    };
 exports.autobee = {
         PARENT: [exports.autoswarm],
         PERSISTS_AFTER_DEATH: true, 
         SHAPE: 4, 
         LABEL: 'Drone',
         HITS_OWN_TYPE: 'hardWithBuffer',
-    };
-    exports.autoswarm = {
-        PARENT: [exports.swarm],
-        AI: { FARMER: true, },
-        INDEPENDENT: true,
     };
     exports.homingbullet = {
         PARENT: [exports.autoswarm],
@@ -1495,7 +1495,7 @@ exports.basic = {
             MAX_CHILDREN: 0,            // def  
             ALT_FIRE: false,            // def 
             NEGATIVE_RECOIL: false,     // def
-            COLOR: 5,
+            COLOR: 3,
         }, }, 
     ],
 };
@@ -8491,46 +8491,46 @@ exports.autohotrod = {
                ]
             };
 
-// exports.man = {
-//    PARENT: [exports.trap],
-//    LABEL: 'Man',
-//    BODY: {
-//                     HEALTH: base.HEALTH * 0.2
-//                 },
-//    SHAPE: [[]],
-//    FACING_TYPE: "turnWithSpeed",
-// };
+exports.man = {
+   PARENT: [exports.trap],
+   LABEL: 'Man',
+   BODY: {
+                    HEALTH: base.HEALTH * 0.2
+                },
+   SHAPE: [[]],
+   FACING_TYPE: "turnWithSpeed",
+};
 
-// exports.man = makeAuto(exports.man)
+exports.man = makeAuto(exports.man)
 
-// exports.hotdrive = {
-//                 PARENT: [exports.genericTank],
-//                 LABEL: 'Hotdrive',
-//                 DANGER: 7,
-//                 CUSTOM: true,
-//                 SHAPE: 6,
-//                 STAT_NAMES: statnames.generic,
-//                 BODY: {
-//                     ACCELERATION: base.ACCEL * 1.2,
-//                     SPEED: base.SPEED * 1.2,
-//                     FOV: base.FOV * 1.1,
-//                 },
-//                 GUNS: [ {
-//          POSITION: [ 9, 17, 1.2, 5, 0, 0, 0, ],
-//          }, {
-//          POSITION: [ 2, 21, 0.8, 15, 0, 0, 0, ],
-//          PROPERTIES: {
-//             SHOOT_SETTINGS: combineStats([g.trap]),
-//             TYPE: exports.man,
-//          }, }, 
-//      ],
-//                 TURRETS: [{
-//         /** SIZE     X       Y     ANGLE    ARC */
-//         POSITION: [10, 0, 0, 0, 360, 1, ],
-//         TYPE: exports.drivesymbol,
-//     }
-//                ]
-//             };
+exports.hotdrive = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Hotdrive',
+                DANGER: 7,
+                CUSTOM: true,
+                SHAPE: 6,
+                STAT_NAMES: statnames.generic,
+                BODY: {
+                    ACCELERATION: base.ACCEL * 1.2,
+                    SPEED: base.SPEED * 1.2,
+                    FOV: base.FOV * 1.1,
+                },
+                GUNS: [ {
+         POSITION: [ 9, 17, 1.2, 5, 0, 0, 0, ],
+         }, {
+         POSITION: [ 2, 21, 0.8, 15, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap,g.lessreload]),
+            TYPE: exports.man,
+         }, }, 
+     ],
+                TURRETS: [{
+        /** SIZE     X       Y     ANGLE    ARC */
+        POSITION: [10, 0, 0, 0, 360, 1, ],
+        TYPE: exports.drivesymbol,
+    }
+               ]
+            };
 
 
 exports.punishment = {
@@ -8618,7 +8618,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
  
     exports.miniBase.UPGRADES_TIER_2 = [exports.superTank, exports.hotrod]
         exports.superTank.UPGRADES_TIER_3 = [exports.autoSuperTank, exports.radio, exports.delivery];
-        exports.hotrod.UPGRADES_TIER_3 = [exports.autohotrod, /*exports.hotdrive*/];
+        exports.hotrod.UPGRADES_TIER_3 = [exports.autohotrod, exports.hotdrive];
     
     //exports.lancer.UPGRADES_TIER_2 = [exports.trilance,exports.knife,exports.sword,exports.invislancer];
     //exports.brute.UPGRADES_TIER_2 = [];
