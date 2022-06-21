@@ -44,6 +44,7 @@ let mockupJsonData = (() => {
                     aspect: rounder(gun.aspect),
                     angle: rounder(gun.angle),
                     color: rounder(gun.color),
+                    skin: rounder(gun.skin),
                 };
             }),
             turrets: e.turrets.map(function(t) {

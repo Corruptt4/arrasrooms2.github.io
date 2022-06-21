@@ -8569,7 +8569,7 @@ exports.punishment = {
 exports.air = {
     PARENT: [exports.bullet],
     LABEL: 'Air',
-    SHAPE: [[-1,-1],[0.5,-1],[1,-0.5],[1,0.5],[0.5,1],[-1,1]]
+    SHAPE: 0,
 };
 
 exports.grinder = {
@@ -8591,9 +8591,39 @@ exports.grinder = {
             GUNS: [ {
          POSITION: [ 18, 12, 1.7, 0, 0, 0, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
-            TYPE: exports.air,
             COLOR: 14,
+         }, }, 
+                   
+                   {
+         POSITION: [ 18, 12, 1.7, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+            SKIN: 1,
+         }, }, {
+         POSITION: [ 18, 12, 1, -100, 0, -176.5, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+            SKIN: 1,
+         }, }, {
+         POSITION: [ 18, 12, 1, -100, 0, 176.5, 0.25, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+            SKIN: 1,
+         }, }, {
+         POSITION: [ 18, 12, 1, -100, 0, -171, 0.5, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+            SKIN: 1,
+         }, }, {
+         POSITION: [ 18, 12, 1, -100, 0, 171, 0.75, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+            SKIN: 1,
          }, }, 
      ],
         };

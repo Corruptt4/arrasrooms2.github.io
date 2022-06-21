@@ -26,6 +26,7 @@ class Gun {
             fire: false,
         };
         this.color = 16;
+        this.skin = 0;
         this.canShoot = false;
         if (info.PROPERTIES != null && info.PROPERTIES.TYPE != null) {
             this.canShoot = true;
@@ -85,6 +86,8 @@ class Gun {
             this.destroyOldestChild = info.PROPERTIES.DESTROY_OLDEST_CHILD == null ? false : info.PROPERTIES.DESTROY_OLDEST_CHILD;
             this.color = (info.PROPERTIES.COLOR == null) ?
                 this.color : info.PROPERTIES.COLOR;
+            this.skin = (info.PROPERTIES.SKIN == null) ?
+                this.skin : info.PROPERTIES.SKIN;
             this.shootOnDeath = (info.PROPERTIES.SHOOT_ON_DEATH == null) ?
                 false : info.PROPERTIES.SHOOT_ON_DEATH;
         }

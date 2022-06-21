@@ -762,7 +762,8 @@ import * as socketStuff from "./lib/socketInit.js";
             context.lineJoin = 'round';
         }
 
-        function drawTrapezoid(context, x, y, length, height, aspect, angle) {
+        function drawTrapezoid(context, x, y, length, height, aspect, angle, skin) {
+          if (skin==0){//normal
             let h = [];
             h = (aspect > 0) ? [height * aspect, height] : [height, -height * aspect];
             let r = [
@@ -781,6 +782,9 @@ import * as socketStuff from "./lib/socketInit.js";
             context.closePath();
             context.stroke();
             context.fill();
+          } else if (skin==1) {//invisible
+            
+          }
         }
         // The big drawing function
         return (x, y, instance, ratio, alpha = 1, scale = 1, rot = 0, turretsObeyRot = false, assignedContext = false, turretInfo = false, render = instance.render) => {
@@ -828,9 +832,10 @@ import * as socketStuff from "./lib/socketInit.js";
                         position = positions[i] / ((g.aspect === 1) ? 2 : 1),
                         gx = g.offset * Math.cos(g.direction + g.angle + rot) + (g.length / 2 - position) * Math.cos(g.angle + rot),
                         gy = g.offset * Math.sin(g.direction + g.angle + rot) + (g.length / 2 - position) * Math.sin(g.angle + rot),
-                        gunColor = g.color == null ? color.grey : getColor(g.color);
+                        gunColor = g.color == null ? color.grey : getColor(g.color),
+                        skin = g.skin == null ? 0 : g.skin;
                         setColor(context, mixColors(gunColor, render.status.getColor(), render.status.getBlend()));
-                    drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * (g.length / 2 - ((g.aspect === 1) ? position * 2 : 0)), drawSize * g.width / 2, g.aspect, g.angle + rot);
+                    drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * (g.length / 2 - ((g.aspect === 1) ? position * 2 : 0)), drawSize * g.width / 2, g.aspect, g.angle + rot, skin);
                 }
             } else {
                 throw new Error("Mismatch gun number with mockup.");
