@@ -83,7 +83,8 @@ const gameloop = (() => {
                 advancedcollide(pusher, entity, false, false, a);
             }
             break;
-        case ((instance.type === 'crasher' && other.type === 'food') || (other.type === 'crasher' && instance.type === 'food')):
+        
+            case ((instance.type === 'crasher' && other.type === 'food') || (other.type === 'crasher' && instance.type === 'food')):
             firmcollide(instance, other);
             break;
         case (instance.team !== other.team):

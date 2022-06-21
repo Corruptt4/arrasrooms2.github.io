@@ -8571,6 +8571,7 @@ exports.punishment = {
 exports.air = {
     PARENT: [exports.bullet],
     LABEL: 'Air',
+    TYPE: 'Air',
     SHAPE: [[-1,-0.1],[1,-0.1],[1,0.1],[-1,0.1]],
     BODY: {
       PUSHABILITY: -500,
