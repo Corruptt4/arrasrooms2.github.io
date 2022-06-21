@@ -185,6 +185,9 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   lessspeed:            [1,     1,     1,      1,      1,      1,      1,      0.6,    0.6,    1,      1,      1,      1],
   // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+  
+  vacuum: [2, 0, 1, 1.2, 100, 0.1, 9999, 10, 10, 0.1, 9999, 1, 1],
+  
   archer:               [      0.1,   0.5,             1,                1,    1.5,   0.03,       5,        2,        2,      0.25,        1,        1,                      1], 
   
   norecoil:             [1,     0,   1,      1,      1,      1,      1,      1,      1,      1,      1,      1,      1], 
@@ -8570,6 +8573,10 @@ exports.air = {
     PARENT: [exports.bullet],
     LABEL: 'Air',
     SHAPE: 0,
+    BODY: {
+      PUSHABILITY: 0,
+      DESNITY: 1000,
+    }
 };
 
 exports.grinder = {
@@ -8579,7 +8586,8 @@ exports.grinder = {
             BODY: {
                 FOV: base.FOV * 1.05,
                 DENSITY: base.DENSITY * 2,
-                SPEED: base.SPEED * 0.75,
+                SPEED: base.SPEED * 0.70,
+                HEALTH: base.HEALTH * 1.3
             },
             TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  21.5,   0,      0,      0,     360,  0,], 
@@ -8597,31 +8605,31 @@ exports.grinder = {
                    {
          POSITION: [ 18, 12, 1.7, 0, 0, 0, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
             TYPE: exports.bullet,
             SKIN: 1,
          }, }, {
-         POSITION: [ 18, 12, 1, -100, 0, -176.5, 0, ],
+         POSITION: [ 18, 12, 1, -130, 0, -176.5, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
             TYPE: exports.bullet,
             SKIN: 1,
          }, }, {
-         POSITION: [ 18, 12, 1, -100, 0, 176.5, 0.25, ],
+         POSITION: [ 18, 12, 1, -130, 0, 176.5, 0.25, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
             TYPE: exports.bullet,
             SKIN: 1,
          }, }, {
-         POSITION: [ 18, 12, 1, -100, 0, -171, 0.5, ],
+         POSITION: [ 18, 12, 1, -130, 0, -171, 0.5, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
             TYPE: exports.bullet,
             SKIN: 1,
          }, }, {
-         POSITION: [ 18, 12, 1, -100, 0, 171, 0.75, ],
+         POSITION: [ 18, 12, 1, -130, 0, 171, 0.75, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
             TYPE: exports.bullet,
             SKIN: 1,
          }, }, 
