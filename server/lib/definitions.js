@@ -8491,6 +8491,26 @@ exports.autohotrod = {
                ]
             };
 
+exports.manTurret = {
+                PARENT: [exports.genericTank],
+                LABEL: 't',
+                DANGER: 7,
+                STAT_NAMES: statnames.swarm,
+                FACING_TYPE: 'locksFacing',
+                BODY: {
+                    ACCELERATION: base.ACCEL * 0.75,
+                    FOV: base.FOV * 1.3,
+                },
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   7,    7.5,    0.6,     7,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier, g.weak]),
+                            TYPE: exports.swarm,
+                            STAT_CALCULATOR: gunCalcNames.swarm,          
+                        }, },
+                ],
+            };
+
 exports.man = {
    PARENT: [exports.trap],
    LABEL: 'Man',
@@ -8501,11 +8521,11 @@ exports.man = {
    FACING_TYPE: "turnWithSpeed",
 };
 
-exports.man = makeAuto(exports.man)
+exports.man = makeAuto(exports.man, "Man", {type: exports.manTurret})
 
 exports.hotdrive = {
                 PARENT: [exports.genericTank],
-                LABEL: 'Hotdrive',
+                LABEL: 'Hotswarm',
                 DANGER: 7,
                 CUSTOM: true,
                 SHAPE: 6,
