@@ -1897,7 +1897,7 @@ import * as socketStuff from "./lib/socketInit.js";
                 });
                 txt = txt.slice(0, -4) + '.';
             } else {
-                txt += '🤷 Wah happen???';
+                txt += '🤷 Died mysteriously';
             }
             return txt;
         };
