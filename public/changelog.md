@@ -1,4 +1,11 @@
-# Update (05/31/2022): a
+# Update (06/21/2022): a2
+- added like 8 more new tanks
+- removed lancer due to bugs
+- new path, minibase
+- Thanks to Max Nest#8441 for adding colored guns, custom polygons, and helping with the vacuum 
+- the new vacumm tank is a bit underpowered rn so a blow secondary fire is planned
+
+# Update (unknown): a
 - changed it back to archer cause theres already a crossbow lol
 - like 8 new tanks im too lazy to list here
 

@@ -8067,7 +8067,7 @@ exports.hexaFlare.GUNS.push(
          }, {
          POSITION: [ 10, 11, 0.6, 4, 0, (360/6)*i, 0, ],
          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.flank, g.flare]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.halfsize, g.moredamge, g.lessspeed, g.flank, g.flank, g.flare, g.halfreload]),
             TYPE: exports.flare,
          }, },  
 )
@@ -8635,7 +8635,8 @@ exports.grinder = {
             SKIN: 1,
          }, }, 
      ],
-        };
+  //todo: add weaker blow, basically a sitting duck without it
+};
 
 
 
