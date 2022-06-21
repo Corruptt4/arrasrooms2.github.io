@@ -56,7 +56,6 @@ const gameloop = (() => {
         if (!instance.activation.check() && !other.activation.check()) {
             return 0;
         }
-        let coversionavoid = ['food']
         let conversion = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air']
         let avoid = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air']
         let blowavoid = ['air']
@@ -75,8 +74,8 @@ const gameloop = (() => {
                 break;
             
             case (
-                (instance.label === 'Deflector' && !coversionavoid.includes(other.type) && conversion.includes(other.type) && instance.master !== other) ||
-                (other.label === 'Deflector' && !coversionavoid.includes(instance.type) && conversion.includes(instance.type) && other.master !== instance)
+                (instance.label === 'Deflector' && conversion.includes(other.type) && instance.master !== other) ||
+                (other.label === 'Deflector' && conversion.includes(instance.type) && other.master !== instance)
             ):
                 conversioncollide(instance, other);
                 break;
