@@ -8674,7 +8674,9 @@ exports.grinder = {
      ],
 };
 
-
+//Tank ideas:
+//Singularity
+////Shoots out a "black hole" that sucks in anything thats not the master, thw actual back hole does low damage but it has high health
 
 
 
