@@ -56,7 +56,8 @@ const gameloop = (() => {
         if (!instance.activation.check() && !other.activation.check()) {
             return 0;
         }
-        let avoid = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion']
+        let avoid = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air']
+        let blowavoid = ['air']
         switch (true) {
             case (
                 (instance.label === 'Vacuum Nozzle Air' && !avoid.includes(other.type) && instance.master !== other) ||
@@ -65,10 +66,10 @@ const gameloop = (() => {
                 vacuumcollide(instance, other);
                 break;
             case (
-                (instance.label === 'Vacuum Nozzle (Blow) Air' /*&& !avoid.includes(other.type)*/ && instance.master !== other) ||
-                (other.label === 'Vacuum Nozzle (Blow) Air' /*&& !avoid.includes(instance.type)*/ && other.master !== instance)
+                (instance.label === 'Vacuum Nozzle (Blow) Air' && !blowavoid.includes(other.type) && instance.master !== other) ||
+                (other.label === 'Vacuum Nozzle (Blow) Air' && !blowavoid.includes(instance.type) && other.master !== instance)
             ):
-                vacuumcollide(instance, other, 35);
+                vacuumcollide(instance, other, 33);
                 break;
             case (instance.type === "wall" || other.type === "wall"):
                 if (instance.type === "wall" && other.type === "wall") return;

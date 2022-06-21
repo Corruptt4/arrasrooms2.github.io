@@ -186,8 +186,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   lessspeed:            [1,     1,     1,      1,      1,      1,      1,      0.6,    0.6,    1,      1,      1,      1],
   // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
   
-  vacuum: [2, 0, 1, 1.2, 999999, 0.1, 999999, 10, 10, 0.08, 10, 1, 1],
-  vacuumRecoil: [2, 0.85, 1, 1.2, 999999, 0.1, 999999, 10, 10, 0.08, 10, 1, 1],
+  vacuum: [2, 0, 1, 1.2, 999999, 0, 999999, 10, 10, 0.08, 10, 1, 1],
+  vacuumRecoil: [2.2, 0.85, 1, 1.2, 999999, 0, 999999, 10, 10, 0.08, 10, 1, 1],
   
   archer:               [      0.1,   0.5,             1,                1,    1.5,   0.03,       5,        2,        2,      0.25,        1,        1,                      1], 
   
