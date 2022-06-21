@@ -638,120 +638,126 @@ import * as socketStuff from "./lib/socketInit.js";
     const drawEntity = (() => {
         // Sub-drawing functions
         function drawPoly(context, centerX, centerY, radius, sides, angle = 0, dipMultih = 1, fill = true) {
-            angle += (sides % 2) ? 0 : Math.PI / sides;
             // Start drawing
             context.beginPath();
-            if (!sides) { // Circle
-                let fillcolor = context.fillStyle;
-                let strokecolor = context.strokeStyle;
-                radius += context.lineWidth / 4;
-                context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
-                context.fillStyle = strokecolor;
-                context.fill();
-                context.closePath();
-                context.beginPath();
-                context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
-                context.fillStyle = fillcolor;
-                context.fill();
-                context.closePath();
-                return;
-            } else if (sides < 0) { // Star
-                if (config.graphical.pointy) context.lineJoin = 'miter';
-                let dip = 1 - (6 / sides / sides);
-                sides = -sides;
-                context.moveTo(centerX + radius * Math.cos(angle), centerY + radius * Math.sin(angle));
-                for (let i = 0; i < sides; i++) {
-                    var theta = (i + 1) / sides * 2 * Math.PI;
-                    var htheta = (i + 0.5) / sides * 2 * Math.PI;
-                    var c = {
-                        x: centerX + radius * dip * dipMultih * Math.cos(htheta + angle),
-                        y: centerY + radius * dip * dipMultih * Math.sin(htheta + angle),
-                    };
-                    var p = {
-                        x: centerX + radius * Math.cos(theta + angle),
-                        y: centerY + radius * Math.sin(theta + angle),
-                    };
-                    context.quadraticCurveTo(c.x, c.y, p.x, p.y);
-                }
-            } else if (sides === 600) {
-                for (let i = 0; i < 6; i++) {
-                    let theta = (i / 6) * 2 * Math.PI,
-                        x = centerX + radius * 1.1 * Math.cos(180 / 6 + theta + angle + 0.385),
-                        y = centerY + radius * 1.1 * Math.sin(180 / 6 + theta + angle + 0.385);
-                    context.lineTo(x, y);
-                } 
-            }  else if (sides === 1000) { //Donut (added by dogeiscut)
-                  let fillcolor = context.fillStyle;
-                  let strokecolor = context.strokeStyle;
-                  radius += context.lineWidth / 4;
-                  context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
-                  context.arc(centerX, centerY, radius/2 - context.lineWidth / 4, 0, 2 * Math.PI, true);
-                  context.fillStyle = strokecolor;
-                  context.fill();
-                  context.closePath();
-                  context.beginPath();
-                  context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
-                  context.arc(centerX, centerY, radius/2 + context.lineWidth / 4, 0, 2 * Math.PI, true);
-                  context.fillStyle = fillcolor;
-                  context.fill();
-                  context.closePath();
+            if (sides instanceof Array) { //custom
+                  let dx = Math.cos(angle);
+                  let dy = Math.sin(angle);
+                  for (let [x, y] of sides) context.lineTo(centerX + radius * (x * dx - y * dy), centerY + radius * (y * dx + x * dy));
+            } else {
+                angle += (sides % 2) ? 0 : Math.PI / sides;
+                if (!sides) { // Circle
+                    let fillcolor = context.fillStyle;
+                    let strokecolor = context.strokeStyle;
+                    radius += context.lineWidth / 4;
+                    context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
+                    context.fillStyle = strokecolor;
+                    context.fill();
+                    context.closePath();
+                    context.beginPath();
+                    context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
+                    context.fillStyle = fillcolor;
+                    context.fill();
+                    context.closePath();
+                    return;
+                } else if (sides < 0) { // Star
+                    if (config.graphical.pointy) context.lineJoin = 'miter';
+                    let dip = 1 - (6 / sides / sides);
+                    sides = -sides;
+                    context.moveTo(centerX + radius * Math.cos(angle), centerY + radius * Math.sin(angle));
+                    for (let i = 0; i < sides; i++) {
+                        var theta = (i + 1) / sides * 2 * Math.PI;
+                        var htheta = (i + 0.5) / sides * 2 * Math.PI;
+                        var c = {
+                            x: centerX + radius * dip * dipMultih * Math.cos(htheta + angle),
+                            y: centerY + radius * dip * dipMultih * Math.sin(htheta + angle),
+                        };
+                        var p = {
+                            x: centerX + radius * Math.cos(theta + angle),
+                            y: centerY + radius * Math.sin(theta + angle),
+                        };
+                        context.quadraticCurveTo(c.x, c.y, p.x, p.y);
+                    }
+                } else if (sides === 600) {
+                    for (let i = 0; i < 6; i++) {
+                        let theta = (i / 6) * 2 * Math.PI,
+                            x = centerX + radius * 1.1 * Math.cos(180 / 6 + theta + angle + 0.385),
+                            y = centerY + radius * 1.1 * Math.sin(180 / 6 + theta + angle + 0.385);
+                        context.lineTo(x, y);
+                    } 
+                }  else if (sides === 1000) { //Donut (added by dogeiscut)
+                      let fillcolor = context.fillStyle;
+                      let strokecolor = context.strokeStyle;
+                      radius += context.lineWidth / 4;
+                      context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
+                      context.arc(centerX, centerY, radius/2 - context.lineWidth / 4, 0, 2 * Math.PI, true);
+                      context.fillStyle = strokecolor;
+                      context.fill();
+                      context.closePath();
+                      context.beginPath();
+                      context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
+                      context.arc(centerX, centerY, radius/2 + context.lineWidth / 4, 0, 2 * Math.PI, true);
+                      context.fillStyle = fillcolor;
+                      context.fill();
+                      context.closePath();
 
-                  return;
-            } else if (sides === 2000) { //Dogeiscut Image (added by dogeiscut wow who wouldve guessed)
-                  
-                  cut.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/pfp_circle.png?v=1653890617509" 
-                  context.translate(centerX, centerY);
-                  context.rotate(angle);
-                  context.drawImage(cut, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
-                  context.rotate(-angle);
-                  context.translate(-centerX, -centerY);
-                  return;
-            } else if (sides === 2001) { //Waffz Image (added by dogeiscut)
-                  
-                  waff.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/waffz.png?v=1653891306773" 
-                  context.translate(centerX, centerY);
-                  context.rotate(angle);
-                  context.drawImage(waff, -radius*4 / 2, -radius*4 / 2, radius*4, radius*4);
-                  context.rotate(-angle);
-                  context.translate(-centerX, -centerY);
-                  return;
-            } else if (sides === 2002) { //Farmer (added by dogeiscut)
-                  let fillcolor = context.fillStyle;
-                let strokecolor = context.strokeStyle;
-                radius += context.lineWidth / 4;
-                context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
-                context.fillStyle = strokecolor;
-                context.fill();
-                context.closePath();
-                context.beginPath();
-                context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
-                context.fillStyle = fillcolor;
-                context.fill();
-                context.closePath();
-                
-                  farm.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/farmhat.png?v=1653891725301" 
-                  context.translate(centerX, centerY-radius*1.1);
-                  context.rotate(0);
-                  context.drawImage(farm, -radius*3 / 2, -radius*3 / 2, radius*3, radius*3);
-                  context.rotate(-0);
-                  context.translate(-centerX, -(centerY-radius*1.1));
-                  return;
-            } else if (sides === 2003) { //carrot Image (added by dogeiscut)
-                  
-                  carrot.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrot.png?v=1653892900639" 
-                  context.translate(centerX, centerY);
-                  context.rotate(angle);
-                  context.drawImage(carrot, -radius*5 / 2, -radius*5 / 2, radius*5, radius*5);
-                  context.rotate(-angle);
-                  context.translate(-centerX, -centerY);
-              
-                  return;
-            } else if (sides > 0) { // Polygon
+                      return;
+                } else if (sides === 2000) { //Dogeiscut Image (added by dogeiscut wow who wouldve guessed)
+
+                      cut.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/pfp_circle.png?v=1653890617509" 
+                      context.translate(centerX, centerY);
+                      context.rotate(angle);
+                      context.drawImage(cut, -radius*2 / 2, -radius*2 / 2, radius*2, radius*2);
+                      context.rotate(-angle);
+                      context.translate(-centerX, -centerY);
+                      return;
+                } else if (sides === 2001) { //Waffz Image (added by dogeiscut)
+
+                      waff.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/waffz.png?v=1653891306773" 
+                      context.translate(centerX, centerY);
+                      context.rotate(angle);
+                      context.drawImage(waff, -radius*4 / 2, -radius*4 / 2, radius*4, radius*4);
+                      context.rotate(-angle);
+                      context.translate(-centerX, -centerY);
+                      return;
+                } else if (sides === 2002) { //Farmer (added by dogeiscut)
+                      let fillcolor = context.fillStyle;
+                    let strokecolor = context.strokeStyle;
+                    radius += context.lineWidth / 4;
+                    context.arc(centerX, centerY, radius + context.lineWidth / 4, 0, 2 * Math.PI, false);
+                    context.fillStyle = strokecolor;
+                    context.fill();
+                    context.closePath();
+                    context.beginPath();
+                    context.arc(centerX, centerY, radius - context.lineWidth / 4, 0, 2 * Math.PI, false);
+                    context.fillStyle = fillcolor;
+                    context.fill();
+                    context.closePath();
+
+                      farm.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/farmhat.png?v=1653891725301" 
+                      context.translate(centerX, centerY-radius*1.1);
+                      context.rotate(0);
+                      context.drawImage(farm, -radius*3 / 2, -radius*3 / 2, radius*3, radius*3);
+                      context.rotate(-0);
+                      context.translate(-centerX, -(centerY-radius*1.1));
+                      return;
+                } else if (sides === 2003) { //carrot Image (added by dogeiscut)
+
+                      carrot.src = "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrot.png?v=1653892900639" 
+                      context.translate(centerX, centerY);
+                      context.rotate(angle);
+                      context.drawImage(carrot, -radius*5 / 2, -radius*5 / 2, radius*5, radius*5);
+                      context.rotate(-angle);
+                      context.translate(-centerX, -centerY);
+
+                      return;
+                } else if (sides > 0) { // Polygon
                 for (let i = 0; i < sides; i++) {
-                    let theta = (i / sides) * 2 * Math.PI;
-                    let x = centerX + radius * Math.cos(theta + angle);
-                    let y = centerY + radius * Math.sin(theta + angle);
-                    context.lineTo(x, y);
+                        let theta = (i / sides) * 2 * Math.PI;
+                        let x = centerX + radius * Math.cos(theta + angle);
+                        let y = centerY + radius * Math.sin(theta + angle);
+                        context.lineTo(x, y);
+                    }
                 }
             }
             context.closePath();
