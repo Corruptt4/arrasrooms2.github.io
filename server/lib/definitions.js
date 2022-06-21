@@ -195,6 +195,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   flare:             [1,     1,   1,      1,      0.7,      1,      1,      1,      1,      1,      1,      1,      1], 
   
+  debugnofire:             [99999999,     1,   1,      0,      0,      0,      0,      0,      0,      0,      1,      1,      1], 
+  
   noshudder:  [1, 1, 0.01, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   halfhealth:  [1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1],
   whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -8696,9 +8698,9 @@ exports.deflector = {
     LABEL: 'Deflector',
   //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  15,     25,      1,      0,      0,      0,      0,   ], 
+        POSITION: [  10,     50,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.vacuumRecoil]),
+            SHOOT_SETTINGS: combineStats([g.debugnofire]),
             TYPE: exports.air,
             LABEL: 'Shield',
             SKIN: 4,

@@ -841,9 +841,9 @@ import * as socketStuff from "./lib/socketInit.js";
             ];
             context.beginPath();
             //context.lineTo(x + l[0] * Math.cos(angle + r[0]), y + l[0] * Math.sin(angle + r[0]));
-            let BALLS = length*Math.PI/180
+            let BALLS = height*Math.PI/180
             ctx.moveTo(x + l[1] * Math.cos(angle + Math.PI), y + l[1] * Math.sin(angle + Math.PI));
-            context.arc(x + l[1] * Math.cos(angle + Math.PI), y + l[1] * Math.sin(angle + Math.PI), height*4, -BALLS/2+angle, BALLS/2+angle);
+            context.arc(x + l[1] * Math.cos(angle + Math.PI), y + l[1] * Math.sin(angle + Math.PI), length*4, -BALLS/2+angle, BALLS/2+angle);
             context.closePath();
             context.stroke();
             context.fill();
