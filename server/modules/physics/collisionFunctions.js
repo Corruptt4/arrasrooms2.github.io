@@ -19,11 +19,15 @@ function simplecollide(my, n) {
     n.accel.y -= b / (a + 0.3) * d;
 }
 
-function vacuum(my, n) {
-    this.velocity.x = portals.launchForce * ax * force / roomSpeed;
-    this.velocity.y = portals.launchForce * ay * force / roomSpeed;
+function vacuumcollide(my, n) {
+    if (my.label === 'Vacuum Nozzle Air') {
+        n.velocity.x += my.velocity.x / 20
+        n.velocity.y += my.velocity.y / 20
+    } else {
+        my.velocity.x += n.velocity.x / 20
+        my.velocity.y += n.velocity.y / 20
+    }
 }
-
 
 
 function firmcollide(my, n, buffer = 0) {
@@ -406,5 +410,6 @@ module.exports = {
     reflectcollide,
     advancedcollide,
     mooncollide,
-    reflectCollide
+    reflectCollide,
+    vacuumcollide
 };

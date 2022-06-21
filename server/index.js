@@ -56,7 +56,14 @@ const gameloop = (() => {
         if (!instance.activation.check() && !other.activation.check()) {
             return 0;
         }
+        let avoid = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion']
         switch (true) {
+            case (
+                (instance.label === 'Vacuum Nozzle Air' && !(other.type in avoid) && instance.master !== other) ||
+                (other.label === 'Vacuum Nozzle Air' && !(instance.type in avoid) && other.master !== instance)
+            ):
+                vacuumcollide(instance, other);
+                break;
             case (instance.type === "wall" || other.type === "wall"):
                 if (instance.type === "wall" && other.type === "wall") return;
                 let wall = instance.type === "wall" ? instance : other;

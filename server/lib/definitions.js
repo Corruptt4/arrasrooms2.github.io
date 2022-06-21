@@ -186,7 +186,7 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   lessspeed:            [1,     1,     1,      1,      1,      1,      1,      0.6,    0.6,    1,      1,      1,      1],
   // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
   
-  vacuum: [2, 0, 1, 1.2, 999999, 0.1, 999999, 10, 10, 0.05, 10, 1, 1],
+  vacuum: [2, 0, 1, 1.2, 999999, 0.1, 999999, 10, 10, 0.08, 10, 1, 1],
   
   archer:               [      0.1,   0.5,             1,                1,    1.5,   0.03,       5,        2,        2,      0.25,        1,        1,                      1], 
   
@@ -8570,6 +8570,7 @@ exports.punishment = {
 
 exports.air = {
     PARENT: [exports.bullet],
+    CUSTOM: true,
     LABEL: 'Air',
     TYPE: 'Air',
     SHAPE: [[-1,-0.1],[1,-0.1],[1,0.1],[-1,0.1]],
@@ -8583,11 +8584,13 @@ exports.grinder = {
             PARENT: [exports.genericTank],
             LABEL: 'Vacuum',
             DANGER: 6,
+            CUSTOM: true,
             BODY: {
                 FOV: base.FOV * 1.05,
                 DENSITY: base.DENSITY * 2,
                 SPEED: base.SPEED * 0.70,
-                HEALTH: base.HEALTH * 1.3
+                HEALTH: base.HEALTH * 1.7,
+                REGEN: base.REGEN*2
             },
             TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
                 POSITION: [  21.5,   0,      0,      0,     360,  0,], 
@@ -8603,28 +8606,28 @@ exports.grinder = {
          }, }, 
                    
             {
-         POSITION: [ 18, 12, 1, -130, 0, -176.5, 0, ],
+         POSITION: [ 18, 12, 1, -180, 0, -176.5, 0, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
             TYPE: exports.air,
             LABEL: 'Nozzle',
             SKIN: 1,
          }, }, {
-         POSITION: [ 18, 12, 1, -130, 0, 176.5, 0.25, ],
+         POSITION: [ 18, 12, 1, -180, 0, 176.5, 0.25, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
             TYPE: exports.air,
            LABEL: 'Nozzle',
             SKIN: 1,
          }, }, {
-         POSITION: [ 18, 12, 1, -130, 0, -171, 0.5, ],
+         POSITION: [ 18, 12, 1, -180, 0, -171, 0.5, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
             TYPE: exports.air,
            LABEL: 'Nozzle',
             SKIN: 1,
          }, }, {
-         POSITION: [ 18, 12, 1, -130, 0, 171, 0.75, ],
+         POSITION: [ 18, 12, 1, -180, 0, 171, 0.75, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
             TYPE: exports.air,
