@@ -1495,7 +1495,6 @@ exports.basic = {
             MAX_CHILDREN: 0,            // def  
             ALT_FIRE: false,            // def 
             NEGATIVE_RECOIL: false,     // def
-            COLOR: 3,
         }, }, 
     ],
 };
@@ -8567,6 +8566,41 @@ exports.punishment = {
             };
 
 
+exports.air = {
+    PARENT: [exports.bullet],
+    LABEL: 'Air',
+    SHAPE: [[-1,-1],[0.5,-1],[1,-0.5],[1,0.5],[0.5,1],[-1,1]]
+};
+
+exports.grinder = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Grinder',
+            DANGER: 6,
+            BODY: {
+                FOV: base.FOV * 1.05,
+                DENSITY: base.DENSITY * 2,
+                SPEED: base.SPEED * 0.75,
+            },
+            TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  21.5,   0,      0,      0,     360,  0,], 
+                TYPE: exports.smasherBody,
+            }],
+            IS_SMASHER: true,
+            SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
+            STAT_NAMES: statnames.smasher,
+            GUNS: [ {
+         POSITION: [ 18, 12, 1.7, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.air,
+            COLOR: 14,
+         }, }, 
+     ],
+        };
+
+
+
+
 
 // UPGRADE PATHS
 
@@ -8652,7 +8686,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
     exports.donut.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
 
     exports.basic.UPGRADES_TIER_2 = [exports.smash/*custom*/];
-        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine/*custom*/,exports.accelerator];
+        exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine/*custom*/,exports.accelerator,exports.grinder];
 
         exports.basic.UPGRADES_TIER_3 = [exports.single/*custom*/];
 

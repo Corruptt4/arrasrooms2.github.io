@@ -821,14 +821,15 @@ import * as socketStuff from "./lib/socketInit.js";
             // Draw guns
             source.guns.update();
             context.lineWidth = Math.max(config.graphical.mininumBorderChunk, ratio * config.graphical.borderChunk);
-            setColor(context, mixColors(color.grey, render.status.getColor(), render.status.getBlend()));
             if (source.guns.length === m.guns.length) {
                 let positions = source.guns.getPositions();
                 for (let i = 0; i < m.guns.length; i++) {
                     let g = m.guns[i],
                         position = positions[i] / ((g.aspect === 1) ? 2 : 1),
                         gx = g.offset * Math.cos(g.direction + g.angle + rot) + (g.length / 2 - position) * Math.cos(g.angle + rot),
-                        gy = g.offset * Math.sin(g.direction + g.angle + rot) + (g.length / 2 - position) * Math.sin(g.angle + rot);
+                        gy = g.offset * Math.sin(g.direction + g.angle + rot) + (g.length / 2 - position) * Math.sin(g.angle + rot),
+                        gunColor = g.color == null ? color.grey : getColor(g.color);
+                        setColor(context, mixColors(gunColor, render.status.getColor(), render.status.getBlend()));
                     drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * (g.length / 2 - ((g.aspect === 1) ? position * 2 : 0)), drawSize * g.width / 2, g.aspect, g.angle + rot);
                 }
             } else {
