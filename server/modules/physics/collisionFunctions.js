@@ -33,10 +33,17 @@ function vacuumcollide(my, n, pow=20) {
 
 function conversioncollide(my, n) {
   if (my.label === 'Deflector') {
-  } else {
     n.master = my
     n.source = my
-    my.health = 0
+    n.velocity.x = -n.velocity.x
+    n.velocity.y = -n.velocity.y
+   // n.velocity.y += 93490534
+  } else {
+    my.master = n
+    my.source = n
+    my.velocity.x = -n.velocity.x
+    my.velocity.y = -n.velocity.y
+   // my.velocity.y += 93490534
   }
 }
 

@@ -78,7 +78,7 @@ const gameloop = (() => {
                 (instance.label === 'Deflector' && !coversionavoid.includes(other.type) && conversion.includes(other.type) && instance.master !== other) ||
                 (other.label === 'Deflector' && !coversionavoid.includes(instance.type) && conversion.includes(instance.type) && other.master !== instance)
             ):
-                reflectcollide(instance, other);
+                conversioncollide(instance, other);
                 break;
             case (instance.type === "wall" || other.type === "wall"):
                 if (instance.type === "wall" && other.type === "wall") return;
