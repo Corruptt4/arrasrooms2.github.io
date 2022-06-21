@@ -1499,7 +1499,7 @@ exports.basic = {
             MAX_CHILDREN: 0,            // def  
             ALT_FIRE: false,            // def 
             NEGATIVE_RECOIL: false,     // def
-            SKIN: 4,                    // def
+            SKIN: 0,                    // def
         }, }, 
     ],
 };
@@ -1507,6 +1507,16 @@ exports.basic = {
         exports.oldbetatester = {
             PARENT: [exports.genericTank],
             LABEL: 'Custom',
+            INVISIBLE: [],
+            TURRETS: [],
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
+                }, 
+            ],
+        };
+exports.betatester = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Beta Tester',
             INVISIBLE: [],
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -8681,12 +8691,29 @@ exports.grinder = {
 //Deflector
 //Has a curved barrel in front that doesn not fire, however enemy ammo will be converted to your team if its touched and it will be reflected
 
+exports.deflector = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Deflector',
+  //CONTROLLERS: ['nearestDifferentMaster'],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  15,     25,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuumRecoil]),
+            TYPE: exports.air,
+            LABEL: 'Shield',
+            SKIN: 4,
+        }, }, 
+    ],
+};
+
 
 
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [/*exports.oldbetatester,*/exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
+exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
+
+exports.betatester.UPGRADES_TIER_1 = [exports.deflector];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
 //exports.betatester2.UPGRADES_TIER_1 = [exports.oldbetatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
