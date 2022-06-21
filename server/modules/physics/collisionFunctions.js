@@ -19,15 +19,15 @@ function simplecollide(my, n) {
     n.accel.y -= b / (a + 0.3) * d;
 }
 
-function vacuumcollide(my, n) {
-    if (my.label === 'Vacuum Nozzle Air') {
+function vacuumcollide(my, n, pow=20) {
+    if (my.label === 'Vacuum Nozzle Air'||my.label === 'Vacuum Nozzle (Blow) Air') {
         let resist = Math.min(Math.max(n.mass, 500), 10000) / 1000
-        n.velocity.x += my.velocity.x / resist / 20
-        n.velocity.y += my.velocity.y / resist / 20
+        n.velocity.x += my.velocity.x / resist / pow
+        n.velocity.y += my.velocity.y / resist / pow
     } else {
         let resist = Math.min(Math.max(my.mass, 500), 10000) / 1000
-        my.velocity.x += n.velocity.x / resist / 20
-        my.velocity.y += n.velocity.y / resist / 20
+        my.velocity.x += n.velocity.x / resist / pow
+        my.velocity.y += n.velocity.y / resist / pow
     }
 }
 

@@ -8588,8 +8588,8 @@ exports.grinder = {
             BODY: {
                 FOV: base.FOV * 1.05,
                 DENSITY: base.DENSITY * 2,
-                SPEED: base.SPEED * 0.70,
-                HEALTH: base.HEALTH * 1.7,
+                SPEED: base.SPEED * 0.75,
+                HEALTH: base.HEALTH * 1.2,
                 REGEN: base.REGEN*2
             },
             TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
@@ -8634,8 +8634,43 @@ exports.grinder = {
            LABEL: 'Nozzle',
             SKIN: 1,
          }, }, 
+                   
+                   
+                   
+                   {
+         POSITION: [ 18, 12, 1, 8, 0, -176.5+180, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
+            TYPE: exports.air,
+            LABEL: 'Nozzle  (Blow)',
+            SKIN: 1,
+            ALT_FIRE: true
+         }, }, {
+         POSITION: [ 18, 12, 1, 8, 0, 176.5+180, 0.25, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
+            TYPE: exports.air,
+           LABEL: 'Nozzle  (Blow)',
+            SKIN: 1,
+            ALT_FIRE: true
+         }, }, {
+         POSITION: [ 18, 12, 1, 8, 0, -171+180, 0.5, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
+            TYPE: exports.air,
+           LABEL: 'Nozzle  (Blow)',
+            SKIN: 1,
+            ALT_FIRE: true
+         }, }, {
+         POSITION: [ 18, 12, 1, 8, 0, 171+180, 0.75, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
+            TYPE: exports.air,
+           LABEL: 'Nozzle (Blow)',
+            SKIN: 1,
+            ALT_FIRE: true
+         }, }, 
      ],
-  //todo: add weaker blow, basically a sitting duck without it
 };
 
 

@@ -64,6 +64,12 @@ const gameloop = (() => {
             ):
                 vacuumcollide(instance, other);
                 break;
+            case (
+                (instance.label === 'Vacuum Nozzle (Blow) Air' /*&& !avoid.includes(other.type)*/ && instance.master !== other) ||
+                (other.label === 'Vacuum Nozzle (Blow) Air' /*&& !avoid.includes(instance.type)*/ && other.master !== instance)
+            ):
+                vacuumcollide(instance, other, 50);
+                break;
             case (instance.type === "wall" || other.type === "wall"):
                 if (instance.type === "wall" && other.type === "wall") return;
                 let wall = instance.type === "wall" ? instance : other;
