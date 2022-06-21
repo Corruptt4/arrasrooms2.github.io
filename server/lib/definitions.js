@@ -1499,6 +1499,7 @@ exports.basic = {
             MAX_CHILDREN: 0,            // def  
             ALT_FIRE: false,            // def 
             NEGATIVE_RECOIL: false,     // def
+            SKIN: 4,                    // def
         }, }, 
     ],
 };
@@ -8676,7 +8677,9 @@ exports.grinder = {
 
 //Tank ideas:
 //Singularity
-////Shoots out a "black hole" that sucks in anything thats not the master, thw actual back hole does low damage but it has high health
+////Shoots out a "black hole" that sucks in anything thats not the master, the actual back hole does low damage but it has high health
+//Deflector
+//Has a curved barrel in front that doesn not fire, however enemy ammo will be converted to your team if its touched and it will be reflected
 
 
 

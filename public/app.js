@@ -828,6 +828,23 @@ import * as socketStuff from "./lib/socketInit.js";
             context.closePath();
             context.stroke();
             context.fill();
+          } else if (skin==4) {//Curved barrel
+            let h = [];
+            h = (aspect > 0) ? [height * aspect, height] : [height, -height * aspect];
+            let r = [
+                Math.atan2(h[0], length),
+                Math.atan2(h[1], length)
+            ];
+            let l = [
+                Math.sqrt(length * length + h[0] * h[0]),
+                Math.sqrt(length * length + h[1] * h[1])
+            ];
+            context.beginPath();
+            context.lineTo(x + l[0] * Math.cos(angle + r[0]), y + l[0] * Math.sin(angle + r[0]));
+            context.arc(x + l[0] * Math.cos(angle + r[0]), y + l[0] * Math.sin(angle + r[0]), height, -length,);
+            context.closePath();
+            context.stroke();
+            context.fill();
           }
         }
         // The big drawing function
