@@ -186,7 +186,7 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   lessspeed:            [1,     1,     1,      1,      1,      1,      1,      0.6,    0.6,    1,      1,      1,      1],
   // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
   
-  vacuum: [2, 0, 1, 1.2, 100, 0.1, 9999, 10, 10, 0.1, 9999, 1, 1],
+  vacuum: [2, 0, 1, 1.2, 10000, 0.1, -99999, 10, 10, 0.05, -2000, 1, 1],
   
   archer:               [      0.1,   0.5,             1,                1,    1.5,   0.03,       5,        2,        2,      0.25,        1,        1,                      1], 
   
@@ -8574,8 +8574,8 @@ exports.air = {
     LABEL: 'Air',
     SHAPE: 0,
     BODY: {
-      PUSHABILITY: 0,
-      DESNITY: 1000,
+      PUSHABILITY: -300,
+      DESNITY: 1,
     }
 };
 
@@ -8602,13 +8602,7 @@ exports.grinder = {
             COLOR: 14,
          }, }, 
                    
-                   {
-         POSITION: [ 18, 12, 1.7, 0, 0, 0, 0, ],
-         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
-            TYPE: exports.bullet,
-            SKIN: 1,
-         }, }, {
+            {
          POSITION: [ 18, 12, 1, -130, 0, -176.5, 0, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
