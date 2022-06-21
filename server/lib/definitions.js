@@ -6649,7 +6649,7 @@ exports.bot = {
         SIZE: 10
     },
     NAME: "[AI] ",
-    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "minion", "fleeAtLowHealth"],
+    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "minion", "fleeAtLowHealth", "wander"],
     AI: {
         STRAFE: true
     }
@@ -6663,7 +6663,7 @@ exports.ramBot = {
     },
     NAME: "[AI] ",
     MOTION_TYPE: 'chase',
-    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth"],
+    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth", "wander"],
     AI: {
         STRAFE: true
     }

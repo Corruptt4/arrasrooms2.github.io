@@ -59,8 +59,8 @@ const gameloop = (() => {
         let avoid = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion']
         switch (true) {
             case (
-                (instance.label === 'Vacuum Nozzle Air' && !(other.type in avoid) && instance.master !== other) ||
-                (other.label === 'Vacuum Nozzle Air' && !(instance.type in avoid) && other.master !== instance)
+                (instance.label === 'Vacuum Nozzle Air' && !avoid.includes(other.type) && instance.master !== other) ||
+                (other.label === 'Vacuum Nozzle Air' && !avoid.includes(instance.type) && other.master !== instance)
             ):
                 vacuumcollide(instance, other);
                 break;

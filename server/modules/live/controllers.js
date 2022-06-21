@@ -749,6 +749,33 @@ ioTypes.fleeAtLowHealth = class extends IO {
     }
 }
 
+ioTypes.wander = class extends IO {
+    constructor(body) {
+        super(body);
+        this.timer = 0;
+    }
+
+    think(input) {
+        if (!(this.timer--)) {
+            this.timer = ran.irandom(400) + 100;
+            this.direction = ran.randomAngle();
+        }
+        let output = {};
+        if (!input.target) output.target = {
+            x: Math.cos(this.direction),
+            y: Math.sin(this.direction),
+        };
+        if (!input.goal) {
+            output.goal = {
+                x: this.body.x + Math.cos(this.direction),
+                y: this.body.y + Math.sin(this.direction),
+            };
+            output.power = 0.5;
+        }
+        return output;
+    }
+}
+
 module.exports = {
     ioTypes,
     IO

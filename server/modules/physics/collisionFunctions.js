@@ -21,11 +21,13 @@ function simplecollide(my, n) {
 
 function vacuumcollide(my, n) {
     if (my.label === 'Vacuum Nozzle Air') {
-        n.velocity.x += my.velocity.x / 20
-        n.velocity.y += my.velocity.y / 20
+        let resist = Math.min(Math.max(n.mass, 500), 10000) / 1000
+        n.velocity.x += my.velocity.x / resist / 20
+        n.velocity.y += my.velocity.y / resist / 20
     } else {
-        my.velocity.x += n.velocity.x / 20
-        my.velocity.y += n.velocity.y / 20
+        let resist = Math.min(Math.max(my.mass, 500), 10000) / 1000
+        my.velocity.x += n.velocity.x / resist / 20
+        my.velocity.y += n.velocity.y / resist / 20
     }
 }
 
