@@ -828,7 +828,7 @@ import * as socketStuff from "./lib/socketInit.js";
             context.closePath();
             context.stroke();
             context.fill();
-          } else if (skin==4) {//Curved barrel
+          } else if (skin==4) {//Curved barrel (bugged currently)
             let h = [];
             h = (aspect > 0) ? [height * aspect, height] : [height, -height * aspect];
             let r = [
