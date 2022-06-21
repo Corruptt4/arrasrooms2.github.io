@@ -19,6 +19,13 @@ function simplecollide(my, n) {
     n.accel.y -= b / (a + 0.3) * d;
 }
 
+function vacuum(my, n) {
+    this.velocity.x = portals.launchForce * ax * force / roomSpeed;
+    this.velocity.y = portals.launchForce * ay * force / roomSpeed;
+}
+
+
+
 function firmcollide(my, n, buffer = 0) {
     let item1 = {
         x: my.x + my.m_x,
