@@ -31,6 +31,14 @@ function vacuumcollide(my, n, pow=20) {
     }
 }
 
+function conversioncollide(my, n) {
+  if (my.label === 'Deflector') {
+  } else {
+    n.master = my
+    n.source = my
+    my.health = 0
+  }
+}
 
 function firmcollide(my, n, buffer = 0) {
     let item1 = {
@@ -413,5 +421,6 @@ module.exports = {
     advancedcollide,
     mooncollide,
     reflectCollide,
-    vacuumcollide
+    vacuumcollide,
+    conversioncollide
 };

@@ -56,6 +56,8 @@ const gameloop = (() => {
         if (!instance.activation.check() && !other.activation.check()) {
             return 0;
         }
+        let coversionavoid = ['food']
+        let conversion = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air']
         let avoid = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air']
         let blowavoid = ['air']
         switch (true) {
@@ -70,6 +72,13 @@ const gameloop = (() => {
                 (other.label === 'Vacuum Nozzle (Blow) Air' && !blowavoid.includes(instance.type) && other.master !== instance)
             ):
                 vacuumcollide(instance, other, 33);
+                break;
+            
+            case (
+                (instance.label === 'Deflector' && !coversionavoid.includes(other.type) && conversion.includes(other.type) && instance.master !== other) ||
+                (other.label === 'Deflector' && !coversionavoid.includes(instance.type) && conversion.includes(instance.type) && other.master !== instance)
+            ):
+                reflectcollide(instance, other);
                 break;
             case (instance.type === "wall" || other.type === "wall"):
                 if (instance.type === "wall" && other.type === "wall") return;
