@@ -8702,6 +8702,7 @@ exports.shield = {
     CUSTOM: true,
     LABEL: 'Shield',
     TYPE: 'Shield',
+    DRAW_SELF: false
 };
 
 exports.deflector = {
@@ -8719,6 +8720,7 @@ exports.deflector = {
             SHOOT_SETTINGS: combineStats([g.basic, g.deflector]),
             TYPE: exports.shield,
             LABEL: '',
+            AUTOFIRE: true,
             SKIN: 4,
         }, }, 
       //todo: make bullet speed effect reflected bullet speed

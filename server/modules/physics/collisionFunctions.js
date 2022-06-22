@@ -33,19 +33,19 @@ function vacuumcollide(my, n, pow=20) {
 
 function conversioncollide(my, n) {
   if (my.label === 'Deflector Shield') {
-    n.master = my
-    n.source = my
-    n.team = my.team
-    let w = my.facing
-    n.velocity.x = Math.cos(w)*Math.abs(n.velocity.x)*2
-    n.velocity.y = Math.sin(w)*Math.abs(n.velocity.y)*2
+    n.master = my.master
+    n.source = my.master
+    n.team = my.master.team
+    let w = my.master.facing
+    n.velocity.x = Math.cos(w)*Math.abs(n.velocity.x)*0.2
+    n.velocity.y = Math.sin(w)*Math.abs(n.velocity.y)*0.2
   } else {
-    my.master = n
-    my.source = n
-    my.team = n.team
-    let w = n.facing
-    my.velocity.x = Math.cos(w)*Math.abs(my.velocity.x)*2
-    my.velocity.y = Math.sin(w)*Math.abs(my.velocity.y)*2
+    my.master = n.master
+    my.source = n.master
+    my.team = n.master.team
+    let w = n.master.facing
+    my.velocity.x = Math.cos(w)*Math.abs(my.velocity.x)*0.2
+    my.velocity.y = Math.sin(w)*Math.abs(my.velocity.y)*0.2
   }
 }
 
