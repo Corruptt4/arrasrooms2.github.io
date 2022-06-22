@@ -8705,6 +8705,13 @@ exports.shield = {
     DRAW_SELF: false
 };
 
+exports.deflectorsymbol = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    SHAPE: 0,
+    COLOR: 10,
+};
+
 exports.deflector = {
     PARENT: [exports.genericTank],
     LABEL: 'Deflector',
@@ -8725,6 +8732,12 @@ exports.deflector = {
         }, }, 
       //todo: make bullet speed effect reflected bullet speed
     ],
+    TURRETS: [{
+                  /** SIZE     X       Y     ANGLE    ARC */
+            POSITION: [11,     16,      0,      0,     360, 0, ],
+            TYPE: exports.deflectorsymbol,
+        }
+    ]
 };
 
 
