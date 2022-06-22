@@ -828,9 +828,9 @@ import * as socketStuff from "./lib/socketInit.js";
             context.closePath();
             context.stroke();
             context.fill();
-          } else if (skin==3) {//R Triangle
+          } else if (skin==4) {//Chipped
             let h = [];
-            h = (aspect > 0) ? [height * aspect, height] : [height, -height * aspect];
+            h = [height, height];
             let r = [
                 Math.atan2(h[0], length),
                 Math.atan2(h[1], length)
@@ -844,7 +844,7 @@ import * as socketStuff from "./lib/socketInit.js";
             context.lineTo(x + l[1] * Math.cos(angle + Math.PI - r[1]), y + l[1] * Math.sin(angle + Math.PI - r[1]));
             context.lineTo(x + l[1] * Math.cos(angle + Math.PI + r[1]), y + l[1] * Math.sin(angle + Math.PI + r[1]));
             context.lineTo(x + l[0] * Math.cos(angle - r[0]), y + l[0] * Math.sin(angle - r[0]));
-            context.lineTo(x + l[0]/2 * Math.cos(angle), y + l[0]/2 * Math.sin(angle));
+            context.lineTo(x + l[0]/aspect*10 * Math.cos(angle), y + l[0]/aspect*10 * Math.sin(angle));
             context.closePath();
             context.stroke();
             context.fill();
