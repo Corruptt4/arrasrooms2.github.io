@@ -8698,7 +8698,7 @@ exports.deflector = {
     LABEL: 'Deflector',
   //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  10,     50,      1,      0,      0,      0,      0,   ], 
+        POSITION: [  18,     20,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.debugnofire]),
             TYPE: exports.air,

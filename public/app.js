@@ -828,7 +828,27 @@ import * as socketStuff from "./lib/socketInit.js";
             context.closePath();
             context.stroke();
             context.fill();
-          } else if (skin==4) {//Curved barrel (bugged currently)
+          } else if (skin==3) {//R Triangle
+            let h = [];
+            h = (aspect > 0) ? [height * aspect, height] : [height, -height * aspect];
+            let r = [
+                Math.atan2(h[0], length),
+                Math.atan2(h[1], length)
+            ];
+            let l = [
+                Math.sqrt(length * length + h[0] * h[0]),
+                Math.sqrt(length * length + h[1] * h[1])
+            ];
+            context.beginPath();
+            context.lineTo(x + l[0] * Math.cos(angle + r[0]), y + l[0] * Math.sin(angle + r[0]));
+            context.lineTo(x + l[1] * Math.cos(angle + Math.PI - r[1]), y + l[1] * Math.sin(angle + Math.PI - r[1]));
+            context.lineTo(x + l[1] * Math.cos(angle + Math.PI + r[1]), y + l[1] * Math.sin(angle + Math.PI + r[1]));
+            context.lineTo(x + l[0] * Math.cos(angle - r[0]), y + l[0] * Math.sin(angle - r[0]));
+            context.lineTo(x + l[0]/2 * Math.cos(angle), y + l[0]/2 * Math.sin(angle));
+            context.closePath();
+            context.stroke();
+            context.fill();
+          } else if (skin==5) {//Curved barrel (bugged currently)
             let h = [];
             h = (aspect > 0) ? [height * aspect, height] : [height, -height * aspect];
             let r = [
