@@ -8702,13 +8702,6 @@ exports.grinder = {
      ],
 };
 
-//Tank ideas:
-//Singularity
-////Shoots out a "black hole" that sucks in anything thats not the master, the actual back hole does low damage but it has high health
-//Deflector
-//Has a curved barrel in front that doesn not fire, however enemy ammo will be converted to your team if its touched and it will be reflected
-
-
 exports.shield = {
     PARENT: [exports.bullet],
     CUSTOM: true,
@@ -8757,6 +8750,7 @@ exports.deflector = {
  exports.roomba = {
             PARENT: [exports.genericTank],
             LABEL: 'Roomba',
+            CUSTOM: true,
             STAT_NAMES: statnames.generic,
             BODY: {
                 HEALTH: base.HEALTH * 0.8,
@@ -8808,6 +8802,22 @@ exports.deflector = {
                     }, },
             ],
         }; 
+
+//Tank ideas:
+//Singularity
+////Shoots out a "black hole" that sucks in anything thats not the master, the actual back hole does low damage but it has high health
+
+//More Ideas:
+//Make the deflector and vacuum part of their own unique basic branch
+//Singularity would branch from vacuum
+
+//more ideas totally not stolen from woomy:
+//A smasher that lets you dash
+////Alt fire to preform it, multiplies your current velocity by your engine accel by some amount
+
+//redesign the visuals of some of the older tanks
+//like the eggmancer
+//or that one mega swarmer
 
 
 
