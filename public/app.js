@@ -925,7 +925,11 @@ import * as socketStuff from "./lib/socketInit.js";
             }
             // Draw body
             context.globalAlpha = 1;
-            setColor(context, mixColors(getColor(instance.color), render.status.getColor(), render.status.getBlend()));
+            if (instance.color instanceof String) {
+              setColor(context, mixColors(instance.color, render.status.getColor(), render.status.getBlend()));
+            } else {
+              setColor(context, mixColors(getColor(instance.color), render.status.getColor(), render.status.getBlend()));
+            }
             drawPoly(context, xx, yy, drawSize / m.size * m.realSize, m.shape, rot, m.dipMulti);
             // Draw turrets above us
             if (source.turrets.length === m.turrets.length) {
