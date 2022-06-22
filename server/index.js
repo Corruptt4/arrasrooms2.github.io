@@ -74,8 +74,8 @@ const gameloop = (() => {
                 break;
             
             case (
-                (instance.label === 'Deflector' && conversion.includes(other.type) && instance.master !== other) ||
-                (other.label === 'Deflector' && conversion.includes(instance.type) && other.master !== instance)
+                (instance.label === 'Deflector Shield' && conversion.includes(other.type) && instance.master !== other) ||
+                (other.label === 'Deflector Shield' && conversion.includes(instance.type) && other.master !== instance)
             ):
                 conversioncollide(instance, other);
                 break;

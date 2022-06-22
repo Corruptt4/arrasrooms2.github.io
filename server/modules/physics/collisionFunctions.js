@@ -32,7 +32,7 @@ function vacuumcollide(my, n, pow=20) {
 }
 
 function conversioncollide(my, n) {
-  if (my.label === 'Deflector') {
+  if (my.label === 'Deflector Shield') {
     n.master = my
     n.source = my
     n.team = my.team

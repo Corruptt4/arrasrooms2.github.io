@@ -201,6 +201,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   halfhealth:  [1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1],
   whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   
+  deflector: [0.01, 0, 1, 0.8, 9999, 0, 0, 0.01, 0.01, 0.04, 1, 1, 1],
+  
   minionswarmer: [0.4, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1],
   
   halfstats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
@@ -8694,6 +8696,14 @@ exports.grinder = {
 //Deflector
 //Has a curved barrel in front that doesn not fire, however enemy ammo will be converted to your team if its touched and it will be reflected
 
+
+exports.shield = {
+    PARENT: [exports.bullet],
+    CUSTOM: true,
+    LABEL: 'Shield',
+    TYPE: 'Shield',
+};
+
 exports.deflector = {
     PARENT: [exports.genericTank],
     LABEL: 'Deflector',
@@ -8706,9 +8716,9 @@ exports.deflector = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  18,     20,      1.8,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.debugnofire]),
-            TYPE: exports.air,
-            LABEL: 'Shield',
+            SHOOT_SETTINGS: combineStats([g.basic, g.deflector]),
+            TYPE: exports.shield,
+            LABEL: '',
             SKIN: 4,
         }, }, 
       //todo: make bullet speed effect reflected bullet speed
