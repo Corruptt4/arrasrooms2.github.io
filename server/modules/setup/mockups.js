@@ -86,6 +86,7 @@ let mockupJsonData = (() => {
             }
             for (let i = 0; i < model.guns.length; i++) {
                 let gun = model.guns[i];
+                if (gun.skin === 1 ) continue;
                 let h = gun.aspect > 0 ? ((scale * gun.width) / 2) * gun.aspect : (scale * gun.width) / 2;
                 let r = Math.atan2(h, scale * gun.length) + rot;
                 let l = Math.sqrt(scale * scale * gun.length * gun.length + h * h);
