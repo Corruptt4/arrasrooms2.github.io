@@ -79,6 +79,15 @@ const gameloop = (() => {
             ):
                 conversioncollide(instance, other);
                 break;
+            
+            case (
+                (instance.type === 'Deflector Shield' && conversion.includes(other.type) && instance.master !== other) ||
+                (other.type === 'Deflector Shield' && conversion.includes(instance.type) && other.master !== instance)
+            ):
+                suckywuckycollideuwu(instance, other);
+                break;
+            
+            
             case (instance.type === "wall" || other.type === "wall"):
                 if (instance.type === "wall" && other.type === "wall") return;
                 let wall = instance.type === "wall" ? instance : other;

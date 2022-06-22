@@ -8822,7 +8822,7 @@ exports.blackhole = {
     COLOR: "#000000",
   TURRETS: [{
                   /** SIZE     X       Y     ANGLE    ARC */
-            POSITION: [20,     0,      0,      0,     360, 1, ],
+            POSITION: [18,     0,      0,      0,     360, 1, ],
             TYPE: exports.blackholesymbol,
         }
     ]

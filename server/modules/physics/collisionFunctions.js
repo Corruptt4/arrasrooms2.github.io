@@ -61,6 +61,18 @@ function conversioncollide(my, n) {
   }
 }
 
+function suckywuckycollideuwu(my, n) {
+    if (my.type === 'bhole') {
+      let w = Math.atan2(n.x-my.x, n.y-my.y)
+      n.velocity.x += Math.cos(w)*5
+      n.velocity.x += Math.sin(w)*5
+    } else {
+      let w = Math.atan2(my.x-n.x, my.y-n.y)
+      my.velocity.x += Math.cos(w)*5
+      my.velocity.x += Math.sin(w)*5
+    }
+}
+
 function firmcollide(my, n, buffer = 0) {
     let item1 = {
         x: my.x + my.m_x,
@@ -443,5 +455,6 @@ module.exports = {
     mooncollide,
     reflectCollide,
     vacuumcollide,
-    conversioncollide
+    conversioncollide,
+    suckywuckycollideuwu
 };
