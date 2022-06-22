@@ -58,6 +58,7 @@ const gameloop = (() => {
         }
         let conversion = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air', 'sentry', 'crasher']
         let avoid = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air']
+        let bholeignore = ['bhole', 'bholeignore']
         let blowavoid = ['air']
         switch (true) {
             case (
@@ -81,8 +82,8 @@ const gameloop = (() => {
                 break;
             
             case (
-                (instance.type === 'Deflector Shield' && conversion.includes(other.type) && instance.master !== other) ||
-                (other.type === 'Deflector Shield' && conversion.includes(instance.type) && other.master !== instance)
+                (instance.type === 'bhole' && !bholeignore.includes(other.type) && instance.master !== other) ||
+                (other.type === 'bhole' && !bholeignore.includes(instance.type) && other.master !== instance)
             ):
                 suckywuckycollideuwu(instance, other);
                 break;

@@ -64,12 +64,12 @@ function conversioncollide(my, n) {
 function suckywuckycollideuwu(my, n) {
     if (my.type === 'bhole') {
       let w = Math.atan2(n.x-my.x, n.y-my.y)
-      n.velocity.x += Math.cos(w)*5
-      n.velocity.x += Math.sin(w)*5
+      n.velocity.x -= Math.sin(w)*0.2
+      n.velocity.y -= Math.cos(w)*0.2
     } else {
       let w = Math.atan2(my.x-n.x, my.y-n.y)
-      my.velocity.x += Math.cos(w)*5
-      my.velocity.x += Math.sin(w)*5
+      my.velocity.x -= Math.sin(w)*0.2
+      my.velocity.y -= Math.cos(w)*0.2
     }
 }
 

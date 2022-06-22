@@ -8810,7 +8810,17 @@ exports.blackholesymbol = {
     SHAPE: 0,
     LABEL: 'Black Hole',
     TYPE: 'Blackhole',
+    TYPE: 'bholeignore',
     COLOR: "#000000"
+};
+
+exports.blackholepow = {
+    PARENT: [exports.bullet],
+    CUSTOM: true,
+    SHAPE: [[]],
+    LABEL: '',
+    TYPE: 'bhole',
+    COLOR: "#000000",
 };
 
 exports.blackhole = {
@@ -8818,13 +8828,23 @@ exports.blackhole = {
     CUSTOM: true,
     SHAPE: 0,
     LABEL: 'Black Hole',
-    TYPE: 'Blackhole',
+    TYPE: 'bholeignore',
     COLOR: "#000000",
   TURRETS: [{
                   /** SIZE     X       Y     ANGLE    ARC */
             POSITION: [18,     0,      0,      0,     360, 1, ],
             TYPE: exports.blackholesymbol,
         }
+    ],
+  GUNS: [ {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  0,     300,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.deflector]),
+            TYPE: exports.blackholepow,
+            LABEL: '',
+            AUTOFIRE: true,
+            SKIN: 1,
+        }, }, 
     ]
 };
 
