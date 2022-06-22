@@ -915,7 +915,7 @@ import * as socketStuff from "./lib/socketInit.js";
                         position = positions[i] / ((g.aspect === 1) ? 2 : 1),
                         gx = g.offset * Math.cos(g.direction + g.angle + rot) + (g.length / 2 - position) * Math.cos(g.angle + rot),
                         gy = g.offset * Math.sin(g.direction + g.angle + rot) + (g.length / 2 - position) * Math.sin(g.angle + rot),
-                        gunColor = g.color == null ? color.grey : getColor(g.color),
+                        gunColor = g.color == null ? color.grey : (typeof g.color === 'string' ? g.color : getColor(g.color)),
                         skin = g.skin == null ? 0 : g.skin;
                         setColor(context, mixColors(gunColor, render.status.getColor(), render.status.getBlend()));
                     drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * (g.length / 2 - ((g.aspect === 1) ? position * 2 : 0)), drawSize * g.width / 2, g.aspect, g.angle + rot, skin);
@@ -925,7 +925,7 @@ import * as socketStuff from "./lib/socketInit.js";
             }
             // Draw body
             context.globalAlpha = 1;
-            setColor(context, mixColors(getColor(instance.color), render.status.getColor(), render.status.getBlend()));
+            setColor(context, mixColors(typeof instance.color === 'string' ? instance.color : getColor(instance.color), render.status.getColor(), render.status.getBlend()));
             drawPoly(context, xx, yy, drawSize / m.size * m.realSize, m.shape, rot, m.dipMulti);
             // Draw turrets above us
             if (source.turrets.length === m.turrets.length) {

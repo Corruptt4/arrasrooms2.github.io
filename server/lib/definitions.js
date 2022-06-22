@@ -8714,13 +8714,14 @@ exports.deflectorsymbol = {
     PARENT: [exports.genericTank],
     LABEL: '',
     SHAPE: 0,
-    COLOR: "#FF0000",
+    COLOR: "#263270",
     CUSTOM: true,
 };
 
 exports.deflector = {
     PARENT: [exports.genericTank],
     LABEL: 'Deflector',
+    //todo: update the deflector to rely on the type and not the label
     CUSTOM: true,   
     BODY: {
        DAMAGE: base.DAMAGE * 0.5

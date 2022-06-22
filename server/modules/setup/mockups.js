@@ -43,7 +43,7 @@ let mockupJsonData = (() => {
                     width: rounder(gun.width),
                     aspect: rounder(gun.aspect),
                     angle: rounder(gun.angle),
-                    color: rounder(gun.color),
+                    color: gun.color,
                     skin: rounder(gun.skin),
                 };
             }),
