@@ -36,16 +36,10 @@ function conversioncollide(my, n) {
     n.master = my
     n.source = my
     n.team = my.team
-    n.velocity.x = -n.velocity.x
-    n.velocity.y = -n.velocity.y
-   // n.velocity.y += 93490534
   } else {
     my.master = n
     my.source = n
     my.team = n.team
-    my.velocity.x = -n.velocity.x
-    my.velocity.y = -n.velocity.y
-   // my.velocity.y += 93490534
   }
 }
 
