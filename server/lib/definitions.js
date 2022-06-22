@@ -8710,11 +8710,13 @@ exports.deflectorsymbol = {
     LABEL: '',
     SHAPE: 0,
     COLOR: 10,
+    CUSTOM: true,
 };
 
 exports.deflector = {
     PARENT: [exports.genericTank],
     LABEL: 'Deflector',
+    CUSTOM: true,   
     BODY: {
        DAMAGE: base.DAMAGE * 0.5
     },
@@ -8747,7 +8749,7 @@ exports.deflector = {
 //testbed/betatester stuff
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
 
-exports.betatester.UPGRADES_TIER_1 = [exports.deflector];
+exports.betatester.UPGRADES_TIER_1 = [];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
 //exports.betatester2.UPGRADES_TIER_1 = [exports.oldbetatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
@@ -8811,6 +8813,8 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq/*custom*/,exports.gen,exports.dumptruck,exports.miner,exports.indust,exports.supertest,exports.radar];
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
+    
+    exports.trapper.UPGRADES_TIER_3 = [exports.deflector];
  
     exports.miniBase.UPGRADES_TIER_2 = [exports.superTank, exports.hotrod]
         exports.superTank.UPGRADES_TIER_3 = [exports.autoSuperTank, exports.radio, exports.delivery];
