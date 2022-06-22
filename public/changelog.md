@@ -1,7 +1,12 @@
+# Update (06/21/2022): small hotfix
+- Attempted to fix a bug that caused reflected crashers to still act like crashers instead of drones
+
 # Update (06/21/2022): More tank work
 - Added Vacuum secondary fire
 - Added Roomba, branches off tri-angle
-- 
+- Fixed bug that caused tanks with a vacuum nozzle to appear small in menus (Thanks Max Nest#8441!)
+- Added Deflector, this tank has a orb on the front which can reflect bullets and drones and change them to your side. Branches off trapper at lvl 45
+- Plans are to make the vacuum and deflector each part of their own unique branch.
 
 # Update (06/21/2022): a2
 - added like 8 more new tanks
@@ -9,6 +14,8 @@
 - new path, minibase
 - Thanks to Max Nest#8441 for adding colored guns, custom polygons, and helping with the vacuum 
 - the new vacumm tank is a bit underpowered rn so a blow secondary fire is planned
+- Added gun skins, barrels can now look different!
+- Added gun colors!
 
 # Update (unknown): a
 - changed it back to archer cause theres already a crossbow lol

@@ -40,6 +40,10 @@ function conversioncollide(my, n) {
       let w = my.master.facing
       n.velocity.x = Math.cos(w)*Math.abs(n.velocity.x)*(1+my.master.skill.spd/4)
       n.velocity.y = Math.sin(w)*Math.abs(n.velocity.y)*(1+my.master.skill.spd/4)
+      if (n.type == "crasher") {
+        n.type == "drone"
+        n.settings.damageClass = 0
+      }
     }
   } else {
     if (my.team != n.master.team) {
@@ -49,6 +53,10 @@ function conversioncollide(my, n) {
       let w = n.master.facing
       my.velocity.x = Math.cos(w)*Math.abs(my.velocity.x)*(1+n.master.skill.spd/4)
       my.velocity.y = Math.sin(w)*Math.abs(my.velocity.y)*(1+n.master.skill.spd/4)
+      if (my.type == "crasher") {
+        my.type == "drone"
+        my.settings.damageClass = 0
+      }
     }
   }
 }
