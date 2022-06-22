@@ -8804,6 +8804,47 @@ exports.deflector = {
             ],
         }; 
 
+exports.blackholesymbol = {
+    PARENT: [exports.genericTank],
+    CUSTOM: true,
+    SHAPE: 0,
+    LABEL: 'Black Hole',
+    TYPE: 'Blackhole',
+    COLOR: "#000000"
+};
+
+exports.blackhole = {
+    PARENT: [exports.trap],
+    CUSTOM: true,
+    SHAPE: 0,
+    LABEL: 'Black Hole',
+    TYPE: 'Blackhole',
+    COLOR: "#000000",
+  TURRETS: [{
+                  /** SIZE     X       Y     ANGLE    ARC */
+            POSITION: [20,     0,      0,      0,     360, 1, ],
+            TYPE: exports.blackholesymbol,
+        }
+    ]
+};
+
+exports.singularity = {
+            PARENT: [exports.genericTank],
+            DANGER: 6,
+            BODY: {
+                ACCELERATION: base.ACCEL * 0.75,
+            },
+            LABEL: 'Singularity',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic]),
+                    TYPE: exports.blackhole,
+                    COLOR: "#000000"
+                }, },
+            ],
+        };
+
 //Tank ideas:
 //Singularity
 ////Shoots out a "black hole" that sucks in anything thats not the master, the actual back hole does low damage but it has high health
@@ -8827,7 +8868,7 @@ exports.deflector = {
 //testbed/betatester stuff
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
 
-exports.betatester.UPGRADES_TIER_1 = [];
+exports.betatester.UPGRADES_TIER_1 = [exports.singularity];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
 //exports.betatester2.UPGRADES_TIER_1 = [exports.oldbetatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
