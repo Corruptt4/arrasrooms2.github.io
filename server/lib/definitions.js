@@ -220,6 +220,7 @@ const statnames = {
     trap: 5,
     generic: 6,
     lance: 7,
+    deflector: 8,
 };
 const gunCalcNames = {
     default: 0,
@@ -8696,6 +8697,11 @@ exports.grinder = {
 exports.deflector = {
     PARENT: [exports.genericTank],
     LABEL: 'Deflector',
+    BODY: {
+       DAMAGE: base.DAMAGE * 0.5
+    },
+    IS_SMASHER: true, // only for engine accel
+    STAT_NAMES: statnames.deflector,
   //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  18,     20,      1.8,      0,      0,      0,      0,   ], 
@@ -8705,6 +8711,7 @@ exports.deflector = {
             LABEL: 'Shield',
             SKIN: 4,
         }, }, 
+      //todo: make bullet speed effect reflected bullet speed
     ],
 };
 
