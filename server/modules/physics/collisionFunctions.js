@@ -66,14 +66,14 @@ function suckywuckycollideuwu(my, n) {
       let distX = my.x - n.x
       let distY = my.y - n.y
       let dist = util.getDistance(my, n)
-      n.velocity.x += distX/dist
-      n.velocity.y += distY/dist
+      n.velocity.x += (distX/dist)/25
+      n.velocity.y += (distY/dist)/25
     } else {
       let distX = n.x - my.x
       let distY = n.y - my.y
       let dist = util.getDistance(my, n)
-      my.velocity.x += distX/dist
-      my.velocity.y += distY/dist
+      my.velocity.x += (distX/dist)/25
+      my.velocity.y += (distY/dist)/25
     }
 }
 
