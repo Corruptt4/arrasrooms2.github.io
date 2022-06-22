@@ -20,7 +20,7 @@ function simplecollide(my, n) {
 }
 
 function vacuumcollide(my, n, pow=20) {
-    if (my.label === 'Vacuum Nozzle Air'||my.label === 'Vacuum Nozzle (Blow) Air') {
+    if (my.type == 'Air'||my.type == 'BAir') {
         let resist = Math.min(Math.max(n.mass, 500), 10000) / 1000
         n.velocity.x += my.velocity.x / resist / pow
         n.velocity.y += my.velocity.y / resist / pow

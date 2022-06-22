@@ -8597,6 +8597,18 @@ exports.air = {
     }
 };
 
+exports.bair = {
+    PARENT: [exports.bullet],
+    CUSTOM: true,
+    LABEL: 'Air',
+    TYPE: 'BAir',
+    SHAPE: [[-1,-0.1],[1,-0.1],[1,0.1],[-1,0.1]],
+    BODY: {
+      PUSHABILITY: -500,
+      DESNITY: 10,
+    }
+};
+
 exports.grinder = {
             PARENT: [exports.genericTank],
             LABEL: 'Vacuum',
@@ -8658,32 +8670,32 @@ exports.grinder = {
          POSITION: [ 18, 12, 1, 8, 0, -176.5+180, 0, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.vacuumRecoil]),
-            TYPE: exports.air,
-            LABEL: 'Nozzle  (Blow)',
+            TYPE: exports.bair,
+            LABEL: 'Nozzle',
             SKIN: 1,
             ALT_FIRE: true
          }, }, {
          POSITION: [ 18, 12, 1, 8, 0, 176.5+180, 0.25, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.vacuumRecoil]),
-            TYPE: exports.air,
-           LABEL: 'Nozzle  (Blow)',
+            TYPE: exports.bair,
+           LABEL: 'Nozzle',
             SKIN: 1,
             ALT_FIRE: true
          }, }, {
          POSITION: [ 18, 12, 1, 8, 0, -171+180, 0.5, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.vacuumRecoil]),
-            TYPE: exports.air,
-           LABEL: 'Nozzle  (Blow)',
+            TYPE: exports.bair,
+           LABEL: 'Nozzle',
             SKIN: 1,
             ALT_FIRE: true
          }, }, {
          POSITION: [ 18, 12, 1, 8, 0, 171+180, 0.75, ],
          PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.vacuumRecoil]),
-            TYPE: exports.air,
-           LABEL: 'Nozzle (Blow)',
+            TYPE: exports.bair,
+           LABEL: 'Nozzle',
             SKIN: 1,
             ALT_FIRE: true
          }, }, 
@@ -8742,6 +8754,61 @@ exports.deflector = {
     ]
 };
 
+ exports.roomba = {
+            PARENT: [exports.genericTank],
+            LABEL: 'Roomba',
+            STAT_NAMES: statnames.generic,
+            BODY: {
+                HEALTH: base.HEALTH * 0.8,
+                SHIELD: base.SHIELD * 0.8,
+                DENSITY: base.DENSITY * 0.6,
+            },
+            DANGER: 6,
+            GUNS: [ {
+         POSITION: [ 16, 8, 1.7, 0, 0, 0, 0, ],
+         PROPERTIES: {
+            COLOR: 14,
+         }, }, 
+                   
+            {
+         POSITION: [ 18, 12, 1, -140, 0, 0+180, 0, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
+            TYPE: exports.air,
+            LABEL: 'Nozzle',
+            SKIN: 1,
+         }, }, {
+         POSITION: [ 18, 12, 1, -140, 0, 10+180, 1/3, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
+            TYPE: exports.air,
+           LABEL: 'Nozzle',
+            SKIN: 1,
+         }, }, {
+         POSITION: [ 18, 12, 1, -140, 0, -10+180, 2/3, ],
+         PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.vacuum]),
+            TYPE: exports.air,
+           LABEL: 'Nozzle',
+            SKIN: 1,
+         }, },
+                   
+                   {   
+                POSITION: [  16,     8,      1,      0,      0,     150,    0.1,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                        TYPE: exports.bullet,
+                        LABEL: gunCalcNames.thruster,
+                    }, }, {   
+                POSITION: [  16,     8,      1,      0,      0,     210,    0.1,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                        TYPE: exports.bullet,
+                        LABEL: gunCalcNames.thruster,
+                    }, },
+            ],
+        }; 
+
 
 
 // UPGRADE PATHS
@@ -8794,7 +8861,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
     exports.flank.UPGRADES_TIER_2 = [exports.hexa, exports.tri, exports.auto3, exports.flanktrap, exports.tritrap/*custom*/];
         exports.auto3.UPGRADES_TIER_3 = [exports.auto5, exports.heavy3, exports.auto4, exports.banshee/*custom*/];
         exports.hexa.UPGRADES_TIER_3 = [exports.octo, exports.hurricane, exports.hexatrap/*custom*/, exports.supertest];
-        exports.tri.UPGRADES_TIER_3 = [exports.fighter, exports.booster, exports.falcon, exports.bomber, exports.autotri, exports.brutalizer, exports.eagle/*custom*/];
+        exports.tri.UPGRADES_TIER_3 = [exports.fighter, exports.booster, exports.falcon, exports.bomber, exports.autotri, exports.brutalizer, exports.eagle/*custom*/,exports.roomba];
 
     exports.director.UPGRADES_TIER_2 = [exports.overseer, exports.cruiser, exports.underseer, exports.lilfact/*custom*/];
         exports.director.UPGRADES_TIER_3 = [exports.manager/*custom*/];

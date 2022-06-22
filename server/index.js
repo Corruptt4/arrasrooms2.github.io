@@ -61,14 +61,14 @@ const gameloop = (() => {
         let blowavoid = ['air']
         switch (true) {
             case (
-                (instance.label === 'Vacuum Nozzle Air' && !avoid.includes(other.type) && instance.master !== other) ||
-                (other.label === 'Vacuum Nozzle Air' && !avoid.includes(instance.type) && other.master !== instance)
+                (instance.type == 'Air' && !avoid.includes(other.type) && instance.master !== other) ||
+                (other.type == 'Air' && !avoid.includes(instance.type) && other.master !== instance)
             ):
                 vacuumcollide(instance, other);
                 break;
             case (
-                (instance.label === 'Vacuum Nozzle (Blow) Air' && !blowavoid.includes(other.type) && instance.master !== other) ||
-                (other.label === 'Vacuum Nozzle (Blow) Air' && !blowavoid.includes(instance.type) && other.master !== instance)
+                (instance.type == 'BAir' && !blowavoid.includes(other.type) && instance.master !== other) ||
+                (other.type == 'BAir' && !blowavoid.includes(instance.type) && other.master !== instance)
             ):
                 vacuumcollide(instance, other, 33);
                 break;
