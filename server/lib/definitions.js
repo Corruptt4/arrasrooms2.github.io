@@ -8829,7 +8829,6 @@ exports.blackhole = {
     SHAPE: 0,
     LABEL: 'Black Hole',
     TYPE: 'bholeignore',
-    COLOR: "#000000",
   TURRETS: [{
                   /** SIZE     X       Y     ANGLE    ARC */
             POSITION: [18,     0,      0,      0,     360, 1, ],
@@ -8855,6 +8854,7 @@ exports.singularity = {
                 ACCELERATION: base.ACCEL * 0.75,
             },
             LABEL: 'Singularity',
+            //todo: nerf black hole health
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
@@ -8867,7 +8867,7 @@ exports.singularity = {
 
 //Tank ideas:
 //Singularity
-////Shoots out a "black hole" that sucks in anything thats not the master, the actual back hole does low damage but it has high health
+////Shoots out a "black hole" that sucks in anything thats not the master, the actual back hole does high damage but it has low health
 
 //More Ideas:
 //Make the deflector and vacuum part of their own unique basic branch
