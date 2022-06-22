@@ -37,15 +37,15 @@ function conversioncollide(my, n) {
     n.source = my.master
     n.team = my.master.team
     let w = my.master.facing
-    n.velocity.x = Math.cos(w)*Math.abs(n.velocity.x)*0.2
-    n.velocity.y = Math.sin(w)*Math.abs(n.velocity.y)*0.2
+    n.velocity.x = Math.cos(w)*Math.abs(n.velocity.x)*(1+my.master.skill.spd/10)
+    n.velocity.y = Math.sin(w)*Math.abs(n.velocity.y)*(1+my.master.skill.spd/10)
   } else {
     my.master = n.master
     my.source = n.master
     my.team = n.master.team
     let w = n.master.facing
-    my.velocity.x = Math.cos(w)*Math.abs(my.velocity.x)*0.2
-    my.velocity.y = Math.sin(w)*Math.abs(my.velocity.y)*0.2
+    my.velocity.x = Math.cos(w)*Math.abs(my.velocity.x)*(1+n.master.skill.spd/10)
+    my.velocity.y = Math.sin(w)*Math.abs(my.velocity.y)*(1+n.master.skill.spd/10)
   }
 }
 

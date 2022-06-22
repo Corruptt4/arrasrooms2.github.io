@@ -8734,7 +8734,7 @@ exports.deflector = {
     ],
     TURRETS: [{
                   /** SIZE     X       Y     ANGLE    ARC */
-            POSITION: [11,     16,      0,      0,     360, 0, ],
+            POSITION: [18,     16,      0,      0,     360, 0, ],
             TYPE: exports.deflectorsymbol,
         }
     ]
