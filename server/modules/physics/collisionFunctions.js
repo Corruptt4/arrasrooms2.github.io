@@ -33,19 +33,23 @@ function vacuumcollide(my, n, pow=20) {
 
 function conversioncollide(my, n) {
   if (my.label === 'Deflector Shield') {
-    n.master = my.master
-    n.source = my.master
-    n.team = my.master.team
-    let w = my.master.facing
-    n.velocity.x = Math.cos(w)*Math.abs(n.velocity.x)*(1+my.master.skill.spd/10)
-    n.velocity.y = Math.sin(w)*Math.abs(n.velocity.y)*(1+my.master.skill.spd/10)
+    if (n.team != my.master.team) {
+      n.master = my.master
+      n.source = my.master
+      n.team = my.master.team
+      let w = my.master.facing
+      n.velocity.x = Math.cos(w)*Math.abs(n.velocity.x)*(1+my.master.skill.spd/4)
+      n.velocity.y = Math.sin(w)*Math.abs(n.velocity.y)*(1+my.master.skill.spd/4)
+    }
   } else {
-    my.master = n.master
-    my.source = n.master
-    my.team = n.master.team
-    let w = n.master.facing
-    my.velocity.x = Math.cos(w)*Math.abs(my.velocity.x)*(1+n.master.skill.spd/10)
-    my.velocity.y = Math.sin(w)*Math.abs(my.velocity.y)*(1+n.master.skill.spd/10)
+    if (my.team != n.master.team) {
+      my.master = n.master
+      my.source = n.master
+      my.team = n.master.team
+      let w = n.master.facing
+      my.velocity.x = Math.cos(w)*Math.abs(my.velocity.x)*(1+n.master.skill.spd/4)
+      my.velocity.y = Math.sin(w)*Math.abs(my.velocity.y)*(1+n.master.skill.spd/4)
+    }
   }
 }
 
