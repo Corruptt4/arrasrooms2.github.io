@@ -56,7 +56,7 @@ const gameloop = (() => {
         if (!instance.activation.check() && !other.activation.check()) {
             return 0;
         }
-        let conversion = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air']
+        let conversion = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air', 'sentry', 'crasher']
         let avoid = ['bullet', 'drone', 'swarm', 'trap', 'block', 'minion', 'air']
         let blowavoid = ['air']
         switch (true) {
