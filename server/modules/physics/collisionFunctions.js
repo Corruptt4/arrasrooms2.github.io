@@ -36,10 +36,16 @@ function conversioncollide(my, n) {
     n.master = my
     n.source = my
     n.team = my.team
+    let w = Math.atan2(my.target.y, my.target.x)
+    n.velocity.x = Math.cos(w)*Math.abs(n.velocity.x)
+    n.velocity.y = Math.sin(w)*Math.abs(n.velocity.y)
   } else {
     my.master = n
     my.source = n
     my.team = n.team
+    let w = Math.atan2(n.target.y, n.target.x)
+    my.velocity.x = Math.cos(w)*Math.abs(my.velocity.x)
+    my.velocity.y = Math.sin(w)*Math.abs(my.velocity.y)
   }
 }
 
