@@ -8709,7 +8709,7 @@ exports.deflectorsymbol = {
     PARENT: [exports.genericTank],
     LABEL: '',
     SHAPE: 0,
-    COLOR: "#31389e",
+    COLOR: "#FF0000",
     CUSTOM: true,
 };
 
