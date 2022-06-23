@@ -9003,6 +9003,7 @@ exports.blackhole = {
     CUSTOM: true,
     SHAPE: 0,
     DANGER: 100,
+            //todo: perfectly center the gun 
     LABEL: 'Black Hole',
     TYPE: 'bholeignore',
   TURRETS: [{
@@ -9030,8 +9031,6 @@ exports.singularity = {
                 ACCELERATION: base.ACCEL * 0.75,
             },
             LABEL: 'Singularity',
-            //todo: nerf black hole health and maybe damage a little bit
-            //maybe also nerf gravity force
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
@@ -9053,7 +9052,7 @@ exports.sourcerdrone = {
      CONTROLLERS: [
         'hangOutNearMasterEven',
         'mapTargetToGoal'
-    ], //temp controllers till i get the proper ones written
+    ], //aghhhhhhhhhhhhh
     TYPE: 'drone',
     ACCEPTS_SCORE: false,
     DANGER: 2,
