@@ -5802,6 +5802,7 @@ exports.dogeTest = {
     CUSTOM: true,
     DANGER: 99999,
     SHAPE: 2000,
+    VALUE: 999999999999999999,
     HAS_NO_RECOIL: true,
     COLOR: 36,
     SKILL: skillSet({ 
