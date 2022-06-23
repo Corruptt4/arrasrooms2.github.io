@@ -277,14 +277,14 @@ const maintainloop = (() => {
         o.life();
     };
     function spawnHealer(loc) {
-      let o = new Entity(position);
-            o.define(entityClass);
-            o.team = -101;
-            o.facing = ran.randomAngle();
-            o.protect();
-            o.life();
+      let o = new Entity(loc);
+      o.define(Class.bighealer);
+      o.team = -101;
+      o.protect();
+      o.life();
     }
     for (let loc of room["wall"]) spawnWall(loc);
+    for (let loc of room["hyou"]) spawnHealer(loc);
     // Spawning functions
     let spawnBosses = (() => {
         let timer = Math.round((c.bossSpawnInterval || 8) * 60); // It's in minutes
