@@ -8854,7 +8854,8 @@ exports.singularity = {
                 ACCELERATION: base.ACCEL * 0.75,
             },
             LABEL: 'Singularity',
-            //todo: nerf black hole health
+            //todo: nerf black hole health and maybe damage a little bit
+            //maybe also nerf gravity force
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
