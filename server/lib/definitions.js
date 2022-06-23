@@ -8940,7 +8940,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.director.UPGRADES_TIER_3 = [exports.manager/*custom*/];
         exports.cruiser.UPGRADES_TIER_3 = [exports.carrier, exports.battleship, exports.fortress/*custom*/,exports.teaser];
         exports.lilfact.UPGRADES_TIER_3 = [exports.factory, exports.autolilfact/*custom*/,exports.cloner,exports.virus];
-        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/,exports.overmancer,exports.droneSpammer];
+        exports.overseer.UPGRADES_TIER_3 = [exports.overlord, exports.overtrap, exports.overgunner, exports.banshee, exports.autoover, exports.drive/*custom*/,exports.overmancer];
         exports.underseer.UPGRADES_TIER_3 = [exports.necromancer, exports.maleficitor/*custom*/,exports.overmancer,exports.collector,exports.eggmacer];
 
     exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery/*custom*/];
