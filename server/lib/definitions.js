@@ -9123,9 +9123,14 @@ exports.healersymbol = {
     CUSTOM: true,
     LABEL: '',
     COLOR: 12,
-    SHAPE: [[-0.2,1],[0.2,1],[0.2,0.2],[1,0.2],[1,-0.2],[0.2,-0.2],[0.2,-1],[-0.2,-1],[-0.2,-0.2],[-1,-0.2],[-1,0.2],[-0.2,0.2]],
+    SHAPE: [[-0.2,0.8],[0.2,0.8],[0.2,0.2],[0.8,0.2],[0.8,-0.2],[0.2,-0.2],[0.2,-0.8],[-0.2,-0.8],[-0.2,-0.2],[-0.8,-0.2],[-0.8,0.2],[-0.2,0.2]],
     INDEPENDENT: true,
 };
+
+exports.healingBullet = {
+  PARENT: [exports.bullet],
+  TYPE: 'healing'
+}
 
 exports.bighealer = {
     PARENT: [exports.dominator],
@@ -9154,7 +9159,7 @@ exports.bighealer = {
     TURRETS: [
       {
                   /** SIZE     X       Y     ANGLE     ARC */
-            POSITION: [12,     0,      0,       0,     360, 1, ],
+            POSITION: [18,     0,      0,       0,     360, 1, ],
             TYPE: exports.healersymbol,
       }, {
         POSITION: [22, 0, 0, 0, 360, 0],

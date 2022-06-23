@@ -119,8 +119,14 @@ const gameloop = (() => {
             case ((instance.type === 'crasher' && other.type === 'food') || (other.type === 'crasher' && instance.type === 'food')):
             firmcollide(instance, other);
             break;
-        case (instance.team !== other.team):
+        case ((instance.team !== other.team)&&
+             (instance.type === 'healing' && instance.master !== other) ||
+              (other.type === 'healing' && other.master !== instance)
+             ):
             advancedcollide(instance, other, true, true);
+            break;
+        case (instance.team == other.team):
+            healcollide(instance, other, 5);
             break;
         case (instance.settings.hitsOwnType == 'never' || other.settings.hitsOwnType == 'never'):
             break;

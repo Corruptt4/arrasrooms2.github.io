@@ -31,6 +31,14 @@ function vacuumcollide(my, n, pow=20) {
     }
 }
 
+function healcollide(my, n, healing) {
+    if (my.type == 'healing'||my.type == 'healing') {
+        n.health.amount += healing
+    } else {
+        my.health.amount += healing
+    }
+}
+
 function conversioncollide(my, n) {
   if (my.label === 'Deflector Shield') {
     if (n.team != my.master.team) {
@@ -460,5 +468,6 @@ module.exports = {
     reflectCollide,
     vacuumcollide,
     conversioncollide,
-    suckywuckycollideuwu
+    suckywuckycollideuwu,
+    healcollide
 };
