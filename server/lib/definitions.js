@@ -211,6 +211,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   blackhole: [1, 1, 1, 1, 0.7, 0.8, 1, 1, 1, 1, 1, 1, 1],
   
+  healer: [1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1],
+  
 };
 
 const dfltskl = 9;
@@ -9117,6 +9119,7 @@ exports.sourceror.TURRETS.push(
 
 exports.healersymbol = {
     PARENT: [exports.genericTank],
+    CONTROLLERS: ['dontTurn'], 
     CUSTOM: true,
     LABEL: '',
     COLOR: 12,
@@ -9142,7 +9145,7 @@ exports.bighealer = {
     },
     FACING_TYPE: 'autospin',
     VALUE: 0,
-    SIZE: 80,
+    SIZE: 60,
     COLOR: 10,
     VARIES_IN_SIZE: false,
     GIVE_KILL_MESSAGE: true,
@@ -9159,30 +9162,30 @@ exports.bighealer = {
     }
     ],
     GUNS: [{    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [    14,      8,      1,      0,      0,      0,      0,   ], 
+        POSITION: [    12,      8,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
             TYPE: exports.bullet,
             LABEL: 'Healer',
             AUTOFIRE: true,
   }, }, {        /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [    14,      8,      1,      0,      0,      90,     0,   ], 
+        POSITION: [    12,      8,      1,      0,      0,      90,     0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
             TYPE: exports.bullet,
             LABEL: 'Healer',
             AUTOFIRE: true,
   }, }, {        /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [    14,      8,      1,      0,      0,      180,    0,   ], 
+        POSITION: [    12,      8,      1,      0,      0,      180,    0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
             TYPE: exports.bullet,
             LABEL: 'Healer',
             AUTOFIRE: true,
   }, }, {        /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [    14,      8,      1,      0,      0,      270,    0,   ], 
+        POSITION: [    12,      8,      1,      0,      0,      270,    0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
             TYPE: exports.bullet,
             LABEL: 'Healer',
             AUTOFIRE: true,
