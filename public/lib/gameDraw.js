@@ -100,6 +100,7 @@ const drawingFunctions = (function(util, global, config, Canvas, color) {
             case 'bas1':
             case 'bap1':
             case 'dom1':
+            case 'hyou':
                 return color.blue;
             case 'bas2':
             case 'bap2':
