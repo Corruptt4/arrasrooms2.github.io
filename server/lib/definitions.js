@@ -9073,12 +9073,13 @@ exports.sourcerdrone = {
         RESIST: 1.5,
         FOV: 0.8,
     },
-    HITS_OWN_TYPE: 'hard',
-    DRAW_HEALTH: false,
+    HITS_OWN_TYPE: 'hardWithBuffer',
+    DRAW_HEALTH: true,
     CLEAR_ON_MASTER_UPGRADE: true,
     BUFF_VS_FOOD: true,
     CUSTOM: true,
     LABEL: 'Powerball',
+    INDEPENDENT: true,
     SHAPE: 0
 };
 

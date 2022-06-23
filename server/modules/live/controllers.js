@@ -790,6 +790,11 @@ ioTypes.hangOutNearMasterEven = class extends IO {
     think(input) {
         if (this.body.invisible[1]) return {}
         if (this.body.source !== this.body) {
+            for (let i=0;i<this.master.children.length;i++) {
+                if (this.master.children[i]===this) {
+                    let myNumber = i
+                }
+            }
             let bound1 = this.orbit * 0.8 + this.body.source.size + this.body.size
             let bound2 = this.orbit * 1.5 + this.body.source.size + this.body.size
             let dist = util.getDistance(this.body, this.body.source) + Math.PI / 8;
