@@ -9115,6 +9115,31 @@ exports.sourceror.TURRETS.push(
 )
 }
 
+
+exports.bighealer = {
+    PARENT: [exports.dominator],
+    TYPE: 'wall',
+    DAMAGE_CLASS: 1,
+    LABEL: 'Healer',
+    FACING_TYPE: 'turnWithSpeed',
+    SHAPE: -9,
+    BODY: {
+        PUSHABILITY: 0,
+        HEALTH: 10000,
+        SHIELD: 10000,
+        REGEN: 1000,
+        DAMAGE: 1,
+        RESIST: 100,
+        STEALTH: 1,
+    },
+    VALUE: 0,
+    SIZE: 60,
+    COLOR: 10,
+    VARIES_IN_SIZE: false,
+    GIVE_KILL_MESSAGE: true,
+    ACCEPTS_SCORE: false,
+};
+
 //Tank ideas:
 //Singularity
 ////Shoots out a "black hole" that sucks in anything thats not the master, the actual back hole does high damage but it has low health

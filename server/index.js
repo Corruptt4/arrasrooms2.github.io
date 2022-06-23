@@ -276,6 +276,14 @@ const maintainloop = (() => {
         o.protect();
         o.life();
     };
+    function spawnHealer(loc) {
+      let o = new Entity(position);
+            o.define(entityClass);
+            o.team = -101;
+            o.facing = ran.randomAngle();
+            o.protect();
+            o.life();
+    }
     for (let loc of room["wall"]) spawnWall(loc);
     // Spawning functions
     let spawnBosses = (() => {
