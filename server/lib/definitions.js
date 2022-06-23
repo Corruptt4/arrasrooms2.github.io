@@ -9054,7 +9054,7 @@ exports.sourcerdrone = {
      CONTROLLERS: [
         'nearestDifferentMaster',
         'mapTargetToGoal'
-    ],
+    ], //temp controllers till i get the proper ones written
     CUSTOM: true,
     LABEL: 'Powerball',
     SHAPE: 0
@@ -9070,6 +9070,7 @@ exports.sourceror = {
             },
             LABEL: 'Sourceror',
             TURRETS: [],
+            FACING_TYPE: 'autospin',
   
             GUNS: [{    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [            0,      8,      1,      1,      0,      0,      0,   ], 
