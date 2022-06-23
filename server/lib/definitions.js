@@ -9053,9 +9053,7 @@ exports.sourcerdrone = {
     PARENT: [exports.drone],
      CONTROLLERS: [
         'nearestDifferentMaster',
-        'canRepel',
-        'mapTargetToGoal',
-        'hangOutNearMaster'
+        'mapTargetToGoal'
     ],
     CUSTOM: true,
     LABEL: 'Powerball',
