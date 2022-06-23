@@ -5804,7 +5804,7 @@ exports.dogeTest = {
     SHAPE: 2000,
     VALUE: 999999999999999999,
     HAS_NO_RECOIL: true,
-    COLOR: 36,
+    COLOR: "#eb9d50",
     SKILL: skillSet({ 
     hlt: 100000,
     dam: 100000,
@@ -5813,15 +5813,15 @@ exports.dogeTest = {
     SIZE: 24,
     BODY: {
         FOV: 3,
-        HEALTH: 999999999,
+        HEALTH: 999999999999999999,
         DAMAGE: 999999999,
         SPEED: 40
     },
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  18,     8,      1.5,      0,      0,      0,      0,   ], 
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      2,      9999,      9999,      9999,      100,      2,      1,      9999,      0.00001,      0]]),
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      2,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
             TYPE: exports.bullet,
             LABEL: 'Cleaner',                  // def
             STAT_CALCULATOR: 0,         // def
@@ -5831,6 +5831,178 @@ exports.dogeTest = {
             MAX_CHILDREN: 0,            // def  
             ALT_FIRE: false,            // def 
             NEGATIVE_RECOIL: false,     // def
+        }, }, 
+           
+           
+           
+           { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      0,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*2,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*3,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*4,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*5,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*6,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*7,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*8,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*9,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*10,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
+        }, }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1.5,      0,      0,      30*11,      0,   ], 
+        PROPERTIES: {               // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
+            SHOOT_SETTINGS: combineStats([[1,      1,     0.1,      20,      999999999999999999,      999999999999999999,      999999999999999999,      100,      100,      3,      999999999999999999,      0.0000001,      999999999999999999]]),
+            TYPE: exports.bullet,
+            LABEL: 'Spreader',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: true,            
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 1
         }, }, 
     ],
 };
