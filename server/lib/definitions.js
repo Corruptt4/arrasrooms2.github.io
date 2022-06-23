@@ -201,13 +201,15 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   halfhealth:  [1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1],
   whatthe: [0.03703703703, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
   
-  deflector: [0.01, 0, 1, 0.8, 9999, 0, 0, 0.01, 0.01, 0.04, 1, 1, 1],
+  deflector: [0.01, 0, 1, 0.7, 9999, 0, 0, 0.01, 0.01, 0.04, 1, 1, 1],
   
   minionswarmer: [0.4, 1, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 1],
   
   halfstats: [0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
   halfnerf: [2, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 2, 1, 1, 1],
-  clonerbuff: [0.7, 1, 1, 1, 0.8, 0.7, 2, 2, 2, 1, 1, 1, 1]
+  clonerbuff: [0.7, 1, 1, 1, 0.8, 0.7, 2, 2, 2, 1, 1, 1, 1],
+  
+  blackhole: [1, 1, 1, 1, 0.7, 0.8, 1, 1, 1, 1, 1, 1, 1],
   
 };
 
@@ -8827,6 +8829,7 @@ exports.blackhole = {
     PARENT: [exports.trap],
     CUSTOM: true,
     SHAPE: 0,
+    DANGER: 100,
     LABEL: 'Black Hole',
     TYPE: 'bholeignore',
   TURRETS: [{
@@ -8859,12 +8862,40 @@ exports.singularity = {
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  20,    14,      1,      0,      0,      0,      0,   ], 
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy]),
+                    SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.blackhole]),
                     TYPE: exports.blackhole,
                     COLOR: "#000000"
                 }, },
             ],
         };
+
+exports.sourcerorsymbol = {
+    PARENT: [exports.genericTank],
+    CUSTOM: true,
+    LABEL: '',
+    SHAPE: 0
+};
+
+exports.sourceror = {
+            PARENT: [exports.genericTank],
+            DANGER: 6,
+            BODY: {
+                ACCELERATION: base.ACCEL * 2,
+                SPEED: base.SPEED * 1.2,
+            },
+            LABEL: 'Sourceror',
+            TURRETS: []
+        };
+
+  for (let i = 0; i < 6; i++) {
+exports.sourceror.TURRETS.push(
+{
+                  /** SIZE     X       Y     ANGLE    ARC */
+            POSITION: [4,     6,      0,      (360/6)*i,     360, 1, ],
+            TYPE: exports.sourcerorsymbol,
+}
+)
+}
 
 //Tank ideas:
 //Singularity
@@ -8889,7 +8920,7 @@ exports.singularity = {
 //testbed/betatester stuff
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
 
-exports.betatester.UPGRADES_TIER_1 = [exports.singularity];
+exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
 //exports.betatester2.UPGRADES_TIER_1 = [exports.oldbetatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
