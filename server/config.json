@@ -19,11 +19,15 @@
   "ARENA_TYPE": "rect",
   "BANNED_CHARACTER_REGEX": "/[\uFDFD\u200E\u0000]/gi", 
   "ROOM_SETUP": [
-    [ "norm", "norm", "norm", "norm", "norm" ],
-    [ "norm", "norm", "norm", "norm", "norm" ],
-    [ "norm", "norm", "nest", "norm", "norm" ],
-    [ "norm", "norm", "norm", "norm", "norm" ],
-    [ "norm", "norm", "norm", "norm", "norm" ]
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ],
+    [ "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm" ]
   ],
   "X_GRID": 5,
   "Y_GRID": 5,
