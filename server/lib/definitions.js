@@ -9050,11 +9050,33 @@ exports.sourcerorsymbol = {
 };
 
 exports.sourcerdrone = {
-    PARENT: [exports.drone],
      CONTROLLERS: [
-        'nearestDifferentMaster',
+        'hangOutNearMasterEven',
         'mapTargetToGoal'
     ], //temp controllers till i get the proper ones written
+    TYPE: 'drone',
+    ACCEPTS_SCORE: false,
+    DANGER: 2,
+    CONTROL_RANGE: 0,
+    MOTION_TYPE: 'chase',
+    FACING_TYPE: 'smoothToTarget',
+    AI: { BLIND: true, },
+    BODY: {
+        PENETRATION: 1.2,
+        PUSHABILITY: 0.6,
+        ACCELERATION: 1,
+        HEALTH: 2.3 * wepHealthFactor,
+        DAMAGE: 8.25 * wepDamageFactor,
+        SPEED: 5,
+        RANGE: 200,
+        DENSITY: 0.03,
+        RESIST: 1.5,
+        FOV: 0.8,
+    },
+    HITS_OWN_TYPE: 'hard',
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    BUFF_VS_FOOD: true,
     CUSTOM: true,
     LABEL: 'Powerball',
     SHAPE: 0

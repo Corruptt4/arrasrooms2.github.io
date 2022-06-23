@@ -804,7 +804,7 @@ ioTypes.hangOutNearMasterEven = class extends IO {
             // Set a goal
             if (dist > bound2 || this.timer > 30) {
                 this.timer = 0
-                let dir = util.getDirection(this.body, this.body.source) + Math.PI * ran.random(0.5);
+                let dir = util.getDirection(this.body, this.body.source) + Math.PI
                 let len = ran.randomRange(bound1, bound2)
                 let x = this.body.source.x - len * Math.cos(dir)
                 let y = this.body.source.y - len * Math.sin(dir)
@@ -815,9 +815,7 @@ ioTypes.hangOutNearMasterEven = class extends IO {
             }
             if (dist < bound2) {
                 output.power = 0.15
-                if (ran.chance(0.3)) {
-                    this.timer++;
-                }
+                this.timer++;
             }
             return output
         }
