@@ -9049,15 +9049,39 @@ exports.sourcerorsymbol = {
     SHAPE: 0
 };
 
+exports.sourcerdrone = {
+    PARENT: [exports.drone],
+     CONTROLLERS: [
+        'nearestDifferentMaster',
+        'canRepel',
+        'mapTargetToGoal',
+        'hangOutNearMaster'
+    ],
+    CUSTOM: true,
+    LABEL: 'Powerball',
+    SHAPE: 0
+};
+
 exports.sourceror = {
             PARENT: [exports.genericTank],
             DANGER: 6,
+            MAX_CHILDREN: 6,
             BODY: {
                 ACCELERATION: base.ACCEL * 2,
                 SPEED: base.SPEED * 1.2,
             },
             LABEL: 'Sourceror',
-            TURRETS: []
+            TURRETS: [],
+  
+            GUNS: [{    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [            0,      8,      1,      1,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone]),
+            TYPE: exports.sourcerdrone,
+            LABEL: '',
+            AUTOFIRE: true,
+            SKIN: 1,
+        }, }, ]
         };
 
   for (let i = 0; i < 6; i++) {
