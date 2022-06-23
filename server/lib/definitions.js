@@ -8730,7 +8730,7 @@ exports.deflector = {
     STAT_NAMES: statnames.deflector,
   //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  18,     20,      1.8,      0,      0,      0,      0,   ], 
+        POSITION: [  16,     15,      1.8,      0,      0,      0,      0,   ], 
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.deflector]),
             TYPE: exports.shield,
@@ -8742,7 +8742,7 @@ exports.deflector = {
     ],
     TURRETS: [{
                   /** SIZE     X       Y     ANGLE    ARC */
-            POSITION: [18,     16,      0,      0,     360, 0, ],
+            POSITION: [12,     14,      0,      0,     360, 0, ],
             TYPE: exports.deflectorsymbol,
         }
     ]
