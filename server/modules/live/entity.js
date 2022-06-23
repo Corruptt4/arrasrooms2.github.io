@@ -604,8 +604,10 @@ class Entity {
         this.collisionArray = [];
         this.invuln = false;
         this.alpha = 1;
+      
       //this is something dogeiscut added for movement
         this.timer = 0;
+      
         this.invisible = [0, 0];
         this.antiNaN = (function(me) {
             let nansInARow = 0;
