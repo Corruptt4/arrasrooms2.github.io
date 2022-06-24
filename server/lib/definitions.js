@@ -6857,7 +6857,7 @@ exports.ramBot = {
     },
     NAME: "[AI] ",
     MOTION_TYPE: 'chase',
-    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth", "wander"],
+    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth", "mapTargetToGoal" "wander"],
     AI: {
         STRAFE: true
     }
