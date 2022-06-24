@@ -763,11 +763,13 @@ function spawnHealerSwarm() {
     let o = new Entity(loc);
     o.define(Class.healingSwarm);
     o.team = -101;
-    o.color = 10;
+    o.color = '#3CA4CB'//10//'#3CA4CB77';
     }
     };
   let makenpcs = (() => {
+    return () => {
     spawnHealerSwarm()
+    }
   })();
     return () => {
         // Do stuff
@@ -780,4 +782,4 @@ setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 1000);
 setInterval(speedcheckloop, 1000);
 setInterval(gamemodeLoop, 1000);
-setInterval(quickmaintainloop, room.cycleSpeed*2);
+setInterval(quickmaintainloop, room.cycleSpeed);
