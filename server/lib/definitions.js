@@ -177,6 +177,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   
   morehealth:           [1,     1,     1,      1,      2,      1,      2,      1,      1,      1,      1,      1,      1], 
   
+  lesshealth:           [1,     1,     1,      1,      0.5,      1,      2,      1,      1,      1,      1,      1,      1], 
+  
   moredamge:            [1,     1,     1,      1,      1,      2,      1,      1,      1,      1,      1,      1,      1], 
   
   damage4health:            [1,     1,     1,      1,      0.5,      2,      1,      1,      1,      1,      1,      1,      1], 
@@ -9245,6 +9247,7 @@ exports.spectator = {
 exports.cheeseburger = {
     PARENT: [exports.miniboss],
     LABEL: "Cheeseburger",
+    NAME: 'Cheeseburger',
     COLOR: "#593c2d",
     CUSTOM: true,
     SHAPE: 0,
@@ -9315,7 +9318,8 @@ exports.cheeseburger = {
 
 exports.fallenmothership = {
     PARENT: [exports.miniboss],
-    LABEL: "Fallen Mothership",
+    LABEL: "Mothership",
+    NAME: 'Fallen Mothership',
     CUSTOM: true,
     DANGER: 10,
     COLOR: 18,
@@ -9330,7 +9334,7 @@ exports.fallenmothership = {
         SHIELD: 0,
         ACCEL: .4,
         SPEED: .6,
-        HEALTH: 1000,
+        HEALTH: 250,
         PUSHABILITY: .15,
         DENSITY: .4,
         DAMAGE: 3
@@ -9347,7 +9351,7 @@ exports.fallenmothership = {
             let S = 22.5 * (t + 1),
                 E = {
                     MAX_CHILDREN: 4,
-                    SHOOT_SETTINGS: combineStats([g.drone, g.over, g.mothership]),
+                    SHOOT_SETTINGS: combineStats([g.drone, g.over, g.mothership, g.lesshealth]),
                     TYPE: exports.drone,
                     AUTOFIRE: true,
                     SYNCS_SKILLS: true,
