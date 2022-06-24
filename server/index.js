@@ -444,7 +444,6 @@ const maintainloop = (() => {
     })();
   
     //code added by DogeisCut, made by Max Nest#8441
-    //it stopped working for some reason
     let spawnSomething = (() => {
         let timer = 60*1;
         let next = 0;
@@ -484,6 +483,13 @@ const maintainloop = (() => {
             } else if (!census.something) timer++;
         };
     })();
+  
+    function spawnHealerSwarm() {
+    let loc = room.randomType("hyou");
+    let o = new Entity(loc);
+    o.define(Class.healingSwarm);
+    o.team = -101;
+    };
 
     function spawnBot(TEAM = null) {
         let set = ran.choose(botSets);
@@ -587,6 +593,8 @@ const maintainloop = (() => {
             spawnCrasher(census);
             spawnBosses(census);
             //spawnSomething(census);
+            //Healing Swarms
+            spawnHealerSwarm();
             // Bots
             if (bots.length < c.BOTS && !global.arenaClosed) bots.push(spawnBot(global.nextTagBotTeam || null));
             // Remove dead ones
