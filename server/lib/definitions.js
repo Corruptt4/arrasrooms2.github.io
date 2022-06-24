@@ -9136,6 +9136,7 @@ exports.healingBullet = {
 }
 
 exports.healing = {
+  //todo: keep the healing to room count ratio consistient
   PARENT: [exports.bullet],
   TYPE: 'healing',
   SIZE: 8,
