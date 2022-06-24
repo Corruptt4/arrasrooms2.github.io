@@ -9137,7 +9137,7 @@ exports.healingSwarm = {
   TYPE: 'healing',
   SIZE: 5,
   BODY: {
-        RANGE: 5,
+        RANGE: 50,
   }
 }
 

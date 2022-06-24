@@ -225,16 +225,6 @@ const gameloop = (() => {
         }
     };
   
-      function spawnHealerSwarm() {
-    for (let i = 0; i < 25; i++){
-    let loc = room.randomType("hyou");
-    let o = new Entity(loc);
-    o.define(Class.healingSwarm);
-    o.team = -101;
-    o.color = 10;
-    }
-    };
-    spawnHealerSwarm()
 })();
 
 setTimeout(closeArena, 60000 * 120); // Restart every 2 hours
@@ -766,8 +756,28 @@ const maintainloop = (() => {
     };
 })();
 
+const quickmaintainloop = (() => {
+function spawnHealerSwarm() {
+    for (let i = 0; i < 25; i++){
+    let loc = room.randomType("hyou");
+    let o = new Entity(loc);
+    o.define(Class.healingSwarm);
+    o.team = -101;
+    o.color = 10;
+    }
+    };
+  let makenpcs = (() => {
+    spawnHealerSwarm()
+  })();
+    return () => {
+        // Do stuff
+        makenpcs();
+    };
+})();
+
 // Bring it to life
 setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 1000);
 setInterval(speedcheckloop, 1000);
 setInterval(gamemodeLoop, 1000);
+setInterval(quickmaintainloop, room.cycleSpeed*2);
