@@ -1648,6 +1648,7 @@ exports.testbed8 = {
 exports.testbed9 = {
             PARENT: [exports.genericTank],
             LABEL: 'Custom Bosses',
+            CUSTOM: true,
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
@@ -9241,44 +9242,44 @@ exports.spectator = {
     },
 }
 
-exports.hamburger = {
+exports.cheeseburger = {
     PARENT: [exports.miniboss],
-    LABEL: "Hamburger",
+    LABEL: "Cheeseburger",
     COLOR: "#593c2d",
+    CUSTOM: true,
     SHAPE: 0,
     SIZE: 27,
-    VARIES_IN_SIZE: true,
     VALUE: 15e4,
     BODY: {
         FOV: 1.25,
-        SPEED: .1 * base.SPEED,
+        SPEED: .6 * base.SPEED,
         HEALTH: 7 * base.HEALTH,
         DAMAGE: 2.5 * base.DAMAGE
     },
   
-    //AI: {
-    //    NO_LEAD: false
-    //},
+    AI: {
+        NO_LEAD: false
+    },
     TURRETS: [{
         POSITION: [14, 6, 0, 180, 190, 0],
-        TYPE: [exports.builder, {
+        TYPE: [exports.basic, {
             COLOR: 13,
             SHAPE: 4,
         }]
     }, {
         POSITION: [14, 6, 0, 60, 190, 0],
-        TYPE: [exports.builder, {
+        TYPE: [exports.basic, {
             COLOR: 11,
             SHAPE: 16,
         }]
     }, {
         POSITION: [14, 6, 0, -60, 190, 0],
-        TYPE: [exports.builder, {
+        TYPE: [exports.basic, {
             COLOR: 12
         }]
     }, {
         POSITION: [16, 0, 0, -60, 360, 1],
-        TYPE: [exports.gunner, {
+        TYPE: [exports.genericTank, {
             COLOR: "#dba37b"
         }]
     }]
@@ -9322,7 +9323,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
 
-exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.hamburger]
+exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.cheeseburger]
 
 
 
