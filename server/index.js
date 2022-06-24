@@ -123,10 +123,10 @@ const gameloop = (() => {
              (instance.type === 'healing' && instance.master !== other) ||
               (other.type === 'healing' && other.master !== instance)
              ):
-            advancedcollide(instance, other, true, true);
+            healcollide(instance, other, 0.05);
             break;
-        case (instance.team == other.team):
-            healcollide(instance, other, 5);
+        case (instance.team !== other.team):
+            advancedcollide(instance, other, true, true);
             break;
         case (instance.settings.hitsOwnType == 'never' || other.settings.hitsOwnType == 'never'):
             break;

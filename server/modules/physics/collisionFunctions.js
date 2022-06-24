@@ -34,9 +34,12 @@ function vacuumcollide(my, n, pow=20) {
 function healcollide(my, n, healing) {
     if (my.type == 'healing'||my.type == 'healing') {
         n.health.amount += healing
+        n.shield.amount += healing
     } else {
         my.health.amount += healing
+        my.shield.amount += healing
     }
+  //todo: dont allow the health to go over the max
 }
 
 function conversioncollide(my, n) {

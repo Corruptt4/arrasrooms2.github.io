@@ -9169,29 +9169,29 @@ exports.bighealer = {
     GUNS: [{    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [    12,      8,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
-            TYPE: exports.bullet,
+            SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.lessspeed, g.lessspeed]),
+            TYPE: exports.healingBullet,
             LABEL: 'Healer',
             AUTOFIRE: true,
   }, }, {        /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [    12,      8,      1,      0,      0,      90,     0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
-            TYPE: exports.bullet,
+            SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.lessspeed, g.lessspeed]),
+            TYPE: exports.healingBullet,
             LABEL: 'Healer',
             AUTOFIRE: true,
   }, }, {        /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [    12,      8,      1,      0,      0,      180,    0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
-            TYPE: exports.bullet,
+            SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.lessspeed, g.lessspeed]),
+            TYPE: exports.healingBullet,
             LABEL: 'Healer',
             AUTOFIRE: true,
   }, }, {        /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [    12,      8,      1,      0,      0,      270,    0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
-            TYPE: exports.bullet,
+            SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.lessspeed, g.lessspeed]),
+            TYPE: exports.healingBullet,
             LABEL: 'Healer',
             AUTOFIRE: true,
   }, }, ]
