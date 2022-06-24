@@ -9382,11 +9382,12 @@ exports.nuclearbomb = {
   PARENT: [exports.genericTank],
   LABEL: 'Nuclear Bomb',
   CUSTOM: true,
-  SIZE: 99999,
+  SIZE: 9999,
+  LAYER: -10000,
   BODY: {
-        HEALTH: 1000000,
+        HEALTH: 1000,
         RESIST: 100,
-        DAMAGE: 0.2
+        DAMAGE: 0.1
   },
 }
 
