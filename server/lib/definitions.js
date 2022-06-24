@@ -9233,10 +9233,11 @@ exports.spectator = {
         HEALTH: 10000,
         SHIELD: 10000,
         REGEN: 1000,
-        DAMAGE: 1,
+        DAMAGE: 0,
         RESIST: 100,
         STEALTH: 1,
-        SPEED: 40,
+        SPEED: 30,
+        ACCELERATION: 30
     },
 }
 
@@ -9264,8 +9265,6 @@ exports.spectator = {
 
 //testbed/betatester stuff
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,exports.spectator];//exports.testbed7];
-
-exports.spectator.UPGRADES_TIER_1  = [exports.basic]
 
 exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror];
 
