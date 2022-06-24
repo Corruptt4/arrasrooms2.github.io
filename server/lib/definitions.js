@@ -9260,25 +9260,53 @@ exports.cheeseburger = {
     AI: {
         NO_LEAD: false
     },
+    GUNS: [{    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [    10,      16,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone]),
+            TYPE: [exports.minion, {COLOR:13}],
+            LABEL: 'Cheeser',
+            AUTOFIRE: true,
+            MAX_CHILDREN: 1,
+            COLOR: 13,
+  }, }, {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [    10,      16,      1,      0,      0,      120,      1/3,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone]),
+            TYPE: [exports.minion, {COLOR:11}],
+            LABEL: 'Lettucer',
+            AUTOFIRE: true,
+            MAX_CHILDREN: 1,
+            COLOR: 11,
+  }, },{    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [    10,      16,      1,      0,      0,      -120,      2/3,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone]),
+            TYPE: [exports.minion, {COLOR:12}],
+            LABEL: 'Tomater',
+            AUTOFIRE: true,
+            MAX_CHILDREN: 1,
+            COLOR: 12,
+  }, },],
     TURRETS: [{
-        POSITION: [14, 6, 0, 180, 190, 0],
+        POSITION: [8, 12, 0, 180, 190, 0],
         TYPE: [exports.basic, {
             COLOR: 13,
             SHAPE: 4,
         }]
     }, {
-        POSITION: [14, 6, 0, 60, 190, 0],
+        POSITION: [8, 12, 0, 60, 190, 0],
         TYPE: [exports.basic, {
             COLOR: 11,
             SHAPE: 16,
         }]
     }, {
-        POSITION: [14, 6, 0, -60, 190, 0],
+        POSITION: [8, 12, 0, -60, 190, 0],
         TYPE: [exports.basic, {
             COLOR: 12
         }]
     }, {
-        POSITION: [16, 0, 0, -60, 360, 1],
+        POSITION: [16, 0, 0, 0, 360, 1],
         TYPE: [exports.genericTank, {
             COLOR: "#dba37b"
         }]
