@@ -9132,7 +9132,7 @@ exports.healingBullet = {
   TYPE: 'healing'
 }
 
-exports.healingSwarm = {
+exports.healing = {
   PARENT: [exports.bullet],
   TYPE: 'healing',
   SIZE: 8,

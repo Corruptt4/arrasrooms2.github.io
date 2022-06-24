@@ -123,7 +123,7 @@ const gameloop = (() => {
              (instance.type === 'healing' && instance.master !== other) ||
               (other.type === 'healing' && other.master !== instance)
              ):
-            healcollide(instance, other, 0.22);
+            healcollide(instance, other, 0.44);
             break;
         case (instance.team !== other.team):
             advancedcollide(instance, other, true, true);
@@ -761,7 +761,7 @@ function spawnHealerSwarm() {
     for (let i = 0; i < 25; i++){
     let loc = room.randomType("hyou");
     let o = new Entity(loc);
-    o.define(Class.healingSwarm);
+    o.define(Class.healing);
     o.team = -101;
     o.color = 10;//'#3CA4CB77';
     o.alpha = 0.3;
@@ -783,4 +783,4 @@ setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 1000);
 setInterval(speedcheckloop, 1000);
 setInterval(gamemodeLoop, 1000);
-setInterval(quickmaintainloop, room.cycleSpeed);
+setInterval(quickmaintainloop, room.cycleSpeed*2);
