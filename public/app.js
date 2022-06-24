@@ -94,29 +94,16 @@ import * as socketStuff from "./lib/socketInit.js";
             if (weight === 1) return color_1;
             if (weight === 0) return color_2;
             var col = "#";
-            if (color_2.length-1>6&&color_1.length-1>6) { //check if has an alpha
-                for (var i = 1; i <= 8; i += 2) { // loop through each of the 3 hex pairs—red, green, and blue, skip the '#'
-                    var v1 = h2d(color_1.substr(i, 2)), // extract the current pairs
-                        v2 = h2d(color_2.substr(i, 2)),
-                        // combine the current pairs from each source color, according to the specified weight
-                        val = d2h(Math.floor(v2 + (v1 - v2) * weight));
-                    while (val.length < 2) {
-                        val = '0' + val;
-                    } // prepend a '0' if val results in a single digit
-                    col += val; // concatenate val to our new color string
-                }
-          } else {
             for (var i = 1; i <= 6; i += 2) { // loop through each of the 3 hex pairs—red, green, and blue, skip the '#'
-                    var v1 = h2d(color_1.substr(i, 2)), // extract the current pairs
-                        v2 = h2d(color_2.substr(i, 2)),
-                        // combine the current pairs from each source color, according to the specified weight
-                        val = d2h(Math.floor(v2 + (v1 - v2) * weight));
-                    while (val.length < 2) {
-                        val = '0' + val;
-                    } // prepend a '0' if val results in a single digit
-                    col += val; // concatenate val to our new color string
-                }
-          }
+                var v1 = h2d(color_1.substr(i, 2)), // extract the current pairs
+                    v2 = h2d(color_2.substr(i, 2)),
+                    // combine the current pairs from each source color, according to the specified weight
+                    val = d2h(Math.floor(v2 + (v1 - v2) * weight));
+                while (val.length < 2) {
+                    val = '0' + val;
+                } // prepend a '0' if val results in a single digit
+                col += val; // concatenate val to our new color string
+            }
             return col; // PROFIT!
         };
     })();

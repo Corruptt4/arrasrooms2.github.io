@@ -9135,7 +9135,8 @@ exports.healingBullet = {
 exports.healingSwarm = {
   PARENT: [exports.bullet],
   TYPE: 'healing',
-  SIZE: 3,
+  SIZE: 8,
+  SHAPE: [[-0.2,0.8],[0.2,0.8],[0.2,0.2],[0.8,0.2],[0.8,-0.2],[0.2,-0.2],[0.2,-0.8],[-0.2,-0.8],[-0.2,-0.2],[-0.8,-0.2],[-0.8,0.2],[-0.2,0.2]],
   BODY: {
         RANGE: 5,
   }

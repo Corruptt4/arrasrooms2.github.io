@@ -123,7 +123,7 @@ const gameloop = (() => {
              (instance.type === 'healing' && instance.master !== other) ||
               (other.type === 'healing' && other.master !== instance)
              ):
-            healcollide(instance, other, 0.12);
+            healcollide(instance, other, 0.22);
             break;
         case (instance.team !== other.team):
             advancedcollide(instance, other, true, true);
@@ -763,7 +763,8 @@ function spawnHealerSwarm() {
     let o = new Entity(loc);
     o.define(Class.healingSwarm);
     o.team = -101;
-    o.color = '#3CA4CB77'//10//'#3CA4CB77';
+    o.color = 10;//'#3CA4CB77';
+    o.alpha = 0.3;
     }
     };
   let makenpcs = (() => {
