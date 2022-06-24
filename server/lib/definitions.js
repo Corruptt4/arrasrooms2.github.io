@@ -9244,7 +9244,7 @@ exports.spectator = {
 exports.hamburger = {
     PARENT: [exports.miniboss],
     LABEL: "Hamburger",
-    COLOR: 2,
+    COLOR: "#593c2d",
     SHAPE: 0,
     SIZE: 27,
     VARIES_IN_SIZE: true,
@@ -9261,18 +9261,25 @@ exports.hamburger = {
     //},
     TURRETS: [{
         POSITION: [14, 6, 0, 180, 190, 0],
-        TYPE: [exports.autogunner, {
-            COLOR: 2
+        TYPE: [exports.builder, {
+            COLOR: 13,
+            SHAPE: 4,
         }]
     }, {
         POSITION: [14, 6, 0, 60, 190, 0],
-        TYPE: [exports.autogunner, {
-            COLOR: 2
+        TYPE: [exports.builder, {
+            COLOR: 11,
+            SHAPE: 16,
         }]
     }, {
         POSITION: [14, 6, 0, -60, 190, 0],
-        TYPE: [exports.autogunner, {
-            COLOR: 2
+        TYPE: [exports.builder, {
+            COLOR: 12
+        }]
+    }, {
+        POSITION: [16, 0, 0, -60, 360, 1],
+        TYPE: [exports.gunner, {
+            COLOR: "#dba37b"
         }]
     }]
 };
