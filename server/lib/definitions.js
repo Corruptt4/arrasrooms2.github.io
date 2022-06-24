@@ -9241,6 +9241,42 @@ exports.spectator = {
     },
 }
 
+exports.hamburger = {
+    PARENT: [exports.miniboss],
+    LABEL: "Hamburger",
+    COLOR: 2,
+    SHAPE: 0,
+    SIZE: 27,
+    VARIES_IN_SIZE: true,
+    VALUE: 15e4,
+    BODY: {
+        FOV: 1.25,
+        SPEED: .1 * base.SPEED,
+        HEALTH: 7 * base.HEALTH,
+        DAMAGE: 2.5 * base.DAMAGE
+    },
+  
+    //AI: {
+    //    NO_LEAD: false
+    //},
+    TURRETS: [{
+        POSITION: [14, 6, 0, 180, 190, 0],
+        TYPE: [exports.autogunner, {
+            COLOR: 2
+        }]
+    }, {
+        POSITION: [14, 6, 0, 60, 190, 0],
+        TYPE: [exports.autogunner, {
+            COLOR: 2
+        }]
+    }, {
+        POSITION: [14, 6, 0, -60, 190, 0],
+        TYPE: [exports.autogunner, {
+            COLOR: 2
+        }]
+    }]
+};
+
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
 //Tank ideas:
@@ -9279,7 +9315,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
 
-exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5]
+exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.hamburger]
 
 
 
