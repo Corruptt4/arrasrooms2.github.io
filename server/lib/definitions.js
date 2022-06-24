@@ -6857,9 +6857,9 @@ exports.ramBot = {
     },
     NAME: "[AI] ",
     MOTION_TYPE: 'chase',
-    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth", "mapTargetToGoal" "wander"],
+    CONTROLLERS: ["nearestDifferentMaster", "mapAltToFire", "fleeAtLowHealth", "mapTargetToGoal", "wander"],
     AI: {
-        STRAFE: true
+        STRAFE: false
     }
 };
 exports.tagMode = {
@@ -9206,6 +9206,22 @@ exports.bighealer = {
             AUTOFIRE: true,
   }, }, ]
 };
+
+
+exports.spectator = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Spectator',
+    CUSTOM: true,
+    HAS_NO_RECOIL: true,
+    SKILL_CAP: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    BODY: {
+        FOV: 2,
+        HEALTH: 999999999999999999,
+        DAMAGE: 0,
+        SPEED: 40,
+        STEALTH: 1,
+    },
+}
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
