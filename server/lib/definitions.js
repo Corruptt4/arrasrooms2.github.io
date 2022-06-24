@@ -9263,8 +9263,8 @@ exports.cheeseburger = {
     GUNS: [{    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [    10,      16,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone]),
-            TYPE: [exports.minion, {COLOR:13}],
+            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.anni, g.morespeed, g.morespeed]),
+            TYPE: [exports.drone, {COLOR:13}],
             LABEL: 'Cheeser',
             AUTOFIRE: true,
             MAX_CHILDREN: 1,
@@ -9272,8 +9272,8 @@ exports.cheeseburger = {
   }, }, {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [    10,      16,      1,      0,      0,      120,      1/3,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone]),
-            TYPE: [exports.minion, {COLOR:11}],
+            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.anni, g.morespeed, g.morespeed]),
+            TYPE: [exports.drone, {COLOR:11}],
             LABEL: 'Lettucer',
             AUTOFIRE: true,
             MAX_CHILDREN: 1,
@@ -9281,8 +9281,8 @@ exports.cheeseburger = {
   }, },{    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [    10,      16,      1,      0,      0,      -120,      2/3,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone]),
-            TYPE: [exports.minion, {COLOR:12}],
+            SHOOT_SETTINGS: combineStats([g.drone, g.pound, g.destroy, g.anni, g.morespeed, g.morespeed]),
+            TYPE: [exports.drone, {COLOR:12}],
             LABEL: 'Tomater',
             AUTOFIRE: true,
             MAX_CHILDREN: 1,
