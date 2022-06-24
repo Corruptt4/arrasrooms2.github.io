@@ -763,7 +763,7 @@ function spawnHealerSwarm() {
     let o = new Entity(loc);
     o.define(Class.healingSwarm);
     o.team = -101;
-    o.color = '#3CA4CB'//10//'#3CA4CB77';
+    o.color = '#3CA4CB77'//10//'#3CA4CB77';
     }
     };
   let makenpcs = (() => {
