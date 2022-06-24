@@ -224,6 +224,17 @@ const gameloop = (() => {
             if (Math.min(1, global.fps / roomSpeed / 1000 * 30) < 0.8) antiLagbot();
         }
     };
+  
+      function spawnHealerSwarm() {
+    for (let i = 0; i < 25; i++){
+    let loc = room.randomType("hyou");
+    let o = new Entity(loc);
+    o.define(Class.healingSwarm);
+    o.team = -101;
+    o.color = 10;
+    }
+    };
+    spawnHealerSwarm()
 })();
 
 setTimeout(closeArena, 60000 * 120); // Restart every 2 hours
@@ -282,15 +293,15 @@ const maintainloop = (() => {
         o.protect();
         o.life();
     };
-    function spawnHealer(loc) {
-      let o = new Entity(loc);
-      o.define(Class.bighealer);
-      o.team = -101;
-      o.protect();
-      o.life();
-    }
+    // function spawnHealer(loc) {
+    //   let o = new Entity(loc);
+    //   o.define(Class.bighealer);
+    //   o.team = -101;
+    //   o.protect();
+    //   o.life();
+    // }
     for (let loc of room["wall"]) spawnWall(loc);
-    for (let loc of room["hyou"]) spawnHealer(loc);
+    // for (let loc of room["hyou"]) spawnHealer(loc);
     // Spawning functions
     let spawnBosses = (() => {
         let timer = Math.round((c.bossSpawnInterval || 8) * 60); // It's in minutes
@@ -483,13 +494,6 @@ const maintainloop = (() => {
             } else if (!census.something) timer++;
         };
     })();
-  
-    function spawnHealerSwarm() {
-    let loc = room.randomType("hyou");
-    let o = new Entity(loc);
-    o.define(Class.healingSwarm);
-    o.team = -101;
-    };
 
     function spawnBot(TEAM = null) {
         let set = ran.choose(botSets);
@@ -594,7 +598,6 @@ const maintainloop = (() => {
             spawnBosses(census);
             //spawnSomething(census);
             //Healing Swarms
-            spawnHealerSwarm();
             // Bots
             if (bots.length < c.BOTS && !global.arenaClosed) bots.push(spawnBot(global.nextTagBotTeam || null));
             // Remove dead ones
