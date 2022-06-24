@@ -9211,15 +9211,32 @@ exports.bighealer = {
 exports.spectator = {
     PARENT: [exports.genericTank],
     LABEL: 'Spectator',
+    DAMAGE_CLASS: 1,
     CUSTOM: true,
     HAS_NO_RECOIL: true,
-    SKILL_CAP: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    INTANGIBLE: true,
+    DANGER: 0,
+    DRAW_HEALTH: false,
+    DISPLAY_NAME: false,
+    SHAPE: [[]],
+    ACCEPTS_SCORE: false,
+    GIVE_KILL_MESSAGE: false,
+    CAN_GO_OUTSIDE_ROOM: true,
+    HITS_OWN_TYPE: 'never',
+    CAN_BE_ON_LEADERBOARD: false,
+    SKILL: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    LEVEL: 45,
+    SKILL_CAP: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
     BODY: {
         FOV: 2,
-        HEALTH: 999999999999999999,
-        DAMAGE: 0,
-        SPEED: 40,
+        PUSHABILITY: 0,
+        HEALTH: 10000,
+        SHIELD: 10000,
+        REGEN: 1000,
+        DAMAGE: 1,
+        RESIST: 100,
         STEALTH: 1,
+        SPEED: 40,
     },
 }
 
@@ -9246,7 +9263,9 @@ exports.spectator = {
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4];//exports.testbed7];
+exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,exports.spectator];//exports.testbed7];
+
+exports.spectator.UPGRADES_TIER_1  = [exports.basic]
 
 exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror];
 
