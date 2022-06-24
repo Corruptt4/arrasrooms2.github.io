@@ -9313,6 +9313,67 @@ exports.cheeseburger = {
     }]
 };
 
+exports.fallenmothership = {
+    PARENT: [exports.miniboss],
+    LABEL: "Fallen Mothership",
+    CUSTOM: true,
+    DANGER: 10,
+    COLOR: 18,
+    SIZE: exports.genericTank.SIZE * (7 / 3),
+    SHAPE: 16,
+    STAT_NAMES: statnames.drone,
+    VALUE: 5e5,
+    SKILL: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    BODY: {
+        REGEN: 0,
+        FOV: 1,
+        SHIELD: 0,
+        ACCEL: .4,
+        SPEED: .6,
+        HEALTH: 1000,
+        PUSHABILITY: .15,
+        DENSITY: .4,
+        DAMAGE: 3
+    },
+    HITS_OWN_TYPE: "pushOnlyTeam",
+    GUNS: (() => {
+        let e = [],
+            T = [1];
+        for (let e = 1; e < 8.5; e += .5) {
+            let t = e / 16;
+            T.push(t);
+        }
+        for (let t = 0; t < 16; t++) {
+            let S = 22.5 * (t + 1),
+                E = {
+                    MAX_CHILDREN: 4,
+                    SHOOT_SETTINGS: combineStats([g.drone, g.over, g.mothership]),
+                    TYPE: exports.drone,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: gunCalcNames.drone,
+                    WAIT_TO_CYCLE: true
+                };
+            t % 2 == 0 && (E.TYPE = [exports.drone, {
+                AI: {
+                    skynet: false
+                },
+                INDEPENDENT: true,
+                LAYER: 10,
+                BODY: {
+                    FOV: 2
+                }
+            }]);
+            let O = {
+                POSITION: [4.3, 3.1, 1.2, 8, 0, S, T[t]],
+                PROPERTIES: E
+            };
+            e.push(O);
+        }
+        return e;
+    })()
+};
+
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
 //Tank ideas:
@@ -9351,7 +9412,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
 
-exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.cheeseburger]
+exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.cheeseburger, exports.fallenmothership]
 
 
 
