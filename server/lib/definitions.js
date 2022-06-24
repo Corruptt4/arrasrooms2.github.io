@@ -9132,6 +9132,11 @@ exports.healingBullet = {
   TYPE: 'healing'
 }
 
+exports.healingSwarm = {
+  PARENT: [exports.autoswarm],
+  TYPE: 'healing'
+}
+
 exports.bighealer = {
     PARENT: [exports.dominator],
     TYPE: 'wall',
@@ -9196,6 +9201,8 @@ exports.bighealer = {
             AUTOFIRE: true,
   }, }, ]
 };
+
+//todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
 //Tank ideas:
 //Singularity
