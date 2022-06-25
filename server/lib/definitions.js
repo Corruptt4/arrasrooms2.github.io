@@ -9392,15 +9392,27 @@ exports.nuclearbomb = {
   },
 }
 
-function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dronelimit = 0) {
+function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dronelimit = 0, gunSettings = []) {
   let output = JSON.parse(JSON.stringify(type));
   let spawner = null;
     switch(preset){
+      case "":
+        spawner = { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [   LENGTH,     WIDTH,    1.2,     X,      Y,      ANGLE,      DELAY,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone].concat(gunSettings)),
+                    TYPE: exports.drone,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: gunCalcNames.drone,
+                    MAX_CHILDREN: dronelimit
+                }, };
+      break;
       default:
         spawner = { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  LENGTH,     WIDTH,      1,      X,      Y,      ANGLE,      DELAY,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
+            SHOOT_SETTINGS: combineStats([g.basic].concat(gunSettings)),
             TYPE: exports.bullet,
         }, };
     }
@@ -9409,7 +9421,7 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
     return output;
 }
 
-exports.basic = addBarrelPreset(exports.basic, "basic", 18, 8, 0, 0, 180)
+//exports.basic = addBarrelPreset(exports.basic, "basic", 18, 8, 0, 0, 180)
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
