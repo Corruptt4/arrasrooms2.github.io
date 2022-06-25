@@ -9396,20 +9396,23 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
   let output = JSON.parse(JSON.stringify(type));
   let spawner = null;
     switch(preset){
+      case 1:
       case "trap":
-        spawner = {         /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  LENGTH, WIDTH,      0,    X,      Y,    ANGLE,  DELAY,   ],
+        spawner = [{         /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  LENGTH, WIDTH,      1,    X,      Y,    ANGLE,  DELAY,   ],
                         }, {
                     POSITION: [   3,     WIDTH,     1.7,  LENGTH+X,Y,    ANGLE,  DELAY,   ], 
                         PROPERTIES: {
                             SHOOT_SETTINGS: combineStats([g.trap].concat(gunSettings)),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
                             ALT_FIRE: altFire
-                        }, };
+                        }, }];
         break;
+      case 2:
       case "drone":
-        spawner = { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [   LENGTH,     WIDTH,    1.2,     X,      Y,      ANGLE,      DELAY,   ], 
+        spawner = [{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            //6,     12,    1.2,     8,
+            POSITION: [   LENGTH-12,     WIDTH-4,    1.2,     X+8,      Y,      ANGLE,      DELAY,   ], 
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.drone].concat(gunSettings)),
                     TYPE: exports.drone,
@@ -9418,28 +9421,32 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
                     STAT_CALCULATOR: gunCalcNames.drone,
                     MAX_CHILDREN: dronelimit,
                   ALT_FIRE: altFire
-                }, };
+                }, }];
       break;
       default:
-        spawner = { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        spawner = [{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  LENGTH,     WIDTH,      1,      X,      Y,      ANGLE,      DELAY,   ], 
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic].concat(gunSettings)),
             TYPE: exports.bullet,
           ALT_FIRE: altFire
-        }, };
+        }, }];
     }
-    if (type.GUNS == null) { output.GUNS = [spawner]; }
-    else { output.GUNS = [...type.GUNS, spawner]; }
+    if (type.GUNS == null) { output.GUNS = spawner; }
+    else { output.GUNS = type.GUNS.concat(spawner); }
     return output;
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 
 exports.random = {
     PARENT: [exports.genericTank],
-    LABEL: 'Random'
+    LABEL: 'Randomized'
 }
 
-exports.random = addBarrelPreset(exports.random, "trap", 18, 8, 0, 0, 0,5,false,[])
+exports.random = addBarrelPreset(exports.random, getRandomInt(3), 18, 8, 0, 0, 0, 0, 2, false, [])
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
