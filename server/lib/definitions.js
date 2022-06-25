@@ -9427,18 +9427,20 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
         spawner = [ {              /*** LENGTH      WIDTH   ASPECT      X       Y        ANGLE      DELAY */
             POSITION: [      LENGTH,     WIDTH,     1.4,     X+8,      Y,      ANGLE,      DELAY,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mach].concat(gunSettings)),
                 TYPE: exports.bullet,
+                ALT_FIRE: altFire
             }, },
         ];
         break;
       case 4:
       case "decorated":  
         spawner = [ {     /*** LENGTH  WIDTH   ASPECT    X       Y       ANGLE   DELAY */
-                    POSITION: [  LENGTH,     WIDTH,      1,      X,      Y,      ANGLE,      DELAY,   ], 
+                    POSITION: [  LENGTH,     LENGTH,      1,      X,      Y,      ANGLE,      DELAY,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.basic]),
+                            SHOOT_SETTINGS: combineStats([g.basic].concat(gunSettings)),
                             TYPE: exports.bullet,
+                            ALT_FIRE: altFire
                         }, },  {
                     POSITION: [  5.5,    WIDTH,    -1.8,    X+6.5,     Y,      ANGLE,      DELAY,   ],                         
                     }
@@ -9446,14 +9448,34 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
       break;
       case 5:
       case "swarm":
-        spawner = [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [   7,    7.5,    0.6,     7,      4,      0,      0,   ], 
+        spawner = [ {     /*** LENGTH      WIDTH   ASPECT    X       Y         ANGLE       DELAY */
+                POSITION: [   LENGTH,    LENGTH,    0.6,     X+7,      4,      ANGLE,      DELAY,   ], 
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.swarm]),
+                        SHOOT_SETTINGS: combineStats([g.swarm].concat(gunSettings)),
                         TYPE: exports.swarm,
-                        STAT_CALCULATOR: gunCalcNames.swarm,               
+                        STAT_CALCULATOR: gunCalcNames.swarm, 
+                        ALT_FIRE: altFire
                     }, },
+                   ]
       break;
+      case 6:
+      case "minion":
+        spawner = [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  4.5,    10,      1,     10.5,    0,      0,      0,   ], 
+                }, {
+                POSITION: [   1,     WIDTH,   1,      15,     0,      0,      0,   ], 
+                PROPERTIES: {          
+                    MAX_CHILDREN: 4,
+                    SHOOT_SETTINGS: combineStats([g.factory].concat(gunSettings)),
+                    TYPE: exports.minion,
+                    STAT_CALCULATOR: gunCalcNames.drone,                        
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,  
+                    ALT_FIRE: altFire
+                }, }, {                        
+                POSITION: [  3.5,    WIDTH,      1,      8,      0,      0,      0,   ], 
+                }
+            ];
       default:
         spawner = [{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  LENGTH,     WIDTH,      1,      X,      Y,      ANGLE,      DELAY,   ], 
