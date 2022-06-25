@@ -9460,10 +9460,10 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
       break;
       case 6:
       case "minion":
-        spawner = [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        spawner = [ { /**** LENGTH  WIDTH ASPECT     X             Y     ANGLE   DELAY */
                 POSITION: [  4.5,  WIDTH-2, 1,   X+LENGTH+10.5,    0,      0,      0,   ], 
                 }, {
-                POSITION: [   1,     WIDTH,   1,      X+LENGTH+15,     0,      0,      0,   ], 
+                POSITION: [   1,    WIDTH,  1,   X+LENGTH+15,      0,      0,      0,   ], 
                 PROPERTIES: {          
                     MAX_CHILDREN: 4,
                     SHOOT_SETTINGS: combineStats([g.factory].concat(gunSettings)),
@@ -9474,7 +9474,7 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
                     ALT_FIRE: altFire,
                     MAX_CHILDREN: dronelimit,
                 }, }, {                        
-                POSITION: [  LENGTH,    WIDTH,   1,      X+8,      0,      0,      0,   ], 
+                POSITION: [  LENGTH+3.5,    WIDTH,   1,      X+8,      0,      0,      0,   ], 
                 }
             ];
       break;
