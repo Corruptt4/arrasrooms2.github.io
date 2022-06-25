@@ -9392,6 +9392,29 @@ exports.nuclearbomb = {
   },
 }
 
+function addBarrelPreset(tank, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dronelimit = 0) {
+  let outputGun = 0;
+    switch(preset){
+      case "basic":
+        outputGun = [{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     8,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: exports.bullet,
+            LABEL: '',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: false,            // def 
+            NEGATIVE_RECOIL: false,     // def
+            SKIN: 0,                    // def
+        }, },]
+        break;
+    }
+}
+
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
 //Tank ideas:
