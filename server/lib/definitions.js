@@ -9411,8 +9411,7 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
       case 2:
       case "drone":
         spawner = [{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            //6,     12,    1.2,     8,
-            POSITION: [   LENGTH-12,     WIDTH-4,    1.2,     X+8,      Y,      ANGLE,      DELAY,   ], 
+            POSITION: [   LENGTH-12,     WIDTH+4,    1.2,     X+8,      Y,      ANGLE,      DELAY,   ], 
                 PROPERTIES: {
                     SHOOT_SETTINGS: combineStats([g.drone].concat(gunSettings)),
                     TYPE: exports.drone,
@@ -9446,7 +9445,16 @@ exports.random = {
     LABEL: 'Randomized'
 }
 
-exports.random = addBarrelPreset(exports.random, getRandomInt(3), 18, 8, 0, 0, 0, 0, 2, false, [])
+if (getRandomInt(2) == 0) {
+  exports.random = addBarrelPreset(exports.random, getRandomInt(3), 18, 8, 0, 0, 0, 0, 2, false, [])
+} else {
+  exports.random = addBarrelPreset(exports.random, getRandomInt(3), 18, 8, 180, 0, 0, 0, 2, false, [])
+}
+
+let rigkosdfjrk = getRandomInt(3)
+let drgkofjngfdlkkn = ((Math.random-0.5)*2)*360
+let bbbbbbbb = ((Math.random-0.5)*2)*8
+exports.random = addBarrelPreset(exports.random, rigkosdfjrk, 18, 8, bbbbbbbb, 0, drgkofjngfdlkkn, 1/3, 2, false, [])
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
