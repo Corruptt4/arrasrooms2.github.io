@@ -9461,9 +9461,9 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
       case 6:
       case "minion":
         spawner = [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [  4.5,    10,      1,     10.5,    0,      0,      0,   ], 
+                POSITION: [  4.5,  WIDTH-2, 1,   X+LENGTH+10.5,    0,      0,      0,   ], 
                 }, {
-                POSITION: [   1,     WIDTH,   1,      15,     0,      0,      0,   ], 
+                POSITION: [   1,     WIDTH,   1,      X+LENGTH+15,     0,      0,      0,   ], 
                 PROPERTIES: {          
                     MAX_CHILDREN: 4,
                     SHOOT_SETTINGS: combineStats([g.factory].concat(gunSettings)),
@@ -9471,11 +9471,13 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
                     STAT_CALCULATOR: gunCalcNames.drone,                        
                     AUTOFIRE: true,
                     SYNCS_SKILLS: true,  
-                    ALT_FIRE: altFire
+                    ALT_FIRE: altFire,
+                    MAX_CHILDREN: dronelimit,
                 }, }, {                        
-                POSITION: [  3.5,    WIDTH,      1,      8,      0,      0,      0,   ], 
+                POSITION: [  LENGTH,    WIDTH,   1,      X+8,      0,      0,      0,   ], 
                 }
             ];
+      break;
       default:
         spawner = [{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  LENGTH,     WIDTH,      1,      X,      Y,      ANGLE,      DELAY,   ], 
@@ -9500,7 +9502,7 @@ exports.random = {
 }
 
 exports.random = addBarrelPreset(exports.random, "trap", 18, 8, 0, 0, 45, 0, 2, false, [])
-exports.random = addBarrelPreset(exports.random, "drone", 18, 8, 0, 0, -45, 0.5, 2, false, [])
+exports.random = addBarrelPreset(exports.random, "minion", 3.5, 8, 0, 0, -45, 0.5, 2, false, [])
 
 
 
