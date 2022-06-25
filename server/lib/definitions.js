@@ -9406,7 +9406,7 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
                             SHOOT_SETTINGS: combineStats([g.trap].concat(gunSettings)),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
                             ALT_FIRE: altFire
-                        }, }];
+                        }, },];
         break;
       case 2:
       case "drone":
@@ -9420,7 +9420,7 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
                     STAT_CALCULATOR: gunCalcNames.drone,
                     MAX_CHILDREN: dronelimit,
                   ALT_FIRE: altFire
-                }, }];
+                }, },];
       break;
       default:
         spawner = [{ /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -9429,7 +9429,7 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
             SHOOT_SETTINGS: combineStats([g.basic].concat(gunSettings)),
             TYPE: exports.bullet,
           ALT_FIRE: altFire
-        }, }];
+        }, },];
     }
     if (type.GUNS == null) { output.GUNS = spawner; }
     else { output.GUNS = type.GUNS.concat(spawner); }
@@ -9445,16 +9445,20 @@ exports.random = {
     LABEL: 'Randomized'
 }
 
-if (getRandomInt(2) == 0) {
-  exports.random = addBarrelPreset(exports.random, getRandomInt(3), 18, 8, 0, 0, 0, 0, 2, false, [])
-} else {
-  exports.random = addBarrelPreset(exports.random, getRandomInt(3), 18, 8, 180, 0, 0, 0, 2, false, [])
-}
+exports.random = addBarrelPreset(exports.random, "trap", 18, 8, 0, 0, 45, 0, 2, false, [])
+exports.random = addBarrelPreset(exports.random, "trap", 18, 8, 0, 0, -45, 0.5, 2, false, [])
 
-let rigkosdfjrk = getRandomInt(3)
-let drgkofjngfdlkkn = ((Math.random-0.5)*2)*360
-let bbbbbbbb = ((Math.random-0.5)*2)*8
-exports.random = addBarrelPreset(exports.random, rigkosdfjrk, 18, 8, bbbbbbbb, 0, drgkofjngfdlkkn, 1/3, 2, false, [])
+// if (getRandomInt(2) == 0) {
+//   exports.random = addBarrelPreset(exports.random, getRandomInt(3), 18, 8, 0, 0, 0, 0, 2, false, [])
+// } else {
+//   exports.random = addBarrelPreset(exports.random, getRandomInt(3), 18, 8, 180, 0, 0, 0, 2, false, [])
+// }
+
+// let rigkosdfjrk = getRandomInt(3)
+// let drgkofjngfdlkkn = ((Math.random-0.5)*2)*360
+// let bbbbbbbb = ((Math.random-0.5)*2)*8
+// exports.random = addBarrelPreset(exports.random, rigkosdfjrk, 18, 8, 0, bbbbbbbb, drgkofjngfdlkkn, 1/3, 2, false, [])
+// exports.random = addBarrelPreset(exports.random, rigkosdfjrk, 18, 8, 0, -bbbbbbbb, -drgkofjngfdlkkn, 1/3, 2, false, [])
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
