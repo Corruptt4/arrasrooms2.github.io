@@ -9392,11 +9392,22 @@ exports.nuclearbomb = {
   },
 }
 
-function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dronelimit = 0, gunSettings = []) {
+function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dronelimit = 0, altFire=false, gunSettings = []) {
   let output = JSON.parse(JSON.stringify(type));
   let spawner = null;
     switch(preset){
-      case "":
+      case "trap":
+        spawner = {         /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  LENGTH, WIDTH,      0,    X,      Y,    ANGLE,  DELAY,   ],
+                        }, {
+                    POSITION: [   3,     WIDTH,     1.7,  LENGTH+X,Y,    ANGLE,  DELAY,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap].concat(gunSettings)),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                            ALT_FIRE: altFire
+                        }, };
+        break;
+      case "drone":
         spawner = { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [   LENGTH,     WIDTH,    1.2,     X,      Y,      ANGLE,      DELAY,   ], 
                 PROPERTIES: {
@@ -9405,7 +9416,8 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
                     AUTOFIRE: true,
                     SYNCS_SKILLS: true,
                     STAT_CALCULATOR: gunCalcNames.drone,
-                    MAX_CHILDREN: dronelimit
+                    MAX_CHILDREN: dronelimit,
+                  ALT_FIRE: altFire
                 }, };
       break;
       default:
@@ -9414,6 +9426,7 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic].concat(gunSettings)),
             TYPE: exports.bullet,
+          ALT_FIRE: altFire
         }, };
     }
     if (type.GUNS == null) { output.GUNS = [spawner]; }
@@ -9421,7 +9434,12 @@ function addBarrelPreset(type, preset, LENGTH, WIDTH, X, Y, ANGLE, DELAY = 0, dr
     return output;
 }
 
-//exports.basic = addBarrelPreset(exports.basic, "basic", 18, 8, 0, 0, 180)
+exports.random = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Random'
+}
+
+exports.random = addBarrelPreset(exports.random, "trap", 18, 8, 0, 0, 0,5,false,[])
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
@@ -9472,7 +9490,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //exports.punishment.UPGRADES_TIER_1 = []
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.miniBase];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.miniBase,exports.random];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
