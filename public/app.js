@@ -107,6 +107,17 @@ import * as socketStuff from "./lib/socketInit.js";
             return col; // PROFIT!
         };
     })();
+  
+    function getRainbow(a, b, c = 0.5) {
+    if (0 >= c)
+        return a;
+    if (1 <= c)
+        return b;
+    let f = 1 - c;
+    a = parseInt(a.slice(1, 7), 16);
+    b = parseInt(b.slice(1, 7), 16);
+    return "#" + ((a & 16711680) * f + (b & 16711680) * c & 16711680 | (a & 65280) * f + (b & 65280) * c & 65280 | (a & 255) * f + (b & 255) * c & 255).toString(16).padStart(6, "0");
+}
 
     function getColor(colorNumber) {
         switch (colorNumber) {
@@ -150,6 +161,8 @@ import * as socketStuff from "./lib/socketInit.js";
             return color.white;
         case 19:
             return color.guiblack;
+        case 36:
+            return getRainbow("#ff1000 #ff9000 #ffd300 #00e00b #226ef6 #a913cf".split(" ")[Math.floor(Date.now() / 200 % 6)], "#ff9000 #ffd300 #00e00b #226ef6 #a913cf #ff1000".split(" ")[Math.floor(Date.now() / 200 % 6)], Date.now() / 200 % 1);
         default:
             return '#FF0000';
         }
