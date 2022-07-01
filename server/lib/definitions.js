@@ -9551,7 +9551,7 @@ exports.twintrapper = {
                         }, {
                     POSITION: [   3,     7,     1.7,    15,      6,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.twin, g.triple]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.twin]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
                         }, },
                        
@@ -9560,7 +9560,7 @@ exports.twintrapper = {
                         }, {
                     POSITION: [   3,     7,     1.7,    15,      -6,      0,      0.5,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.twin, g.triple]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.twin]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
                         }, },
                   ],
