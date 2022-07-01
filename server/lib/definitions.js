@@ -9505,9 +9505,10 @@ exports.random = addBarrelPreset(exports.random, "trap", 18, 8, 0, 0, 45, 0, 2, 
 exports.random = addBarrelPreset(exports.random, "minion", 3.5, 8, 0, 0, -45, 0.5, 2, false, [])
 
 
-exports.architect = {
+exports.booby = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Booby-trapper',
+                CUSTOM: true,
                 BODY: {
                     SPEED: base.SPEED * 1.1,
                 },
@@ -9515,15 +9516,70 @@ exports.architect = {
                 FACING_TYPE: 'autospin',
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  12,     8,      0,      0,     190, 0], 
-                        TYPE: exports.architectgun,
+                        TYPE: exports.trapper,
                             }, {
                     POSITION: [  12,     8,      0,     120,    190, 0], 
-                        TYPE: exports.architectgun,
+                        TYPE: exports.trapper,
                             }, {
                     POSITION: [  12,     8,      0,     240,    190, 0], 
-                        TYPE: exports.architectgun,
+                        TYPE: exports.trapper,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  12,     8,      0,      0+60,     190, 0], 
+                        TYPE: exports.trapper,
+                            }, {
+                    POSITION: [  12,     8,      0,     120+60,    190, 0], 
+                        TYPE: exports.trapper,
+                            }, {
+                    POSITION: [  12,     8,      0,     240+60,    190, 0], 
+                        TYPE: exports.trapper,
                             },
                 ],
+            };
+
+exports.triple = {
+            PARENT: [exports.genericTank],
+            DANGER: 6,
+            BODY: {
+                FOV: base.FOV * 1.05,
+            },
+            LABEL: 'Triplet',
+            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                POSITION: [  18,    10,      1,      0,      5,      0,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+                        TYPE: exports.bullet,
+                    }, }, { 
+                POSITION: [  18,    10,      1,      0,     -5,      0,     0.5,  ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+                        TYPE: exports.bullet,
+                    }, }, { 
+                POSITION: [  21,    10,      1,      0,      0,      0,      0,   ], 
+                    PROPERTIES: {
+                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
+                        TYPE: exports.bullet,
+                    }, }, 
+            ],
+        };
+
+exports.tripletrapper = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Tripple Trapper',
+                BODY: {
+                    DENSITY: base.DENSITY * 0.6,
+                    SPEED: base.SPEED * 0.8,
+                    FOV: base.FOV * 1.15,
+                },
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  15,     7,      1,      0,      0,      0,      0,   ],
+                        }, {
+                    POSITION: [   3,     7,     1.7,    15,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, },
+                  ],
             };
 
 
@@ -9615,7 +9671,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.trapper.UPGRADES_TIER_3 = [exports.minitrap, exports.overtrap/*custom*/, exports.exploder];
         exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq/*custom*/,exports.gen,exports.dumptruck,exports.miner,exports.indust,exports.supertest,exports.radar];
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
-        exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/];
+        exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/, exports.booby];
     
     exports.trapper.UPGRADES_TIER_3 = [exports.deflector];
  
