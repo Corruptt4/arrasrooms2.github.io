@@ -9505,6 +9505,27 @@ exports.random = addBarrelPreset(exports.random, "trap", 18, 8, 0, 0, 45, 0, 2, 
 exports.random = addBarrelPreset(exports.random, "minion", 3.5, 8, 0, 0, -45, 0.5, 2, false, [])
 
 
+exports.architect = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Booby-trapper',
+                BODY: {
+                    SPEED: base.SPEED * 1.1,
+                },
+                DANGER: 6,
+                FACING_TYPE: 'autospin',
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  12,     8,      0,      0,     190, 0], 
+                        TYPE: exports.architectgun,
+                            }, {
+                    POSITION: [  12,     8,      0,     120,    190, 0], 
+                        TYPE: exports.architectgun,
+                            }, {
+                    POSITION: [  12,     8,      0,     240,    190, 0], 
+                        TYPE: exports.architectgun,
+                            },
+                ],
+            };
+
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
