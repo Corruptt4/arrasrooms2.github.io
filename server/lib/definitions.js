@@ -9536,47 +9536,31 @@ exports.booby = {
                 ],
             };
 
-exports.triple = {
-            PARENT: [exports.genericTank],
-            DANGER: 6,
-            BODY: {
-                FOV: base.FOV * 1.05,
-            },
-            LABEL: 'Triplet',
-            GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                POSITION: [  18,    10,      1,      0,      5,      0,     0.5,  ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
-                        TYPE: exports.bullet,
-                    }, }, { 
-                POSITION: [  18,    10,      1,      0,     -5,      0,     0.5,  ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
-                        TYPE: exports.bullet,
-                    }, }, { 
-                POSITION: [  21,    10,      1,      0,      0,      0,      0,   ], 
-                    PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triple]),
-                        TYPE: exports.bullet,
-                    }, }, 
-            ],
-        };
-
-exports.tripletrapper = {
+exports.twintrapper = {
                 PARENT: [exports.genericTank],
-                LABEL: 'Tripple Trapper',
+                LABEL: 'Twin Trapper',
+                CUSTOM: true,
                 BODY: {
                     DENSITY: base.DENSITY * 0.6,
                     SPEED: base.SPEED * 0.8,
                     FOV: base.FOV * 1.15,
                 },
                 DANGER: 7,
-                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  15,     7,      1,      0,      0,      0,      0,   ],
+                GUNS:[  { /*** LENGTH  WIDTH   ASPECT      X       Y     ANGLE   DELAY */
+                    POSITION: [  15,     7,      1,      0,      6,      0,      0,   ],
                         }, {
-                    POSITION: [   3,     7,     1.7,    15,      0,      0,      0,   ], 
+                    POSITION: [   3,     7,     1.7,    15,      6,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.twin, g.triple]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, },
+                       
+                       { /*** LENGTH  WIDTH   ASPECT      X       Y     ANGLE   DELAY */
+                    POSITION: [  15,     7,      1,      0,      -6,      0,      0.5,   ],
+                        }, {
+                    POSITION: [   3,     7,     1.7,    15,      -6,      0,      0.5,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.twin, g.triple]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
                         }, },
                   ],
@@ -9635,7 +9619,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.miniBase,exports.random];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
-        exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/];
+        exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/,exports.twintrapper];
         exports.double.UPGRADES_TIER_3 = [exports.tripletwin, exports.split, exports.autodouble, exports.bentdouble/*custom*/,exports.scattergun];
         exports.bent.UPGRADES_TIER_3 = [exports.penta, exports.spread, exports.benthybrid, exports.bentdouble, exports.triple/*custom*/];
         exports.gunner.UPGRADES_TIER_3 = [exports.autogunner, exports.nailgun, exports.auto4, exports.machinegunner, exports.guntrap, exports.hurricane, exports.overgunner/*custom*/,exports.poprocks];
@@ -9668,13 +9652,11 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.destroy.UPGRADES_TIER_3 = [exports.conq, exports.anni, exports.hybrid, exports.construct, exports.hiveshooter/*custom*/,exports.demoman,exports.imposter];
 
     exports.trapper.UPGRADES_TIER_2 = [exports.builder, exports.tritrap, exports.flanktrap/*custom*/];
-        exports.trapper.UPGRADES_TIER_3 = [exports.minitrap, exports.overtrap/*custom*/, exports.exploder];
+        exports.trapper.UPGRADES_TIER_3 = [exports.minitrap, exports.overtrap/*custom*/, exports.exploder,exports.twintrapper,exports.deflector];
         exports.builder.UPGRADES_TIER_3 = [exports.construct, exports.autobuilder, exports.engineer, exports.boomer, exports.architect, exports.conq/*custom*/,exports.gen,exports.dumptruck,exports.miner,exports.indust,exports.supertest,exports.radar];
         exports.flanktrap.UPGRADES_TIER_3 = [exports.bomber, exports.bulwark, exports.bushwhack, exports.fortress, exports.guntrap/*custom*/];
         exports.tritrap.UPGRADES_TIER_3 = [exports.fortress, exports.hexatrap, exports.septatrap, exports.architect/*custom*/, exports.booby];
-    
-    exports.trapper.UPGRADES_TIER_3 = [exports.deflector];
- 
+
     exports.miniBase.UPGRADES_TIER_2 = [exports.superTank, exports.hotrod]
         exports.superTank.UPGRADES_TIER_3 = [exports.autoSuperTank, exports.radio, exports.delivery];
         exports.hotrod.UPGRADES_TIER_3 = [exports.autohotrod, exports.hotdrive];
