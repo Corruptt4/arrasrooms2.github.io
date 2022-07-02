@@ -9566,6 +9566,60 @@ exports.twintrapper = {
                   ],
             };
 
+exports.longauto = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Auto-long',
+                DANGER: 7,
+                SHAPE: [[-3,-1],[3,-1],[3,1],[-3,1]],
+                FACING_TYPE: 'autospin',
+                TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [  11,     8,      0,      90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      10,      90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      20,      90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      30,      90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      -10,      90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      -20,      90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      -30,      90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      10,      -90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      20,      -90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      30,      -90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      -10,      -90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      -20,      -90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      -30,      -90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            }, { /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8,      0,      -90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            },
+                
+                ]
+            };
+
+
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
@@ -9592,7 +9646,7 @@ exports.twintrapper = {
 //testbed/betatester stuff
 exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,exports.spectator];//exports.testbed7];
 
-exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror];
+exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror,exports.longauto];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
 //exports.betatester2.UPGRADES_TIER_1 = [exports.oldbetatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
