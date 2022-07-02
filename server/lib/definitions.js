@@ -9633,7 +9633,7 @@ exports.tinyGenericTank = {
       },
 };
 
-.tiny = {
+exports.tiny = {
     PARENT: [exports.tinyGenericTank],
     LABEL: 'Tiny', 
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -9662,6 +9662,56 @@ exports.tinyTwin = {
     ],
 };
 
+exports.tinySniper = {
+        PARENT: [exports.tinyGenericTank],
+        LABEL: 'Sniper',
+        BODY: {
+            DENSITY: base.DENSITY * 0.5,
+            SPEED: base.SPEED * 2,
+            DAMAGE: base.DAMAGE * 0.5,
+            HEALTH: base.HEALTH * 0.75,
+            SHIELD: base.SHIELD * 0.75,
+            ACCELERATION: base.ACCEL * 0.7, 
+            FOV: base.FOV * 1.2 * 1.5,
+        },
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.flank]),
+                TYPE: exports.bullet,
+            }, },
+        ],
+    };
+
+exports.doubletinyturret = {
+    PARENT: [exports.tinyGenericTank],
+    LABEL: '', 
+    COLOR: null,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+            TYPE: exports.bullet,
+        }, }, 
+    ],
+};
+
+exports.doubletiny = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Double Tiny', 
+    SHAPE: [[]],
+    FACING_TYPE: 'autospin',
+            TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  8,     8,      0,      0,     360,  0], 
+                    TYPE: exports.doubletinyturret,
+                        },{ /*  SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  8,     -8,      0,      0,     360,  0], 
+                    TYPE: exports.doubletinyturret,
+                        },
+  ]
+};
+
+
 
 exports.snipounder = {
         PARENT: [exports.genericTank],
@@ -9680,6 +9730,7 @@ exports.snipounder = {
             }, },
         ],
     };
+
 
 
 
@@ -9784,7 +9835,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.dualFlare.UPGRADES_TIER_3 = [exports.firestorm, exports.hexaFlare];
         exports.quadFlare.UPGRADES_TIER_3 = [exports.hexaFlare];
 
-    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin]
+    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin, exports.doubletiny]
 
     exports.reskins.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
     exports.farmer.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
