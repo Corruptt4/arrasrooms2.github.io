@@ -9618,6 +9618,30 @@ exports.longauto = {
             };
 
 exports.tiny = {
+    PARENT: [exports.tinygenericTank],
+    CUSTOM: true,
+    LABEL: 'Tiny', 
+    SIZE: 8,
+    DIPMULTI: 1.5,
+    SHAPE: -6,
+    BODY: {
+                    DENSITY: base.DENSITY * 0.5,
+                    SPEED: base.SPEED * 2,
+                    FOV: base.FOV * 1.5,
+                    DAMAGE: base.DAMAGE * 0.5,
+                    HEALTH: base.HEALTH * 0.75,
+                    SHIELD: base.SHIELD * 0.75
+      },
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+            TYPE: exports.bullet,
+        }, }, 
+    ],
+};
+
+exports.tiny = {
     PARENT: [exports.genericTank],
     CUSTOM: true,
     LABEL: 'Tiny', 
@@ -9635,8 +9659,7 @@ exports.tiny = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
-            WAIT_TO_CYCLE: true,
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
             TYPE: exports.bullet,
         }, }, 
     ],
