@@ -9616,6 +9616,30 @@ exports.longauto = {
                 ]
             };
 
+exports.tiny = {
+    PARENT: [exports.genericTank],
+    CUSTOM: true,
+    LABEL: 'Tiny', 
+    SIZE: 5,
+    DIPMULTI: 1.5,
+    SHAPE: -6,
+    BODY: {
+                    DENSITY: base.DENSITY * 0.5,
+                    SPEED: base.SPEED * 2,
+                    FOV: base.FOV * 2,
+                    DAMAGE: base.DAMAGE * 0.5,
+                    HEALTH: base.HEALTH * 0.75
+      },
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            WAIT_TO_CYCLE: true,
+            TYPE: exports.bullet,
+        }, }, 
+    ],
+};
+
 
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
@@ -9667,7 +9691,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //exports.punishment.UPGRADES_TIER_1 = []
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.miniBase,exports.random];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.miniBase,exports.tiny];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/,exports.twintrapper];
