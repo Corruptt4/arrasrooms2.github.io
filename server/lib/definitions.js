@@ -3140,6 +3140,7 @@ exports.drive = {
                 }, },
             ],
         };
+
             exports.anni = {
                 PARENT: [exports.genericTank],
                 BODY: {
@@ -9641,6 +9642,25 @@ exports.tiny = {
 };
 
 
+exports.snipounder = {
+        PARENT: [exports.genericTank],
+        CUSTOM: true,
+        LABEL: 'Snipounder',
+        DANGER: 7,
+        BODY: {
+            ACCELERATION: base.ACCEL * 0.75, 
+            FOV: base.FOV * 1.2,
+        },
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  24,    14,     1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.pound, g.destroy]),
+                TYPE: exports.bullet,
+            }, },
+        ],
+    };
+
+
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
@@ -9700,7 +9720,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.gunner.UPGRADES_TIER_3 = [exports.autogunner, exports.nailgun, exports.auto4, exports.machinegunner, exports.guntrap, exports.hurricane, exports.overgunner/*custom*/,exports.poprocks];
 
     exports.sniper.UPGRADES_TIER_2 = [exports.assassin, exports.hunter, exports.mini, exports.rifle/*custom*/];
-        exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack/*custom*/];
+        exports.sniper.UPGRADES_TIER_3 = [exports.bushwhack/*custom*/,exports.snipounder];
         exports.assassin.UPGRADES_TIER_3 = [exports.falcon, exports.ranger, exports.stalker, exports.autoass/*custom*/,exports.archer];
         exports.hunter.UPGRADES_TIER_3 = [exports.preda, exports.poach, exports.sidewind, exports.dual/*custom*/];
         exports.mini.UPGRADES_TIER_3 = [exports.stream, exports.nailgun, exports.hybridmini, exports.minitrap/*custom*/];
@@ -9724,7 +9744,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
     exports.pound.UPGRADES_TIER_2 = [exports.destroy, exports.builder, exports.artillery/*custom*/];
         exports.pound.UPGRADES_TIER_3 = [exports.shotgun2, exports.eagle/*custom*/];
         exports.artillery.UPGRADES_TIER_3 = [exports.mortar, exports.spread, exports.skimmer, exports.twister/*custom*/, exports.balli];
-        exports.destroy.UPGRADES_TIER_3 = [exports.conq, exports.anni, exports.hybrid, exports.construct, exports.hiveshooter/*custom*/,exports.demoman,exports.imposter];
+        exports.destroy.UPGRADES_TIER_3 = [exports.conq, exports.anni, exports.hybrid, exports.construct, exports.hiveshooter/*custom*/,exports.demoman,exports.imposter,exports.snipounder];
 
     exports.trapper.UPGRADES_TIER_2 = [exports.builder, exports.tritrap, exports.flanktrap/*custom*/];
         exports.trapper.UPGRADES_TIER_3 = [exports.minitrap, exports.overtrap/*custom*/, exports.exploder,exports.twintrapper,exports.deflector];
