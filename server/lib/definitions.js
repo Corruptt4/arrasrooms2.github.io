@@ -9617,10 +9617,9 @@ exports.longauto = {
                 ]
             };
 
-exports.tiny = {
-    PARENT: [exports.tinygenericTank],
+exports.tinyGenericTank = {
+    PARENT: [exports.genericTank],
     CUSTOM: true,
-    LABEL: 'Tiny', 
     SIZE: 8,
     DIPMULTI: 1.5,
     SHAPE: -6,
@@ -9632,36 +9631,34 @@ exports.tiny = {
                     HEALTH: base.HEALTH * 0.75,
                     SHIELD: base.SHIELD * 0.75
       },
+};
+
+.tiny = {
+    PARENT: [exports.tinyGenericTank],
+    LABEL: 'Tiny', 
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
             TYPE: exports.bullet,
         }, }, 
     ],
 };
 
-exports.tiny = {
-    PARENT: [exports.genericTank],
-    CUSTOM: true,
-    LABEL: 'Tiny', 
-    SIZE: 8,
-    DIPMULTI: 1.5,
-    SHAPE: -6,
-    BODY: {
-                    DENSITY: base.DENSITY * 0.5,
-                    SPEED: base.SPEED * 2,
-                    FOV: base.FOV * 1.5,
-                    DAMAGE: base.DAMAGE * 0.5,
-                    HEALTH: base.HEALTH * 0.75,
-                    SHIELD: base.SHIELD * 0.75
-      },
+exports.tinyTwin = {
+    PARENT: [exports.tinyGenericTank],
+    LABEL: 'Tiny Twin', 
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
-            TYPE: exports.bullet,
-        }, }, 
+            POSITION: [  20,     8,      1,      0,     5.5,     0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.flank]),
+                TYPE: exports.bullet,
+            }, }, { /* LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  20,     8,      1,      0,    -5.5,     0,     0.5,  ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.flank]),
+                TYPE: exports.bullet,
+            }, }, 
     ],
 };
 
@@ -9735,7 +9732,7 @@ exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centr
 
 //exports.punishment.UPGRADES_TIER_1 = []
 
-exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.miniBase,exports.tiny];
+exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, exports.flank, exports.director, exports.pound, exports.trapper/*custom*/, /*exports.brute,*/exports.furnace,exports.miniBase];
 
     exports.twin.UPGRADES_TIER_2 = [exports.double, exports.bent, exports.gunner, exports.hexa/*custom*/];
         exports.twin.UPGRADES_TIER_3 = [exports.dual, exports.bulwark, exports.musket/*custom*/,exports.twintrapper];
@@ -9787,11 +9784,13 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.dualFlare.UPGRADES_TIER_3 = [exports.firestorm, exports.hexaFlare];
         exports.quadFlare.UPGRADES_TIER_3 = [exports.hexaFlare];
 
+    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin]
+
     exports.reskins.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
     exports.farmer.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
     exports.donut.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
 
-    exports.basic.UPGRADES_TIER_2 = [exports.smash/*custom*/];
+    exports.basic.UPGRADES_TIER_2 = [exports.smash/*custom*/,exports.tiny];
         exports.smash.UPGRADES_TIER_3 = [exports.megasmash, exports.spike, exports.autosmash, exports.landmine/*custom*/,exports.accelerator,exports.grinder];
 
         exports.basic.UPGRADES_TIER_3 = [exports.single/*custom*/];
