@@ -9621,15 +9621,16 @@ exports.tiny = {
     PARENT: [exports.genericTank],
     CUSTOM: true,
     LABEL: 'Tiny', 
-    SIZE: 5,
+    SIZE: 8,
     DIPMULTI: 1.5,
     SHAPE: -6,
     BODY: {
                     DENSITY: base.DENSITY * 0.5,
                     SPEED: base.SPEED * 2,
-                    FOV: base.FOV * 2,
+                    FOV: base.FOV * 1.5,
                     DAMAGE: base.DAMAGE * 0.5,
-                    HEALTH: base.HEALTH * 0.75
+                    HEALTH: base.HEALTH * 0.75,
+                    SHIELD: base.SHIELD * 0.75
       },
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
