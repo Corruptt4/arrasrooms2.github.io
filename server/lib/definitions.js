@@ -9571,48 +9571,45 @@ exports.longauto = {
                 LABEL: 'Auto-long',
                 DANGER: 7,
                 SHAPE: [[-3,-1],[3,-1],[3,1],[-3,1]],
-                FACING_TYPE: 'autospin',
+                //FACING_TYPE: 'autospin',
                 TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [  11,     8,      0,      90,     180, 0], 
                         TYPE: exports.auto5gun,
                             }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      10,      90,     180, 0], 
+                    POSITION: [       11,     8,      12,      90,     180, 0], 
                         TYPE: exports.auto5gun,
                             }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      20,      90,     180, 0], 
+                    POSITION: [       11,     8,      24,      90,     270, 0], 
                         TYPE: exports.auto5gun,
                             }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      30,      90,     180, 0], 
+                    POSITION: [       11,     8,      -12,      90,     180, 0], 
                         TYPE: exports.auto5gun,
                             }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      -10,      90,     180, 0], 
+                    POSITION: [       11,     8,      -24,      90,     270, 0], 
                         TYPE: exports.auto5gun,
                             }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      -20,      90,     180, 0], 
+                    POSITION: [       11,     8,      12,      -90,     180, 0], 
                         TYPE: exports.auto5gun,
                             }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      -30,      90,     180, 0], 
+                    POSITION: [       11,     8,      24,      -90,     270, 0], 
                         TYPE: exports.auto5gun,
                             }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      10,      -90,     180, 0], 
+                    POSITION: [       11,     8,      -12,      -90,     180, 0], 
                         TYPE: exports.auto5gun,
                             }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      20,      -90,     180, 0], 
-                        TYPE: exports.auto5gun,
-                            }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      30,      -90,     180, 0], 
-                        TYPE: exports.auto5gun,
-                            }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      -10,      -90,     180, 0], 
-                        TYPE: exports.auto5gun,
-                            }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      -20,      -90,     180, 0], 
-                        TYPE: exports.auto5gun,
-                            }, { /*  SIZE     X       Y     ANGLE    ARC */
-                    POSITION: [       11,     8,      -30,      -90,     180, 0], 
+                    POSITION: [       11,     8,      -24,      -90,     270, 0], 
                         TYPE: exports.auto5gun,
                             }, { /*  SIZE     X       Y     ANGLE    ARC */
                     POSITION: [       11,     8,      0,      -90,     180, 0], 
+                        TYPE: exports.auto5gun,
+                            },
+                          
+                          {      /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8+20,      4,      0,     270, 0], 
+                        TYPE: exports.auto5gun,
+                            },
+                          {      /*  SIZE     X       Y     ANGLE    ARC */
+                    POSITION: [       11,     8+20,      -4,      0,     270, 0], 
                         TYPE: exports.auto5gun,
                             },
                 
