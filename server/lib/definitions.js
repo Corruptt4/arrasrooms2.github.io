@@ -10259,6 +10259,8 @@ exports.eliteShotgun = {
     ]
 };
 
+exports.penta2 = {PARENT: [exports.pentagon], LAYER: -9999, CONTROLLERS: ['nearestDifferentMaster'], HITS_OWN_TYPE: "hardWithBuffer", MOTION_TYPE: "chase", TYPE: 'drone'}
+
 exports.elitePentagon = {
     PARENT: [exports.elite],
     LABEL: "Elite Pentagon",
@@ -10270,7 +10272,7 @@ exports.elitePentagon = {
     VALUE: 18e4,
     BODY: {
         FOV: 1.25,
-        SPEED: .1 * base.SPEED,
+        SPEED: .5 * base.SPEED,
         HEALTH: 5 * base.HEALTH,
         DAMAGE: 2.5 * base.DAMAGE
     },
@@ -10278,7 +10280,7 @@ exports.elitePentagon = {
             POSITION: [  0,    6,     1,      0,      0,      0,      0,   ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.morereload]),
-                TYPE: [exports.pentagon, {LAYER: -9999, CONTROLLERS: ['nearestDifferentMaster'], HITS_OWN_TYPE: "hardWithBuffer", MOTION_TYPE: "chase",}],
+                TYPE: exports.penta2,
             }, },
         ],
 };
