@@ -10145,6 +10145,63 @@ exports.elitebasic = {
     ]
 };
 
+exports.eliteMachineGunner = {
+    PARENT: [exports.elite],
+    LABEL: "Elite Machine Gunner",
+    COLOR: '#FFA78B',
+    SHAPE: 12,
+    CUSTOM: true,
+    SIZE: 27,
+    VARIES_IN_SIZE: true,
+    VALUE: 15e4,
+    BODY: {
+        FOV: 1.25,
+        SPEED: .1 * base.SPEED,
+        HEALTH: 5 * base.HEALTH,
+        DAMAGE: 2.5 * base.DAMAGE
+    },
+    TURRETS: [{
+        POSITION: [5, 10, 0, 0, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*1, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*2, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*3, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*4, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*5, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*6, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*7, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*8, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*9, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*10, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [5, 10, 0, 30*11, 135, 0],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [10, 0, 0, 0, 360, 1],
+        TYPE: [exports.machinegunner, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, 
+    ]
+};
 
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
@@ -10185,7 +10242,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
 
-exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.cheeseburger, exports.eliteTrapper, exports.industfac, exports.elitebasic]
+exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.cheeseburger, exports.eliteTrapper, exports.industfac, exports.elitebasic, exports.eliteMachineGunner]
 
 
 
