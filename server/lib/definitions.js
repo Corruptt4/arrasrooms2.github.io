@@ -10221,40 +10221,40 @@ exports.eliteShotgun = {
     },
     TURRETS: [{
         POSITION: [5, 10, 0, 0, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*1, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*2, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*3, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*4, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*5, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*6, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*7, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*8, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*9, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*10, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, {
         POSITION: [5, 10, 0, 30*11, 135, 0],
-        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+        TYPE: [exports.shotgun2, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'], BODY: { FOV: 0.3, } }]
     }, 
     ]
 };
