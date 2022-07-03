@@ -10033,7 +10033,7 @@ exports.sawgun = {
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  18,     16,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.halfreload, g.morespeed, g.morespeed, g.doublereload]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.halfreload, g.morespeed, g.morespeed]),
             TYPE: exports.saw,
         }, },
     ]
@@ -10061,16 +10061,16 @@ exports.cabin = {
                             AUTOFIRE: true,
                             SYNCS_SKILLS: true,   
                         }, }, {                        
-                    POSITION: [   4,     14,      1,      8,      0,      0,      0,   ], 
+                    POSITION: [   6,     14,      -1.2,      6,      0,      0,      0,   ], 
                     }
                 ],
             };
 
 exports.industfac = {
     PARENT: [exports.elite],
-    LABEL: "Industry",
+    LABEL: "Elite Industrialist",
     COLOR: '#61574c',
-    SHAPE: 6,
+    SHAPE: 12,
     CUSTOM: true,
     SIZE: 27,
     VARIES_IN_SIZE: true,
@@ -10100,7 +10100,7 @@ exports.industfac = {
         POSITION: [10, 10, 0, 60*5, 90, 0],
         TYPE: exports.sawgun
     }, {
-        POSITION: [10, 0, 0, 0, 360, 1],
+        POSITION: [18, 0, 0, 0, 360, 1],
         TYPE: exports.cabin
     }, 
     ]
