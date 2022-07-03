@@ -10259,13 +10259,11 @@ exports.eliteShotgun = {
     ]
 };
 
-exports.penta2 = {PARENT: [exports.pentagon], LAYER: -9999, CONTROLLERS: ['nearestDifferentMaster'], HITS_OWN_TYPE: "hardWithBuffer", MOTION_TYPE: "chase", TYPE: 'drone'}
-
 exports.elitePentagon = {
     PARENT: [exports.elite],
-    LABEL: "Elite Pentagon",
+    LABEL: "Polygonist",
     COLOR: 36,
-    SHAPE: 5,
+    SHAPE: -8,
     CUSTOM: true,
     SIZE: 30,
     VARIES_IN_SIZE: true,
@@ -10276,11 +10274,27 @@ exports.elitePentagon = {
         HEALTH: 5 * base.HEALTH,
         DAMAGE: 2.5 * base.DAMAGE
     },
+    MAX_CHILDREN: 30,
    GUNS: [ {      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [  0,    6,     1,      0,      0,      0,      0,   ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.morereload]),
-                TYPE: exports.penta2,
+                TYPE: [exports.pentagon, {CONTROLLERS: ['nearestDifferentMaster'], HITS_OWN_TYPE: 'hardWithBuffer'} ]
+            }, },{      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  0,    4,     1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.morereload]),
+                TYPE: [exports.triangle, {CONTROLLERS: ['nearestDifferentMaster'], HITS_OWN_TYPE: 'hardWithBuffer'} ]
+            }, },{      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  0,    4,     1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.morereload]),
+                TYPE: [exports.square, {CONTROLLERS: ['nearestDifferentMaster'], HITS_OWN_TYPE: 'hardWithBuffer'} ]
+            }, },{      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  0,    2,     1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.morereload]),
+                TYPE: [exports.egg, {CONTROLLERS: ['nearestDifferentMaster'], HITS_OWN_TYPE: 'hardWithBuffer'} ]
             }, },
         ],
 };
