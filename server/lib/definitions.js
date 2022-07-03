@@ -10275,10 +10275,10 @@ exports.elitePentagon = {
         DAMAGE: 2.5 * base.DAMAGE
     },
    GUNS: [ {      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [  0,    10,     1,      0,      0,      0,      0,   ], 
+            POSITION: [  0,    6,     1,      0,      0,      0,      0,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic]),
-                TYPE: exports.pentagon,
+                SHOOT_SETTINGS: combineStats([g.basic, g.morereload]),
+                TYPE: [exports.pentagon, {LAYER: -9999, CONTROLLERS: ['nearestDifferentMaster'], HITS_OWN_TYPE: "hardWithBuffer", MOTION_TYPE: "chase",}],
             }, },
         ],
 };
