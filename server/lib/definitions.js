@@ -9626,7 +9626,7 @@ exports.tinyGenericTank = {
     BODY: {
                     DENSITY: base.DENSITY * 0.5,
                     SPEED: base.SPEED * 2,
-                    FOV: base.FOV * 1.5,
+                    FOV: base.FOV * 1.25,
                     DAMAGE: base.DAMAGE * 0.5,
                     HEALTH: base.HEALTH * 0.75,
                     SHIELD: base.SHIELD * 0.75
@@ -9664,7 +9664,7 @@ exports.tinyTwin = {
 
 exports.tinySniper = {
         PARENT: [exports.tinyGenericTank],
-        LABEL: 'Sniper',
+        LABEL: 'Tiny Sniper',
         BODY: {
             DENSITY: base.DENSITY * 0.5,
             SPEED: base.SPEED * 2,
@@ -9672,7 +9672,7 @@ exports.tinySniper = {
             HEALTH: base.HEALTH * 0.75,
             SHIELD: base.SHIELD * 0.75,
             ACCELERATION: base.ACCEL * 0.7, 
-            FOV: base.FOV * 1.2 * 1.5,
+            FOV: base.FOV * 1.2 * 1.25,
         },
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
@@ -9682,6 +9682,19 @@ exports.tinySniper = {
             }, },
         ],
     };
+
+exports.tinyMachine = {
+        PARENT: [exports.tinyGenericTank],
+        LABEL: 'Tiny Machine Gun',
+        GUNS: [ {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [    12,     10,     1.4,     8,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.flank]),
+                TYPE: exports.bullet,
+            }, },
+        ],
+    };
+
 
 exports.doubletinyturret = {
     PARENT: [exports.tinyGenericTank],
@@ -9837,7 +9850,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.dualFlare.UPGRADES_TIER_3 = [exports.firestorm, exports.hexaFlare];
         exports.quadFlare.UPGRADES_TIER_3 = [exports.hexaFlare];
 
-    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin, /*exports.doubletiny*/exports.tinySniper]
+    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin, /*exports.doubletiny*/exports.tinySniper, exports.tinyMachine]
 
     exports.reskins.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
     exports.farmer.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
