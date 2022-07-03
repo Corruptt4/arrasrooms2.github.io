@@ -9973,19 +9973,37 @@ exports.eliteTrapper = {
         POSITION: [5, 10, 0, 0, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 60*1, 135, 0],
+        POSITION: [5, 10, 0, 30*1, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 60*2, 135, 0],
+        POSITION: [5, 10, 0, 30*2, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 60*3, 135, 0],
+        POSITION: [5, 10, 0, 30*3, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 60*4, 135, 0],
+        POSITION: [5, 10, 0, 30*4, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 60*5, 135, 0],
+        POSITION: [5, 10, 0, 30*5, 135, 0],
+        TYPE: exports.trapper
+    }, {
+        POSITION: [5, 10, 0, 30*6, 135, 0],
+        TYPE: exports.trapper
+    }, {
+        POSITION: [5, 10, 0, 30*7, 135, 0],
+        TYPE: exports.trapper
+    }, {
+        POSITION: [5, 10, 0, 30*8, 135, 0],
+        TYPE: exports.trapper
+    }, {
+        POSITION: [5, 10, 0, 30*9, 135, 0],
+        TYPE: exports.trapper
+    }, {
+        POSITION: [5, 10, 0, 30*10, 135, 0],
+        TYPE: exports.trapper
+    }, {
+        POSITION: [5, 10, 0, 30*11, 135, 0],
         TYPE: exports.trapper
     }, {
         POSITION: [10, 0, 0, 0, 360, 1],
@@ -10021,11 +10039,38 @@ exports.sawgun = {
     ]
 };
 
+exports.cabin = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Cabin',
+                DANGER: 7,
+                COLOR: '#61574c',
+                STAT_NAMES: statnames.drone,
+                BODY: {
+                    SPEED: base.SPEED * 0.8,
+                    FOV: 1.1,
+                },
+                MAX_CHILDREN: 6,
+                GUNS: [ { /**** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [   5,     11,      1,      10.5,   0,      0,      0,   ], 
+                        }, {
+                    POSITION: [   2,     14,      1,      15.5,   0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.factory]),
+                            TYPE: exports.worker,
+                            STAT_CALCULATOR: gunCalcNames.minion,                        
+                            AUTOFIRE: true,
+                            SYNCS_SKILLS: true,   
+                        }, }, {                        
+                    POSITION: [   4,     14,      1,      8,      0,      0,      0,   ], 
+                    }
+                ],
+            };
+
 exports.industfac = {
     PARENT: [exports.elite],
     LABEL: "Industry",
     COLOR: '#61574c',
-    SHAPE: 12,
+    SHAPE: 6,
     CUSTOM: true,
     SIZE: 27,
     VARIES_IN_SIZE: true,
@@ -10037,44 +10082,26 @@ exports.industfac = {
         DAMAGE: 2.5 * base.DAMAGE
     },
     TURRETS: [{
-        POSITION: [5, 10, 0, 0, 135, 0],
+        POSITION: [10, 10, 0, 0, 90, 0],
         TYPE: exports.sawgun
     }, {
-        POSITION: [5, 10, 0, 30*1, 135, 0],
+        POSITION: [10, 10, 0, 60*1, 90, 0],
         TYPE: exports.sawgun
     }, {
-        POSITION: [5, 10, 0, 30*2, 135, 0],
+        POSITION: [10, 10, 0, 60*2, 90, 0],
         TYPE: exports.sawgun
     }, {
-        POSITION: [5, 10, 0, 30*3, 135, 0],
+        POSITION: [10, 10, 0, 60*3, 90, 0],
         TYPE: exports.sawgun
     }, {
-        POSITION: [5, 10, 0, 30*4, 135, 0],
+        POSITION: [10, 10, 0, 60*4, 90, 0],
         TYPE: exports.sawgun
     }, {
-        POSITION: [5, 10, 0, 30*5, 135, 0],
-        TYPE: exports.sawgun
-    }, {
-        POSITION: [5, 10, 0, 30*6, 135, 0],
-        TYPE: exports.sawgun
-    }, {
-        POSITION: [5, 10, 0, 30*7, 135, 0],
-        TYPE: exports.sawgun
-    }, {
-        POSITION: [5, 10, 0, 30*8, 135, 0],
-        TYPE: exports.sawgun
-    }, {
-        POSITION: [5, 10, 0, 30*9, 135, 0],
-        TYPE: exports.sawgun
-    }, {
-        POSITION: [5, 10, 0, 30*10, 135, 0],
-        TYPE: exports.sawgun
-    }, {
-        POSITION: [5, 10, 0, 30*11, 135, 0],
+        POSITION: [10, 10, 0, 60*5, 90, 0],
         TYPE: exports.sawgun
     }, {
         POSITION: [10, 0, 0, 0, 360, 1],
-        TYPE: [exports.eliteTrapperTurret, { INDEPENDENT: true, CONTROLLERS: ['spin'] }]
+        TYPE: exports.cabin
     }, 
     ]
 };
