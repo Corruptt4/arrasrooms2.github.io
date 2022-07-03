@@ -9881,11 +9881,85 @@ exports.snipounder = {
         ],
     };
 
+exports.eliteTrapperTurret = (() => {
+                let a = 360/7, d = 1/7;
+                return {
+                    PARENT: [exports.genericTank],
+                    LABEL: 'Septa-Trapper',
+                    DANGER: 7,
+                    COLOR: '#3256ba',
+                    BODY: {
+                        SPEED: base.SPEED * 0.8,
+                    },
+                    STAT_NAMES: statnames.trap,
+                    HAS_NO_RECOIL: true,
+                    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                        POSITION: [  15,     7,      1,      0,      0,      0,      0,   ],
+                            }, {
+                        POSITION: [   3,     7,     1.7,    15,      0,      0,      0,   ], 
+                            PROPERTIES: {
+                                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                                AUTOFIRE: true,
+                            }, }, {
+                        POSITION: [  15,     7,      1,      0,      0,      a,     4*d,  ],
+                            }, {
+                        POSITION: [   3,     7,     1.7,    15,      0,      a,     4*d,  ], 
+                            PROPERTIES: {
+                                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                                AUTOFIRE: true,
+                            }, }, {
+                        POSITION: [  15,     7,      1,      0,      0,     2*a,    1*d,  ],
+                            }, {
+                        POSITION: [   3,     7,     1.7,    15,      0,     2*a,    1*d,  ], 
+                            PROPERTIES: {
+                                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                                AUTOFIRE: true,
+                            }, }, {
+                        POSITION: [  15,     7,      1,      0,      0,     3*a,    5*d,  ],
+                            }, {
+                        POSITION: [   3,     7,     1.7,    15,      0,     3*a,    5*d,  ], 
+                            PROPERTIES: {
+                                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                                AUTOFIRE: true,
+                            }, }, {
+                        POSITION: [  15,     7,      1,      0,      0,     4*a,    2*d,  ],
+                            }, {
+                        POSITION: [   3,     7,     1.7,    15,      0,     4*a,    2*d,  ], 
+                            PROPERTIES: {
+                                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                                AUTOFIRE: true,
+                            }, }, {
+                        POSITION: [  15,     7,      1,      0,      0,     5*a,    6*d,  ],
+                            }, {
+                        POSITION: [   3,     7,     1.7,    15,      0,     5*a,    6*d,  ], 
+                            PROPERTIES: {
+                                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                                AUTOFIRE: true,
+                            }, }, {
+                        POSITION: [  15,     7,      1,      0,      0,     6*a,    3*d,  ],
+                            }, {
+                        POSITION: [   3,     7,     1.7,    15,      0,     6*a,    3*d,  ], 
+                            PROPERTIES: {
+                                SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                                AUTOFIRE: true,
+                            }, },
+                    ],
+                };
+            })();
+
 exports.eliteTrapper = {
     PARENT: [exports.elite],
     LABEL: "Elite Trapper",
-    COLOR: 10,
+    COLOR: '#3256ba',
     SHAPE: 12,
+    CUSTOM: true,
     SIZE: 27,
     VARIES_IN_SIZE: true,
     VALUE: 15e4,
@@ -9932,8 +10006,8 @@ exports.eliteTrapper = {
         POSITION: [5, 10, 0, 30*11, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [18, 10, 0, 0, 360, 0],
-        TYPE: [exports.septatrap, { INDEPENDENT: true, CONTROLLERS: ['spin'] }]
+        POSITION: [10, 0, 0, 0, 360, 1],
+        TYPE: [exports.eliteTrapperTurret, { INDEPENDENT: true, CONTROLLERS: ['spin'] }]
     }, 
     ]
 };
