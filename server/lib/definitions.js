@@ -10259,6 +10259,23 @@ exports.eliteShotgun = {
     ]
 };
 
+exports.elitePentagon = {
+    PARENT: [exports.elite],
+    LABEL: "Elite Pentagon",
+    COLOR: 14,
+    SHAPE: 5,
+    CUSTOM: true,
+    SIZE: 30,
+    VARIES_IN_SIZE: true,
+    VALUE: 18e4,
+    BODY: {
+        FOV: 1.25,
+        SPEED: .1 * base.SPEED,
+        HEALTH: 5 * base.HEALTH,
+        DAMAGE: 2.5 * base.DAMAGE
+    },
+};
+
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
 
 //Tank ideas:
