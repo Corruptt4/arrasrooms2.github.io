@@ -9973,37 +9973,19 @@ exports.eliteTrapper = {
         POSITION: [5, 10, 0, 0, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 30*1, 135, 0],
+        POSITION: [5, 10, 0, 60*1, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 30*2, 135, 0],
+        POSITION: [5, 10, 0, 60*2, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 30*3, 135, 0],
+        POSITION: [5, 10, 0, 60*3, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 30*4, 135, 0],
+        POSITION: [5, 10, 0, 60*4, 135, 0],
         TYPE: exports.trapper
     }, {
-        POSITION: [5, 10, 0, 30*5, 135, 0],
-        TYPE: exports.trapper
-    }, {
-        POSITION: [5, 10, 0, 30*6, 135, 0],
-        TYPE: exports.trapper
-    }, {
-        POSITION: [5, 10, 0, 30*7, 135, 0],
-        TYPE: exports.trapper
-    }, {
-        POSITION: [5, 10, 0, 30*8, 135, 0],
-        TYPE: exports.trapper
-    }, {
-        POSITION: [5, 10, 0, 30*9, 135, 0],
-        TYPE: exports.trapper
-    }, {
-        POSITION: [5, 10, 0, 30*10, 135, 0],
-        TYPE: exports.trapper
-    }, {
-        POSITION: [5, 10, 0, 30*11, 135, 0],
+        POSITION: [5, 10, 0, 60*5, 135, 0],
         TYPE: exports.trapper
     }, {
         POSITION: [10, 0, 0, 0, 360, 1],
@@ -10013,18 +9995,89 @@ exports.eliteTrapper = {
 };
 
 
-exports.machine = {
-        PARENT: [exports.genericTank],
-        LABEL: 'Machine Gun',
+
+exports.worker = {
+        PARENT: [exports.minion],
+        LABEL: 'Worker',
         GUNS: [ {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [    12,     10,     1.4,     8,      0,      0,      0,   ], 
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.minion]),
                 TYPE: exports.bullet,
             }, },
         ],
     };
 
+exports.sawgun = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Sawgun',
+    CUSTOM: true,
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,     16,      1,      0,      0,      0,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.halfreload, g.morespeed, g.morespeed, g.doublereload]),
+            TYPE: exports.saw,
+        }, },
+    ]
+};
+
+exports.industfac = {
+    PARENT: [exports.elite],
+    LABEL: "Industry",
+    COLOR: '#61574c',
+    SHAPE: 12,
+    CUSTOM: true,
+    SIZE: 27,
+    VARIES_IN_SIZE: true,
+    VALUE: 15e4,
+    BODY: {
+        FOV: 1.25,
+        SPEED: .1 * base.SPEED,
+        HEALTH: 7 * base.HEALTH,
+        DAMAGE: 2.5 * base.DAMAGE
+    },
+    TURRETS: [{
+        POSITION: [5, 10, 0, 0, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*1, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*2, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*3, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*4, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*5, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*6, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*7, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*8, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*9, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*10, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [5, 10, 0, 30*11, 135, 0],
+        TYPE: exports.sawgun
+    }, {
+        POSITION: [10, 0, 0, 0, 360, 1],
+        TYPE: [exports.eliteTrapperTurret, { INDEPENDENT: true, CONTROLLERS: ['spin'] }]
+    }, 
+    ]
+};
 
 
 
@@ -10066,7 +10119,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
 
-exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.cheeseburger, exports.eliteTrapper]
+exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.cheeseburger, exports.eliteTrapper, exports.industfac]
 
 
 
