@@ -9775,30 +9775,56 @@ exports.tinyPound = {
     };
 
 exports.tinyTrapper = {
-                PARENT: [exports.genericTank],
+                PARENT: [exports.tinyGenericTank],
                 LABEL: 'Tiny Trapper',
                 BODY: {
-                    DENSITY: base.DENSITY * 0.6,
-                    SPEED: base.SPEED * 0.8,
-                    FOV: base.FOV * 1.15,
+                    DAMAGE: base.DAMAGE * 0.5,
+                    HEALTH: base.HEALTH * 0.75,
+                    SHIELD: base.SHIELD * 0.75,
+                    DENSITY: base.DENSITY * 0.6 * 0.5,
+                    SPEED: base.SPEED * 0.8 * 2,
+                    FOV: base.FOV * 1.15 * 1.25,
                 },
                 DANGER: 7,
                 GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-                    POSITION: [  15,     7,      1,      0,      0,      0,      0,   ],
+                    POSITION: [  14,     8,      1,      0,      0,      0,      0,   ],
                         }, {
-                    POSITION: [   3,     7,     1.7,    15,      0,      0,      0,   ], 
+                    POSITION: [   2,     8,     1.7,    14,      0,      0,      0,   ], 
                         PROPERTIES: {
-                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap, g.flank]),
                             TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
                         }, },
                   ],
             };
 
+exports.tinySmasherBody = {
+    LABEL: '',
+    CONTROLLERS: ['spin'], 
+    COLOR: 9,
+    SHAPE: 7,
+    INDEPENDENT: true,
+};
 
-
-
-
-
+exports.tinySmash = {
+            PARENT: [exports.tinyGenericTank],
+            LABEL: 'Tiny Smasher',
+            DANGER: 6,
+            BODY: {
+                SPEED: base.SPEED * 2,
+                DAMAGE: base.DAMAGE * 0.5,
+                HEALTH: base.HEALTH * 0.75,
+                SHIELD: base.SHIELD * 0.75,
+                FOV: base.FOV * 1.05 * 1.25,
+                DENSITY: base.DENSITY * 2 * 0.5,
+            },
+            TURRETS: [{ /** SIZE     X       Y     ANGLE    ARC */
+                POSITION: [  21.5,   0,      0,      0,     360,  0,], 
+                TYPE: exports.tinySmasherBody,
+            }],
+            IS_SMASHER: true,
+            SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl,],
+            STAT_NAMES: statnames.smasher,
+        };
 
 
 
@@ -9842,7 +9868,6 @@ exports.snipounder = {
         LABEL: 'Snipounder',
         DANGER: 7,
         BODY: {
-          
             ACCELERATION: base.ACCEL * 0.75, 
             FOV: base.FOV * 1.2,
         },
@@ -9959,7 +9984,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.dualFlare.UPGRADES_TIER_3 = [exports.firestorm, exports.hexaFlare];
         exports.quadFlare.UPGRADES_TIER_3 = [exports.hexaFlare];
 
-    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin, exports.tinySniper, exports.tinyMachine, exports.tinyFlank, exports.tinyDirector, exports.tinyPound]
+    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin, exports.tinySniper, exports.tinyMachine, exports.tinyFlank, exports.tinyDirector, exports.tinyPound, exports.tinyTrapper, exports.tinySmash]
 
     exports.reskins.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
     exports.farmer.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
