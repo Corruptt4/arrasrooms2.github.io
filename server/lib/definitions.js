@@ -9966,7 +9966,7 @@ exports.eliteTrapper = {
     BODY: {
         FOV: 1.25,
         SPEED: .1 * base.SPEED,
-        HEALTH: 7 * base.HEALTH,
+        HEALTH: 5 * base.HEALTH,
         DAMAGE: 2.5 * base.DAMAGE
     },
     TURRETS: [{
@@ -10072,6 +10072,46 @@ exports.industfac = {
     PARENT: [exports.elite],
     LABEL: "Elite Industrialist",
     COLOR: '#61574c',
+    SHAPE: 12,
+    CUSTOM: true,
+    SIZE: 27,
+    VARIES_IN_SIZE: true,
+    VALUE: 15e4,
+    BODY: {
+        FOV: 1.25,
+        SPEED: .1 * base.SPEED,
+        HEALTH: 7 * base.HEALTH,
+        DAMAGE: 2.5 * base.DAMAGE
+    },
+    TURRETS: [{
+        POSITION: [7, 10, 0, 0, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [7, 10, 0, 60*1, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [7, 10, 0, 60*2, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [7, 10, 0, 60*3, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [7, 10, 0, 60*4, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [7, 10, 0, 60*5, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
+    }, {
+        POSITION: [16, 0, 0, 0, 360, 1],
+        TYPE: exports.cabin
+    }, 
+    ]
+};
+
+exports.elitebasic = {
+    PARENT: [exports.elite],
+    LABEL: "Elite Basic",
+    COLOR: '#62a872',
     SHAPE: 12,
     CUSTOM: true,
     SIZE: 27,
