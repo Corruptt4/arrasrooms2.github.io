@@ -9808,10 +9808,11 @@ exports.tinySmasherBody = {
 exports.tinySmash = {
             PARENT: [exports.tinyGenericTank],
             LABEL: 'Tiny Smasher',
+            SHAPE: 0,
             DANGER: 6,
             BODY: {
                 SPEED: base.SPEED * 2,
-                DAMAGE: base.DAMAGE * 0.5,
+                DAMAGE: base.DAMAGE * 0.75,
                 HEALTH: base.HEALTH * 0.75,
                 SHIELD: base.SHIELD * 0.75,
                 FOV: base.FOV * 1.05 * 1.25,
