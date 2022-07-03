@@ -9686,7 +9686,8 @@ exports.tinySniper = {
 exports.doubletinyturret = {
     PARENT: [exports.tinyGenericTank],
     LABEL: '', 
-    COLOR: null,
+    //COLOR: "master"
+    FACING_TYPE: 'smoothToTarget',
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
@@ -9699,13 +9700,14 @@ exports.doubletinyturret = {
 exports.doubletiny = {
     PARENT: [exports.genericTank],
     LABEL: 'Double Tiny', 
+    CUSTOM: true,
     SHAPE: [[]],
     FACING_TYPE: 'autospin',
             TURRETS: [{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  8,     8,      0,      0,     360,  0], 
+                POSITION: [  10,     8,      0,      0,     360,  0], 
                     TYPE: exports.doubletinyturret,
                         },{ /*  SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  8,     -8,      0,      0,     360,  0], 
+                POSITION: [  10,     8,      0,      180,     360,  0], 
                     TYPE: exports.doubletinyturret,
                         },
   ]
@@ -9835,7 +9837,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.dualFlare.UPGRADES_TIER_3 = [exports.firestorm, exports.hexaFlare];
         exports.quadFlare.UPGRADES_TIER_3 = [exports.hexaFlare];
 
-    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin, exports.doubletiny]
+    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin, /*exports.doubletiny*/exports.tinySniper]
 
     exports.reskins.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
     exports.farmer.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
