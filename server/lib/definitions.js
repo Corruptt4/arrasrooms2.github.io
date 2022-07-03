@@ -9649,12 +9649,12 @@ exports.tinyTwin = {
     PARENT: [exports.tinyGenericTank],
     LABEL: 'Tiny Twin', 
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [  20,     8,      1,      0,     5.5,     0,      0,   ], 
+            POSITION: [  17,     9,      1,      0,     5.5,     0,      0,   ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.flank]),
                 TYPE: exports.bullet,
             }, }, { /* LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [  20,     8,      1,      0,    -5.5,     0,     0.5,  ], 
+            POSITION: [  17,     9,      1,      0,    -5.5,     0,     0.5,  ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.flank]),
                 TYPE: exports.bullet,
@@ -9675,7 +9675,7 @@ exports.tinySniper = {
             FOV: base.FOV * 1.2 * 1.25,
         },
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [  24,    8.5,     1,      0,      0,      0,      0,   ], 
+            POSITION: [  17+4,    9.5,     1,      0,      0,      0,      0,   ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.flank]),
                 TYPE: exports.bullet,
@@ -9687,13 +9687,121 @@ exports.tinyMachine = {
         PARENT: [exports.tinyGenericTank],
         LABEL: 'Tiny Machine Gun',
         GUNS: [ {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [    12,     10,     1.4,     8,      0,      0,      0,   ], 
+            POSITION: [    13,     11,     1.4,     8,      0,      0,      0,   ], 
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.mach, g.flank]),
                 TYPE: exports.bullet,
             }, },
         ],
     };
+
+exports.tinyFlank = {
+        PARENT: [exports.tinyGenericTank],
+        LABEL: 'Tiny Flank Guard',
+        BODY: {
+            DENSITY: base.DENSITY * 0.5,
+            SPEED: base.SPEED * 2 * 1.1,
+            FOV: base.FOV * 1.25,
+            DAMAGE: base.DAMAGE * 0.5,
+            HEALTH: base.HEALTH * 0.75,
+            SHIELD: base.SHIELD * 0.75
+        },
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  17,     9,      1,      0,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                    TYPE: exports.bullet,
+                }, }, {   
+            POSITION: [  17,     9,      1,      0,      0,     120,     0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                    TYPE: exports.bullet,
+                }, }, {   
+            POSITION: [  17,     9,      1,      0,      0,     240,     0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                    TYPE: exports.bullet,
+                }, },
+        ],
+    };
+
+exports.tinyDirector = {
+        PARENT: [exports.tinyGenericTank],
+        LABEL: 'Tiny Director',  
+        STAT_NAMES: statnames.drone,
+        DANGER: 5,
+        BODY: {
+            DENSITY: base.DENSITY * 0.5,
+            SPEED: base.SPEED * 2 * 1.1,
+            FOV: base.FOV * 1.25 * 1.1,
+            DAMAGE: base.DAMAGE * 0.5,
+            HEALTH: base.HEALTH * 0.75,
+            SHIELD: base.SHIELD * 0.75,
+            ACCELERATION: base.ACCEL * 0.75,
+        },
+        MAX_CHILDREN: 6,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [   6,     13,    1.2,     8,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.over, g.flank]),
+                    TYPE: exports.drone,
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: gunCalcNames.drone,
+                }, },
+        ],
+    };
+
+exports.tinyPound = {
+        PARENT: [exports.tinyGenericTank],
+        DANGER: 5,
+        BODY: {
+            DENSITY: base.DENSITY * 0.5,
+            SPEED: base.SPEED * 2,
+            FOV: base.FOV * 1.25,
+            DAMAGE: base.DAMAGE * 0.5,
+            HEALTH: base.HEALTH * 0.75,
+            SHIELD: base.SHIELD * 0.75,
+            ACCELERATION: base.ACCEL * 0.8,
+        },
+        LABEL: 'Tiny Pounder',
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  19,    13,      1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.flank]),
+                TYPE: exports.bullet,
+            }, },
+        ],
+    };
+
+exports.tinyTrapper = {
+                PARENT: [exports.genericTank],
+                LABEL: 'Tiny Trapper',
+                BODY: {
+                    DENSITY: base.DENSITY * 0.6,
+                    SPEED: base.SPEED * 0.8,
+                    FOV: base.FOV * 1.15,
+                },
+                DANGER: 7,
+                GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+                    POSITION: [  15,     7,      1,      0,      0,      0,      0,   ],
+                        }, {
+                    POSITION: [   3,     7,     1.7,    15,      0,      0,      0,   ], 
+                        PROPERTIES: {
+                            SHOOT_SETTINGS: combineStats([g.trap, g.hexatrap]),
+                            TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                        }, },
+                  ],
+            };
+
+
+
+
+
+
+
+
+
 
 
 exports.doubletinyturret = {
@@ -9734,6 +9842,7 @@ exports.snipounder = {
         LABEL: 'Snipounder',
         DANGER: 7,
         BODY: {
+          
             ACCELERATION: base.ACCEL * 0.75, 
             FOV: base.FOV * 1.2,
         },
@@ -9850,7 +9959,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.dualFlare.UPGRADES_TIER_3 = [exports.firestorm, exports.hexaFlare];
         exports.quadFlare.UPGRADES_TIER_3 = [exports.hexaFlare];
 
-    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin, /*exports.doubletiny*/exports.tinySniper, exports.tinyMachine]
+    exports.tiny.UPGRADES_TIER_3 = [exports.tinyTwin, exports.tinySniper, exports.tinyMachine, exports.tinyFlank, exports.tinyDirector, exports.tinyPound]
 
     exports.reskins.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
     exports.farmer.UPGRADES_TIER_1 = exports.basic.UPGRADES_TIER_1
