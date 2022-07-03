@@ -10262,7 +10262,7 @@ exports.eliteShotgun = {
 exports.elitePentagon = {
     PARENT: [exports.elite],
     LABEL: "Elite Pentagon",
-    COLOR: 14,
+    COLOR: 36,
     SHAPE: 5,
     CUSTOM: true,
     SIZE: 30,
@@ -10274,6 +10274,13 @@ exports.elitePentagon = {
         HEALTH: 5 * base.HEALTH,
         DAMAGE: 2.5 * base.DAMAGE
     },
+   GUNS: [ {      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [  0,    10,     1,      0,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: exports.pentagon,
+            }, },
+        ],
 };
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
@@ -10314,7 +10321,7 @@ exports.testbed6.UPGRADES_TIER_1 = [exports.greenpentagon, exports.greentriangle
 //exports.testbed7.UPGRADES_TIER_1 = [exports.bullet, exports.casing, exports.flare, exports.swarm, exports.bee, exports.autoswarm, exports.homingbullet, exports.accelbullet, exports.growbullet, exports.trap, exports.block, exports.boomerang, exports.drone, exports.testbed9]
 //exports.testbed8.UPGRADES_TIER_1 = [exports.sunchip, exports.autosunchip, exports.invissunchip, exports.gunchip, exports.missile, exports.twistmissile, exports.hypermissile, exports.snake, exports.hive]
 
-exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.cheeseburger, exports.eliteTrapper, exports.industfac, exports.elitebasic, exports.eliteMachineGunner, exports.eliteShotgun]
+exports.testbed9.UPGRADES_TIER_1 = [exports.centre,exports.centre2,exports.centre3,exports.centre4,exports.centre5, exports.cheeseburger, exports.eliteTrapper, exports.industfac, exports.elitebasic, exports.eliteMachineGunner, exports.eliteShotgun, exports.elitePentagon]
 
 
 
