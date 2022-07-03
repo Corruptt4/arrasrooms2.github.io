@@ -10013,6 +10013,19 @@ exports.eliteTrapper = {
 };
 
 
+exports.machine = {
+        PARENT: [exports.genericTank],
+        LABEL: 'Machine Gun',
+        GUNS: [ {    /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [    12,     10,     1.4,     8,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mach]),
+                TYPE: exports.bullet,
+            }, },
+        ],
+    };
+
+
 
 
 //todo: replace bighealer with small drones that spawn randomly around in the room type that target and heal you, sorta like diep base drones
