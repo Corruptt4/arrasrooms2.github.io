@@ -9971,40 +9971,40 @@ exports.eliteTrapper = {
     },
     TURRETS: [{
         POSITION: [5, 10, 0, 0, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*1, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*2, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*3, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*4, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*5, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*6, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*7, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*8, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*9, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*10, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [5, 10, 0, 30*11, 135, 0],
-        TYPE: exports.trapper
+        TYPE: [exports.trapper, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
         POSITION: [10, 0, 0, 0, 360, 1],
         TYPE: [exports.eliteTrapperTurret, { INDEPENDENT: true, CONTROLLERS: ['spin'] }]
@@ -10031,6 +10031,8 @@ exports.sawgun = {
     LABEL: 'Sawgun',
     CUSTOM: true,
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  12,     20,      1,      0,      0,      0,      0,   ], 
+        }, { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  18,     16,      1,      0,      0,      0,      0,   ], 
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.halfreload, g.morespeed, g.morespeed]),
@@ -10082,25 +10084,25 @@ exports.industfac = {
         DAMAGE: 2.5 * base.DAMAGE
     },
     TURRETS: [{
-        POSITION: [10, 10, 0, 0, 90, 0],
-        TYPE: exports.sawgun
+        POSITION: [7, 10, 0, 0, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
-        POSITION: [10, 10, 0, 60*1, 90, 0],
-        TYPE: exports.sawgun
+        POSITION: [7, 10, 0, 60*1, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
-        POSITION: [10, 10, 0, 60*2, 90, 0],
-        TYPE: exports.sawgun
+        POSITION: [7, 10, 0, 60*2, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
-        POSITION: [10, 10, 0, 60*3, 90, 0],
-        TYPE: exports.sawgun
+        POSITION: [7, 10, 0, 60*3, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
-        POSITION: [10, 10, 0, 60*4, 90, 0],
-        TYPE: exports.sawgun
+        POSITION: [7, 10, 0, 60*4, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
-        POSITION: [10, 10, 0, 60*5, 90, 0],
-        TYPE: exports.sawgun
+        POSITION: [7, 10, 0, 60*5, 180, 0],
+        TYPE: [exports.sawgun, { INDEPENDENT: true, CONTROLLERS: ['nearestDifferentMaster'] }]
     }, {
-        POSITION: [18, 0, 0, 0, 360, 1],
+        POSITION: [16, 0, 0, 0, 360, 1],
         TYPE: exports.cabin
     }, 
     ]
