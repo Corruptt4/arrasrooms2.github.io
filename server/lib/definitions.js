@@ -9931,6 +9931,9 @@ exports.eliteTrapper = {
     }, {
         POSITION: [5, 10, 0, 30*11, 135, 0],
         TYPE: exports.trapper
+    }, {
+        POSITION: [18, 10, 0, 0, 360, 0],
+        TYPE: [exports.septatrap, { INDEPENDENT: true, CONTROLLERS: ['spin'] }]
     }, 
     ]
 };
