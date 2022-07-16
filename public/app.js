@@ -680,7 +680,7 @@ import * as socketStuff from "./lib/socketInit.js";
                     sides = -sides;
                     context.moveTo(centerX + radius * Math.cos(angle), centerY + radius * Math.sin(angle));
                     for (let i = 0; i < sides; i++) {
-                        var theta = (i + 1) / sides * 2 * Math.PI;
+                        var theta = (i + 1)    / sides * 2 * Math.PI;
                         var htheta = (i + 0.5) / sides * 2 * Math.PI;
                         var c = {
                             x: centerX + radius * dip * dipMultih * Math.cos(htheta + angle),
