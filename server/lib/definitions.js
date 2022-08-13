@@ -10373,6 +10373,272 @@ exports.elitePentagon = {
 //or that one mega swarmer
 
 
+//beta/scrapped tanks
+exports.crowbaraAutoTankGun = {
+  PARENT: [exports.genericTank],
+  LABEL: "",
+  BETA: true,
+  CUSTOM: true,
+  BODY: {
+    FOV: 3,
+  },
+  CONTROLLERS: [
+    "canRepel",
+    "onlyAcceptInArc",
+    "mapAltToFire",
+    "nearestDifferentMaster",
+  ],
+  COLOR: 16,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [22, 10, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.auto]),
+        TYPE: exports.bullet,
+      },
+    },
+  ],
+};
+exports.crowbar = {
+  PARENT: [exports.genericTank],
+  DANGER: 6,
+  LABEL: "Crowbar",
+  BETA: true,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.6,
+    SPEED: base.SPEED * 0.85,
+    FOV: base.FOV * 1.4,
+  },
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [37, 8.5, 1, 0, 0, 0, 0],
+    },
+    {
+      POSITION: [5, 8.5, -1.6, 8, 0, 0, 0],
+    },
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [8, 38, 0, 0, 360, 1],
+      TYPE: [
+        exports.crowbaraAutoTankGun,
+        {
+          INDEPENDENT: true,
+        },
+      ],
+    },
+    {
+      POSITION: [8, 28, 0, 0, 360, 1],
+      TYPE: [
+        exports.crowbaraAutoTankGun,
+        {
+          INDEPENDENT: true,
+        },
+      ],
+    },
+    {
+      POSITION: [8, 18, 0, 0, 360, 1],
+      TYPE: [
+        exports.crowbaraAutoTankGun,
+        {
+          INDEPENDENT: true,
+        },
+      ],
+    },
+  ],
+};
+exports.vulcan = {
+  PARENT: [exports.genericTank],
+  LABEL: "Vulcan",
+  DANGER: 7,
+  BETA: true,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [28, 2, 1, 0, 4, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [28, 2, 1, 0, -4, 0, 0.8],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [28, 2, 1, 0, 2.25, 0, 0.2],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [28, 2, 1, 0, -2.25, 0, 0.6],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [28, 2, 1, 0, 0, 0, 0.4],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.fast]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [5, 13, 1, 7, 0, 0, 0],
+    },
+    {
+      POSITION: [5, 13, 1, 20, 0, 0, 0],
+    },
+  ],
+};
+exports.accurator = {
+  PARENT: [exports.genericTank],
+  LABEL: "Accurator",
+  BETA: true,
+  DANGER: 7,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.5,
+    SPEED: base.SPEED * 0.8,
+    FOV: base.FOV * 1.5,
+  },
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [5, 1, -5, 24, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.mach, g.fake]),
+        TYPE: exports.accelbullet,
+      },
+    },
+    {
+      POSITION: [16, 10, 1.4, 8, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.mach]),
+        TYPE: exports.accelbullet,
+      },
+    },
+  ],
+};
+
+exports.crossbow = {
+  PARENT: [exports.genericTank],
+  LABEL: "Crossbow",
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.7,
+    FOV: base.FOV * 1.225,
+  },
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [12.5, 3.5, 1, 0, 4, 25, 0.6],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.sniper,
+          g.rifle,
+          g.halfspeed,
+          g.halfreload,
+          g.halfrecoil,
+        ]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [12.5, 3.5, 1, 0, -4, -25, 0.6],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.sniper,
+          g.rifle,
+          g.halfspeed,
+          g.halfreload,
+          g.halfrecoil,
+        ]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [15, 3.5, 1, 0, 4, 12.5, 0.4],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.sniper,
+          g.rifle,
+          g.halfspeed,
+          g.halfreload,
+          g.halfrecoil,
+        ]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [15, 3.5, 1, 0, -4, -12.5, 0.4],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.sniper,
+          g.rifle,
+          g.halfspeed,
+          g.halfreload,
+          g.halfrecoil,
+        ]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [20, 3.5, 1, 0, 4, 0, 0.2],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.sniper,
+          g.rifle,
+          g.halfspeed,
+          g.halfreload,
+          g.halfrecoil,
+        ]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [20, 3.5, 1, 0, -4, 0, 0.2],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.sniper,
+          g.rifle,
+          g.halfspeed,
+          g.halfreload,
+          g.halfrecoil,
+        ]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [24, 7, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.sniper,
+          g.rifle,
+          g.slow,
+          g.halfreload,
+          g.halfrecoil,
+        ]),
+        TYPE: exports.bullet,
+      },
+    },
+  ],
+};
+
 
 function pages(name,tanks){
   var l=tanks.length,offset=0,page_number=1,page_name,prev_page,curr_page,start_page;
