@@ -10374,10 +10374,32 @@ exports.elitePentagon = {
 
 
 
+function pages(name,tanks){
+  var l=tanks.length,offset=0,page_number=1,page_name,prev_page,curr_page,start_page;
+  do{
+    page_name=name+"/PAGE "+page_number++;
+    exports[page_name]=curr_page={
+      "PARENT":[exports.genericTank],
+      "SHAPE":1000,
+      "LABEL":page_name,
+      "UPGRADES_TIER_1":tanks.slice(offset,offset+=10),
+      "CUSTOM":true
+    };
+    if(prev_page){
+      curr_page.UPGRADES_TIER_1.push(prev_page);
+      prev_page.UPGRADES_TIER_1.push(curr_page);
+    }else start_page=curr_page;
+    prev_page=curr_page;
+  }while(offset<l);
+  prev_page.UPGRADES_TIER_1.push(start_page);
+  return start_page;
+}
+
+
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,exports.spectator];//exports.testbed7];
+exports.testbed.UPGRADES_TIER_1 = [exports.betatester, exports.basic, exports.testbed5, exports.testbed2,exports.testbed3,exports.testbed4,exports.spectator,pages("everything",Object.values(exports))];//exports.testbed7];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror,exports.longauto];
 

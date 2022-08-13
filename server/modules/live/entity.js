@@ -902,6 +902,9 @@ class Entity {
         if (set.CUSTOM != null) {
             this.customValue = set.CUSTOM;
         }
+        if (set.BETA != null) {
+            this.betaValue = set.BETA;
+        }
         if (set.VARIES_IN_SIZE != null) {
             this.settings.variesInSize = set.VARIES_IN_SIZE;
             this.squiggle = (this.settings.variesInSize) ? ran.randomRange(0.8, 1.2) : 1;
@@ -1136,7 +1139,8 @@ class Entity {
             size: this.size,
             rsize: this.realSize,
             dipMulti: this.dipMulti,
-            custom: this.custom,          
+            custom: this.custom,
+            beta: this.beta,
             status: 1,
             health: this.health.display(),
             shield: this.shield.display(),

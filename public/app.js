@@ -1871,9 +1871,17 @@ import * as socketStuff from "./lib/socketInit.js";
                         global.clickables.upgrade.place(i++, x, y, len, height);
                         // Draw box
                         if (picture.custom==true){
-                          fill = "#ff7777"
+                          if (picture.beta==true){
+                            fill = "#ffff77"
+                          } else {
+                            fill = "#ff7777"
+                          }
                         } else {
-                          fill = "#ffffff"
+                          if (picture.beta==true){
+                            fill = "#77ff77"
+                          } else {
+                            fill = "#ffffff"
+                          }
                         }
                         ctx.globalAlpha = 0.5;
                         ctx.fillStyle = fill//getColor((colorIndex > 15 ? colorIndex - 16 : colorIndex));
