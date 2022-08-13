@@ -56,6 +56,8 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   trap: [39, 1, .25, .65, 1.025, .325, 1.1, 4.9, 1, 1.125, 1, 15, 3],
     swarm: [27, .25, .05, .4, .9, .235, .65, 3.5, 1, 1, 1.25, 5, 1.25],
     drone: [66, .25, .1, .6, 5, .295, 1, 2.35, 1, 1, 1, .1, 1.1],
+    bigdrone: [30, 0.25, 0.1, 1.5, 2.5, 2, 1, 1.5, 1, 1, 1, 0.1, 1],
+    verybigdrone: [10, 0.25, 0.1, 2.25, 5, 3, 1, 1.5, 1, 1, 1, 0.1, 1],
     factory: [72, 1, .1, .7, 2, .2, 1, 3, 1, 1, 1, .1, 1],
     basic: [18.25, 1.4, .1, 1, 2, .2, 1, 4.5, 1, 1, 1, 15, 1],
     destroyerDominator: [6.5, 0, 1, .975, 6, 6, 6, .575, .475, 1, 1, .5, 1],
@@ -148,6 +150,7 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
     notdense: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, .1, 1, 1],
     halfrange: [1, 1, 1, 1, 1, 1, 1, 1, 1, .5, 1, 1, 1],
     fake: [1, 1, 1, 1e-5, 1e-4, 1, 1, 1e-5, 2, 0, 1, 1, 1],
+    healer: [1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1],
     op: [.5, 1.3, 1, 1, 4, 4, 4, 3, 2, 1, 5, 2, 1],
     protectorswarm: [5, 1e-6, 1, 1, 100, 1, 1, 1, 1, .5, 5, 1, 10],
     summoner: [.3, 1, 1, 1.125, .4, .345, .4, 1, 1, 1, .8, 1, 1],
@@ -212,8 +215,6 @@ const g = { // Reload, recoil, shudder (speed variation), size, health, damage, 
   clonerbuff: [0.7, 1, 1, 1, 0.8, 0.7, 2, 2, 2, 1, 1, 1, 1],
   
   blackhole: [1, 1, 1, 1, 0.7, 0.8, 1, 1, 1, 1, 1, 1, 1],
-  
-  healer: [1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1],
   
 };
 
@@ -10638,6 +10639,422 @@ exports.crossbow = {
     },
   ],
 };
+exports.armsman = makeHybrid(exports.rifle, "Armsman");
+
+
+
+exports.mendersymbol = {
+  PARENT: [exports.genericTank],
+  COLOR: 16,
+  LABEL: "",
+  SHAPE: 3,
+};
+exports.healerSymbol = {
+  PARENT: [exports.genericTank],
+  COLOR: 12,
+  LABEL: "",
+  SHAPE: [
+    [0.3, -0.3],
+    [1, -0.3],
+    [1, 0.3],
+    [0.3, 0.3],
+    [0.3, 1],
+    [-0.3, 1],
+    [-0.3, 0.3],
+    [-1, 0.3],
+    [-1, -0.3],
+    [-0.3, -0.3],
+    [-0.3, -1],
+    [0.3, -1],
+  ],
+};
+
+exports.healerBullet = {
+  PARENT: [exports.bullet],
+  HITS_OWN_TYPE: "normal",
+};
+exports.physicianBody = {
+  LABEL: "",
+  CONTROLLERS: ["spin"],
+  COLOR: 9,
+  SHAPE: 4,
+  INDEPENDENT: true,
+};
+
+// HEALER "WEAPONS"
+exports.bigCheeseDrone = {
+  PARENT: [exports.drone],
+  BODY: {
+    HEALTH: 2 * wepHealthFactor,
+  },
+};
+exports.surgeonPillboxTurret = {
+  PARENT: [exports.genericTank],
+  LABEL: "",
+  COLOR: 16,
+  BODY: {
+    FOV: 3,
+  },
+  HAS_NO_RECOIL: true,
+  CONTROLLERS: ["fastspin"],
+  //CONTROLLERS: ['nearestDifferentMaster'],
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [13, 0, 0, 0, 360, 1],
+      TYPE: exports.healerSymbol,
+    },
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [17, 11, 1, 0, 0, 90, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.turret]),
+        TYPE: exports.healerBullet,
+        AUTOFIRE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [14, 11, 1, 0, 0, 90, 0.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.turret]),
+        TYPE: exports.healerBullet,
+        AUTOFIRE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [17, 11, 1, 0, 0, 270, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.turret]),
+        TYPE: exports.healerBullet,
+        AUTOFIRE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [14, 11, 1, 0, 0, 270, 0.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.turret]),
+        TYPE: exports.healerBullet,
+        AUTOFIRE: true,
+      },
+    },
+  ],
+};
+exports.surgeonPillbox = {
+  LABEL: "Pillbox",
+  PARENT: [exports.trap],
+  SHAPE: -6,
+  MOTION_TYPE: "motor",
+  CONTROLLERS: ["goToMasterTarget", "nearestDifferentMaster"],
+  INDEPENDENT: true,
+  BODY: {
+    SPEED: 1,
+    DENSITY: 5,
+  },
+  DIE_AT_RANGE: true,
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [11, 0, 0, 0, 360, 1],
+      TYPE: exports.surgeonPillboxTurret,
+    },
+  ],
+};
+exports.doctorDrone = {
+  PARENT: [exports.bigCheeseDrone],
+  HITS_OWN_TYPE: "normal",
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [13, 0, 0, 0, 360, 1],
+      TYPE: exports.healerSymbol,
+    },
+  ],
+};
+
+exports.healer = {
+  PARENT: [exports.genericTank],
+  LABEL: "Healer",
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [13, 0, 0, 0, 360, 1],
+      TYPE: exports.healerSymbol,
+    },
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [8, 9, -0.5, 12.5, 0, 0, 0],
+    },
+    {
+      POSITION: [18, 10, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
+        TYPE: exports.healerBullet,
+      },
+    },
+  ],
+};
+exports.medic = {
+  PARENT: [exports.genericTank],
+  LABEL: "Medic",
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.7,
+    FOV: base.FOV * 1.2,
+  },
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [13, 0, 0, 0, 360, 1],
+      TYPE: exports.healerSymbol,
+    },
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [8, 9, -0.5, 16.5, 0, 0, 0],
+    },
+    {
+      POSITION: [22, 10, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
+        TYPE: exports.healerBullet,
+      },
+    },
+  ],
+};
+exports.ambulance = {
+  PARENT: [exports.genericTank],
+  LABEL: "Ambulance",
+  BODY: {
+    HEALTH: base.HEALTH * 0.8,
+    SHIELD: base.SHIELD * 0.8,
+    DENSITY: base.DENSITY * 0.6,
+  },
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [13, 0, 0, 0, 360, 1],
+      TYPE: exports.healerSymbol,
+    },
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [8, 9, -0.5, 12.5, 0, 0, 0],
+    },
+    {
+      POSITION: [18, 10, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.flank,
+          g.tri,
+          g.trifront,
+          g.tonsmorrecoil,
+          g.healer,
+        ]),
+        TYPE: exports.healerBullet,
+        LABEL: "Front",
+      },
+    },
+    {
+      POSITION: [16, 8, 1, 0, 0, 150, 0.1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+        TYPE: exports.bullet,
+        LABEL: gunCalcNames.thruster,
+      },
+    },
+    {
+      POSITION: [16, 8, 1, 0, 0, 210, 0.1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+        TYPE: exports.bullet,
+        LABEL: gunCalcNames.thruster,
+      },
+    },
+  ],
+};
+exports.surgeon = {
+  PARENT: [exports.genericTank],
+  LABEL: "Surgeon",
+  STAT_NAMES: statnames.trap,
+  BODY: {
+    SPEED: base.SPEED * 0.75,
+    FOV: base.FOV * 1.15,
+  },
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [13, 0, 0, 0, 360, 1],
+      TYPE: exports.healerSymbol,
+    },
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [5, 11, 1, 10.5, 0, 0, 0],
+    },
+    {
+      POSITION: [3, 14, 1, 15.5, 0, 0, 0],
+    },
+    {
+      POSITION: [2, 14, 1.3, 18, 0, 0, 0],
+      PROPERTIES: {
+        MAX_CHILDREN: 2,
+        SHOOT_SETTINGS: combineStats([g.trap, g.block, g.slow]),
+        TYPE: exports.surgeonPillbox,
+        SYNCS_SKILLS: true,
+      },
+    },
+    {
+      POSITION: [4, 14, 1, 8, 0, 0, 0],
+    },
+  ],
+};
+exports.paramedic = {
+  PARENT: [exports.genericTank],
+  LABEL: "Paramedic",
+  BODY: {
+    SPEED: base.SPEED * 0.9,
+  },
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [13, 0, 0, 0, 360, 1],
+      TYPE: exports.healerSymbol,
+    },
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [8, 9, -0.5, 10, 0, -17.5, 0.5],
+    },
+    {
+      POSITION: [15.5, 10, 1, 0, 0, -17.5, 0.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.healer]),
+        TYPE: exports.healerBullet,
+      },
+    },
+    {
+      POSITION: [8, 9, -0.5, 10, 0, 17.5, 0.5],
+    },
+    {
+      POSITION: [15.5, 10, 1, 0, 0, 17.5, 0.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.healer]),
+        TYPE: exports.healerBullet,
+      },
+    },
+    {
+      POSITION: [8, 9, -0.5, 12.5, 0, 0, 0],
+    },
+    {
+      POSITION: [18, 10, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.healer]),
+        TYPE: exports.healerBullet,
+      },
+    },
+  ],
+};
+exports.physician = {
+  PARENT: [exports.genericTank],
+  LABEL: "Physician",
+  BODY: {
+    SPEED: base.speed * 0.9,
+    DAMAGE: base.DAMAGE * -1.1,
+    FOV: base.FOV * 1.05,
+    DENSITY: base.DENSITY * 2,
+  },
+  IS_SMASHER: true,
+  FACING_TYPE: "autospin",
+  SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl],
+  STAT_NAMES: statnames.smasher,
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [13, 0, 0, 0, 360, 1],
+      TYPE: exports.healerSymbol,
+    },
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [18, 0, 0, 0, 360, 0],
+      TYPE: exports.physicianBody,
+    },
+    {
+      POSITION: [18, 0, 0, 15, 360, 0],
+      TYPE: exports.physicianBody,
+    },
+    {
+      POSITION: [18, 0, 0, 30, 360, 0],
+      TYPE: exports.physicianBody,
+    },
+    {
+      POSITION: [18, 0, 0, 45, 360, 0],
+      TYPE: exports.physicianBody,
+    },
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [18, 0, 0, 60, 360, 0],
+      TYPE: exports.physicianBody,
+    },
+    {
+      POSITION: [18, 0, 0, 75, 360, 0],
+      TYPE: exports.physicianBody,
+    },
+    {
+      POSITION: [18, 0, 0, 90, 360, 0],
+      TYPE: exports.physicianBody,
+    },
+    {
+      POSITION: [18, 0, 0, 135, 360, 0],
+      TYPE: exports.physicianBody,
+    },
+  ],
+};
+exports.doctor = {
+  PARENT: [exports.genericTank],
+  LABEL: "Doctor",
+  STAT_NAMES: statnames.drone,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.7,
+    FOV: base.FOV * 1.15,
+  },
+  MAX_CHILDREN: 1,
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [13, 0, 0, 0, 360, 1],
+      TYPE: exports.healerSymbol,
+    },
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [17, 16, 1.25, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.drone,
+          g.over,
+          g.verybigdrone,
+          g.healer,
+        ]),
+        TYPE: exports.doctorDrone,
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: gunCalcNames.drone,
+      },
+    },
+  ],
+};
 
 
 function pages(name,tanks){
@@ -10704,7 +11121,7 @@ exports.basic.UPGRADES_TIER_1 = [exports.twin, exports.sniper, exports.machine, 
         exports.assassin.UPGRADES_TIER_3 = [exports.falcon, exports.ranger, exports.stalker, exports.autoass/*custom*/,exports.archer];
         exports.hunter.UPGRADES_TIER_3 = [exports.preda, exports.poach, exports.sidewind, exports.dual/*custom*/];
         exports.mini.UPGRADES_TIER_3 = [exports.stream, exports.nailgun, exports.hybridmini, exports.minitrap/*custom*/];
-        exports.rifle.UPGRADES_TIER_3 = [exports.musket]/*custom*/;
+        exports.rifle.UPGRADES_TIER_3 = [exports.musket, exports.crossbow,/*custom*/];
 
     exports.machine.UPGRADES_TIER_2 = [exports.artillery, exports.mini, exports.gunner/*custom*/];
         exports.machine.UPGRADES_TIER_3 = [exports.spray/*custom*/];
