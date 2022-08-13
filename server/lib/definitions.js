@@ -10675,6 +10675,7 @@ exports.healerBullet = {
 };
 exports.physicianBody = {
   LABEL: "",
+  BETA: true,
   CONTROLLERS: ["spin"],
   COLOR: 9,
   SHAPE: 4,
@@ -10684,6 +10685,7 @@ exports.physicianBody = {
 // HEALER "WEAPONS"
 exports.bigCheeseDrone = {
   PARENT: [exports.drone],
+  BETA: true,
   BODY: {
     HEALTH: 2 * wepHealthFactor,
   },
@@ -10767,6 +10769,7 @@ exports.surgeonPillbox = {
 exports.doctorDrone = {
   PARENT: [exports.bigCheeseDrone],
   HITS_OWN_TYPE: "normal",
+  BETA: true,
   TURRETS: [
     {
       /** SIZE     X       Y     ANGLE    ARC */
@@ -10968,6 +10971,7 @@ exports.paramedic = {
 exports.physician = {
   PARENT: [exports.genericTank],
   LABEL: "Physician",
+  BETA: true,
   BODY: {
     SPEED: base.speed * 0.9,
     DAMAGE: base.DAMAGE * -1.1,
@@ -11023,6 +11027,7 @@ exports.physician = {
 exports.doctor = {
   PARENT: [exports.genericTank],
   LABEL: "Doctor",
+  BETA: true,
   STAT_NAMES: statnames.drone,
   BODY: {
     ACCELERATION: base.ACCEL * 0.7,
@@ -11055,6 +11060,65 @@ exports.doctor = {
     },
   ],
 };
+
+exports.mender = {
+  PARENT: [exports.genericTank],
+  LABEL: "Mender",
+  DANGER: 7,
+  BETA: true,
+  TURRETS: [
+    {
+      /** SIZE     X       Y     ANGLE    ARC */
+      POSITION: [6, 0, 0, 0, 360, 1],
+      TYPE: exports.mendersymbol,
+    },
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [20, 10, 1, 0, 0, 180, 50],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.fake]),
+        TYPE: exports.healerBullet,
+        ALT_FIRE: true,
+      },
+    },
+    {
+      POSITION: [5, 20, 1, -21, 0, 0, 50],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
+        TYPE: exports.healerBullet,
+        ALT_FIRE: true,
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [17, 3, 1, 0, -6, -7, 0.25],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty]),
+        TYPE: exports.bullet,
+        LABEL: "Secondary",
+      },
+    },
+    {
+      POSITION: [17, 3, 1, 0, 6, 7, 0.75],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.arty]),
+        TYPE: exports.bullet,
+        LABEL: "Secondary",
+      },
+    },
+    {
+      POSITION: [19, 12, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty]),
+        TYPE: exports.bullet,
+        LABEL: "Heavy",
+      },
+    },
+  ],
+};
+
 
 
 function pages(name,tanks){
