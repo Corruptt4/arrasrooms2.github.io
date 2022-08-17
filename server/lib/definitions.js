@@ -8132,7 +8132,7 @@ for (let i = 0; i < 6; i++) {
 }
 exports.accelerator.TURRETS.push(
 { /** SIZE     X       Y     ANGLE    ARC */
-                POSITION: [  11,   0,      0,      0,     360,  1,], 
+            POSITION: [  11,   0,      0,      0,     360,  1,], 
                 TYPE: exports.accelSymbol,
             }
 )
