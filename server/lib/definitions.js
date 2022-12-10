@@ -977,6 +977,7 @@ exports.autoTurret = {
         FOV: 0.8
     },
     COLOR: 16,
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
     //CONTROLLERS: ['nearestDifferentMaster'],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  22,    10,      1,      0,      0,      0,      0,   ], 
@@ -4516,6 +4517,7 @@ exports.trapTurret = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap, g.lowpower, g.fast, g.halfreload]),
                 TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                AUTOFIRE: true
             }, },
     ],
 };
@@ -11148,6 +11150,13 @@ const setBuild = (build) => {
     throw new RangeError("Build must be made up of 10 numbers");
   return [6, 4, 3, 5, 2, 9, 0, 1, 8, 7].map((r) => skills[r]);
 };
+let ctta = []
+for (let i = 0.5; i < 9; i++) {
+  ctta.push({
+    POSITION: [6, 8.5, 0, (360 * i) / 9, 0, 0],
+    TYPE: exports.trapTurret
+  })
+}
 exports.kronos = (() => {
   g.kronosMissileTrail = [
     1.35, 1.2, 2, 0.95, 1.3, 1.3, 1.3, 1.2, 1.2, 0.75, 1, 2, 1,
@@ -11400,9 +11409,10 @@ exports.kronos = (() => {
     NAME: "Kronos",
     COLOR: 6,
     SHAPE: 11,
+    SIZE: 125,
     VALUE: 4000000,
     BODY: {
-      FOV: 0.4
+      FOV: 1
     },
     TURRETS: (() => {
       let output = [
@@ -11429,10 +11439,326 @@ exports.kronos = (() => {
     })(),
   };
 })();
+
+exports.zaphkielskimturret = {
+    PARENT: [exports.genericTank],
+    BODY: {
+        FOV: base.FOV * 5,
+    },
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+    LABEL: '',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  10,    14,    -0.5,     9,      0,      0,      0,  ], 
+             }, {
+        POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
+               PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, [5, 1, 1, 1, 10, 10, 2.3, 1.5, 1, 1, 1, 1, 1]]),
+                TYPE: exports.hypermissile,
+            },  },
+    ],
+};
+exports.zaphkielbody1 = {
+  PARENT: [exports.genericTank],
+  LABEL: '',
+  SHAPE: 5,
+  COLOR: 2,
+  CONTROLLERS: ['slowspin'],
+  TURRETS: []
+}
+for (let i = 0.5; i < 5; i++) {
+  exports.zaphkielbody1.TURRETS.push({
+    POSITION: [8, 8, 0, (360 * i) / 5, 180, 0],
+    TYPE: exports.zaphkielskimturret
+  })
+}
+exports.zaphkielbody2 = {
+  PARENT: [exports.genericTank],
+  LABEL: '',
+  SHAPE: 7,
+  COLOR: 2,
+  BODY: {
+    FOV: 3
+  },
+  CONTROLLERS: ['reverseslowspin'],
+  GUNS: []
+}
+for (let i = 0.5; i < 7; i++) {
+  exports.zaphkielbody2.GUNS.push({
+    POSITION: [11.5, 6, 1.3, 0, 0, (360 * i) / 7, 0],
+    PROPERTIES: {
+      SHOOT_SETTINGS: combineStats([g.drone, [5, 1, 1, 1, 1.2, 1.33, 1.02, 0.5, 1, 1, 1, 1, 1]]),
+      TYPE: [exports.drone, {INDEPENDENT: true, BODY: {SPEED: 1.3, FOV: 1.3}}], AUTOFIRE: true, MAX_CHILDREN: 4
+    }
+  })
+}
+exports.zaphkiel = { // o
+  PARENT: [exports.miniboss],
+  LABEL: 'Celestial',
+  NAME: "Zaphkiel",
+  SIZE: 40,
+  COLOR: 2,
+  TURRETS: [
+    ...ctta,
+    {
+      POSITION: [15, 0, 0, 0, 360, 1],
+      TYPE: exports.zaphkielbody2
+    }, {
+      POSITION: [9.5, 0, 0, 0, 360, 1],
+      TYPE: exports.zaphkielbody1
+    }
+  ]
+}
+exports.paladinhiveshoot = {
+  PARENT: [exports.autoTurret],
+  LABEL: "",
+  HAS_NO_RECOIL: true,
+  BODY: {
+    FOV: base.FOV * 1.9,
+  },
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [14, 14, -1.2, 5, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.pound,
+          g.destroy,
+          g.anni,
+          g.power,
+          g.halfreload,
+          g.power,
+          g.double_damage,
+          g.double_damage,
+          g.quadro_damage,
+          g.half_damage,
+          g.hive,
+        ]),
+        TYPE: [exports.hive, { MOTION_TYPE: "slowdown" }],
+      },
+    },
+    {
+      POSITION: [15, 12, 1, 5, 0, 0, 0],
+    },
+  ],
+};
+exports.paladinbody1 = {
+  PARENT: [exports.genericTank],
+  LABEL: "",
+  CONTROLLERS: ["slowspin"],
+  SHAPE: 5,
+  COLOR: 14,
+  TURRETS: [],
+};
+for (let i = 0; i < 5; i++) {
+  exports.paladinbody1.TURRETS.push({
+    POSITION: [8, 8, 0, (360 * i) / 5 + 360 / 5 / 2, 180, 0],
+    TYPE: exports.paladinhiveshoot,
+  });
+}
+exports.paladinbody2 = {
+  PARENT: [exports.genericTank],
+  LABEL: "",
+  HAS_NO_RECOIL: true,
+  CONTROLLERS: ["reverseslowspin"],
+  SHAPE: 7,
+  COLOR: 14,
+  GUNS: [],
+};
+for (let i = 0; i < 7; i++) {
+  exports.paladinbody2.GUNS.push({
+    POSITION: [12, 6, 1.4, 0, 0, (360 * i) / 7 + 360 / 7 / 2, 0],
+    PROPERTIES: {
+      SHOOT_SETTINGS: combineStats([
+        g.drone,
+        g.double_damage,
+        g.over,
+        g.halfreload,
+      ]),
+      TYPE: exports.paladindrone,
+      AUTOFIRE: true,
+      MAX_CHILDREN: 5,
+    },
+  });
+}
+exports.paladin = {
+  PARENT: [exports.miniboss],
+  LABEL: "Celestial",
+  NAME: "Paladin",
+  SIZE: 40,
+  SHAPE: 9,
+  BODY: {
+    HEALTH: base.HEALTH * 15 * 2,
+    DAMAGE: base.DAMAGE * 5,
+    SPEED: 1.2,
+  },
+  COLOR: 14,
+  VALUE: 1000000,
+  TURRETS: [
+    ...ctta,
+    {
+      POSITION: [15, 0, 0, 0, 360, 1],
+      TYPE: exports.paladinbody2,
+    },
+    {
+      POSITION: [9.5, 0, 0, 0, 360, 1],
+      TYPE: exports.paladinbody1,
+    },
+  ],
+};
+exports.freyjaauto4gun = {
+  PARENT: [exports.genericTank],
+  LABEL: "",
+  BODY: {
+    FOV: 2,
+  },
+  CONTROLLERS: [
+    "canRepel",
+    "onlyAcceptInArc",
+    "mapAltToFire",
+    "nearestDifferentMaster",
+  ],
+  COLOR: 16,
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [16, 4, 1, 0, -3.5, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.power,
+          g.turret,
+          g.double_damage,
+          g.double_damage,
+          g.quadro_damage,
+        ]),
+        TYPE: exports.bullet,
+      },
+    },
+    {
+      POSITION: [16, 4, 1, 0, 3.5, 0, 0.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.power,
+          g.turret,
+          g.double_damage,
+          g.double_damage,
+          g.quadro_damage,
+        ]),
+        TYPE: exports.bullet,
+      },
+    },
+  ],
+};
+exports.freyjacruiser = {
+  PARENT: [exports.autoTurret],
+  LABEL: "Cruiser",
+  DANGER: 6,
+  FACING_TYPE: "locksFacing",
+  STAT_NAMES: statnames.swarm,
+  BODY: {
+    ACCELERATION: base.ACCEL * 0.75,
+    FOV: base.FOV * 1.2,
+  },
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [7, 7.5, 0.6, 7, 4, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.swarm,
+          g.power,
+          g.lessreload,
+          g.double_damage,
+          g.double_damage,
+          g.quadro_damage,
+          g.turret,
+          g.double_damage,
+          g.power
+        ]),
+        TYPE: exports.swarm,
+        STAT_CALCULATOR: gunCalcNames.swarm,
+      },
+    },
+    {
+      POSITION: [7, 7.5, 0.6, 7, -4, 0, 0.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.swarm,
+          g.power,
+          g.lessreload,
+          g.double_damage,
+          g.double_damage,
+          g.quadro_damage,
+          g.turret,
+          g.double_damage,
+          g.power
+        ]),
+        TYPE: exports.swarm,
+        STAT_CALCULATOR: gunCalcNames.swarm,
+      },
+    },
+  ],
+};
+exports.freyjabody1 = {
+  PARENT: [exports.genericTank],
+  LABEL: "",
+  SHAPE: 5,
+  COLOR: 1,
+  CONTROLLERS: ["slowspin"],
+  TURRETS: [],
+};
+for (let i = 0; i < 5; i++) {
+  exports.freyjabody1.TURRETS.push({
+    POSITION: [8, 8, 0, (360 * i) / 5 + 360 / 5 / 2, 180, 0],
+    TYPE: exports.freyjaauto4gun,
+  });
+}
+exports.freyjabody2 = {
+  PARENT: [exports.genericTank],
+  LABEL: "",
+  SHAPE: 7,
+  COLOR: 1,
+  CONTROLLERS: ["reverseslowspin"],
+  TURRETS: [],
+};
+for (let i = 0; i < 7; i++) {
+  exports.freyjabody2.TURRETS.push({
+    POSITION: [8, 8.5, 0, (360 * i) / 7 + 360 / 7 / 2, 180, 0],
+    TYPE: exports.freyjacruiser,
+  });
+}
+exports.freyja = {
+  PARENT: [exports.miniboss],
+  LABEL: "Celestial",
+  NAME: "Freyja",
+  VALUE: 1000000,
+  SHAPE: 9,
+  SIZE: 40,
+  COLOR: 1,
+  BODY: {
+    HEALTH: base.HEALTH * 15 * 2,
+    DAMAGE: base.DAMAGE * 5,
+    SPEED: 1.3,
+  },
+  TURRETS: [
+    ...ctta,
+    {
+      POSITION: [15, 0, 0, 0, 360, 1],
+      TYPE: exports.freyjabody2,
+    },
+    {
+      POSITION: [9.5, 0, 0, 0, 360, 1],
+      TYPE: exports.freyjabody1,
+    },
+  ],
+};
+
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.kronos];
+exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.zaphkiel, exports.paladin, exports.freyja];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror,exports.longauto];
 
