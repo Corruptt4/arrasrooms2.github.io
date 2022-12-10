@@ -11149,7 +11149,85 @@ const setBuild = (build) => {
   return [6, 4, 3, 5, 2, 9, 0, 1, 8, 7].map((r) => skills[r]);
 };
 exports.cel = () => {
-  exports.trapTurret = {}
+  exports.trptr = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Turret',
+    BODY: {
+        FOV: 0.5,
+    },
+    INDEPENDENT: true,
+    CONTROLLERS: ['nearestDifferentMaster'], 
+    COLOR: 16,
+    AI: {
+        SKYNET: true,
+        FULL_VIEW: true,
+    },
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  16,    14,      1,      0,      0,      0,      0,   ],
+            }, {
+        POSITION: [   4,    14,     1.8,    16,      0,      0,      0,   ], 
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap, g.lowpower, g.fast, g.halfreload]),
+                TYPE: exports.trap, STAT_CALCULATOR: gunCalcNames.trap,
+                AUTOFIRE: true
+            }, },
+    ],
+  }
+  exports.tr1 = {
+    PARENT: [exports.auto3gun],
+    LABEL: '',
+    GUNS: [
+      {
+        POSITION: [18, 8, 1, 0, 5.5, 0, 0, 0],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.turret]),
+          TYPE: exports.bullet,
+          SKIN: 4
+        }
+      },{
+        POSITION: [18, 8, 1, 0, -5.5, 0, 0, 0],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.turret]),
+          TYPE: exports.bullet,
+          SKIN: 4
+        }
+      }
+    ]
+  }
+  exports.layer = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    SHAPE: 5,
+    COLOR: "#33A4FA",
+    TURRETS: (()=> {
+      var tr = []
+      for (let i = 0.5; i < 5; i++) {
+        tr.push({
+          POSITION: [8, 8, 0, (360 * i) / 5, 90, 0],
+          TYPE: exports.tr1
+        })
+      }
+    })()
+  }
+  return {
+    PARENT: [exports.genericTank],
+    LABEL: 'Semi-Celestial',
+    SHAPE: 7,
+    COLOR: "#33A4FA",
+    TURRETS: (()=> {
+      var tr = []
+      for (let i = 0.5; i < 7; i++) {
+        tr.push({
+          POSITION: [8, 8, 0, (360 * i) / 7, 0, 0],
+          TYPE: exports.trptr
+        })
+      }
+      tr.push({
+        POSITION: [12, 0, 0, 0, 360, 1],
+        TYPE: [exports.layer, {CONTROLLERS: ['reverseslowspin']}]
+      })
+    })()
+  }
 }
 // UPGRADE PATHS
 
