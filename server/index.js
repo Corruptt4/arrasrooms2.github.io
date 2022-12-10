@@ -754,7 +754,7 @@ function spawnHealerSwarm() {
     for (let i = 0; i < 25; i++){
     let loc = room.randomType("hyou");
     let o = new Entity(loc);
-    o.define(Class.healing);
+    o.define(Class.ek3);
     o.team = -101;
     o.color = 10;//'#3CA4CB77';
     o.alpha = 0.3;

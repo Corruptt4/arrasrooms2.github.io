@@ -1,11 +1,20 @@
 [
   {
-    "key": "TOKEN_DEV_BALLS123113323123214_DEV_TOKEN",
-    "discordID": "269281036687507456",
+    "key": "TOKEN_DEEZ97830N99S_TOKEN",
+    "discordID": "1015718882423607316",
     "nameColor": "#FFFF00",
     "testbedTank": "testbed",
     "startingTank": "basic",
     "name": "Tricky#3337",
     "note": "Owner"
+  },
+  {
+    "key": "TOKEN_e", 
+    "discordID": "1043860615497781259",
+    "nameColor": "#FFFF00",
+    "testbedTank": "testbed",
+    "startingTank": "basic",
+    "name": "Pecoka#7207",
+    "note": "Admin"
   }
 ]
