@@ -483,7 +483,7 @@ const maintainloop = (() => {
         let team = TEAM ? TEAM : getTeam();
         const botName = ran.chooseBotName();
         let color = [10, 11, 12, 15][team - 1];
-        if (room.gameMode === "ffa") color = (c.RANDOM_COLORS ? Math.floor(Math.random() * 20) : 12);
+        if (room.gameMode === "normal") color = (c.RANDOM_COLORS ? Math.floor(Math.random() * 20) : 12);
         let loc = c.SPECIAL_BOSS_SPAWNS ? room.randomType("nest") : room.randomType("norm");
         let o = new Entity(loc);
         o.color = color;
@@ -749,31 +749,10 @@ const maintainloop = (() => {
     };
 })();
 
-const quickmaintainloop = (() => {
-function spawnHealerSwarm() {
-    for (let i = 0; i < 25; i++){
-    let loc = room.randomType("hyou");
-    let o = new Entity(loc);
-    o.define(Class.ek3);
-    o.team = -101;
-    o.color = 10;//'#3CA4CB77';
-    o.alpha = 0.3;
-    }
-    };
-  let makenpcs = (() => {
-    return () => {
-    spawnHealerSwarm()
-    }
-  })();
-    return () => {
-        // Do stuff
-        makenpcs();
-    };
-})();
+
 
 // Bring it to life
 setInterval(gameloop, room.cycleSpeed);
 setInterval(maintainloop, 1000);
 setInterval(speedcheckloop, 1000);
 setInterval(gamemodeLoop, 1000);
-setInterval(quickmaintainloop, room.cycleSpeed*2);

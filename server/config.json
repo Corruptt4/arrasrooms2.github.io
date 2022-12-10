@@ -13,7 +13,7 @@
   "verbose": true,
   "WIDTH": 6500,
   "HEIGHT": 6500,
-  "MODE": "ffa",
+  "MODE": "normal",
   "TEAMS": 4,
   "RANDOM_COLORS": false,
   "ARENA_TYPE": "rect",
