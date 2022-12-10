@@ -54,7 +54,11 @@ const skillSet = (() => {
 
 const g = { // Reload, recoil, shudder (speed variation), size, health, damage, penetration, speed, max speed, range, density, spray (accuracy variation), resist
   trap: [39, 1, .25, .65, 1.025, .325, 1.1, 4.9, 1, 1.125, 1, 15, 3],
-    swarm: [27, .25, .05, .4, .9, .235, .65, 3.5, 1, 1, 1.25, 5, 1.25],
+    swarm: [27, .25, .05, .4, .9, .235, .65, 3.5, 1, 1, 1.25, 5, 1.25],double_damage: [1, 1, 1, 1, 1.8, 1.65, 1, 1, 1, 1, 1, 1, 1],
+    smaller: [1, 1, 1, 0.8, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    triple_damage: [1, 1, 1, 1, 2.3, 2, 1, 1, 1, 1, 1, 1, 1],
+    quadro_damage: [1, 1, 1, 1, 2.7, 2.65, 1, 1, 1, 1, 1, 1, 1],
+    half_damage: [1, 1, 1, 1, 0.6, 0.7, 1, 1, 1, 1, 1, 1, 1],
     drone: [66, .25, .1, .6, 5, .295, 1, 2.35, 1, 1, 1, .1, 1.1],
     bigdrone: [30, 0.25, 0.1, 1.5, 2.5, 2, 1, 1.5, 1, 1, 1, 0.1, 1],
     verybigdrone: [10, 0.25, 0.1, 2.25, 5, 3, 1, 1.5, 1, 1, 1, 0.1, 1],
@@ -1557,7 +1561,7 @@ exports.betatester2 = {
           INVISIBLE: [],
     BODY: {
         ACCELERATION: 1,
-        SPEED: 0,
+        SPEED: 10,
         HEALTH: 1,
         RESIST: 1,
         SHIELD: 0,
@@ -11412,7 +11416,10 @@ exports.kronos = (() => {
     SIZE: 125,
     VALUE: 4000000,
     BODY: {
-      FOV: 1
+      FOV: 1,
+      HEALTH: base.HEALTH * 15 * 7,
+      DAMAGE: 5,
+      SPEED: 1.15
     },
     TURRETS: (() => {
       let output = [
@@ -11452,7 +11459,7 @@ exports.zaphkielskimturret = {
              }, {
         POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
                PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, [5, 1, 1, 1, 10, 10, 2.3, 1.5, 1, 1, 1, 1, 1]]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.lessreload, g.quadro_damage, g.double_damage]),
                 TYPE: exports.hypermissile,
             },  },
     ],
@@ -11497,6 +11504,12 @@ exports.zaphkiel = { // o
   NAME: "Zaphkiel",
   SIZE: 40,
   COLOR: 2,
+  SHAPE: 9,
+  BODY: {
+    HEALTH: base.HEALTH * 15 * 2,
+    DAMAGE: base.DAMAGE * 5,
+    SPEED: 1.2,
+  },
   TURRETS: [
     ...ctta,
     {
@@ -11758,7 +11771,7 @@ exports.freyja = {
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.zaphkiel, exports.paladin, exports.freyja];
+exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.zaphkiel, exports.paladin, exports.freyja, exports.testbed2];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror,exports.longauto];
 
