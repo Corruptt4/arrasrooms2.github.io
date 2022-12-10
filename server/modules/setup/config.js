@@ -9,7 +9,7 @@ goog.require('goog.structs.QuadTree');
 
 const defaults = require("../../config.json");
 
-const gamemode = "2TDM"; // keep it as ffa
+const gamemode = "Maze Groups"; // keep it as ffa
 
 const gamemodes = {
     "FFA": {
@@ -33,7 +33,7 @@ const gamemodes = {
             ["norm", "rock", "rock", "rock", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "rock", "rock", "rock", "norm"],
             ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
             ["norm", "norm", "norm", "norm", "norm", "roid", "rock", "rock", "rock", "roid", "norm", "norm", "norm", "norm", "norm"],
-            ["norm", "rock", "norm", "norm", "norm", "rock", "nest", "nest", "nest", "rock", "norm", "norm", "norm", "rock", "norm"],
+            ["norm", "rock", "norm", "norm", "norm", "rock", "nest", "nest", "nest", "rock", "norm", "norm", "norm", "norm", "norm"],
             ["norm", "rock", "roid", "norm", "norm", "rock", "nest", "port", "nest", "rock", "norm", "norm", "roid", "rock", "norm"],
             ["norm", "rock", "norm", "norm", "norm", "rock", "nest", "nest", "nest", "rock", "norm", "norm", "norm", "rock", "norm"],
             ["norm", "norm", "norm", "norm", "norm", "roid", "rock", "rock", "rock", "roid", "norm", "norm", "norm", "norm", "norm"],
@@ -203,7 +203,9 @@ const gamemodes = {
             ["roid", "rock", "norm", "norm", "norm", "rock", "rock", "norm", "norm", "norm", "rock", "roid"],
             ["rock", "rock", "norm", "norm", "norm", "roid", "roid", "norm", "norm", "norm", "rock", "rock"]
         ],
-        BOTS: 16
+        BOTS: 16,
+        X_GRID: 12,
+        Y_GRID: 12
     },
     "4TDM": {
         MODE: "tdm",

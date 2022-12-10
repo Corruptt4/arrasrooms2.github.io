@@ -5042,29 +5042,29 @@ exports.nestKeeper = {
     }]
 };
 
-// exports.bot = {
-//     AUTO_UPGRADE: 'random',
-//     FACING_TYPE: 'looseToTarget',
-//     BODY: {
-//         SIZE: 12,
-//         HEALTH: base.HEALTH * 0.75,
-//         DAMAGE: base.DAMAGE * 0.75,
-//     },
-//     //COLOR: 17,
-//     NAME: "[AI] ",
-//     CONTROLLERS: [
-//         'nearestDifferentMaster', 'mapAltToFire', 'minion', 'fleeAtLowHealth'
-//     ],
-//     AI: { STRAFE: true, },
-//     SKILL: skillSet({
-//         rld: 0.875,
-//         spd: 0.875,
-//         dam: 0.875, 
-//         pen: 0.875,
-//         str: 0.875,
-//         atk: 0.875,
-//     }),
-// };
+/* exports.bot = {
+    AUTO_UPGRADE: 'random',
+    FACING_TYPE: 'looseToTarget',
+    BODY: {
+        SIZE: 12,
+         HEALTH: base.HEALTH * 0.75,
+        DAMAGE: base.DAMAGE * 0.75,
+   },
+    //COLOR: 17,
+    NAME: "[AI] ",
+    CONTROLLERS: [
+        'nearestDifferentMaster', 'mapAltToFire', 'minion', 'fleeAtLowHealth'
+    ],
+    AI: { STRAFE: true, },
+    SKILL: skillSet({
+        rld: 0.875,
+        spd: 0.875,
+        dam: 0.875, 
+         pen: 0.875,
+         str: 0.875,
+        atk: 0.875,
+    }),
+ }; */
 
 exports.octoblock = {
     PARENT: [exports.block],
