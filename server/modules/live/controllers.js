@@ -704,6 +704,46 @@ ioTypes.reversespin = class extends IO {
         };
     }
 }
+ioTypes.reverseslowspin = class extends IO {
+    constructor(b) {
+        super(b)
+        this.a = 0
+    }
+    think(input) {
+        this.a -= 0.015
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
+ioTypes.slowspin = class extends IO {
+    constructor(b) {
+        super(b)
+        this.a = 0
+    }
+    think(input) {
+        this.a += 0.015
+        let offset = 0
+        if (this.body.bond != null) {
+            offset = this.body.bound.angle
+        }
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
 ioTypes.dontTurn = class extends IO {
     constructor(b) {
         super(b)
