@@ -5,34 +5,7 @@
     "nameColor": "#FFFF00",
     "testbedTank": "testbed",
     "startingTank": "basic",
-    "name": "DogeisCut#2306",
+    "name": "Tricky#3337",
     "note": "Owner"
-  }, 
-  {
-    "key": "TOKEN_DEV_BALLS56656786786_DEV_TOKEN",
-    "discordID": "388157850263748611",
-    "nameColor": "#00FF00",
-    "testbedTank": "testbed",
-    "startingTank": "basic",
-    "name": "Waffz_The_Pancake#2744",
-    "note": "Co-Owner"
-  },
-  {
-    "key": "TOKEN_DEV_fbnh845g89ehgn_DEV_TOKEN",
-    "discordID": "980585357039009832",
-    "nameColor": "#FFFF77",
-    "testbedTank": "testbed",
-    "startingTank": "basic",
-    "name": "Max Nest#8441",
-    "note": "stole a dev key so you can have your own",
-    "note2": "also helped a lot with certain features"
-  },
-  {
-    "key": "IAMLYINGTOYOU",
-    "nameColor": "#00000000",
-    "testbedTank": "punishment",
-    "startingTank": "punishment",
-    "name": "idiot",
-    "note": "idiot"
   }
 ]

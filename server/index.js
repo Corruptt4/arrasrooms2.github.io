@@ -290,25 +290,18 @@ const maintainloop = (() => {
     //   o.protect();
     //   o.life();
     // }
-    for (let loc of room["wall"]) spawnWall(loc);
+    for (let loc of room["maze"]) spawnWall(loc);
     // for (let loc of room["hyou"]) spawnHealer(loc);
     // Spawning functions
     let spawnBosses = (() => {
         let timer = Math.round((c.bossSpawnInterval || 8) * 60); // It's in minutes
         const selections = [{
-            bosses: [Class.elite_destroyer, Class.elite_sprayer, Class.elite_gunner, Class.elite_battleship],
+            bosses: [Class.elite_destroyer, Class.elite_sprayer, Class.elite_gunner],
             location: "nest",
             amount: [1, 3],
             nameType: "a",
             message: "Influx detected...",
             chance: 2
-        }, {
-            bosses: [Class.palisade, Class.summoner, Class.skimboss, Class.nestKeeper],
-            location: "norm",
-            amount: [1, 2],
-            nameType: "castle",
-            message: "A strange trembling...",
-            chance: 1
         }];
         return (census) => {
             if (!census.miniboss && !timer --) {
