@@ -329,6 +329,14 @@ import * as socketStuff from "./lib/socketInit.js";
         util.retrieveFromLocalStorage('optColors');
         util.retrieveFromLocalStorage('optNoPointy');
         util.retrieveFromLocalStorage('optBorders');
+        "" === document.getElementById("optColors").value &&
+          (document.getElementById("optColors").value = "normal");
+        util.mobile &&
+          "" === document.getElementById("optMobile").value &&
+          (document.getElementById("optMobile").value = "joysticks");
+        "" === document.getElementById("optBorders").value &&
+          (document.getElementById("optBorders").value = "normal");
+        let fa = document.getElementById("optCustom");
         // Set default theme
         if (document.getElementById('optColors').value === '') {
             document.getElementById('optColors').value = 'normal';
