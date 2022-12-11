@@ -9,7 +9,7 @@ goog.require('goog.structs.QuadTree');
 
 const defaults = require("../../config.json");
 
-const gamemode = ["Maze 4TDM"]; // keep it as ffa
+const gamemode = ["Siege"]; // keep it as ffa
 
 const gamemodes = {
     "FFA": {
