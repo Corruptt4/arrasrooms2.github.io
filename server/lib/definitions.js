@@ -11809,7 +11809,7 @@ exports.enyo = (() => {
       var tr = []
       for (let i = 0.5; i < 5; i++) {
         tr.push({
-          POSITION: [8, 8, 0, (360 * i) / 5, 110, 0],
+          POSITION: [8, 8, 0, (360 * i) / 5, 90, 0],
           TYPE: exports.enyotr
         })
       }
@@ -11827,7 +11827,7 @@ exports.enyo = (() => {
       var tr = []
       for (let i = 0.5; i < 7; i++) {
         tr.push({
-          POSITION: [8, 8, 0, (360 * i) / 7, 110, 0],
+          POSITION: [8, 8, 0, (360 * i) / 7, 90, 0],
           TYPE: exports.autoTurret
         })
       }
