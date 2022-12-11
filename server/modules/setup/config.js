@@ -256,7 +256,7 @@ const gamemodes = {
             ["outb", "outb", "outb", "outb", "outb", "outb", "outb", "wall", "wall", "wall", "wall", "wall", "outb", "outb", "outb", "outb", "outb", "outb", "outb"],
         ],
         secondaryGameMode: "Boss Rush",
-        BOTS: 6
+        BOTS: 40
     },
     "Mothership": {
         MODE: "tdm",

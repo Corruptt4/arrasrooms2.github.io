@@ -743,7 +743,7 @@ class Entity {
     }
     giveUp(player, name = "Mothership") {
         if (!player.body.isMothership) player.body.controllers = [new ioTypes.nearestDifferentMaster(player.body), new ioTypes.spinWhenIdle(player.body)];
-        else if (player.body.isMothership) player.body.controllers = [new ioTypes.nearestDifferentMaster(player.body), new ioTypes.botMovement(player.body), new ioTypes.mapTargetToGoal(player.body)];
+        else if (player.body.isMothership) player.body.controllers = [new ioTypes.nearestDifferentMaster(player.body), new ioTypes.botMoving(player.body), new ioTypes.mapTargetToGoal(player.body)];
         player.body.name = player.body.label;
         player.body.underControl = false;
         player.body.sendMessage = content => {};

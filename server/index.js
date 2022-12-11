@@ -291,6 +291,7 @@ const maintainloop = (() => {
     //   o.life();
     // }
     for (let loc of room["maze"]) spawnWall(loc);
+    for (let loc of room["wall"]) spawnWall(loc);
     // for (let loc of room["hyou"]) spawnHealer(loc);
     // Spawning functions
     let spawnBosses = (() => {
