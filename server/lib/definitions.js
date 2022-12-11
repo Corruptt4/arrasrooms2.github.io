@@ -736,6 +736,12 @@ exports.drone = {
     CLEAR_ON_MASTER_UPGRADE: true,
     BUFF_VS_FOOD: true,
 };
+    exports.paladindrone = {
+      PARENT: [exports.drone],
+      BODY: {
+        SPEED: 1.35
+      }
+    }
     exports.sunchip = {
         PARENT: [exports.drone],
         SHAPE: 4,
@@ -11768,11 +11774,71 @@ exports.freyja = {
     },
   ],
 };
-
+exports.enyo = (() => {
+  exports.enyotr = {
+    PARENT: [exports.autoTurret],
+    LABEL: '',
+    GUNS: (()=> {
+      var gs = []
+      exports.dual.GUNS.forEach(e=> {
+        gs.push({
+          POSITION: [
+            e.POSITION[0],
+            e.POSITION[1],
+            e.POSITION[2],
+            e.POSITION[3],
+            e.POSITION[4],
+            e.POSITION[5],
+            e.POSITION[6],
+          ],
+          PROPERTIES: e.PROPERTIES
+        })
+      })
+      return gs
+    })()
+  }
+  exports.enyobody1 = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    SHAPE: 5,
+    COLOR: "#F7AAF70",
+    CONTROLLERS: ['slowspin'],
+    TURRETS: (()=> {
+      var tr = []
+      for (let i = 0.5; i < 5; i++) {
+        tr.push({
+          POSITION: [8, 8, 0, (360 * i) / 5, 110, 0],
+          TYPE: exports.enyotr
+        })
+      }
+      return tr
+    })()
+  }
+  return {
+    PARENT: [exports.miniboss],
+    LABEL: "Celestial",
+    NAME: "Enyo",
+    VALUE: 1000000,
+    SHAPE: 9,
+    SIZE: 40,
+    COLOR: "#F7AAF70",
+    BODY: {
+      HEALTH: base.HEALTH * 15 * 2,
+      DAMAGE: base.DAMAGE * 5,
+      SPEED: 1.3,
+    },
+    TURRETS: [
+      {
+        POSITION: [9.5, 0, 0, 0, 360, 1],
+        TYPE: exports.enyobody1
+      }
+    ]
+  }
+})()
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.zaphkiel, exports.paladin, exports.freyja, exports.testbed2];
+exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.zaphkiel, exports.paladin, exports.freyja, exports.enyo, exports.testbed2];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror,exports.longauto];
 
