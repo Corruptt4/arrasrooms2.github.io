@@ -8,15 +8,17 @@
     "build": "node standaloneClient/build minify"
   },
   "dependencies": {
-    "google-closure-library": "^20220502.0.0",
-    "node-fetch": "^3.2.8",
+    "google-closure-library": "^20221102.0.0",
+    "node-fetch": "^3.3.0",
     "express": "latest",
     "express-ws": "latest",
     "express-minify": "latest",
     "cors": "latest",
     "forwarded-for": "latest",
     "javascript-obfuscator": "latest",
-    "uglify-js": "latest"
+    "uglify-js": "latest",
+    "eris": "^0.17.1",
+    "discord.js": "^14.7.0"
   },
   "engines": {
     "node": "16.x"
