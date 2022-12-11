@@ -489,7 +489,7 @@ const maintainloop = (() => {
         let o = new Entity(loc);
         o.color = color;
         o.invuln = true;
-        o.define(Class[set.startClass]);
+        o.define(Class.basic);
         o.name += botName;
         o.refreshBodyAttributes();
         o.color = color;
@@ -514,8 +514,8 @@ const maintainloop = (() => {
             let className = set.startClass;
             for (let key in Class)
                 if (Class[key].index === index) className = key;
-            o.define(Class[set.ai]);
-            o.define(Class[className]);
+            o.define(Class.bot);
+            o.define(Class.basic);
             o.refreshBodyAttributes();
             o.name += botName;
             o.invuln = false;

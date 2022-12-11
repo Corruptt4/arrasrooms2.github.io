@@ -5042,7 +5042,7 @@ exports.nestKeeper = {
     }]
 };
 
-/* exports.bot = {
+exports.bot = {
     AUTO_UPGRADE: 'random',
     FACING_TYPE: 'looseToTarget',
     BODY: {
@@ -5053,7 +5053,7 @@ exports.nestKeeper = {
     //COLOR: 17,
     NAME: "[AI] ",
     CONTROLLERS: [
-        'nearestDifferentMaster', 'mapAltToFire', 'minion', 'fleeAtLowHealth'
+        'nearestDifferentMaster', 'mapAltToFire', 'botMoving', 'fleeAtLowHealth'
     ],
     AI: { STRAFE: true, },
     SKILL: skillSet({
@@ -5064,7 +5064,7 @@ exports.nestKeeper = {
          str: 0.875,
         atk: 0.875,
     }),
- }; */
+ };
 
 exports.octoblock = {
     PARENT: [exports.block],
