@@ -596,7 +596,7 @@ ioTypes.botMoving = class extends IO {
     this.dir = 0;
   }
   chooseSpot() {
-    this.wanderRoom = Math.random() < 0.8 ? "norm" || "obsr" : "nest";
+    this.wanderRoom = Math.random() < 0.8 ? "norm" || "norm" : "nest";
     return room.randomType(this.wanderRoom);
   }
   think(input) {

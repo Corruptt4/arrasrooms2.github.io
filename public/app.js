@@ -1707,14 +1707,14 @@ import * as socketStuff from "./lib/socketInit.js";
                 if (!global.showDebug) y += 14 * 3;
                 // Text
                 if (global.showDebug) {
-                    text.debug[5].draw('carrassot2.glitch.me', x + len, y - 50 - (5 * 14) - 2, 15, "#FF7700", 'right');
+                    text.debug[5].draw('arrasrooms.glitch.me', x + len, y - 50 - (5 * 14) - 2, 15, "#FFF000", 'right');
                     text.debug[4].draw('Prediction: ' + Math.round(GRAPHDATA) + 'ms', x + len, y - 50 - 4 * 14, 10, color.guiwhite, 'right');
                     text.debug[3].draw(`Bandwidth: ${gui.bandwidth.in} in, ${gui.bandwidth.out} out`, x + len, y - 50 - 3 * 14, 10, color.guiwhite, 'right');
                     text.debug[2].draw('Update Rate: ' + global.metrics.updatetime + 'Hz', x + len, y - 50 - 2 * 14, 10, color.guiwhite, 'right');
                     text.debug[1].draw((100 * gui.fps).toFixed(2) + '% : ' + global.metrics.rendertime + " FPS", x + len, y - 50 - 1 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, 'right');
                     text.debug[0].draw(global.metrics.latency + " ms - " + global.serverName, x + len, y - 50, 10, color.guiwhite, 'right');
                 } else {
-                    text.debug[2].draw('carrassot2.glitch.me', x + len, y - 50 - (2 * 14) - 2, 15, "#FF7700", 'right');
+                    text.debug[2].draw('arrasrooms.glitch.me', x + len, y - 50 - (2 * 14) - 2, 15, "#F0FF0F", 'right');
                     text.debug[1].draw((100 * gui.fps).toFixed(2) + '% : ' + global.metrics.rendertime + " FPS", x + len, y - 50 - 1 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, 'right');
                     text.debug[0].draw(global.metrics.latency + " ms : " + global.metrics.updatetime + "Hz", x + len, y - 50, 10, color.guiwhite, 'right');
                 }
