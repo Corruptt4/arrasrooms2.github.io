@@ -11453,7 +11453,242 @@ exports.kronos = (() => {
     })(),
   };
 })();
-
+exports.ragnarok = (() => {
+  g.ragnarokGunnerCruiser = [3, 1, 1, 1, 0.7, 0.7, 1.3, 1.5, 1.5, 2, 1, 1, 1];
+  exports.ragnarokGunnerCruiser = {
+    PARENT: [exports.turretParent],
+    INDEPENDENT: true,
+    GUNS: [
+      {
+        POSITION: [10, 8.5, 0.4, 0, 5.75, 0, 0.5],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.swarm, g.ragnarokGunnerCruiser]),
+          TYPE: exports.swarm,
+        },
+      },
+      {
+        POSITION: [10, 8.5, 0.4, 0, -5.75, 0, 0.75],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.swarm, g.ragnarokGunnerCruiser]),
+          TYPE: exports.swarm,
+        },
+      },
+      {
+        POSITION: [16, 3.5, 1, 0, 3, 0, 0.25],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([
+            g.bullet,
+            g.twin,
+            g.ragnarokGunnerCruiser,
+          ]),
+          TYPE: exports.bullet,
+        },
+      },
+      {
+        POSITION: [16, 3.5, 1, 0, -3, 0, 0],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([
+            g.bullet,
+            g.twin,
+            g.ragnarokGunnerCruiser,
+          ]),
+          TYPE: exports.bullet,
+        },
+      },
+    ],
+  };
+  exports.ragnarokGunnerCruiserBody = {
+    PARENT: [exports.genericTank],
+    LABEL: "Gunner Cruiser",
+    SHAPE: 5,
+    SKILL: setBuild("9999999999"),
+    CONTROLLERS: ["reverseslowspin"],
+    INDEPENDENT: true,
+    TURRETS: (() => {
+      let output = [];
+      for (let i = 0; i < 5; i++)
+        output.push({
+          POSITION: [8, 9, 0, (360 / 5) * i + 360 / 10, 180, 0],
+          TYPE: exports.ragnarokGunnerCruiser,
+        });
+      return output;
+    })(),
+  };
+  g.ragnarokAutoSmasher = [3, 0, 1, 1, 0.4, 0.4, 1.25, 2, 2, 1.5, 2, 1, 1];
+  exports.ragnarokAutoSmasherTurret = {
+    PARENT: [exports.turretParent],
+    BODY: {
+      FOV: 1,
+    },
+    SKILL: setBuild("9999999999"),
+    INDEPENDENT: true,
+    GUNS: [
+      {
+        POSITION: [20, 6, 1, 0, 5, 0, 0],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.bullet, g.ragnarokAutoSmasher]),
+          TYPE: [
+            exports.bullet,
+            {
+              PERSISTS_AFTER_DEATH: true,
+            },
+          ],
+          STAT_CALCULATOR: gunCalcNames.fixedReload,
+        },
+      },
+      {
+        POSITION: [20, 6, 1, 0, -5, 0, 0.5],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.bullet, g.ragnarokAutoSmasher]),
+          TYPE: [
+            exports.bullet,
+            {
+              PERSISTS_AFTER_DEATH: true,
+            },
+          ],
+          STAT_CALCULATOR: gunCalcNames.fixedReload,
+        },
+      },
+    ],
+  };
+  exports.ragnarokAutoSmasher = makeAuto(
+    {
+      PARENT: [exports.bullet],
+      TURRETS: [
+        {
+          POSITION: [21.5, 0, 0, 0, 360, 0],
+          TYPE: exports.smasherBody,
+        },
+      ],
+    },
+    "Auto-Smasher",
+    {
+      type: exports.ragnarokAutoSmasherTurret,
+      size: 11,
+    }
+  );
+  exports.ragnarokAutoSmasherLauncher = {
+    PARENT: [exports.turretParent],
+    SKILL: setBuild("9999999999"),
+    INDEPENDENT: true,
+    GUNS: [
+      {
+        POSITION: [10, 13, -0.5, 9, 0, 0, 0],
+      },
+      {
+        POSITION: [17, 14, 1.4, 0, 0, 0, 0],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([
+            g.bullet,
+            g.pound,
+            g.destroy,
+            [4, 1, 1, 0.9, 1.5, 1.5, 1, 1.75, 1.75, 1.5, 1, 1, 1],
+          ]),
+          TYPE: exports.ragnarokAutoSmasher,
+        },
+      },
+    ],
+  };
+  exports.ragnarokAutoSmasherBody = {
+    PARENT: [exports.genericTank],
+    LABEL: "Auto Smasher",
+    SHAPE: 7,
+    CONTROLLERS: ["slowspin"],
+    INDEPENDENT: true,
+    TURRETS: (() => {
+      let output = [];
+      for (let i = 0; i < 7; i++)
+        output.push({
+          POSITION: [6, 9, 0, (360 / 7) * i + 360 / 14, 90, 0],
+          TYPE: exports.ragnarokAutoSmasherLauncher,
+        });
+      return output;
+    })(),
+  };
+  exports.ragnarokGemBody = {
+    PARENT: [exports.genericTank],
+    LABEL: "Gem",
+    SHAPE: 9,
+    MAX_CHILDREN: 18,
+    CONTROLLERS: ["reverseslowspin"],
+    INDEPENDENT: true,
+    GUNS: (() => {
+      exports.ragnarokGem = {
+        PARENT: [exports.drone],
+        SHAPE: 6,
+      };
+      let output = [];
+      for (let i = 0; i < 9; i++)
+        output.push({
+          POSITION: [3.5, 6.5, 0.5, 7.5, 0, (360 / 9) * i + 360 / 18, 2],
+          PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([
+              g.drone,
+              [2, 1, 1, 0.5, 3, 3, 1, 0.3, 0.2, 1, 1, 1, 1],
+            ]),
+            TYPE: [
+              exports.ragnarokGem,
+              {
+                INDEPENDENT: true,
+                DRAW_HEALTH: true,
+                BODY: {
+                  FOV: 1.175,
+                },
+              },
+            ],
+            AUTOFIRE: true,
+            SYNC_SKILLS: true,
+            STAT_CALCULATOR: gunCalcNames.drone,
+          },
+        });
+      return output;
+    })(),
+  };
+  return {
+    PARENT: [exports.miniboss],
+    NAME: "Ragnarok",
+    COLOR: 0,
+    DANGER: 100,
+    SIZE: 125,
+    TURRETS: (() => {
+      let output = [
+        {
+          POSITION: [17, 0, 0, 0, 360, 1],
+          TYPE: [
+            exports.ragnarokGemBody,
+            {
+              COLOR: 0,
+            },
+          ],
+        },
+        {
+          POSITION: [12, 0, 0, 0, 360, 1],
+          TYPE: [
+            exports.ragnarokAutoSmasherBody,
+            {
+              COLOR: 0,
+            },
+          ],
+        },
+        {
+          POSITION: [7, 0, 0, 0, 360, 1],
+          TYPE: [
+            exports.ragnarokGunnerCruiserBody,
+            {
+              COLOR: 0,
+            },
+          ],
+        },
+      ];
+      for (let i = 0; i < 11; i++)
+        output.push({
+          POSITION: [4, 9, 0, (360 / 11) * i + 360 / 22, 0, 0],
+          TYPE: exports.trapTurret,
+        });
+      return output;
+    })(),
+  };
+})();
 exports.zaphkielskimturret = {
     PARENT: [exports.genericTank],
     BODY: {
