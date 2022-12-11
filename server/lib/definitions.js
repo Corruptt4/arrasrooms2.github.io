@@ -11778,6 +11778,7 @@ exports.enyo = (() => {
   exports.enyotr = {
     PARENT: [exports.autoTurret],
     LABEL: '',
+    SKILL: setBuild("9999999999"),
     GUNS: (()=> {
       var gs = []
       exports.dual.GUNS.forEach(e=> {
@@ -11801,7 +11802,8 @@ exports.enyo = (() => {
     PARENT: [exports.genericTank],
     LABEL: '',
     SHAPE: 5,
-    COLOR: "#F7AAF70",
+    SKILL: setBuild("9999999999"),
+    COLOR: "#F0A899",
     CONTROLLERS: ['slowspin'],
     TURRETS: (()=> {
       var tr = []
@@ -11814,6 +11816,24 @@ exports.enyo = (() => {
       return tr
     })()
   }
+  exports.enyobody2 = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    SHAPE: 7,
+    SKILL: setBuild("9999999999"),
+    COLOR: "#F0A899",
+    CONTROLLERS: ['reverseslowspin'],
+    TURRETS: (()=> {
+      var tr = []
+      for (let i = 0.5; i < 7; i++) {
+        tr.push({
+          POSITION: [8, 8, 0, (360 * i) / 7, 110, 0],
+          TYPE: exports.autoTurret
+        })
+      }
+      return tr
+    })()
+  }
   return {
     PARENT: [exports.miniboss],
     LABEL: "Celestial",
@@ -11821,13 +11841,18 @@ exports.enyo = (() => {
     VALUE: 1000000,
     SHAPE: 9,
     SIZE: 40,
-    COLOR: "#F7AAF70",
+    COLOR: "#F0A899",
     BODY: {
       HEALTH: base.HEALTH * 15 * 2,
       DAMAGE: base.DAMAGE * 5,
       SPEED: 1.3,
     },
     TURRETS: [
+      ...ctta,
+      {
+        POSITION: [15, 0, 0, 0, 360, 1],
+        TYPE: exports.enyobody2
+      },
       {
         POSITION: [9.5, 0, 0, 0, 360, 1],
         TYPE: exports.enyobody1
