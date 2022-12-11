@@ -512,8 +512,11 @@ const maintainloop = (() => {
         setTimeout(function() {
             if (!o || o.isDead()) return;
             const index = o.index;
+            let className = set.startClass;
+            for (let key in Class)
+                if (Class[key].index === index) className = key;
             o.define(Class.bot);
-            o.define(Class.basic);
+            o.define(Class[className]);
             o.refreshBodyAttributes();
             o.controllers.push(new ioTypes.botMovement(o));
             o.name += botName;

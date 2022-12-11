@@ -166,7 +166,7 @@ const gamemodes = {
         HEIGHT: 6500,
         MODE: "tdm",
         TEAMS: 4,
-        BOTS: 24,
+        BOTS: 48,
         ROOM_SETUP: [
             ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
             ["norm", "bap1", "bas1", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "bas4", "bap4", "norm"],
