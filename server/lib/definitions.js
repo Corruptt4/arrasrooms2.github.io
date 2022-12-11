@@ -6622,6 +6622,7 @@ exports.mazeWall = {
     PARENT: [exports.obstacle],
     SIZE: 25,
     SHAPE: 4,
+    COLOR: '#755600',
     LABEL: "Wall"
 };
 
@@ -11865,7 +11866,7 @@ exports.enyo = (() => {
 //testbed/betatester stuff
 exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.zaphkiel, exports.paladin, exports.freyja, exports.enyo, exports.testbed2];
 
-exports.betatester.UPGRADES_TIER_1 = [exports.singularity,exports.sourceror,exports.longauto];
+exports.betatester.UPGRADES_TIER_1 = [exports.dual];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
 //exports.betatester2.UPGRADES_TIER_1 = [exports.oldbetatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]

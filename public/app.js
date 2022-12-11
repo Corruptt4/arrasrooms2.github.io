@@ -195,7 +195,9 @@ import * as socketStuff from "./lib/socketInit.js";
         case 'dom4':
             return color.magenta;
         case 'nest':
-            return (real) ? color.purple : color.lavender;
+            return color.yellow;
+        case 'norm':
+            return color.yellow
         case 'cent':
             return "#ff0000"
         case 'dom0':
