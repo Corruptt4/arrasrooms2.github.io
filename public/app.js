@@ -1509,6 +1509,7 @@ import * as socketStuff from "./lib/socketInit.js";
                         drawGuiRect(ax, ay, size, size, true);
                     }
                 } while (false);
+              
             } { // Draw messages
                 if (global.showTree) return;
                 let vspacing = 4;
