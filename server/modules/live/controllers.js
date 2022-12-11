@@ -577,7 +577,7 @@ ioTypes.minion = class extends IO {
         }
     }
 }
-ioTypes.botMoving = class extends IO {
+ioTypes.botMovement = class extends IO {
   constructor(body) {
     super(body);
     this.nearEdge = 1;
@@ -818,7 +818,7 @@ ioTypes.botMoving = class extends IO {
       power: power,
     };
   }
-} 
+}
 ioTypes.hangOutNearMaster = class extends IO {
     constructor(body) {
         super(body)

@@ -493,6 +493,7 @@ const maintainloop = (() => {
         o.name += botName;
         o.refreshBodyAttributes();
         o.color = color;
+        o.controllers.push(new ioTypes.botMovement(o));
         if (room.gameMode === "tdm") o.team = -team;
         o.skill.score = 23500;
         o.isBot = true;
@@ -514,6 +515,7 @@ const maintainloop = (() => {
             o.define(Class.bot);
             o.define(Class.basic);
             o.refreshBodyAttributes();
+            o.controllers.push(new ioTypes.botMovement(o));
             o.name += botName;
             o.invuln = false;
             o.skill.set(set.build);

@@ -44,30 +44,11 @@ const botBuilds = [
     [9, 7, 7, 7, 6, 0, 0, 0, 0, 9]
 ];
 
-const botSets = [{ // Smasher Ram Bots
-    ai: "ramBot",
-    build: [0, 0, 0, 0, 0, 5, 9, 12, 3, 10],
-    startClass: "smash"
-}, { // Tri-Angle Ram Bots
-    ai: "ramBot",
-    build: [9, 0, 0, 0, 0, 5, 9, 9, 4, 9],
-    startClass: "tri"
-}, { // Pounder Bots
-    ai: "bot",
-    build: [3, 8, 8, 8, 7, 0, 0, 3, 0, 7],
-    startClass: "pound"
-}, { // Sniper Bots
+const botSets = [
+  { // Sniper Bots
     ai: "bot",
     build: [6, 8, 8, 8, 5, 0, 5, 5, 0, 2],
-    startClass: "sniper"
-}, { // Drone Bots
-    ai: "bot",
-    build: [3, 8, 8, 8, 7, 0, 3, 3, 0, 7],
-    startClass: "director"
-}, {
-    ai: "bot",
-    build: [6, 8, 8, 8, 5, 0, 5, 5, 0, 2],
-    startClass: "furnace"
+    startClass: "basic"
 },];
 for (let build of botBuilds) botSets.push({ // All the builds that bots have.
     ai: "bot",
