@@ -11505,6 +11505,7 @@ exports.zaphkiel = { // o
   SIZE: 40,
   COLOR: 2,
   SHAPE: 9,
+  VALUE: 1000000,
   BODY: {
     HEALTH: base.HEALTH * 15 * 2,
     DAMAGE: base.DAMAGE * 5,
