@@ -9,7 +9,7 @@ goog.require('goog.structs.QuadTree');
 
 const defaults = require("../../config.json");
 
-const gamemode = "Maze Groups"; // keep it as ffa
+const gamemode = "Siege"; // keep it as ffa
 
 const gamemodes = {
     "FFA": {
@@ -51,11 +51,12 @@ const gamemodes = {
     },
     "Maze Groups": {
         GROUPS: (Math.random() * 3 | 0) + 2,
-        MAZE: 32,
+        MAZE: 64,
         X_GRID: 16,
         Y_GRID: 16,
-        WIDTH: 5000,
-        HEIGHT: 5000,
+        BOTS: 90,
+        WIDTH: 32000,
+        HEIGHT: 32000,
         ROOM_SETUP: [
             ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
             ["norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm"],
@@ -77,7 +78,7 @@ const gamemodes = {
         secondaryGameMode: "Squads"
     },
     "Maze": {
-        MAZE: 32,
+        MAZE: 128,
         X_GRID: 16,
         Y_GRID: 16,
         WIDTH: 5000,
