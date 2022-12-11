@@ -11456,7 +11456,7 @@ exports.kronos = (() => {
 exports.ragnarok = (() => {
   g.ragnarokGunnerCruiser = [3, 1, 1, 1, 0.7, 0.7, 1.3, 1.5, 1.5, 2, 1, 1, 1];
   exports.ragnarokGunnerCruiser = {
-    PARENT: [exports.turretParent],
+    PARENT: [exports.autoTurret],
     INDEPENDENT: true,
     GUNS: [
       {
@@ -11477,7 +11477,7 @@ exports.ragnarok = (() => {
         POSITION: [16, 3.5, 1, 0, 3, 0, 0.25],
         PROPERTIES: {
           SHOOT_SETTINGS: combineStats([
-            g.bullet,
+            g.basic,
             g.twin,
             g.ragnarokGunnerCruiser,
           ]),
@@ -11488,7 +11488,7 @@ exports.ragnarok = (() => {
         POSITION: [16, 3.5, 1, 0, -3, 0, 0],
         PROPERTIES: {
           SHOOT_SETTINGS: combineStats([
-            g.bullet,
+            g.basic,
             g.twin,
             g.ragnarokGunnerCruiser,
           ]),
@@ -11516,7 +11516,7 @@ exports.ragnarok = (() => {
   };
   g.ragnarokAutoSmasher = [3, 0, 1, 1, 0.4, 0.4, 1.25, 2, 2, 1.5, 2, 1, 1];
   exports.ragnarokAutoSmasherTurret = {
-    PARENT: [exports.turretParent],
+    PARENT: [exports.autoTurret],
     BODY: {
       FOV: 1,
     },
@@ -11526,7 +11526,7 @@ exports.ragnarok = (() => {
       {
         POSITION: [20, 6, 1, 0, 5, 0, 0],
         PROPERTIES: {
-          SHOOT_SETTINGS: combineStats([g.bullet, g.ragnarokAutoSmasher]),
+          SHOOT_SETTINGS: combineStats([g.basic, g.ragnarokAutoSmasher]),
           TYPE: [
             exports.bullet,
             {
@@ -11539,7 +11539,7 @@ exports.ragnarok = (() => {
       {
         POSITION: [20, 6, 1, 0, -5, 0, 0.5],
         PROPERTIES: {
-          SHOOT_SETTINGS: combineStats([g.bullet, g.ragnarokAutoSmasher]),
+          SHOOT_SETTINGS: combineStats([g.basic, g.ragnarokAutoSmasher]),
           TYPE: [
             exports.bullet,
             {
@@ -11568,7 +11568,7 @@ exports.ragnarok = (() => {
     }
   );
   exports.ragnarokAutoSmasherLauncher = {
-    PARENT: [exports.turretParent],
+    PARENT: [exports.autoTurret],
     SKILL: setBuild("9999999999"),
     INDEPENDENT: true,
     GUNS: [
@@ -11579,7 +11579,7 @@ exports.ragnarok = (() => {
         POSITION: [17, 14, 1.4, 0, 0, 0, 0],
         PROPERTIES: {
           SHOOT_SETTINGS: combineStats([
-            g.bullet,
+            g.basic,
             g.pound,
             g.destroy,
             [4, 1, 1, 0.9, 1.5, 1.5, 1, 1.75, 1.75, 1.5, 1, 1, 1],
@@ -11646,9 +11646,17 @@ exports.ragnarok = (() => {
   };
   return {
     PARENT: [exports.miniboss],
-    NAME: "Ragnarok",
+    LABEL: 'Ragnarok',
+    NAME: " ",
     COLOR: 0,
+    SHAPE: 11,
     DANGER: 100,
+    BODY: {
+      FOV: 1,
+      HEALTH: base.HEALTH * 15 * 7,
+      DAMAGE: 5,
+      SPEED: 1.15
+    },
     SIZE: 125,
     TURRETS: (() => {
       let output = [
@@ -12100,7 +12108,7 @@ exports.enyo = (() => {
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.zaphkiel, exports.paladin, exports.freyja, exports.enyo, exports.testbed2];
+exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.zaphkiel, exports.paladin, exports.freyja, exports.enyo, exports.testbed2];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.dual];
 
