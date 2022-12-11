@@ -11841,6 +11841,7 @@ exports.enyo = (() => {
     NAME: "Enyo",
     VALUE: 1000000,
     SHAPE: 9,
+    CUSTON: true,
     SIZE: 40,
     COLOR: "#F0A899",
     BODY: {
