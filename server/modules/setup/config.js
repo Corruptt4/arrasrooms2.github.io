@@ -78,7 +78,7 @@ const gamemodes = {
         secondaryGameMode: "Squads"
     },
     "Maze": {
-        MAZE: 32,
+        MAZE: 16,
         X_GRID: 16,
         Y_GRID: 16,
         WIDTH: 5000,
