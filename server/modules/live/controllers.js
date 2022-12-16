@@ -607,7 +607,7 @@ ioTypes.botMovement = class extends IO {
       if (this.timer <= 0 || util.getDistance(this.body, this.goal) < this.body.SIZE || this.state === 0) {
         this.timer = Math.random() * 500 | 0;
         this.state = 1;
-        this.goal = room.randomType(Math.random() > .9 ? "nest" : "bas1");
+        this.goal = room.randomType(Math.random() > .9 ? "dom0" : "dom1");
       }
     }
     return {

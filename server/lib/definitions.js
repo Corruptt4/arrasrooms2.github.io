@@ -11487,7 +11487,7 @@ exports.kronos = (() => {
     VALUE: 4000000,
     BODY: {
       FOV: 1,
-      HEALTH: base.HEALTH * 15 * 7,
+      HEALTH: base.HEALTH * 15 * 14,
       DAMAGE: 5,
       SPEED: 1.15
     },
@@ -11709,14 +11709,14 @@ exports.ragnarok = (() => {
   };
   return {
     PARENT: [exports.miniboss],
-    LABEL: 'Ragnarok',
-    NAME: " ",
+    LABEL: '',
+    NAME: "Ragnarok",
     COLOR: 0,
     SHAPE: 11,
     DANGER: 100,
     BODY: {
       FOV: 1,
-      HEALTH: base.HEALTH * 15 * 7,
+      HEALTH: base.HEALTH * 15 * 14,
       DAMAGE: 5,
       SPEED: 1.15
     },
