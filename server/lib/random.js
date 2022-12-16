@@ -97,7 +97,7 @@ exports.chooseChance = (...arg) => {
 
 exports.chooseBotName = () => {
     return exports.choose([
-        "Backrooms Entity" + (Math.floor(Math.random() * 900))
+        "Wanderer" + (Math.floor(Math.random() * 54533))
     ]);
 };
 

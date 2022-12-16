@@ -1,4 +1,7 @@
 # Update (12/16/2022)
+- Bots name are now Wanderer (Number between 1 and 54533)
+
+# Update (12/16/2022)
 - Bot movement changed.
 - Added Eternal waves from 14 to 25
 
