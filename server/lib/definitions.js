@@ -11714,7 +11714,7 @@ exports.zaphkielskimturret = {
              }, {
         POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
                PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.lessreload, g.quadro_damage, g.double_damage, g.quadro_damage]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.lessreload, g.quadro_damage, g.double_damage, g.quadro_damage, g.quadro_damage]),
                 TYPE: exports.hypermissile,
             },  },
     ],
@@ -11800,7 +11800,7 @@ exports.paladinhiveshoot = {
           g.double_damage,
           g.double_damage,
           g.quadro_damage,
-          g.half_damage,
+          g.quadro_damage,
           g.hive,
         ]),
         TYPE: [exports.hive, { MOTION_TYPE: "slowdown" }],

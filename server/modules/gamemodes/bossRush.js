@@ -17,7 +17,7 @@ function generateWaves() {
         bosses = bosses.sort(() => 0.5 - Math.random());
         waves.push(wave);
     }
-    for (let i = 14; i < 25; i++) {
+    for (let i = 4; i < 25; i++) {
       let wave = []
       for (let j = 0; j < 2 + Math.random() * 4 + (i * .4); j++) wave.push(finales[j]);
       finales = finales.sort(() => 0.5 - Math.random());
