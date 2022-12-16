@@ -64,21 +64,15 @@ const bossRush = (function() {
             sockets.broadcast("Wave " + (index + 1) + " has arrived!");
         }
     }
-    function spawnMothership() {
-        return;
-        sockets.broadcast("A Mothership has spawned!");
-        let o = new Entity(room.randomType("bas1"));
-        o.define(ran.choose(mothershipChoices));
-        o.define({
-            DANGER: 10
-        });
-        o.color = 10
-        o.team = -1
-        o.name = "Mothership";
-        o.isMothership = true;
-        o.controllers.push(new ioTypes.nearestDifferentMaster(o));
-        o.controllers.push(new ioTypes.botMovement(o));
-    };
+    if (room["nest"]) {
+      for (let loc of room["nest"]) {
+        let o = new Entity(loc)
+        o.define(Class.mothership)
+        o.isMothership = true
+        o.controllers = [new ioTypes.botMovement(o)]
+        o.onDea
+      }
+    }
     let spawn = (loc, team, type = false) => {
         type = type ? type : Class.destroyerDominator;
         let o = new Entity(loc);

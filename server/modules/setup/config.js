@@ -243,7 +243,7 @@ const gamemodes = {
             ["outb", "outb", "outb", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "outb", "outb", "outb"],
             ["outb", "outb", "outb", "wall", "norm", "norm", "bas1", "norm", "norm", "norm", "norm", "norm", "bas1", "norm", "norm", "wall", "outb", "outb", "outb"],
             ["wall", "wall", "wall", "wall", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "wall", "wall", "wall", "wall"],
-            ["wall", "boss", "boss", "boss", "norm", "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm", "norm", "boss", "boss", "boss", "wall"],
+            ["wall", "boss", "boss", "boss", "norm", "norm", "norm", "moth", "nest", "nest", "nest", "norm", "norm", "norm", "norm", "boss", "boss", "boss", "wall"],
             ["wall", "boss", "boss", "boss", "norm", "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm", "norm", "boss", "boss", "boss", "wall"],
             ["wall", "boss", "boss", "boss", "norm", "norm", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "norm", "norm", "boss", "boss", "boss", "wall"],
             ["wall", "wall", "wall", "wall", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "wall", "wall", "wall", "wall"],
