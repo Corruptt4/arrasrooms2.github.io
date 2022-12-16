@@ -6753,14 +6753,72 @@ exports.dominator = {
 };
 exports.destroyerDominator = {
     PARENT: [exports.dominator],
+    FACING_TYPE: 'autospin',
+    CONTROLLERS: ['alwaysFire'],
     GUNS: [{
-        POSITION: [15.25, 6.75, 1, 0, 0, 0, 0],
+        POSITION: [4, 3.75, 1, 8, 0, 0, 0]
+    }, {
+        POSITION: [1.25, 3.75, 1.7, 12, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.destroyerDominator]),
-            TYPE: exports.bullet
+            SHOOT_SETTINGS: combineStats([g.trap, g.trapperDominator]),
+            TYPE: exports.trap
         }
     }, {
-        POSITION: [5, 6.75, -1.6, 6.75, 0, 0, 0]
+        POSITION: [4, 3.75, 1, 8, 0, 45, 0]
+    }, {
+        POSITION: [1.25, 3.75, 1.7, 12, 0, 45, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.trapperDominator]),
+            TYPE: exports.trap
+        }
+    }, {
+        POSITION: [4, 3.75, 1, 8, 0, 90, 0]
+    }, {
+        POSITION: [1.25, 3.75, 1.7, 12, 0, 90, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.trapperDominator]),
+            TYPE: exports.trap
+        }
+    }, {
+        POSITION: [4, 3.75, 1, 8, 0, 135, 0]
+    }, {
+        POSITION: [1.25, 3.75, 1.7, 12, 0, 135, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.trapperDominator]),
+            TYPE: exports.trap
+        }
+    }, {
+        POSITION: [4, 3.75, 1, 8, 0, 180, 0]
+    }, {
+        POSITION: [1.25, 3.75, 1.7, 12, 0, 180, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.trapperDominator]),
+            TYPE: exports.trap
+        }
+    }, {
+        POSITION: [4, 3.75, 1, 8, 0, 225, 0]
+    }, {
+        POSITION: [1.25, 3.75, 1.7, 12, 0, 225, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.trapperDominator]),
+            TYPE: exports.trap
+        }
+    }, {
+        POSITION: [4, 3.75, 1, 8, 0, 270, 0]
+    }, {
+        POSITION: [1.25, 3.75, 1.7, 12, 0, 270, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.trapperDominator]),
+            TYPE: exports.trap
+        }
+    }, {
+        POSITION: [4, 3.75, 1, 8, 0, 315, 0]
+    }, {
+        POSITION: [1.25, 3.75, 1.7, 12, 0, 315, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.trapperDominator]),
+            TYPE: exports.trap
+        }
     }]
 };
 exports.gunnerDominator = {

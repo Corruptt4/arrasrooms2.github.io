@@ -8,9 +8,9 @@ goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
 function generateWaves() {
-    let bosses = [Class.elite_destroyer, Class.elite_gunner, Class.elite_sprayer, Class.elite_battleship, Class.palisade, Class.skimboss, Class.summoner, Class.nestKeeper, Class.zaphkiel, Class.paladin, Class.enyo, Class.freyja, Class.ragnarok, Class.kronos].sort(() => 0.5 - Math.random());
+    let bosses = [Class.elite_destroyer, Class.elite_gunner, Class.elite_sprayer, Class.elite_battleship, Class.palisade, Class.skimboss, Class.summoner, Class.nestKeeper, Class.zaphkiel, Class.paladin, Class.enyo, Class.freyja, Class.ragnarok, Class.kronos].sort(() => 1.25 - Math.random());
     let waves = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         let wave = [];
         for (let j = 0; j < 2 + Math.random() * 4 + (i * .4); j++) wave.push(bosses[j]);
         bosses = bosses.sort(() => 0.5 - Math.random());
