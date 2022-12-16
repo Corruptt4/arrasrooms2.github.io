@@ -738,9 +738,13 @@ exports.drone = {
 };
     exports.paladindrone = {
       PARENT: [exports.drone],
+      SHAPE: 5,
+      INDEPENDENT: true,
       BODY: {
-        SPEED: 1.35
-      }
+        SPEED: 1.35,
+        HEALTH: 3,
+      },
+      DRAW_HEALTH: true
     }
     exports.sunchip = {
         PARENT: [exports.drone],
@@ -968,7 +972,7 @@ exports.genericTank = {
         DAMAGE: base.DAMAGE, 
         PENETRATION: base.PENETRATION, 
         SHIELD: base.SHIELD,
-        REGEN: 3.75,
+        REGEN: base.REGEN * 3,
         FOV: base.FOV,
         DENSITY: base.DENSITY,
         PUSHABILITY: 0.9,
