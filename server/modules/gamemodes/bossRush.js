@@ -64,13 +64,22 @@ const bossRush = (function() {
             sockets.broadcast("Wave " + (index + 1) + " has arrived!");
         }
     }
-    if (room["nest"]) {
-      for (let loc of room["nest"]) {
+    if (room["moth"]) {
+      for (let loc of room["moth"]) {
         let o = new Entity(loc)
         o.define(Class.mothership)
         o.isMothership = true
+        o.team = -1
+        o.color = 10
         o.controllers = [new ioTypes.botMovement(o)]
-        o.onDea
+        o.onDead = () => {
+          let e = new Entity(loc)
+          e.define(Class.mothership)
+          e.isMothership = true
+          e.team = -1
+          e.color = 10
+          e.controllers = [new ioTypes.botMovement(o)]
+        }
       }
     }
     let spawn = (loc, team, type = false) => {
@@ -98,7 +107,6 @@ const bossRush = (function() {
     };
 
     function init() {
-        for (let i = 0; i < 1; i++) spawnMothership();
         for (let loc of room["bas1"]) spawn(loc, -1);
         console.log("Boss rush initialized.");
     };
