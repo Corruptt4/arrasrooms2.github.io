@@ -1,3 +1,6 @@
+# Update (12/16/2022)
+- Bot movement changed.
+- Added Eternal waves from 14 to 25
 # Update (12/11/2022)
 - Maze 4TDM Bots increased from 24 to 48
 - Added a new celestial Enyo

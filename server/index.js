@@ -490,6 +490,7 @@ const maintainloop = (() => {
         o.color = color;
         o.invuln = true;
         o.define(Class.basic);
+        o.skill.set([7, 6, 4, 8, 5, 4, 9, 5, 5, 4])
         o.name += botName;
         o.refreshBodyAttributes();
         o.color = color;

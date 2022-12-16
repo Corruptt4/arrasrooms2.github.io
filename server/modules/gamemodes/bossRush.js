@@ -10,40 +10,19 @@ goog.require('goog.structs.QuadTree');
 function generateWaves() {
     let bosses = [Class.elite_destroyer, Class.elite_gunner, Class.elite_sprayer, Class.elite_battleship, Class.palisade, Class.skimboss, Class.summoner, Class.nestKeeper, Class.zaphkiel, Class.paladin, Class.enyo, Class.freyja, Class.theia].sort(() => 0.5 - Math.random());
     let finales = [Class.ragnarok, Class.kronos]
-    const waves = (function() {
-    class Wave {
-         constructor(bosses, message) {
-            this.bosses = bosses;
-            this.message = message;
-        }
-      }
-    for (let i = 0; i < 19; i ++) {
-            bosses = bosses.sort(() => 0.5 - Math.random());
-            const bosses = [];
-            for (let x = 0; x < 2 + (Math.random() * 5 | 0); x ++) {
-                bosses.push(bosses[x]);
-            }
-            waves.push(new Wave(bosses));
-        }
-        let output = output.concat(waves.sort((a, b) => a.bosses.length - b.bosses.length));
-        for (let i = 0; i < waves.length; i ++) {
-            if (i === 0) {
-                output.push(new Wave([finales[i]], "Your end is here. We will end this."));
-            } else {
-                output.push(new Wave([finales[i]]));
-            }
-        }
-        finales = finales.sort(() => .5 - Math.random());
-        let celestialWaves = [];
-        for (let i = 0; i < 5; i ++) {
-            const bosses = [finales[i]];
-            finales = finales.sort(() => 0.5 - Math.random());
-            for (let x = 0; x < 1 + (Math.random() * 3 | 0); x ++) {
-                bosses.push(finales[x]);
-            }
-            celestialWaves.push(new Wave(bosses));
-        }
-    })()
+    let waves = [];
+    for (let i = 0; i < 10; i++) {
+        let wave = [];
+        for (let j = 0; j < 2 + Math.random() * 4 + (i * .4); j++) wave.push(bosses[j]);
+        bosses = bosses.sort(() => 0.5 - Math.random());
+        waves.push(wave);
+    }
+    for (let i = 14; i < 25; i++) {
+      let wave = []
+      for (let j = 0; j < 2 + Math.random() * 4 + (i * .4); j++) wave.push(finales[j]);
+      finales = finales.sort(() => 0.5 - Math.random());
+      waves.push(wave)
+    }
     return waves;
 };
 const bossRush = (function() {

@@ -957,6 +957,7 @@ exports.genericTank = {
     DANGER: 5,
     MOTION_TYPE: 'motor',
     FACING_TYPE: 'toTarget',
+    HITS_OWN_TYPE: 'hardOnlyTanks',
     SIZE: 12,
     MAX_CHILDREN: 0,   
     DAMAGE_EFFECTS: false,
