@@ -12113,9 +12113,9 @@ exports.enyo = (() => {
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.zaphkiel, exports.paladin, exports.freyja, exports.enyo, exports.testbed2];
+exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.zaphkiel, exports.paladin, exports.freyja, exports.enyo, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.testbed2, exports.basic];
 
-exports.betatester.UPGRADES_TIER_1 = [exports.dual];
+exports.betatester.UPGRADES_TIER_1 = [exports.dual, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.basic];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
 //exports.betatester2.UPGRADES_TIER_1 = [exports.oldbetatester, exports.teaser,exports.donutbasic,exports.demoman,exports.farmer,exports.poprocks]
