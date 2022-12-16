@@ -968,7 +968,7 @@ exports.genericTank = {
         DAMAGE: base.DAMAGE, 
         PENETRATION: base.PENETRATION, 
         SHIELD: base.SHIELD,
-        REGEN: 1.25,
+        REGEN: 3.75,
         FOV: base.FOV,
         DENSITY: base.DENSITY,
         PUSHABILITY: 0.9,

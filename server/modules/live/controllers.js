@@ -31,7 +31,7 @@ ioTypes.slowSpin = class extends IO {
         this.a = 0;
     }
     think(input) {
-        this.a += 0.01;
+        this.a += 0.02;
         let offset = 0;
         if (this.body.bond != null) {
             offset = this.body.bound.angle;
@@ -72,7 +72,7 @@ ioTypes.reverseSlowSpin = class extends IO {
         this.a = 0
     }
     think(input) {
-        this.a -= 0.01;
+        this.a -= 0.02;
         let offset = 0
         if (this.body.bond != null) {
             offset = this.body.bound.angle
@@ -748,7 +748,7 @@ ioTypes.reverseslowspin = class extends IO {
         this.a = 0
     }
     think(input) {
-        this.a -= 0.015
+        this.a -= 0.025
         let offset = 0
         if (this.body.bond != null) {
             offset = this.body.bound.angle
@@ -768,7 +768,7 @@ ioTypes.slowspin = class extends IO {
         this.a = 0
     }
     think(input) {
-        this.a += 0.015
+        this.a += 0.025
         let offset = 0
         if (this.body.bond != null) {
             offset = this.body.bound.angle
