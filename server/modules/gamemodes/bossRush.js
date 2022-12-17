@@ -79,7 +79,7 @@ const bossRush = (function() {
         o.controllers.push(new ioTypes.nearestDifferentMaster(o));
         o.controllers.push(new ioTypes.botMovement(o));
     };
-    let spawn = (loc, team, type = false) => {
+    let spawn = (loc, team, type = false, typedeath = false) => {
         type = type ? type : Class.destroyerDominator;
         typedeath = typedeath ? typedeath : Class.dominator
         let o = new Entity(loc);
