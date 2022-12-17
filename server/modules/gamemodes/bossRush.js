@@ -79,6 +79,8 @@ const bossRush = (function() {
         o.controllers.push(new ioTypes.nearestDifferentMaster(o));
         o.controllers.push(new ioTypes.botMovement(o));
     };
+    let maxSanctuaries = 0;
+    let sanctuaries = 0;
     let spawn = (loc, team, type = false) => {
         type = type ? type : Class.destroyerDominator;
         let o = new Entity(loc);
@@ -93,15 +95,45 @@ const bossRush = (function() {
         o.onDead = function() {
             if (o.team === -100) {
                 spawn(loc, -1, type);
-                room.setType("dom1", loc);
+                room.setType("bas1", loc);
                 sockets.broadcast("A dominator has been captured by BLUE!");
-                o.define(type)
+                if (sanctuaries < 1) {
+                    sockets.broadcast("Your team may now respawn.");
+                    for (const socket of sockets.clients) {
+                        if (socket.awaitingSpawn) {
+                            socket.reallySpawn();
+                        }
+                    }
+                }
+                sanctuaries ++;
             } else {
-                spawn(loc, -100, Class.dominator)
+                sanctuaries --;
+                if (sanctuaries < 1) {
+                    sockets.broadcast("Your team can no longer respawn. Capture a dominator to allow respawning.");
+                    sockets.broadcast("Your team will lose in 90 seconds");
+                    function tick(i) {
+                        if (sanctuaries > 0) {
+                            return;
+                        }
+                        if (i <= 0) {
+                            sockets.broadcast("Your team has lost!");
+                            setTimeout(closeArena, 2500);
+                            return;
+                        }
+                        if (i % 15 === 0 || i <= 10) {
+                            sockets.broadcast(`${i} seconds until your team loses!`);
+                        }
+                        setTimeout(function retick() {
+                            tick(i - 1);
+                        }, 1000);
+                    }
+                    tick(91);
+                }
+                spawn(loc, -100, type);
                 room.setType("dom0", loc);
-                sockets.broadcast("A dominator has been captured by Bosses!");
+                sockets.broadcast("A dominator has been captured by the bosses!");
             }
-        };
+        }
     };
 
     function init() {

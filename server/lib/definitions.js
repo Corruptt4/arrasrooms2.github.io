@@ -12516,7 +12516,7 @@ exports.xukmes = (() => {
              }, {
         POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
                PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.lessreload, g.halfreload, g.halfreload, g.quadro_damage, g.double_damage, g.triple_damage, g.quadro_damage, g.quadro_damage]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.lessreload, g.halfreload, g.halfreload, g.quadro_damage]),
                 TYPE: exports.hypermissile,
             },  },
     ],
