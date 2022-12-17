@@ -891,9 +891,21 @@ import * as socketStuff from "./lib/socketInit.js";
             context.closePath();
             context.stroke();
             context.fill();
+          } else if (skin==6) {
+            let h = []
+            h = (aspect > 0) ? [height * aspect, height] : [height, -aspect * height]
+            let l = [
+                Math.sqrt(length * length + h[0] * h[0]),
+                Math.sqrt(length * length + h[1] * h[1])
+            ];
+            let baller = height*Math.PI/90
+            ctx.moveTo(x + l[1] * Math.cos(angle + Math.PI), y + l[1] * Math.sin(angle + Math.PI));
+            context.arc(x + l[1] * Math.cos(angle / Math.PI), y + l[1] * Math.sin(angle + baller), length*4, -baller/2+angle, baller/2+angle)
+            context.closePath()
+            context.fill()
+            context.stroke()
           }
         }
-      
         // The big drawing function
         return (x, y, instance, ratio, alpha = 1, scale = 1, rot = 0, turretsObeyRot = false, assignedContext = false, turretInfo = false, render = instance.render) => {
             let context = (assignedContext) ? assignedContext : ctx;

@@ -1531,7 +1531,7 @@ exports.basic = {
             MAX_CHILDREN: 0,            // def  
             ALT_FIRE: false,            // def 
             NEGATIVE_RECOIL: false,     // def
-            SKIN: 5,                    // def
+            SKIN: 0,                    // def
         }, }, 
     ],
 };
