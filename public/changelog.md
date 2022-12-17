@@ -1,3 +1,6 @@
+# Update (12/17/2022)
+- Bosses now orbit around sanctuaries at further distance to lete Eternals not r
+
 # Update (12/16/2022)
 - Bots name are now Wanderer (Number between 1 and 54533)
 

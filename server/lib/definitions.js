@@ -12503,9 +12503,20 @@ exports.enyo = (() => {
     ]
   }
 })()
-exports.shiva = (() => {
-  exports.shirvabody1 = {
-    PARENT: []
+exports.xukmes = (() => {
+  exports.xukmesbody1 = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    SHAPE: 5,
+    CONTROLLERS: ['slowspin'],
+    TURRETS: (()=> {
+      var tr = []
+      for (let i = 0.5; i < 5; i++) {
+        tr.push({
+          
+        })
+      }
+    })()
   }
   return {}
 })()
