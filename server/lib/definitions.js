@@ -1678,6 +1678,16 @@ exports.testbed9 = {
                 }, 
             ],
         };
+exports.testbedpg2 = {
+    PARENT: [exports.genericTank],
+    LABEL: 'PAGE 2',
+    CUSTOM: true,
+    TURRETS: [],
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
+        }, 
+    ],
+}
             exports.single = {
                 PARENT: [exports.genericTank],
                 LABEL: 'Single',
@@ -12592,43 +12602,50 @@ exports.xukmes = (() => {
   }
 })()
 exports.thedisease = (() => {
-  exports.minion = {
-    PARENT: [exports.overlord],
-    CONTROLLERS: ['minion', 'canRepel', 'nearestDifferentMaster'],
-    SHAPE: 4,
-    FACING_TYPE: 'fastspin',
-    BODY: {
-      HEALTH: 20,
-      DAMAGE: 7.5,
-      FOV: 2.25
-    },
-    COLOR: "#cbc73cff"
-  },
-  exports.body1 = {
-    PARENT: [exports.genericTank],
-    LABEL: '',
-    SHAPE: 8,
-    CONTROLLERS: ['slowspin'],
-    SKILL: setBuild("9999999999"),
-    GUNS: (()=> {
-      var gs = []
-      for (let i = 1; i < 4; i++) {
-        gs.push({
-          POSITION: [11, 8, 1.3, 0, 0, (360 * i) / 4, 0],
-          PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.double_damage, g.double_reload, g.morereload])
-          }
-        })
-      }
-    })
-  }
+  // exports.tdminion = {
+  //   PARENT: [exports.overlord],
+  //   CONTROLLERS: ['minion', 'canRepel', 'nearestDifferentMaster'],
+  //   SHAPE: 4,
+  //   FACING_TYPE: 'fastspin',
+  //   BODY: {
+  //     HEALTH: 20,
+  //     DAMAGE: 7.5,
+  //     FOV: 2.25
+  //   },
+  //   COLOR: "#cbc73cff"
+  // }
+  //  exports.tdbody1 = {
+  //   PARENT: [exports.genericTank],
+  //   LABEL: '',
+  //   SHAPE: 5,
+  //   SKILL: setBuild("9999999999"),
+  //   COLOR: "#cbc73cff",
+  //   CONTROLLERS: ['slowspin'],
+  //   GUNS: (()=> {
+  //     var gs = []
+  //     for (let i = 1; i < 4; i++) {
+  //       gs.push({
+  //         POSITION: [11, 8, 1.3, 0, 0, (360 * i) / 4, 0],
+  //         PROPERTIES: {
+  //           SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.double_damage, g.double_reload, g.morereload]),
+  //           TYPE: exports.sunchip
+  //         }
+  //       })
+  //     }
+  //   })
+  // }
   return {
     PARENT: [exports.miniboss],
-    LABEL: 'The Disease',
+    LABEL: '???',
     NAME: 'The Disease',
+    COLOR: "#cbc73cff",
+    SHAPE: 9,
+    SIZE: 40,
+    VALUE: 1000000,
     BODY: {
-      HEALTH: 3000,
-      DAMAGE: 10
+        HEALTH: base.HEALTH * 15 * 4,
+        DAMAGE: base.DAMAGE * 4,
+        SPEED: 1.3
     }
   }
 })()
@@ -12636,7 +12653,7 @@ exports.thedisease = (() => {
 
 //testbed/betatester stuff
 exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.alviss, exports.tyr, exports.zaphkiel, exports.xukmes, exports.paladin, exports.freyja, exports.enyo, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.testbed2, exports.basic];
-
+exports.testbed2.UPGRADES_TIER_1 = [exports.thedisease]
 exports.betatester.UPGRADES_TIER_1 = [exports.dual, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.basic];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
