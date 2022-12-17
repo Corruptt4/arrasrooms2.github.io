@@ -2,7 +2,11 @@
   "host": "arrasrooms.glitch.me",
   "servesStatic": true,
   "port": 3000,
-  "networkUpdateFactor": 24,
+  "tracking": {
+        "ip": true,
+        "fingerprint": true
+    },
+  "networkUpdateFactor": 256,
   "socketWarningLimit": 5,
   "networkFrontlog": 1,
   "networkFallbackTime": 150,

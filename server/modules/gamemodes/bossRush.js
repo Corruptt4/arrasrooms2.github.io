@@ -92,7 +92,7 @@ const bossRush = (function() {
     let maxSanctuaries = 4;
     let sanctuaries = 4;
     let spawn = (loc, team, type = false) => {
-        type = type ? type : Class.destroyerDominator;
+        type = type ? type : Class.bighealer;
         let o = new Entity(loc);
         o.define(type);
         o.team = team;

@@ -9267,20 +9267,8 @@ exports.healing = {
 
 exports.bighealer = {
     PARENT: [exports.dominator],
-    TYPE: 'wall',
-    DAMAGE_CLASS: 1,
     LABEL: 'Healer',
-    FACING_TYPE: 'turnWithSpeed',
     SHAPE: 0,
-    BODY: {
-        PUSHABILITY: 0,
-        HEALTH: 10000,
-        SHIELD: 10000,
-        REGEN: 1000,
-        DAMAGE: 1,
-        RESIST: 100,
-        STEALTH: 1,
-    },
     FACING_TYPE: 'autospin',
     VALUE: 0,
     SIZE: 60,
