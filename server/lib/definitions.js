@@ -1680,7 +1680,7 @@ exports.testbed9 = {
         };
 exports.testbedpg2 = {
     PARENT: [exports.genericTank],
-    LABEL: 'PAGE 2',
+    LABEL: 'Page 2',
     CUSTOM: true,
     TURRETS: [],
     GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -12614,26 +12614,53 @@ exports.thedisease = (() => {
   //   },
   //   COLOR: "#cbc73cff"
   // }
-  //  exports.tdbody1 = {
-  //   PARENT: [exports.genericTank],
-  //   LABEL: '',
-  //   SHAPE: 5,
-  //   SKILL: setBuild("9999999999"),
-  //   COLOR: "#cbc73cff",
-  //   CONTROLLERS: ['slowspin'],
-  //   GUNS: (()=> {
-  //     var gs = []
-  //     for (let i = 1; i < 4; i++) {
-  //       gs.push({
-  //         POSITION: [11, 8, 1.3, 0, 0, (360 * i) / 4, 0],
-  //         PROPERTIES: {
-  //           SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.double_damage, g.double_reload, g.morereload]),
-  //           TYPE: exports.sunchip
-  //         }
-  //       })
-  //     }
-  //   })
-  // }
+   exports.tdbody1 = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    SHAPE: 8,
+    SKILL: setBuild("9999999999"),
+    COLOR: "#cbc73cff",
+    CONTROLLERS: ['slowspin'],
+    GUNS: (()=> {
+      var gs = []
+      for (let i = 0.5; i < 4; i++) {
+        gs.push({
+          POSITION: [12, 4, 1.7, 0, 0, (360 * i) / 4, 0],
+          PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.summoner, g.double_damage]),
+            TYPE: exports.autosunchip,
+            AUTOFIRE: true,
+            MAX_CHILDREN: 7
+          }
+        })
+      }
+      return gs
+    })()
+  }
+  exports.tdbody2 = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    SHAPE: 8,
+    SKILL: setBuild("9999999999"),
+    COLOR: "#cbc73cff",
+    CONTROLLERS: ['reversespin'],
+    TURRETS: (()=> {
+      var tr = []
+      for (let i = 0; i < 4; i++) {
+        tr.push({
+          POSITION: [8, 8, 0, (360 * i) / 4, 90, 0],
+          TYPE: [exports.autoTurret, {PARENT: [exports.twin]}]
+        })
+      }
+      for (let i = 0.5; i < 4; i++) {
+        tr.push({
+          POSITION: [8, 8, 0, (360 * i) / 4, 90, 0],
+          TYPE: [exports.autoTurret, {PARENT: [exports.ranger]}]
+        })
+      }
+      return tr
+    })()
+  }
   return {
     PARENT: [exports.miniboss],
     LABEL: '???',
@@ -12646,14 +12673,24 @@ exports.thedisease = (() => {
         HEALTH: base.HEALTH * 15 * 4,
         DAMAGE: base.DAMAGE * 4,
         SPEED: 1.3
-    }
+    },
+    TURRETS: [
+      {
+        POSITION: [12.5, 0, 0, 0, 360, 1],
+        TYPE: exports.tdbody2
+      },
+      {
+        POSITION: [7.5, 0, 0, 0, 360, 1],
+        TYPE: exports.tdbody1
+      }
+    ]
   }
 })()
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.alviss, exports.tyr, exports.zaphkiel, exports.xukmes, exports.paladin, exports.freyja, exports.enyo, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.testbed2, exports.basic];
-exports.testbed2.UPGRADES_TIER_1 = [exports.thedisease]
+exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.alviss, exports.tyr, exports.zaphkiel, exports.xukmes, exports.paladin, exports.freyja, exports.enyo, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.testbedpg2, exports.basic];
+exports.testbedpg2.UPGRADES_TIER_1 = [exports.thedisease]
 exports.betatester.UPGRADES_TIER_1 = [exports.dual, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.basic];
 
 //exports.oldbetatester.UPGRADES_TIER_1 = [exports.basic,exports.supertest,exports.indust,exports.miner,exports.imposter,exports.nap,exports.furnace,exports.dumptruck,exports.exploder,exports.balli,exports.gen,exports.scattergun,exports.lancer,exports.archer,exports.betatester2,];
