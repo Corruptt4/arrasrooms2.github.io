@@ -79,9 +79,8 @@ const bossRush = (function() {
         o.controllers.push(new ioTypes.nearestDifferentMaster(o));
         o.controllers.push(new ioTypes.botMovement(o));
     };
-    let spawn = (loc, team, type = false, typedeath = false) => {
+    let spawn = (loc, team, type = false) => {
         type = type ? type : Class.destroyerDominator;
-        typedeath = typedeath ? typedeath : Class.dominator
         let o = new Entity(loc);
         o.define(type);
         o.team = team;
@@ -98,7 +97,13 @@ const bossRush = (function() {
                 sockets.broadcast("A dominator has been captured by BLUE!");
                 o.define(type)
             } else {
-                spawn(loc, -100, typedeath)
+                o.team = team;
+                o.color = [10, 11, 12, 15][-team - 1] || 3;
+                o.skill.score = 111069;
+                o.name = "Dominator";
+                o.SIZE = c.WIDTH / c.X_GRID / 10;
+                o.isDominator = true;
+                o.controllers = [new ioTypes.nearestDifferentMaster(o), new ioTypes.spinWhenIdle(o)];
                 room.setType("dom0", loc);
                 sockets.broadcast("A dominator has been captured by the bosses!");
                 o.define(Class.dominator)

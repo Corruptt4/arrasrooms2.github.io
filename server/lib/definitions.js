@@ -11714,6 +11714,7 @@ exports.ragnarok = (() => {
     COLOR: 0,
     SHAPE: 11,
     DANGER: 100,
+    VALUE: 4000000,
     BODY: {
       FOV: 1,
       HEALTH: base.HEALTH * 15 * 14,
