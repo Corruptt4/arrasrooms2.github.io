@@ -4568,7 +4568,7 @@ exports.miniboss = {
         mob: 0
     }),
     LEVEL: 45,
-    CONTROLLERS: ["nearestDifferentMaster", "minion", "canRepel"],
+    CONTROLLERS: ["nearestDifferentMaster", "bossorbit", "canRepel"],
     AI: {
         NO_LEAD: true
     },
