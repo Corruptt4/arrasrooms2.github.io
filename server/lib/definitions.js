@@ -12602,18 +12602,35 @@ exports.xukmes = (() => {
   }
 })()
 exports.thedisease = (() => {
-  // exports.tdminion = {
-  //   PARENT: [exports.overlord],
-  //   CONTROLLERS: ['minion', 'canRepel', 'nearestDifferentMaster'],
-  //   SHAPE: 4,
-  //   FACING_TYPE: 'fastspin',
-  //   BODY: {
-  //     HEALTH: 20,
-  //     DAMAGE: 7.5,
-  //     FOV: 2.25
-  //   },
-  //   COLOR: "#cbc73cff"
-  // }
+   exports.tdminion = {
+     PARENT: [exports.minion],
+     SHAPE: 4,
+     FACING_TYPE: 'fastspin',
+     BODY: {
+      HEALTH: 20,
+      DAMAGE: 7.5,
+      FOV: 2.25
+    },
+     COLOR: "#cbc73cff",
+     GUNS: (()=> {
+       var gs = []
+       exports.overlord.GUNS.push(e => {
+         gs.push({
+           POSITION: [
+             e.POSITION[0],
+             e.POSITION[1],
+             e.POSITION[2],
+             e.POSITION[3],
+             e.POSITION[4],
+             e.POSITION[5],
+             e.POSITION[6],
+           ],
+           PROPERTIES: e.PROPERTIES
+         })
+       })
+       return gs
+     })()
+   }
    exports.tdbody1 = {
     PARENT: [exports.genericTank],
     LABEL: '',
@@ -12666,7 +12683,7 @@ exports.thedisease = (() => {
     LABEL: '???',
     NAME: 'The Disease',
     COLOR: "#cbc73cff",
-    SHAPE: 9,
+    SHAPE: 12,
     SIZE: 40,
     VALUE: 1000000,
     BODY: {
@@ -12683,7 +12700,26 @@ exports.thedisease = (() => {
         POSITION: [7.5, 0, 0, 0, 360, 1],
         TYPE: exports.tdbody1
       }
-    ]
+    ],
+    GUNS: (()=> {
+      var gs = []
+      for (let i = 0; i < 8; i++) {
+        gs.push({
+           POSITION: [   5,     11,      1,      10.5,   0,      0,      0,   ], 
+               }, {
+           POSITION: [   2,     14,      1,      15.5,   0,      0,      0,   ], 
+               PROPERTIES: {
+                   SHOOT_SETTINGS: combineStats([g.factory]),
+                   TYPE: exports.tdminion,
+                   STAT_CALCULATOR: gunCalcNames.drone,                        
+                   AUTOFIRE: true,
+                   SYNCS_SKILLS: true,   
+               }, }, {                        
+           POSITION: [   4,     14,      1,      8,      0,      0,      0,   ], 
+        })
+      }
+      return gs
+    })()
   }
 })()
 // UPGRADE PATHS
