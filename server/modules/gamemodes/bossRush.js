@@ -81,6 +81,7 @@ const bossRush = (function() {
     };
     let spawn = (loc, team, type = false) => {
         type = type ? type : Class.destroyerDominator;
+        typedeath = typedeath ? typedeath : Class.dominator
         let o = new Entity(loc);
         o.define(type);
         o.team = team;
@@ -97,7 +98,7 @@ const bossRush = (function() {
                 sockets.broadcast("A dominator has been captured by BLUE!");
                 o.define(type)
             } else {
-                spawn(loc, -100, type);
+                spawn(loc, -100, typedeath)
                 room.setType("dom0", loc);
                 sockets.broadcast("A dominator has been captured by the bosses!");
                 o.define(Class.dominator)
