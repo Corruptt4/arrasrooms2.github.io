@@ -117,7 +117,7 @@ const bossRush = (function() {
                         }
                         if (i <= 0) {
                             sockets.broadcast("Your team has lost!");
-                            setTimeout(closeArena, 2500);
+                            setTimeout(process.exit(), 2500);
                             return;
                         }
                         if (i % 15 === 0 || i <= 10) {
@@ -135,7 +135,26 @@ const bossRush = (function() {
             }
         }
     };
-
+    if (room["moth"]) {
+      for (let loc of room["moth"]) {
+        let o = new Entity(loc)
+        o.define(Class.mothership)
+        o.color = 10
+        o.team = -1
+        o.isMothership = true
+        o.onDead = () => {
+          let e = new Entity(loc)
+          e.define(Class.mothership)
+          e.color = 10
+          e.team = -1
+          e.isMothership = true
+          e.controllers.push(new ioTypes.nearestDifferentMaster(e));
+          e.controllers.push(new ioTypes.mapTargetToGoal(e));
+          e.onDead = o.onDead
+          o = e
+        }
+      }
+    }
     function init() {
         for (let loc of room["bas1"]) spawn(loc, -1);
         console.log("Boss rush initialized.");
