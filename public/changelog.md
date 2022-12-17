@@ -1,5 +1,6 @@
 # Update (12/17/2022)
-- Bosses now orbit around sanctuaries at further distance to lete Eternals not r
+- Bosses now orbit around sanctuaries at further distance to let Eternals not ram the sanctuaries.
+- Added Xumes, a new Celestial.
 
 # Update (12/16/2022)
 - Bots name are now Wanderer (Number between 1 and 54533)
@@ -18,4 +19,3 @@
 
 # Startup (12/10/2022)
 - Server Startup.
-- Changed FFA To Normal

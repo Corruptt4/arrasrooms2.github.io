@@ -12487,7 +12487,7 @@ exports.enyo = (() => {
     COLOR: "#F0A899",
     BODY: {
       HEALTH: base.HEALTH * 15 * 2,
-      DAMAGE: base.DAMAGE * 5,
+      DAMAGE: base.DAMAGE * 5, 
       SPEED: 1.3,
     },
     TURRETS: [
@@ -12504,26 +12504,89 @@ exports.enyo = (() => {
   }
 })()
 exports.xukmes = (() => {
+  exports.xukmesskimturret = {
+    PARENT: [exports.genericTank],
+    BODY: {
+        FOV: base.FOV * 5,
+    },
+    CONTROLLERS: ['canRepel', 'onlyAcceptInArc', 'mapAltToFire', 'nearestDifferentMaster'], 
+    LABEL: '',
+    GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  10,    14,    -0.5,     9,      0,      0,      0,  ], 
+             }, {
+        POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
+               PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.lessreload, g.halfreload, g.halfreload, g.quadro_damage, g.double_damage, g.triple_damage, g.quadro_damage, g.quadro_damage]),
+                TYPE: exports.hypermissile,
+            },  },
+    ],
+};
   exports.xukmesbody1 = {
     PARENT: [exports.genericTank],
     LABEL: '',
     SHAPE: 5,
+    SKILL: setBuild("9999999999"),
+    COLOR: "#AF9720",
     CONTROLLERS: ['slowspin'],
     TURRETS: (()=> {
       var tr = []
       for (let i = 0.5; i < 5; i++) {
         tr.push({
-          
+          POSITION: [8, 8, 0, (360 * i) / 5, 180, 0],
+          TYPE: [exports.autoTurret, {PARENT: [exports.twin]}]
         })
       }
+      return tr
     })()
   }
-  return {}
+  exports.xukmesbody2 = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    SHAPE: 7,
+    SKILL: setBuild("9999999999"),
+    COLOR: "#AF9720",
+    CONTROLLERS: ['reverseslowspin'],
+    TURRETS: (()=> {
+      var tr = []
+      for (let i = 0.5; i < 7; i++) {
+        tr.push({
+          POSITION: [8, 8, 0, (360 * i) / 7, 180, 0],
+          TYPE: [exports.autoTurret, {PARENT: [exports.xukmesskimturret]}]
+        })
+      }
+      return tr
+    })()
+  }
+  return {
+    PARENT: [exports.miniboss],
+    LABEL: 'Celestial',
+    NAME: 'Xukmes',
+    COLOR: "#AF9720",
+    SHAPE: 9,
+    SIZE: 40,
+    VALUE: 1000000,
+    BODY: {
+        HEALTH: base.HEALTH * 15 * 4,
+        DAMAGE: base.DAMAGE * 4,
+        SPEED: 1.3
+    },
+    TURRETS: [
+        ...ctta,
+        {
+            POSITION: [15, 0, 0, 0, 360, 1],
+            TYPE: exports.xukmesbody2
+        },
+        {
+            POSITION: [9.5, 0, 0, 0, 360, 1],
+            TYPE: exports.xukmesbody1
+        }
+    ]
+  }
 })()
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.alviss, exports.tyr, exports.zaphkiel, exports.paladin, exports.freyja, exports.enyo, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.testbed2, exports.basic];
+exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.alviss, exports.tyr, exports.zaphkiel, exports.xukmes, exports.paladin, exports.freyja, exports.enyo, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.testbed2, exports.basic];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.dual, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.basic];
 
