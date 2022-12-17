@@ -11344,7 +11344,7 @@ exports.kronos = (() => {
       let output = [];
       for (let i = 0; i < 9; i++)
         output.push({
-          POSITION: [6, 9, 0, (360 / 9) * i + 360 / 18, 90, 0],
+          POSITION: [6, 9, 0, (360 / 9) * i + 360 / 18, 180, 0],
           TYPE: exports.kronosMissileTurret,
         });
       return output;
@@ -11409,7 +11409,7 @@ exports.kronos = (() => {
       let output = [];
       for (let i = 0; i < 7; i++)
         output.push({
-          POSITION: [8, 9, 0, (360 / 7) * i + 360 / 14, 90, 0],
+          POSITION: [6, 9, 0, (360 / 7) * i + 360 / 14, 180, 0],
           TYPE: exports.kronosCarrier,
         });
       return output;
@@ -11471,7 +11471,7 @@ exports.kronos = (() => {
       let output = [];
       for (let i = 0; i < 5; i++)
         output.push({
-          POSITION: [9, 8, 0, (360 / 5) * i + 360 / 10, 90, 0],
+          POSITION: [9, 8, 0, (360 / 5) * i + 360 / 10, 180, 0],
           TYPE: exports.kronosTriplet,
         });
       return output;
@@ -11499,7 +11499,7 @@ exports.kronos = (() => {
           TYPE: exports.kronosMissileBody,
         },
         {
-          POSITION: [9, 0, 0, 0, 360, 1],
+          POSITION: [10, 0, 0, 0, 360, 1],
           TYPE: exports.kronosCarrierBody,
         },
         {
