@@ -11850,101 +11850,6 @@ exports.fiolnirSplitCruiser = {
     },
   ],
 };
-exports.fiolnirBeekeeperBody = {
-  PARENT: [exports.genericTank],
-  LABEL: "Fiolnir",
-  CONTROLLERS: ["spin"],
-  SHAPE: 5,
-  SIZE: 10,
-  COLOR: 17,
-  TURRETS: [
-    {
-      POSITION: [12, 7.5, 0, 180, 180, 0],
-      TYPE: [exports.fiolnirBeekeeper, { COLOR: 17 }],
-    },
-    {
-      POSITION: [12, 7.5, 0, 108, 180, 0],
-      TYPE: [exports.fiolnirBeekeeper, { COLOR: 17 }],
-    },
-    {
-      POSITION: [12, 7.5, 0, 35, 180, 0],
-      TYPE: [exports.fiolnirBeekeeper, { COLOR: 17 }],
-    },
-    {
-      POSITION: [12, 7.5, 0, -35, 180, 0],
-      TYPE: [exports.fiolnirBeekeeper, { COLOR: 17 }],
-    },
-    {
-      POSITION: [12, 7.5, 0, -108, 180, 0],
-      TYPE: [exports.fiolnirBeekeeper, { COLOR: 17 }],
-    },
-  ],
-};
-exports.fiolnirSplitCruiserBody = {
-  PARENT: [exports.genericTank],
-  LABEL: "Fiolnir",
-  SHAPE: 7,
-  CONTROLLERS: ["reversespin"],
-  SIZE: 13,
-  COLOR: 17,
-  TURRETS: [
-    {
-      POSITION: [7, 9, 0, 180, 180, 0],
-      TYPE: [exports.fiolnirSplitCruiser, { COLOR: 17 }],
-    },
-    {
-      POSITION: [7, 9, 0, 129, 180, 0],
-      TYPE: [exports.fiolnirSplitCruiser, { COLOR: 17 }],
-    },
-    {
-      POSITION: [7, 9, 0, 77.5, 180, 0],
-      TYPE: [exports.fiolnirSplitCruiser, { COLOR: 17 }],
-    },
-    {
-      POSITION: [7, 9, 0, 26, 180, 0],
-      TYPE: [exports.fiolnirSplitCruiser, { COLOR: 17 }],
-    },
-    {
-      POSITION: [7, 9, 0, -26, 180, 0],
-      TYPE: [exports.fiolnirSplitCruiser, { COLOR: 17 }],
-    },
-    {
-      POSITION: [7, 9, 0, -77.5, 180, 0],
-      TYPE: [exports.fiolnirSplitCruiser, { COLOR: 17 }],
-    },
-    {
-      POSITION: [7, 9, 0, -129, 180, 0],
-      TYPE: [exports.fiolnirSplitCruiser, { COLOR: 17 }],
-    },
-  ],
-};
-exports.fiolnir = {
-  PARENT: [exports.miniboss],
-  LABEL: "Rogue Celestial",
-  NAME: "Fiolnir",
-  VALUE: 1000000,
-  SIZE: 50,
-  BODY: {
-    HEALTH: base.HEALTH * 15 * 2,
-    DAMAGE: base.DAMAGE * 5,
-    SPEED: 1.2
-  },
-  COLOR: 17,
-  SHAPE: 9,
-  TURRETS: [
-    ...ctta,
-    {
-      POSITION: [14, 0, 0, 0, 360, 1],
-      TYPE: exports.fiolnirSplitCruiserBody,
-      COLOR: 17,
-    },
-    {
-      POSITION: [9, 0, 0, 0, 360, 1],
-      TYPE: exports.fiolnirBeekeeperBody,
-      COLOR: 17,
-    },
-  ],
-};
 exports.alvisseggswarm = {
   PARENT: [exports.swarm],
   SHAPE: 0,
@@ -11980,10 +11885,11 @@ exports.alvissturret1 = {
           g.pound,
           g.destroy,
           g.anni,
-          g.celestialSkim,
           g.power,
           g.double_damage,
-          g.double_damage
+          g.double_damage,
+          g.quadro_damage,
+          g.triple_damage
         ]),
         TYPE: exports.alvissmissile,
       },
@@ -12006,7 +11912,7 @@ exports.alvissturret2 = {
 exports.alvissbody1 = {
   PARENT: [exports.genericTank],
   LABEL: "",
-  CONTROLLERS: ["spin"],
+  CONTROLLERS: ["slowspin"],
   SHAPE: 5,
   COLOR: 17,
   TURRETS: [
@@ -12035,7 +11941,7 @@ exports.alvissbody1 = {
 exports.alvissbody2 = {
   PARENT: [exports.genericTank],
   LABEL: "",
-  CONTROLLERS: ["reversespin"],
+  CONTROLLERS: ["reverseslowspin"],
   SHAPE: 7,
   COLOR: 17,
   TURRETS: [
@@ -12141,7 +12047,7 @@ exports.tyrbody1 = {
   LABEL: '',
   SHAPE: 5,
   COLOR: 17,
-  CONTROLLERS: ['spin'],
+  CONTROLLERS: ['slowspin'],
   TURRETS: []
 }
 for (let i = 0; i < 5; i++) {
@@ -12155,7 +12061,7 @@ exports.tyrbody2 = {
   LABEL: '',
   SHAPE: 7,
   COLOR: 17,
-  CONTROLLERS: ['reversespin'],
+  CONTROLLERS: ['reverseslowspin'],
   TURRETS: []
 }
 for (let i = 0; i < 7; i++) {
@@ -12201,7 +12107,7 @@ exports.zaphkielskimturret = {
              }, {
         POSITION: [  17,    15,      1,      0,      0,      0,      0,  ], 
                PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.lessreload, g.quadro_damage, g.double_damage, g.quadro_damage, g.quadro_damage]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.halfreload, g.halfreload, g.lessreload, g.quadro_damage, g.double_damage, g.triple_damage, g.quadro_damage, g.quadro_damage]),
                 TYPE: exports.hypermissile,
             },  },
     ],
@@ -12600,7 +12506,7 @@ exports.enyo = (() => {
 // UPGRADE PATHS
 
 //testbed/betatester stuff
-exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.fiolnir, exports.alviss, exports.tyr, exports.zaphkiel, exports.paladin, exports.freyja, exports.enyo, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.testbed2, exports.basic];
+exports.testbed.UPGRADES_TIER_1 = [exports.kronos, exports.ragnarok, exports.alviss, exports.tyr, exports.zaphkiel, exports.paladin, exports.freyja, exports.enyo, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.testbed2, exports.basic];
 
 exports.betatester.UPGRADES_TIER_1 = [exports.dual, exports.nestKeeper, exports.elite_battleship, exports.elite_destroyer, exports.elite_gunner, exports.elite_sprayer, exports.basic];
 
