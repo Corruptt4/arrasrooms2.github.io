@@ -16,6 +16,7 @@ function generateWaves() {
         bosses = bosses.sort(() => 0.5 - Math.random());
         waves.push(wave);
     }
+    
     return waves;
 };
 const bossRush = (function() {

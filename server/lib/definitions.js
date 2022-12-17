@@ -12605,6 +12605,7 @@ exports.thedisease = (() => {
    exports.tdminion = {
      PARENT: [exports.minion],
      SHAPE: 4,
+     MAX_CHILDREN: 8,
      FACING_TYPE: 'fastspin',
      BODY: {
       HEALTH: 20,
@@ -12710,7 +12711,8 @@ exports.thedisease = (() => {
            POSITION: [   2,     5,      1,      13.5,   0,      (360 * i) / 8,      0,   ], 
                PROPERTIES: {
                    SHOOT_SETTINGS: combineStats([g.factory]),
-                   TYPE: exports.tdminion,   
+                   TYPE: exports.tdminion,
+                   MAX_CHILDREN: 1
                }, }, {                        
            POSITION: [   4,     5,      1,      8,      0,      (360 * i) / 8,      0,   ], 
         })

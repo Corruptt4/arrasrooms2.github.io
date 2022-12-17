@@ -1,3 +1,10 @@
+# Update(12/17/2022)
+- Added The Disease (Credits to Dwajl)
+- A Boss with celestial health and body damage but all its layers has 8 sides (insted of themain body which has 12 sides)
+- first layer has 4 sunchip spawners that deal 2x damage
+- 2nd has 4 twin turrets and 4 ranger turrets
+- and final has 8 factory guns
+
 # Update (12/17/2022)
 - Bosses now orbit around sanctuaries at further distance to let Eternals not ram the sanctuaries.
 - Added Xumes, a new Celestial.
