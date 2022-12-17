@@ -79,8 +79,8 @@ const bossRush = (function() {
         o.controllers.push(new ioTypes.nearestDifferentMaster(o));
         o.controllers.push(new ioTypes.botMovement(o));
     };
-    let maxSanctuaries = 0;
-    let sanctuaries = 0;
+    let maxSanctuaries = 4;
+    let sanctuaries = 4;
     let spawn = (loc, team, type = false) => {
         type = type ? type : Class.destroyerDominator;
         let o = new Entity(loc);

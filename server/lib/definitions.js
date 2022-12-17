@@ -11889,7 +11889,6 @@ exports.alvissturret1 = {
           g.double_damage,
           g.double_damage,
           g.quadro_damage,
-          g.triple_damage
         ]),
         TYPE: exports.alvissmissile,
       },
@@ -12337,7 +12336,9 @@ exports.freyjacruiser = {
           g.quadro_damage,
           g.turret,
           g.double_damage,
-          g.power
+          g.power,
+          g.doublereload,
+          g.doublereload
         ]),
         TYPE: exports.swarm,
         STAT_CALCULATOR: gunCalcNames.swarm,
@@ -12355,7 +12356,9 @@ exports.freyjacruiser = {
           g.quadro_damage,
           g.turret,
           g.double_damage,
-          g.power
+          g.power,
+          g.doublereload,
+          g.doublereload
         ]),
         TYPE: exports.swarm,
         STAT_CALCULATOR: gunCalcNames.swarm,
