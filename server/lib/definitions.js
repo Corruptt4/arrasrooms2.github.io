@@ -12610,11 +12610,11 @@ exports.thedisease = (() => {
       HEALTH: 20,
       DAMAGE: 7.5,
       FOV: 2.25
-    },
+     },
      COLOR: "#cbc73cff",
      GUNS: (()=> {
        var gs = []
-       exports.overlord.GUNS.push(e => {
+       exports.overlord.GUNS.forEach(e => {
          gs.push({
            POSITION: [
              e.POSITION[0],
@@ -12705,17 +12705,14 @@ exports.thedisease = (() => {
       var gs = []
       for (let i = 0; i < 8; i++) {
         gs.push({
-           POSITION: [   5,     11,      1,      10.5,   0,      0,      0,   ], 
+           POSITION: [   5,     3,      1,      8.5,   0,      (360 * i) / 8,      0,   ], 
                }, {
-           POSITION: [   2,     14,      1,      15.5,   0,      0,      0,   ], 
+           POSITION: [   2,     5,      1,      13.5,   0,      (360 * i) / 8,      0,   ], 
                PROPERTIES: {
                    SHOOT_SETTINGS: combineStats([g.factory]),
-                   TYPE: exports.tdminion,
-                   STAT_CALCULATOR: gunCalcNames.drone,                        
-                   AUTOFIRE: true,
-                   SYNCS_SKILLS: true,   
+                   TYPE: exports.tdminion,   
                }, }, {                        
-           POSITION: [   4,     14,      1,      8,      0,      0,      0,   ], 
+           POSITION: [   4,     5,      1,      8,      0,      (360 * i) / 8,      0,   ], 
         })
       }
       return gs
