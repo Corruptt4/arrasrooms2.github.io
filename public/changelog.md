@@ -4,6 +4,15 @@
 - first layer has 4 sunchip spawners that deal 2x damage
 - 2nd has 4 twin turrets and 4 ranger turrets
 - and final has 8 factory guns
+- if there are equal or over 7 
+it will be class 5 difficulty (hard) 
+if over 5
+or equal
+it will be class 4 difficulty (Intermediete) 
+if over or equal to 3
+it will be class 2 difficulty (Novice)
+if 1 or 2
+it will be class 1 difficulty (Easy)
 
 # Update (12/17/2022)
 - Bosses now orbit around sanctuaries at further distance to let Eternals not ram the sanctuaries.

@@ -64,6 +64,15 @@ const bossRush = (function() {
         } else {
             sockets.broadcast("Wave " + (index + 1) + " has arrived!");
         }
+        if (bosses.length >= 5) {
+          sockets.broadcast("Class 4 Dificulty. (Intermediate)")
+        } else if (bosses.length >= 7) {
+          sockets.broadcast("Class 5 Dificulty. (Hard)")
+        } else if (bosses.length >= 3) {
+          sockets.broadcast("Class 2 Dificulty. (Novice)")
+        } else if (bosses.length >= 1) {
+          sockets.broadcast("Class 1 Dificulty. (Easy)")
+        }
     }
     function spawnMothership() {
         return;
