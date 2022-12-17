@@ -97,16 +97,9 @@ const bossRush = (function() {
                 sockets.broadcast("A dominator has been captured by BLUE!");
                 o.define(type)
             } else {
-                let e = new Entity(loc)
-                e.team = team;
-                e.color = -100;
-                e.skill.score = 111069;
-                e.name = "Dominator";
-                e.SIZE = c.WIDTH / c.X_GRID / 10;
-                e.isDominator = true;
-                e.controllers = [new ioTypes.nearestDifferentMaster(o), new ioTypes.spinWhenIdle(o)];
-                sockets.broadcast("A dominator has been captured by the bosses!");
-                o.define(Class.dominator)
+                spawn(loc, -100, Class.dominator)
+                room.setType("dom0", loc);
+                sockets.broadcast("A dominator has been captured by Bosses!");
             }
         };
     };
