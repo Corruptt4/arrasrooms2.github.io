@@ -1546,15 +1546,42 @@ exports.basic = {
                 }, 
             ],
         };
-exports.betatester = {
+exports.testbedprt = {
             PARENT: [exports.genericTank],
-            LABEL: 'Beta Tester',
-            INVISIBLE: [],
+            LABEL: '',
+            RESET_UPGRADES: true,
+            SKILL: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+            LEVEL: -1,
+          SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
+          INVISIBLE: [],
+    BODY: {
+        ACCELERATION: 1,
+        SPEED: 10,
+        HEALTH: 1,
+        RESIST: 1,
+        SHIELD: 0,
+        REGEN: 0,
+        DAMAGE: 1,
+        PENETRATION: 1,
+        RANGE: 0,
+        FOV: 2,
+        DENSITY: 1,
+        STEALTH: 1,
+        PUSHABILITY: 1,        
+        HETERO: 2,
+    },    
             TURRETS: [],
             GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
                 POSITION: [  18,    10,    -1.4,     0,      0,      0,      0,   ], 
-                }, 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.op]),
+                    TYPE: exports.bullet,
+                }, }, 
             ],
+        };
+exports.betatester = {
+            PARENT: [exports.testbedprt],
+            LABEL: 'Beta Tester',
         };
 exports.betatester2 = {
             PARENT: [exports.genericTank],
