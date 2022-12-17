@@ -12591,6 +12591,47 @@ exports.xukmes = (() => {
     ]
   }
 })()
+exports.thedisease = (() => {
+  exports.minion = {
+    PARENT: [exports.overlord],
+    CONTROLLERS: ['minion', 'canRepel', 'nearestDifferentMaster'],
+    SHAPE: 4,
+    FACING_TYPE: 'fastspin',
+    BODY: {
+      HEALTH: 20,
+      DAMAGE: 7.5,
+      FOV: 2.25
+    },
+    COLOR: "#cbc73cff"
+  },
+  exports.body1 = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    SHAPE: 8,
+    CONTROLLERS: ['slowspin'],
+    SKILL: setBuild("9999999999"),
+    GUNS: (()=> {
+      var gs = []
+      for (let i = 1; i < 4; i++) {
+        gs.push({
+          POSITION: [11, 8, 1.3, 0, 0, (360 * i) / 4, 0],
+          PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.sunchip, g.double_damage, g.double_reload, g.morereload])
+          }
+        })
+      }
+    })
+  }
+  return {
+    PARENT: [exports.miniboss],
+    LABEL: 'The Disease',
+    NAME: 'The Disease',
+    BODY: {
+      HEALTH: 3000,
+      DAMAGE: 10
+    }
+  }
+})()
 // UPGRADE PATHS
 
 //testbed/betatester stuff
