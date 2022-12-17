@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="Arrasrooms is a new backrooms. Welcome to your worst nightmare.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:image" content="https://cdn.glitch.global/066ba826-ca6f-4b05-8161-4c0e906c4e32/6796bbeb-0121-4ace-bf9a-b0f6812522db.image.png?v=1670695025627">
+    <meta property="og:image:width" content="54">
+    <meta property="og:image:height" content="54">
+    <title>Arrasrooms</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700">
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.glitch.global/066ba826-ca6f-4b05-8161-4c0e906c4e32/6796bbeb-0121-4ace-bf9a-b0f6812522db.image.png?v=1670695025627">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.global/066ba826-ca6f-4b05-8161-4c0e906c4e32/6796bbeb-0121-4ace-bf9a-b0f6812522db.image.png?v=1670695025627">
+    <link rel="manifest" href="/lib/json/manifest.json">
+    <meta name="msapplication-TileColor" content="#FF7700">
+    <meta name="theme-color" content="#FF7700">
+</head>
+
+<body oncontextmenu="return false" id="mainBody">
+    <div id="gameAreaWrapper">
+        <canvas id="gameCanvas" tabindex="1"></canvas>
+    </div>
+    <div id="mainWrapper">
+        <div id="startMenuWrapper">
+            <div id="startMenu">
+                <div id="twitterHolder" class="startMenuHolder">
+                  Whats supposed to go here again?
+                </div>
+                <div class="startMenuHolder">
+                    <div class="sliderHolder">
+                        <div class="slider" id="startMenuSlidingContent">
+                            <center><img src="https://cdn.glitch.global/066ba826-ca6f-4b05-8161-4c0e906c4e32/6796bbeb-0121-4ace-bf9a-b0f6812522db.image.png?v=1670695025627" /></center>
+                            <h1 id="gameName">Arrasrooms</h1>
+                            <div id="serverName">
+                                <h4 class="nopadding">Connecting...</h4>
+                            </div>
+                            <table id="serverSelector" style="display:none;"></table>
+                            <input type="text" autofocus tabindex="1" spellcheck="false" placeholder="Your name?" id="playerNameInput" maxlength="100" />
+                            <input type="text" class="conceal" tabindex="3" placeholder="Token required." id="playerKeyInput" maxlength="64" />
+                        </div>
+                        <div class="slider" id="startMenuSlidingTrigger">
+                            <h3 class="nopadding">view options/help 🡲</h3>
+                        </div>
+                        <div class="slider">
+                            <br>
+                            <options_header>Advanced Controls:</options_header><br>
+                            <table>
+                                <tr>
+                                    <td><b>E</b>: auto-fire</td>
+                                    <td><b>C</b>: auto-spin</td>
+                                </tr>
+                                <tr>
+                                    <td><b>R</b>: disable auto-weapons</td>
+                                    <td><b>N</b>: level up (sandbox)</td>
+                                </tr>
+                            </table>
+                            <options_header>Options:</options_header>
+                            <select id="optColors" tabindex="-1">
+                                <option value="normal">Light Colors</option>
+                                <option value="dark">Dark Colors</option>
+                                <option value="natural">Natural</option>
+                                <option value="classic">Classic</option>
+                                <option value="forest">Forest (Fan-made)</option>
+                                <option value="midnight">Midnight (Fan-made)</option>
+                                <option value="pastel">Snow (Fan-made)</option>
+                                <option value="ocean">Coral Reef (Fan-made)</option>
+                                <option value="badlands">Badlands (Fan-made)</option>
+                                <option value="bleach">Bleach (Fan-made)</option>
+                            </select>
+                            <select id="optMobile" tabindex="-1">
+                            <option value="joysticks">Joysticks</option>
+                            <option value="desktop">Desktop</option>
+                          </select>
+                            <select id="optBorders" tabindex="-1">
+                                <option value="normal">Soft Borders</option>
+                                <option value="dark">Dark Borders</option>
+                                <option value="neon">Neon Mode</option>
+                                <option value="glass">Glass Mode</option>
+                            </select>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <label><input id="optScreenshotMode" tabindex="-1" class="checkbox" type="checkbox"> Screenshot Mode</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <label><input id="optNoPointy" tabindex="-1" class="checkbox" type="checkbox" > Pointy Traps</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <label><input id="optFancy" tabindex="-1" class="checkbox" type="checkbox"> Low Graphics</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <label><input id="optPredictive" tabindex="-1" class="checkbox" type="checkbox"> Disable Hyperactivity</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <label><input id="coloredHealthbars" tabindex="-1" class="checkbox" type="checkbox" > Green Health Bars</label>
+                                        </div>
+                                    </td>
+                                  
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="position: relative; bottom: -10px;">
+                        <button id="startButton" tabindex="2">Play</button>
+                    </div>
+                </div>
+                <div class="startMenuHolder shrinkable">
+                    <span class="titleSpan">Changelog</span>
+                    <div id="patchNotes" class="shadowScroll"></div>
+                </div>
+                <div id="bottomHolder">
+                    <h5 class="nopadding" style="margin:0; display:inline">Contact us</h5>
+                    <form action="https://discord.gg/au63xsws" method="post" target="_top">
+                        <input id="pledge" type="submit" value="Discord Server!">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JS -->
+    <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script type="module" src="./lib/config.js"></script>
+    <script type="module" src="./lib/color.js"></script>
+    <script type="module" src="./lib/global.js"></script>
+    <script type="module" src="./lib/util.js"></script>
+    <script type="module" src="./lib/canvas.js"></script>
+    <script type="module" src="./lib/protocol.js"></script>
+    <script type="module" src="./lib/socketInit.js"></script>
+    <script type="module" src="./app.js"></script>
+    <script>
+        var clicked = true;
+        $("#startMenuSlidingTrigger").on('click', function() {
+            if (clicked) {
+                clicked = false;
+                $(this).html('<h3 class="nopadding">close options/help 🡶</h3>');
+                $(".slider").css({
+                    "top": "-265px"
+                })
+            } else {
+                clicked = true;
+                $(this).html('<h3 class="nopadding">view options/help 🡲</h3>');
+                $(".slider").css({
+                    "top": 0
+                });
+            }
+        });
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('/service-worker.js', {
+                scope: '/'
+            }).then(registration => console.log('Service Worker Registered'));
+        }
+    </script>
+</body>
+
+</html>
