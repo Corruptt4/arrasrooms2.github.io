@@ -97,14 +97,14 @@ const bossRush = (function() {
                 sockets.broadcast("A dominator has been captured by BLUE!");
                 o.define(type)
             } else {
-                let o = new Entity(loc)
-                o.team = team;
-                o.color = -100;
-                o.skill.score = 111069;
-                o.name = "Dominator";
-                o.SIZE = c.WIDTH / c.X_GRID / 10;
-                o.isDominator = true;
-                o.controllers = [new ioTypes.nearestDifferentMaster(o), new ioTypes.spinWhenIdle(o)];
+                let e = new Entity(loc)
+                e.team = team;
+                e.color = -100;
+                e.skill.score = 111069;
+                e.name = "Dominator";
+                e.SIZE = c.WIDTH / c.X_GRID / 10;
+                e.isDominator = true;
+                e.controllers = [new ioTypes.nearestDifferentMaster(o), new ioTypes.spinWhenIdle(o)];
                 sockets.broadcast("A dominator has been captured by the bosses!");
                 o.define(Class.dominator)
             }
