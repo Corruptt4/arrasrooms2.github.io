@@ -142,6 +142,9 @@ const bossRush = (function() {
         o.color = 10
         o.team = -1
         o.isMothership = true
+        o.controllers.push(new ioTypes.nearestDifferentMaster(o));
+        o.controllers.push(new ioTypes.mapTargetToGoal(o));
+        o.controllers.push(new ioTypes.canRepel(o))
         o.onDead = () => {
           let e = new Entity(loc)
           e.define(Class.mothership)
@@ -150,6 +153,7 @@ const bossRush = (function() {
           e.isMothership = true
           e.controllers.push(new ioTypes.nearestDifferentMaster(e));
           e.controllers.push(new ioTypes.mapTargetToGoal(e));
+          o.controllers.push(new ioTypes.canRepel(e))
           e.onDead = o.onDead
           o = e
         }

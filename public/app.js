@@ -893,6 +893,7 @@ import * as socketStuff from "./lib/socketInit.js";
             context.fill();
           }
         }
+      
         // The big drawing function
         return (x, y, instance, ratio, alpha = 1, scale = 1, rot = 0, turretsObeyRot = false, assignedContext = false, turretInfo = false, render = instance.render) => {
             let context = (assignedContext) ? assignedContext : ctx;

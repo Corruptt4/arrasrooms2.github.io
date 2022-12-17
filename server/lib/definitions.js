@@ -585,6 +585,10 @@ exports.bullet = {
     // DIE_AT_LOW_SPEED: true,
     DIE_AT_RANGE: true,
 };
+exports.lrbullet = {
+  PARENT: [exports.bullet],
+  LAYER: 12,
+}
     exports.casing = {
         PARENT: [exports.bullet],
         LABEL: 'Shell',
@@ -1527,7 +1531,7 @@ exports.basic = {
             MAX_CHILDREN: 0,            // def  
             ALT_FIRE: false,            // def 
             NEGATIVE_RECOIL: false,     // def
-            SKIN: 0,                    // def
+            SKIN: 5,                    // def
         }, }, 
     ],
 };
@@ -11237,6 +11241,7 @@ exports.kronos = (() => {
   ];
   exports.kronosMissile = {
     PARENT: [exports.missile],
+    LAYER: 12,
     GUNS: [
       {
         /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
@@ -11366,7 +11371,7 @@ exports.kronos = (() => {
             g.carrier,
             g.kronosCarrier,
           ]),
-          TYPE: exports.swarm,
+          TYPE: [exports.swarm, {LAYER: 12}],
           STAT_CALCULATOR: gunCalcNames.swarm,
         },
       },
@@ -11379,7 +11384,7 @@ exports.kronos = (() => {
             g.carrier,
             g.kronosCarrier,
           ]),
-          TYPE: exports.swarm,
+          TYPE: [exports.swarm, {LAYER: 12}],
           STAT_CALCULATOR: gunCalcNames.swarm,
         },
       },
@@ -11392,7 +11397,7 @@ exports.kronos = (() => {
             g.carrier,
             g.kronosCarrier,
           ]),
-          TYPE: exports.swarm,
+          TYPE: [exports.swarm, {LAYER: 12}],
           STAT_CALCULATOR: gunCalcNames.swarm,
         },
       },
@@ -11430,7 +11435,7 @@ exports.kronos = (() => {
             g.triple,
             g.kronosTriplet,
           ]),
-          TYPE: exports.bullet,
+          TYPE: exports.lrbullet,
         },
       },
       {
@@ -11442,7 +11447,7 @@ exports.kronos = (() => {
             g.triple,
             g.kronosTriplet,
           ]),
-          TYPE: exports.bullet,
+          TYPE: exports.lrbullet,
         },
       },
       {
@@ -11455,7 +11460,7 @@ exports.kronos = (() => {
             g.kronosTriplet,
             g.mach,
           ]),
-          TYPE: exports.bullet,
+          TYPE: exports.lrbullet,
         },
       },
     ],
