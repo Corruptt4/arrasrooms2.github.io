@@ -95,10 +95,12 @@ const bossRush = (function() {
                 spawn(loc, -1, type);
                 room.setType("dom1", loc);
                 sockets.broadcast("A dominator has been captured by BLUE!");
+                o.define(type)
             } else {
                 spawn(loc, -100, type);
                 room.setType("dom0", loc);
                 sockets.broadcast("A dominator has been captured by the bosses!");
+                o.define(Class.dominator)
             }
         };
     };
