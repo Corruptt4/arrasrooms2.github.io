@@ -1,0 +1,43 @@
+[
+  {
+    "key": "TOKEN_49-02_839_42S_TOKEN",
+    "discordID": "1015718882423607316",
+    "nameColor": "#FFF000", 
+    "testbedTank": "testbed",
+    "startingTank": "basic",
+    "name": "Tricky#3337",
+    "note": "Owner"
+  },
+  {
+    "key": "200_mark",
+    "testbedTank": "testbed",
+    "startingTank": "basic"
+ },
+  {
+    "key": "TOKEN_A[{}82.A{_=UA_TOKEN",
+    "discordID": "698466605851738153",
+    "nameColor": "#FFF000", 
+    "testbedTank": "betatester",
+    "startingTank": "basic",
+    "name": "LA3T#4868",
+    "note": "Beta Tester"
+  },
+  {
+    "key": "TOKEN_A[]42;'[9=}23_TOKEN",
+    "discordID": "",
+    "nameColor": "#FFF000", 
+    "testbedTank": "punishment",
+    "startingTank": "basic",
+    "name": "COMOTUS#3764",
+    "note": "Beta Tester"
+  },
+  {
+    "key": "TOKEN_659E235",
+    "discordID": "1043860615497781259",
+    "nameColor": "#ff5900", 
+    "testbedTank": "testbed",
+    "startingTank": "basic",
+    "name": "darealpecoka#7207",
+    "note": "Owner's Friend"
+  }
+]

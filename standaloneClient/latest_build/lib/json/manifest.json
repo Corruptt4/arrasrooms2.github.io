@@ -1,0 +1,15 @@
+{
+    "name": "arras.io",
+    "theme_color": "#FF7700",
+    "background_color": "#484948",
+    "description": "carrassot is a mod of arras.io, it adds new custom tanks, a boss to fight at the center, insane custom shapes, an much more!",
+    "orientation": "landscape",
+    "start_url": "/",
+    "scope": "/",
+    "display": "fullscreen",
+    "icons": [{
+        "src": "https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrassot.png?v=1653855270220",
+        "sizes": "192x192",
+        "type": "image/png"
+    }]
+}

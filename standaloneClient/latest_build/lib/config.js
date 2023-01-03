@@ -1,0 +1,1 @@
+const config={graphical:{screenshotMode:!1,borderChunk:5,barChunk:4,mininumBorderChunk:3,deathBlurAmount:3,darkBorders:!1,fancyAnimations:!0,colors:"normal",pointy:!0,fontSizeBoost:1.4,fontStrokeRatio:4.5,neon:!1,coloredHealthbars:!1},gui:{expectedMaxSkillLevel:9},lag:{unresponsive:!1,memory:60}};export{config};
