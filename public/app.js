@@ -163,6 +163,14 @@ import * as socketStuff from "./lib/socketInit.js";
             return color.guiblack;
         case 36:
             return getRainbow("#ff1000 #ff9000 #ffd300 #00e00b #226ef6 #a913cf".split(" ")[Math.floor(Date.now() / 200 % 6)], "#ff9000 #ffd300 #00e00b #226ef6 #a913cf #ff1000".split(" ")[Math.floor(Date.now() / 200 % 6)], Date.now() / 200 % 1);
+        case 37:
+            return "#44F5F2";
+        case 38:
+            return "#33A3F1";
+        case 39:
+            return "#33F912";
+        case 40:
+            return "#adff2f";
         default:
             return '#FF0000';
         }
@@ -886,7 +894,7 @@ import * as socketStuff from "./lib/socketInit.js";
             context.beginPath();
             //context.lineTo(x + l[0] * Math.cos(angle + r[0]), y + l[0] * Math.sin(angle + r[0]));
             let BALLS = height*Math.PI/180
-            ctx.moveTo(x + l[1] * Math.cos(angle + Math.PI), y + l[1] * Math.sin(angle + Math.PI));
+            context.beginPath()
             context.arc(x + l[1] * Math.cos(angle + Math.PI), y + l[1] * Math.sin(angle + Math.PI), length*4, -BALLS/2+angle, BALLS/2+angle);
             context.closePath();
             context.stroke();
@@ -898,9 +906,10 @@ import * as socketStuff from "./lib/socketInit.js";
                 Math.sqrt(length * length + h[0] * h[0]),
                 Math.sqrt(length * length + h[1] * h[1])
             ];
-            let baller = height*Math.PI/90
+            let baller = height*Math.PI/240
             ctx.moveTo(x + l[1] * Math.cos(angle + Math.PI), y + l[1] * Math.sin(angle + Math.PI));
-            context.arc(x + l[1] * Math.cos(angle / Math.PI), y + l[1] * Math.sin(angle + baller), length*4, -baller/2+angle, baller/2+angle)
+            context.lineTo(x + l[1] * Math.cos(angle + Math.PI), y + l[1] * Math.sin(angle + baller), length*4, -baller/2+angle, baller/2+angle)
+            context.lineTo(x + l[1] * Math.cos(angle - Math.PI), y + l[1] * Math.sin(angle + baller), length*4, -baller/2+angle, baller/2+angle)
             context.closePath()
             context.fill()
             context.stroke()
@@ -1731,14 +1740,14 @@ import * as socketStuff from "./lib/socketInit.js";
                 if (!global.showDebug) y += 14 * 3;
                 // Text
                 if (global.showDebug) {
-                    text.debug[5].draw('arrasrooms.glitch.me', x + len, y - 50 - (5 * 14) - 2, 15, "#FFF000", 'right');
+                    text.debug[5].draw('arrasbrokenreality.glitch.me', x + len, y - 50 - (5 * 14) - 2, 15, "#FFF000", 'right');
                     text.debug[4].draw('Prediction: ' + Math.round(GRAPHDATA) + 'ms', x + len, y - 50 - 4 * 14, 10, color.guiwhite, 'right');
                     text.debug[3].draw(`Bandwidth: ${gui.bandwidth.in} in, ${gui.bandwidth.out} out`, x + len, y - 50 - 3 * 14, 10, color.guiwhite, 'right');
                     text.debug[2].draw('Update Rate: ' + global.metrics.updatetime + 'Hz', x + len, y - 50 - 2 * 14, 10, color.guiwhite, 'right');
                     text.debug[1].draw((100 * gui.fps).toFixed(2) + '% : ' + global.metrics.rendertime + " FPS", x + len, y - 50 - 1 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, 'right');
                     text.debug[0].draw(global.metrics.latency + " ms - " + global.serverName, x + len, y - 50, 10, color.guiwhite, 'right');
                 } else {
-                    text.debug[2].draw('arrasrooms.glitch.me', x + len, y - 50 - (2 * 14) - 2, 15, "#F0FF0F", 'right');
+                    text.debug[2].draw('arrasbrokenreality.glitch.me', x + len, y - 50 - (2 * 14) - 2, 15, "#F0FF0F", 'right');
                     text.debug[1].draw((100 * gui.fps).toFixed(2) + '% : ' + global.metrics.rendertime + " FPS", x + len, y - 50 - 1 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, 'right');
                     text.debug[0].draw(global.metrics.latency + " ms : " + global.metrics.updatetime + "Hz", x + len, y - 50, 10, color.guiwhite, 'right');
                 }
@@ -2007,7 +2016,7 @@ import * as socketStuff from "./lib/socketInit.js";
                 xx = global.screenWidth / 2 - scale * position.middle.x * 0.707,
                 yy = global.screenHeight / 2 - 35 + scale * position.middle.x * 0.707;
             drawEntity((xx - 190 - len / 2) + .5 | 0, (yy - 10) + .5 | 0, picture, 1.5, 1, 0.5 * scale / picture.realSize, -Math.PI / 4, true);
-            text.taunt.draw('GET TROLLED IDIOT', x, y - 80, 8, color.guiwhite, 'center');
+            text.taunt.draw('Died by mistake? Or for something?', x, y - 80, 8, color.guiwhite, 'center');
             //text.taunt.draw(' By the way, you can press "~" or "`" to access custom tanks!', x, y - 80, 8, color.guiwhite, 'center');
             text.level.draw('Level ' + gui.__s.getLevel() + ' ' + global.mockups[gui.type].name + '.', x - 170, y - 30, 24, color.guiwhite);
             //text.score.draw('Final score: ' + util.formatLargeNumber(Math.round(global.finalScore.get())), x - 170, y + 25, 50, color.guiwhite);

@@ -3,16 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="description" content="Arrasrooms is a new backrooms. Welcome to your worst nightmare.">
+    <meta name="description" content="carrassot is a mod of arras.io, it adds new custom tanks, a boss to fight at the center, insane custom shapes, an much more!">
     <meta name="robots" content="index, follow">
-    <meta property="og:image" content="https://cdn.glitch.global/066ba826-ca6f-4b05-8161-4c0e906c4e32/6796bbeb-0121-4ace-bf9a-b0f6812522db.image.png?v=1670695025627">
+    <meta property="og:image" content="https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrassot.png?v=1653855270220">
     <meta property="og:image:width" content="54">
     <meta property="og:image:height" content="54">
-    <title>Arrasrooms</title>
+    <title>carrassot</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700">
     <link rel="stylesheet" href="/main.css" />
-    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.glitch.global/066ba826-ca6f-4b05-8161-4c0e906c4e32/6796bbeb-0121-4ace-bf9a-b0f6812522db.image.png?v=1670695025627">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.glitch.global/066ba826-ca6f-4b05-8161-4c0e906c4e32/6796bbeb-0121-4ace-bf9a-b0f6812522db.image.png?v=1670695025627">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrassot.png?v=1653855270220">
     <link rel="manifest" href="/lib/json/manifest.json">
     <meta name="msapplication-TileColor" content="#FF7700">
     <meta name="theme-color" content="#FF7700">
@@ -31,13 +30,12 @@
                 <div class="startMenuHolder">
                     <div class="sliderHolder">
                         <div class="slider" id="startMenuSlidingContent">
-                            <center><img src="https://cdn.glitch.global/066ba826-ca6f-4b05-8161-4c0e906c4e32/6796bbeb-0121-4ace-bf9a-b0f6812522db.image.png?v=1670695025627" /></center>
-                            <h1 id="gameName">ArrasBackrooms</h1>
+                            <center><img src="https://cdn.glitch.global/5d8fe1d6-9e9a-4092-b336-15778a00cda4/carrassot96x96.png?v=1653855833916" /></center>
+                            <h1 id="gameName">carrassot</h1>
                             <div id="serverName">
                                 <h4 class="nopadding">Connecting...</h4>
                             </div>
-                            <table id="serverSelector" style="display:none;"></table>
-                            <input type="text" autofocus tabindex="1" spellcheck="false" placeholder="Your name?" id="playerNameInput" maxlength="100" />
+                            <input type="text" autofocus tabindex="1" spellcheck="false" placeholder="This is the tale of:" id="playerNameInput" maxlength="24" />
                             <input type="text" class="conceal" tabindex="3" placeholder="Token required." id="playerKeyInput" maxlength="64" />
                         </div>
                         <div class="slider" id="startMenuSlidingTrigger">
@@ -69,10 +67,6 @@
                                 <option value="badlands">Badlands (Fan-made)</option>
                                 <option value="bleach">Bleach (Fan-made)</option>
                             </select>
-                            <select id="optMobile" tabindex="-1">
-                            <option value="joysticks">Joysticks</option>
-                            <option value="desktop">Desktop</option>
-                          </select>
                             <select id="optBorders" tabindex="-1">
                                 <option value="normal">Soft Borders</option>
                                 <option value="dark">Dark Borders</option>
@@ -88,7 +82,7 @@
                                     </td>
                                     <td>
                                         <div>
-                                            <label><input id="optNoPointy" tabindex="-1" class="checkbox" type="checkbox" > Pointy Traps</label>
+                                            <label><input id="optNoPointy" tabindex="-1" class="checkbox" type="checkbox" checked> Classic Traps</label>
                                         </div>
                                     </td>
                                 </tr>
@@ -107,10 +101,9 @@
                                 <tr>
                                     <td>
                                         <div>
-                                            <label><input id="coloredHealthbars" tabindex="-1" class="checkbox" type="checkbox" > Green Health Bars</label>
+                                            <label><input id="coloredHealthbars" tabindex="-1" class="checkbox" type="checkbox" checked> Colored Health Bars</label>
                                         </div>
                                     </td>
-                                  
                                 </tr>
                             </table>
                         </div>
@@ -124,9 +117,15 @@
                     <div id="patchNotes" class="shadowScroll"></div>
                 </div>
                 <div id="bottomHolder">
-                    <h5 class="nopadding" style="margin:0; display:inline">Contact us</h5>
-                    <form action="https://discord.gg/vWnesBfS" method="post" target="_top">
-                        <input id="pledge" type="submit" value="Discord Server!">
+                    <h5 class="nopadding" style="margin:0; display:inline">Help support the dev: </h5>
+                    <form action="https://www.patreon.com/arras_dev" method="post" target="_top">
+                        <input id="pledge" type="submit" value="Patreon!">
+                    </form>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="YJ42X4KU6ETPA">
+                        <input id="donate" type="submit" value="Paypal!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                     </form>
                 </div>
             </div>

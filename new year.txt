@@ -1,0 +1,7 @@
+{
+    "key": "NEW_YEAR",
+    "testbedTank": "testbed",
+    "startingTank": "basic"
+},
+
+Hope 2023 will be best

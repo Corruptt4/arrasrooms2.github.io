@@ -1,3 +1,28 @@
+# Update (1/2/2023)
+- Siege Bots count is now 22
+- Bosses will loose health in boss room insted of regening it on damage
+- Added Glitchton (Credits to Lavamani#6876)
+
+# Update (12/30/2022)
+- Added Pentamancer
+- Added some helpers to deal with bosses (big smashers)
+- Added Elite Rifle
+
+# Update (12/25/2022)
+- Christmas update!
+- Added spiky (Spawns as obstacles)
+- For who that thinks spiky will make siege harder
+- Added Cutter Spawner (This one spawns a giant cutter with lot of health)
+
+# Update (12/18/2022)
+- Changed sanctuary design with a flank turret for more defense
+
+# Update (12/18/2022)
+- Nerfed The Disease minions.
+- Added Magmaporous
+- Added Legionary Crasher
+- Added Zamolxis (A Semi Celestial)
+
 # Update(12/17/2022)
 - Added The Disease (Credits to Dwajl)
 - A Boss with celestial health and body damage but all its layers has 8 sides (insted of themain body which has 12 sides)
@@ -8,7 +33,7 @@
   it will be class 5 difficulty (hard) 
   if over 5
   or equal
-  it will be class 4 difficulty (Intermediete) 
+  it will be class 4 difficulty (Intermediete)
   if over or equal to 3
   it will be class 2 difficulty (Novice)
   if 1 or 2
