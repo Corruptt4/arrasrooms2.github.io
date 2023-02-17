@@ -2,42 +2,64 @@
   {
     "key": "TOKEN_49-02_839_42S_TOKEN",
     "discordID": "1015718882423607316",
-    "nameColor": "#FFF000", 
+    "nameColor": "#7ADBBC",
     "testbedTank": "testbed",
     "startingTank": "basic",
     "name": "Tricky#3337",
-    "note": "Owner"
+    "note": "Owner And Main Developer"
   },
-  {
-    "key": "200_mark",
-    "testbedTank": "testbed",
-    "startingTank": "basic"
- },
   {
     "key": "TOKEN_A[{}82.A{_=UA_TOKEN",
     "discordID": "698466605851738153",
-    "nameColor": "#FFF000", 
+    "nameColor": "#FF3FF3",
     "testbedTank": "betatester",
     "startingTank": "basic",
     "name": "LA3T#4868",
     "note": "Beta Tester"
   },
   {
-    "key": "TOKEN_A[]42;'[9=}23_TOKEN",
-    "discordID": "",
-    "nameColor": "#FFF000", 
-    "testbedTank": "punishment",
+    "key": "TOKEN_659E235",
+    "discordID": "1043860615497781259",
+    "nameColor": "#00ff1e",
+    "testbedTank": "testbed",
     "startingTank": "basic",
-    "name": "COMOTUS#3764",
+    "name": "[GD] Pecoka#7207",
+    "note": "Friend"
+  },
+  {
+    "key": "TOKEN_9483",
+    "discordID": "977577145201197146",
+    "nameColor": "#FF4FF4",
+    "testbedTank": "testbed",
+    "startingTank": "basic",
+    "name": "Felix543#1336",
+    "note": "Developer And Friend"
+  },
+  {
+    "key": "TOKEN_9oopwp2{)2]=1_TOKEN",
+    "discordID": "1029915617668640828",
+    "nameColor": "#D4AF37",
+    "testbedTank": "betatester",
+    "startingTank": "basic",
+    "name": "cℍｅ𝕤𝔱𝕖г#9216",
     "note": "Beta Tester"
   },
   {
-    "key": "TOKEN_659E235",
-    "discordID": "1043860615497781259",
-    "nameColor": "#ff5900", 
+    "key": "TOKEN_4Sh6uZraSju$fM%_TOKEN",
+    "discordID": "900002636860911707",
+    "nameColor": "#FF0000",
     "testbedTank": "testbed",
     "startingTank": "basic",
-    "name": "darealpecoka#7207",
-    "note": "Owner's Friend"
+    "name": "asdf!!!!!!1#1621",
+    "note": "Asdf And Developer"
+  },
+  {
+    "key": "TOKEN_3Pd3a5e//s%sas_TOKEN",
+    "discordID": "1038454880471351366",
+    "nameColor": "#003d4f",
+    "testbedTank": "betatester",
+    "startingTank": "basic",
+    "name": "2014#1782",
+    "note": "Beta Tester"
   }
 ]

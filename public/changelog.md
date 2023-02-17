@@ -1,3 +1,63 @@
+# Update (2/17/2023)
+- Buffed pounder,destroyer,annihilator bullet health,pen,damage
+- Fixed the discord invite
+- Made the gamespeed a bit faster
+
+# Update (2/16/2023)
+- Upgrade Basic Bug Fixed
+- Food Rarety Per Tier
+
+# Update (2/15/2023)
+- Better Testbed Setup
+- Cursed Tank
+- Portal
+
+# Plans (2/15/2023)
+- Map size of 4000x16000
+- Rooms for each 4000x4000
+- Portal (Added)
+- Food to spawn in Respective rooms
+
+# Update (2/15/2023)
+- Reworked Food Score now it quadruples per level,
+- Square XP: 107
+- Triangle XP: 427
+- Pentagon XP: 1717
+
+# Update (2/11/2023)
+- Added Egger
+
+# Update (2/2/2023)
+- Removed skim turret from Glitchton minions.
+
+# Update (31/1/2023)
+- Added New Logo (pecoka)
+
+# Update(28/1/2023)
+- Added Elite Spinner from arras.io
+
+# Update (24/1/2023)
+- Added Theia
+- Added Nyx
+- Now Beta Testers have access to Semi-Celestials
+
+# Update (24/1/2023)
+- Added Square Cluster,
+- Food can colide with themselves
+
+# Update (23/1/2023)
+- Remade arras.io Big Cheese tank
+
+# Update (21/1/2023)
+- Nerfed Ganymede 2nd layer reload speed
+
+# Update (21/1/2023)
+- Added Ridan (Creidits to !Attakante#8485)
+- Added Ridan's ling celestial (Ganymede)
+
+# Update (16/1/2023)
+- Added Trimurti
+
 # Update (1/2/2023)
 - Siege Bots count is now 22
 - Bosses will loose health in boss room insted of regening it on damage

@@ -931,10 +931,11 @@ const sockets = (() => {
                     socket.camera.fov = 2000;
                     // Mark it as spawned
                     socket.status.hasSpawned = true;
-                    body.sendMessage('You have spawned! Welcome to the game.');
-                    body.sendMessage('Remember you can hold T to see the upgrade tree!');
+                    body.sendMessage('You have spawned! Welcome to the game, Arrasrooms.');
+                    body.sendMessage('Remember you can hold T to see the upgrade the tree!');
                     body.sendMessage('Custom tanks have a red background!');
                     body.sendMessage('You will be invulnerable until you move or shoot.');
+                    body.sendMessage('And Also There Is Instructions In This Link (https://arrasbrokenreality.glitch.me/instructions.md).');
                     //body.sendMessage('Press the "~" key or "`" key to access custom tanks!');
                     // Move the client camera
                     socket.talk('c', socket.camera.x, socket.camera.y, socket.camera.fov);

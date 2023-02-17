@@ -303,45 +303,7 @@ const maintainloop = (() => {
     for (let loc of room["maze"]) spawnWall(loc);
     for (let loc of room["wall"]) spawnWall(loc);
     // for (let loc of room["hyou"]) spawnHealer(loc);
-    // Spawning functions
-    let spawnBosses = (() => {
-        let timer = Math.round((c.bossSpawnInterval || 8) * 60); // It's in minutes
-        const selections = [{
-            bosses: [Class.elite_destroyer, Class.elite_sprayer, Class.elite_gunner],
-            location: "nest",
-            amount: [1, 3],
-            nameType: "a",
-            message: "Influx detected...",
-            chance: 2
-        }];
-        return (census) => {
-            if (!census.miniboss && !timer --) {
-                timer --;
-                const selection = selections[ran.chooseChance(...selections.map(selection => selection.chance))];
-                const amount = Math.floor(Math.random() * selection.amount[1]) + selection.amount[0];
-                sockets.broadcast(amount > 1 ? "Visitors are coming..." : "A visitor is coming...");
-                if (selection.message) {
-                    setTimeout(sockets.broadcast, 2500, selection.message);
-                }
-                setTimeout(() => {
-                    const names = ran.chooseBossName(selection.nameType, amount);
-                    sockets.broadcast(amount > 1 ? util.listify(names) + " have arrived!" : names[0] + " has arrived!");
-                    names.forEach((name, i) => {
-                        let spot, m = 0;
-                        do {
-                            spot = room.randomType(selection.location);
-                            m ++;
-                        } while (dirtyCheck(spot, 500) && m < 30);
-                        let boss = new Entity(spot);
-                        boss.name = name;
-                        boss.define(selection.bosses.sort(() => .5 - Math.random())[i % selection.bosses.length]);
-                        boss.team = -100;
-                    });
-                }, 5000);
-                timer = Math.round((c.bossSpawnInterval || 8) * 65); // 5 seconds due to spawning process
-            }
-        }
-    })();
+    // Spawning function
     /*let spawnBosses = (() => {
         let timer = 0;
         let boss = (() => {
@@ -505,8 +467,6 @@ const maintainloop = (() => {
         o.refreshBodyAttributes();
         o.color = color;
         o.fov = 10;
-        o.controllers.push(new ioTypes.bot(o));
-        o.controllers.push(new ioTypes.goto(o))
         if (room.gameMode === "tdm") o.team = -team;
         o.skill.score = 23500;
         o.isBot = true;
@@ -531,11 +491,12 @@ const maintainloop = (() => {
             o.define(Class.bot);
             o.define(Class[className]);
             o.refreshBodyAttributes();
-            o.controllers.push(new ioTypes.botMovement(o));
+            o.controllers.push(new ioTypes.bot(o));
             o.name += botName;
+            o.fov = 10
             o.invuln = false;
             o.skill.set(set.build);
-        }, 3000 + (Math.floor(Math.random() * 7000)));
+        }, 1000 + (Math.floor(Math.random() * 2000)));
         return o;
     };
     if (c.SPACE_MODE) {
@@ -594,7 +555,6 @@ const maintainloop = (() => {
             });
             // Spawning
             spawnCrasher(census);
-            spawnBosses(census);
             //spawnSomething(census);
             //Healing Swarms
             // Bots
@@ -640,25 +600,16 @@ const maintainloop = (() => {
         const types = [
             new FoodType("Normal Food", [
                 Class.egg, Class.square, Class.triangle,
-                Class.pentagon, Class.bigPentagon
+                Class.pentagon, Class.bigPentagon, Class.alphaPentagon,
+                Class.galaPentagon
             ], ["scale", 4], 2000),
+            new FoodType("Rare Food", [
+              Class.nonagon, Class.decagon, Class.hendecagon, Class.dodecagon
+            ], ["scale", 4], 2)
           
             //new FoodType("Misc Food", [
             //    Class.healFruit
             //], ["scale", 4], 500),
-          
-            new FoodType("Rare Food", [
-                Class.gem, Class.greensquare, Class.greentriangle,
-                Class.greenpentagon
-            ], ["scale", 5], 1),
-            new FoodType("Rare Food 2", [
-                Class.star
-            ], ["scale", 5], 10),
-            new FoodType("Nest Food", [
-                Class.pentagon, Class.bigPentagon, Class.hugePentagon, Class.galaPentagon, Class.greenpentagon
-                /*Class.alphaHexagon, Class.alphaHeptagon, Class.alphaOctogon,
-                Class.alphaNonagon, Class.alphaDecagon, Class.icosagon*/ // Commented out because stats aren't done yet.
-            ], ["scale", 4], 1, true)
         ];
         function getFoodType(isNestFood = false) {
             const possible = [[], []];
@@ -671,7 +622,394 @@ const maintainloop = (() => {
             return possible[0][ran.chooseChance(...possible[1])];
         }
         function spawnShape(location, type = 0) {
-            let o = new Entity(location);
+            let o = new Entity(room.randomType("norm"));
+            type = types[type].choose();
+            o.define(type);
+            o.define({
+                BODY: {
+                    ACCELERATION: 0.015 / (type.FOOD.LEVEL + 1)
+                }
+            });
+            o.facing = ran.randomAngle();
+            o.team = -100;
+            return o;
+        };
+        function spawnGroupedFood() {
+            let location, i = 5;
+            do {
+                location = room.random();
+                i --;
+                if (i <= 0) {
+                    return;
+                }
+            } while (room.isIn("nest", location));
+            for (let i = 0, amount = (Math.random() * 20) | 0; i < amount; i ++) {
+                const angle = Math.random() * Math.PI * 2;
+                spawnShape({
+                    x: location.x + Math.cos(angle) * (Math.random() * 50),
+                    y: location.y + Math.sin(angle) * (Math.random() * 50)
+                }, getFoodType());
+            }
+        }
+        function spawnDistributedFood() {
+            let location, i = 5;
+            do {
+                location = room.random();
+                i --;
+                if (i <= 0) {
+                    return;
+                }
+            } while (room.isIn("nest", location));
+            spawnShape(location, getFoodType());
+        }
+        function spawnNestFood() {
+            let shape = spawnShape(room.randomType("nest"), getFoodType(true));
+            shape.isNestFood = true;
+        }
+        return () => {
+            const maxFood = Math.sqrt(c.FOOD_AMOUNT) + Math.sqrt(room.width * room.height) / c.FOOD_AMOUNT * views.length;
+            const maxNestFood = maxFood * (room["nest"].length / (room.xgrid * room.ygrid)) * c.NEST_FOOD_AMOUNT;
+            const census = (() => {
+                let food = 0;
+                let nestFood = 0;
+                for (let instance of entities) {
+                    if (instance.type === "food") {
+                        if (instance.isNestFood) nestFood ++;
+                        else food ++;
+                    }
+                }
+                return {
+                    food,
+                    nestFood
+                };
+            })();
+            if (census.food < maxFood) {
+                for (let i = 0; i < maxFood - census.food; i ++) {
+                    if (Math.random() > .875) {
+                        if (Math.random() > .375) {
+                            spawnDistributedFood();
+                        } else {
+                            spawnGroupedFood();
+                        }
+                    }
+                }
+            }
+            if (census.nestFood < maxNestFood) {
+                for (let i = 0; i < maxNestFood - census.nestFood; i ++) {
+                    if (Math.random() > .75) {
+                        spawnNestFood();
+                    }
+                }
+            }
+        };
+    })();
+  const makefood2 = (() => {
+        class FoodType {
+            constructor(groupName, types, chances, chance, isNestFood = false) {
+                if (chances[0] === "scale") {
+                    const scale = chances[1];
+                    chances = [];
+                    for (let i = types.length; i > 0; i --) {
+                        chances.push(i ** scale);
+                    }
+                }
+                this.name = groupName;
+                if (types.length !== chances.length) {
+                    throw new RangeError(groupName + ": error with group. Please make sure there is the same number of types as chances.");
+                }
+                this.types = types;
+                this.chances = chances;
+                this.chance = chance;
+                this.isNestFood = isNestFood;
+            }
+            choose() {
+                return this.types[ran.chooseChance(...this.chances)];
+            }
+        }
+        const types = [
+            new FoodType("Normal Food", [
+                Class.egg, Class.square, Class.triangle,
+                Class.pentagon, Class.bigPentagon, Class.alphaPentagon,
+                Class.galaPentagon
+            ], ["scale", 4], 2000),
+            new FoodType("Rare Food", [
+              Class.nonagon, Class.decagon, Class.hendecagon, Class.dodecagon
+            ], ["scale", 4], 20)
+          
+            //new FoodType("Misc Food", [
+            //    Class.healFruit
+            //], ["scale", 4], 500),
+        ];
+        function getFoodType(isNestFood = false) {
+            const possible = [[], []];
+            for (let i = 0; i < types.length; i ++) {
+                if (types[i].isNestFood == isNestFood) {
+                    possible[0].push(i);
+                    possible[1].push(types[i].chance);
+                }
+            }
+            return possible[0][ran.chooseChance(...possible[1])];
+        }
+        function spawnShape(location, type = 0) {
+            let o = new Entity(room.randomType("como"));
+            type = types[type].choose();
+            o.define(type);
+            o.define({
+                BODY: {
+                    ACCELERATION: 0.015 / (type.FOOD.LEVEL + 1)
+                }
+            });
+            o.facing = ran.randomAngle();
+            o.team = -100;
+            return o;
+        };
+        function spawnGroupedFood() {
+            let location, i = 5;
+            do {
+                location = room.random();
+                i --;
+                if (i <= 0) {
+                    return;
+                }
+            } while (room.isIn("nest", location));
+            for (let i = 0, amount = (Math.random() * 20) | 0; i < amount; i ++) {
+                const angle = Math.random() * Math.PI * 2;
+                spawnShape({
+                    x: location.x + Math.cos(angle) * (Math.random() * 50),
+                    y: location.y + Math.sin(angle) * (Math.random() * 50)
+                }, getFoodType());
+            }
+        }
+        function spawnDistributedFood() {
+            let location, i = 5;
+            do {
+                location = room.random();
+                i --;
+                if (i <= 0) {
+                    return;
+                }
+            } while (room.isIn("nest", location));
+            spawnShape(location, getFoodType());
+        }
+        function spawnNestFood() {
+            let shape = spawnShape(room.randomType("nest"), getFoodType(true));
+            shape.isNestFood = true;
+        }
+        return () => {
+            const maxFood = Math.sqrt(c.FOOD_AMOUNT) + Math.sqrt(room.width * room.height) / c.FOOD_AMOUNT * views.length;
+            const maxNestFood = maxFood * (room["nest"].length / (room.xgrid * room.ygrid)) * c.NEST_FOOD_AMOUNT;
+            const census = (() => {
+                let food = 0;
+                let nestFood = 0;
+                for (let instance of entities) {
+                    if (instance.type === "food") {
+                        if (instance.isNestFood) nestFood ++;
+                        else food ++;
+                    }
+                }
+                return {
+                    food,
+                    nestFood
+                };
+            })();
+            if (census.food < maxFood) {
+                for (let i = 0; i < maxFood - census.food; i ++) {
+                    if (Math.random() > .875) {
+                        if (Math.random() > .375) {
+                            spawnDistributedFood();
+                        } else {
+                            spawnGroupedFood();
+                        }
+                    }
+                }
+            }
+            if (census.nestFood < maxNestFood) {
+                for (let i = 0; i < maxNestFood - census.nestFood; i ++) {
+                    if (Math.random() > .75) {
+                        spawnNestFood();
+                    }
+                }
+            }
+        };
+    })();
+  const makefood3 = (() => {
+        class FoodType {
+            constructor(groupName, types, chances, chance, isNestFood = false) {
+                if (chances[0] === "scale") {
+                    const scale = chances[1];
+                    chances = [];
+                    for (let i = types.length; i > 0; i --) {
+                        chances.push(i ** scale);
+                    }
+                }
+                this.name = groupName;
+                if (types.length !== chances.length) {
+                    throw new RangeError(groupName + ": error with group. Please make sure there is the same number of types as chances.");
+                }
+                this.types = types;
+                this.chances = chances;
+                this.chance = chance;
+                this.isNestFood = isNestFood;
+            }
+            choose() {
+                return this.types[ran.chooseChance(...this.chances)];
+            }
+        }
+        const types = [
+            new FoodType("Normal Food", [
+                Class.egg, Class.square, Class.triangle,
+                Class.pentagon, Class.bigPentagon, Class.alphaPentagon,
+                Class.galaPentagon
+            ], ["scale", 4], 2000),
+            new FoodType("Rare Food", [
+              Class.nonagon, Class.decagon, Class.hendecagon, Class.dodecagon
+            ], ["scale", 4], 120)
+          
+            //new FoodType("Misc Food", [
+            //    Class.healFruit
+            //], ["scale", 4], 500),
+        ];
+        function getFoodType(isNestFood = false) {
+            const possible = [[], []];
+            for (let i = 0; i < types.length; i ++) {
+                if (types[i].isNestFood == isNestFood) {
+                    possible[0].push(i);
+                    possible[1].push(types[i].chance);
+                }
+            }
+            return possible[0][ran.chooseChance(...possible[1])];
+        }
+        function spawnShape(location, type = 0) {
+            let o = new Entity(room.randomType("unco"));
+            type = types[type].choose();
+            o.define(type);
+            o.define({
+                BODY: {
+                    ACCELERATION: 0.015 / (type.FOOD.LEVEL + 1)
+                }
+            });
+            o.facing = ran.randomAngle();
+            o.team = -100;
+            return o;
+        };
+        function spawnGroupedFood() {
+            let location, i = 5;
+            do {
+                location = room.random();
+                i --;
+                if (i <= 0) {
+                    return;
+                }
+            } while (room.isIn("nest", location));
+            for (let i = 0, amount = (Math.random() * 20) | 0; i < amount; i ++) {
+                const angle = Math.random() * Math.PI * 2;
+                spawnShape({
+                    x: location.x + Math.cos(angle) * (Math.random() * 50),
+                    y: location.y + Math.sin(angle) * (Math.random() * 50)
+                }, getFoodType());
+            }
+        }
+        function spawnDistributedFood() {
+            let location, i = 5;
+            do {
+                location = room.random();
+                i --;
+                if (i <= 0) {
+                    return;
+                }
+            } while (room.isIn("nest", location));
+            spawnShape(location, getFoodType());
+        }
+        function spawnNestFood() {
+            let shape = spawnShape(room.randomType("nest"), getFoodType(true));
+            shape.isNestFood = true;
+        }
+        return () => {
+            const maxFood = Math.sqrt(c.FOOD_AMOUNT) + Math.sqrt(room.width * room.height) / c.FOOD_AMOUNT * views.length;
+            const maxNestFood = maxFood * (room["nest"].length / (room.xgrid * room.ygrid)) * c.NEST_FOOD_AMOUNT;
+            const census = (() => {
+                let food = 0;
+                let nestFood = 0;
+                for (let instance of entities) {
+                    if (instance.type === "food") {
+                        if (instance.isNestFood) nestFood ++;
+                        else food ++;
+                    }
+                }
+                return {
+                    food,
+                    nestFood
+                };
+            })();
+            if (census.food < maxFood) {
+                for (let i = 0; i < maxFood - census.food; i ++) {
+                    if (Math.random() > .875) {
+                        if (Math.random() > .375) {
+                            spawnDistributedFood();
+                        } else {
+                            spawnGroupedFood();
+                        }
+                    }
+                }
+            }
+            if (census.nestFood < maxNestFood) {
+                for (let i = 0; i < maxNestFood - census.nestFood; i ++) {
+                    if (Math.random() > .75) {
+                        spawnNestFood();
+                    }
+                }
+            }
+        };
+    })();
+   const makefood4 = (() => {
+        class FoodType {
+            constructor(groupName, types, chances, chance, isNestFood = false) {
+                if (chances[0] === "scale") {
+                    const scale = chances[1];
+                    chances = [];
+                    for (let i = types.length; i > 0; i --) {
+                        chances.push(i ** scale);
+                    }
+                }
+                this.name = groupName;
+                if (types.length !== chances.length) {
+                    throw new RangeError(groupName + ": error with group. Please make sure there is the same number of types as chances.");
+                }
+                this.types = types;
+                this.chances = chances;
+                this.chance = chance;
+                this.isNestFood = isNestFood;
+            }
+            choose() {
+                return this.types[ran.chooseChance(...this.chances)];
+            }
+        }
+        const types = [
+            new FoodType("Normal Food", [
+                Class.egg, Class.square, Class.triangle,
+                Class.pentagon, Class.bigPentagon, Class.alphaPentagon,
+                Class.galaPentagon
+            ], ["scale", 4], 2000),
+            new FoodType("Rare Food", [
+              Class.nonagon, Class.decagon, Class.hendecagon, Class.dodecagon
+            ], ["scale", 4], 480)
+          
+            //new FoodType("Misc Food", [
+            //    Class.healFruit
+            //], ["scale", 4], 500),
+        ];
+        function getFoodType(isNestFood = false) {
+            const possible = [[], []];
+            for (let i = 0; i < types.length; i ++) {
+                if (types[i].isNestFood == isNestFood) {
+                    possible[0].push(i);
+                    possible[1].push(types[i].chance);
+                }
+            }
+            return possible[0][ran.chooseChance(...possible[1])];
+        }
+        function spawnShape(location, type = 0) {
+            let o = new Entity(room.randomType("rare"));
             type = types[type].choose();
             o.define(type);
             o.define({
@@ -757,6 +1095,9 @@ const maintainloop = (() => {
         // Do stuff
         makenpcs();
         makefood();
+        makefood2();
+        makefood3();
+        makefood4();
         // Regen health and update the grid
         loopThrough(entities, function(instance) {
             if (instance.shield.max) instance.shield.regenerate();

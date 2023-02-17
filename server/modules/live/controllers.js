@@ -99,6 +99,9 @@ ioTypes.bossRushAI = class extends IO {
         if (room.isIn("limi", this.body)) {
             this.enabled = false;
         }
+        if (room.isIn("outb", this.body)) {
+          this.enabled = true
+        }
         if (this.enabled) {
             return {
                 goal: this.goal
@@ -114,6 +117,23 @@ ioTypes.goto = class extends IO {
     }
     think(input) {
         if (room.isIn("bas1", this.body)) {
+            this.enabled = false;
+        }
+        if (this.enabled) {
+            return {
+                goal: this.goal
+            }
+        }
+    }
+}
+ioTypes.goton = class extends IO {
+    constructor(body) {
+        super(body);
+        this.enabled = true;
+        this.goal = room.randomType('nest')
+    }
+    think(input) {
+        if (room.isIn("nest", this.body)) {
             this.enabled = false;
         }
         if (this.enabled) {
@@ -750,13 +770,12 @@ ioTypes.minion = class extends IO {
 ioTypes.bot = class extends IO {
     constructor(body) {
         super(body)
-        this.turnwise = 1
+        this.turnwise = 0
     }
     think(input) {
         if (input.target != null && (input.alt || input.main)) {
             let sizeFactor = Math.sqrt(this.body.master.size / this.body.master.SIZE)
             let leash = 82 * sizeFactor
-            let orbit = 240 * sizeFactor
             let repel = 142 * sizeFactor
             let goal
             let power = 1
@@ -846,6 +865,24 @@ ioTypes.bossorbit = class extends IO {
         }
     }
 }
+ioTypes.gotor = class extends IO {
+  constructor(body) {
+    super(body)
+    this.goal = (room.randomType('bas1'));
+    this.timer = Math.random() * 500 | 0
+    this.state = 1
+  }
+  think(input) {
+    if (this.timer <= 0 || util.getDistance(this.body, this.goal) < this.body.SIZE || this.state === 0) {
+        this.timer = Math.random() * 500 | 0;
+        this.state = 1;
+        this.goal = room.randomType(Math.random() > .9 ? "bas1" : "nest");
+      }
+    return {
+      goal: this.goal
+    }
+  }
+}
 ioTypes.botMovement = class extends IO {
   constructor(body) {
     super(body);
@@ -876,7 +913,7 @@ ioTypes.botMovement = class extends IO {
       if (this.timer <= 0 || util.getDistance(this.body, this.goal) < this.body.SIZE || this.state === 0) {
         this.timer = Math.random() * 500 | 0;
         this.state = 1;
-        this.goal = room.randomType(Math.random() > .9 ? "bas1" : "bas1");
+        this.goal = room.randomType(Math.random() > .9 ? "bas1" : "nest");
       }
     }
     return {

@@ -9,7 +9,8 @@ goog.require('goog.structs.QuadTree');
 
 const defaults = require("../../config.json");
 
-const gamemode = ["Siege"]; // keep it as ffa
+const gamemode = ["Backrooms"];
+const gamemode2 = ["FFA"]// keep it as ffa
 
 const gamemodes = {
     "FFA": {
@@ -187,26 +188,20 @@ const gamemodes = {
         ],
         secondaryGameMode: "Maze"
     },
-    "2TDM": {
+    "Backrooms": {
         MODE: "tdm",
         TEAMS: 2,
         ROOM_SETUP: [
-            ["rock", "rock", "norm", "norm", "norm", "roid", "roid", "norm", "norm", "norm", "rock", "rock"],
-            ["roid", "rock", "norm", "norm", "norm", "rock", "rock", "norm", "norm", "norm", "rock", "roid"],
-            ["bas1", "norm", "rock", "norm", "norm", "norm", "norm", "norm", "norm", "rock", "norm", "bas2"],
-            ["bas1", "norm", "norm", "norm", "norm", "roid", "rock", "norm", "norm", "norm", "norm", "bas2"],
-            ["bap1", "norm", "norm", "norm", "norm", "nest", "nest", "norm", "norm", "norm", "norm", "bap2"],
-            ["bas1", "norm", "norm", "rock", "nest", "nest", "nest", "nest", "roid", "norm", "norm", "bas2"],
-            ["bas1", "norm", "norm", "roid", "nest", "nest", "nest", "nest", "rock", "norm", "norm", "bas2"],
-            ["bap1", "norm", "norm", "norm", "norm", "nest", "nest", "norm", "norm", "norm", "norm", "bap2"],
-            ["bas1", "norm", "norm", "norm", "norm", "rock", "roid", "norm", "norm", "norm", "norm", "bas2"],
-            ["bas1", "norm", "rock", "norm", "norm", "norm", "norm", "norm", "norm", "rock", "norm", "bas2"],
-            ["roid", "rock", "norm", "norm", "norm", "rock", "rock", "norm", "norm", "norm", "rock", "roid"],
-            ["rock", "rock", "norm", "norm", "norm", "roid", "roid", "norm", "norm", "norm", "rock", "rock"]
+             ["bap1", "bas1", "norm", "norm", "como", "como", "como", "como", "unco", "unco", "unco", "unco", "rare", "rare", "rare", "bas4"],
+             ["norm", "norm", "norm", "norm", "como", "como", "como", "como", "unco", "unco", "unco", "unco", "rare", "rare", "rare", "rare"],
+             ["norm", "nest", "nest", "norm", "como", "nest", "nest", "como", "unco", "nest", "nest", "unco", "rare", "nest", "nest", "rare"],
+             ["norm", "nest", "nest", "norm", "como", "nest", "nest", "como", "unco", "nest", "nest", "unco", "rare", "nest", "nest", "rare"],
+             ["norm", "norm", "norm", "norm", "como", "como", "como", "como", "unco", "unco", "unco", "unco", "rare", "rare", "rare", "rare"],
+             ["bap2", "bas2", "norm", "norm", "como", "como", "como", "como", "unco", "unco", "unco", "unco", "rare", "rare", "rare", "bas4"]
         ],
-        BOTS: 16,
-        X_GRID: 12,
-        Y_GRID: 12
+        BOTS: 15,
+        X_GRID: 16,
+        Y_GRID: 6
     },
     "4TDM": {
         MODE: "tdm",
@@ -232,7 +227,6 @@ const gamemodes = {
         SPECIAL_BOSS_SPAWNS: true,
         WIDTH: 7500,
         HEIGHT: 7500,
-        AREA_TYPE: "circle",
         X_GRID: 19,
         Y_GRID: 19,
         ROOM_SETUP: [
@@ -242,13 +236,13 @@ const gamemodes = {
             ["outb", "outb", "outb", "outb", "outb", "wall", "wall", "wall", "boss", "boss", "boss", "wall", "wall", "wall", "outb", "outb", "outb", "outb", "outb"],
             ["outb", "outb", "outb", "outb", "wall", "wall", "norm", "wall", "norm", "norm", "norm", "wall", "norm", "wall", "wall", "outb", "outb", "outb", "outb"],
             ["outb", "outb", "outb", "wall", "wall", "norm", "norm", "norm", "limi", "limi", "limi", "norm", "norm", "norm", "wall", "wall", "outb", "outb", "outb"],
-            ["outb", "outb", "outb", "wall", "norm", "norm", "bas1", "norm", "norm", "norm", "norm", "norm", "bas1", "norm", "norm", "wall", "outb", "outb", "outb"],
-            ["wall", "wall", "wall", "wall", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "wall", "wall", "wall", "wall"],
-            ["wall", "boss", "boss", "boss", "norm", "limi", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "limi", "norm", "boss", "boss", "boss", "wall"],
-            ["wall", "boss", "boss", "boss", "norm", "limi", "norm", "norm", "nest", "moth", "nest", "norm", "norm", "limi", "norm", "boss", "boss", "boss", "wall"],
-            ["wall", "boss", "boss", "boss", "norm", "limi", "norm", "norm", "nest", "nest", "nest", "norm", "norm", "limi", "norm", "boss", "boss", "boss", "wall"],
-            ["wall", "wall", "wall", "wall", "wall", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "norm", "wall", "wall", "wall", "wall", "wall"],
-            ["outb", "outb", "outb", "wall", "norm", "norm", "bas1", "norm", "norm", "norm", "norm", "norm", "bas1", "norm", "norm", "wall", "outb", "outb", "outb"],
+            ["outb", "outb", "outb", "wall", "norm", "norm", "wall", "wall", "norm", "norm", "norm", "wall", "wall", "norm", "norm", "wall", "outb", "outb", "outb"],
+            ["wall", "wall", "wall", "wall", "wall", "norm", "wall", "bas1", "norm", "norm", "norm", "bas1", "wall", "norm", "wall", "wall", "wall", "wall", "wall"],
+            ["wall", "boss", "boss", "boss", "norm", "limi", "norm", "norm", "norm", "nest", "norm", "norm", "norm", "limi", "norm", "boss", "boss", "boss", "wall"],
+            ["wall", "boss", "boss", "boss", "norm", "limi", "norm", "norm", "nest", "norm", "nest", "norm", "norm", "limi", "norm", "boss", "boss", "boss", "wall"],
+            ["wall", "boss", "boss", "boss", "norm", "limi", "norm", "norm", "norm", "nest", "norm", "norm", "norm", "limi", "norm", "boss", "boss", "boss", "wall"],
+            ["wall", "wall", "wall", "wall", "wall", "norm", "wall", "bas1", "norm", "norm", "norm", "bas1", "wall", "norm", "wall", "wall", "wall", "wall", "wall"],
+            ["outb", "outb", "outb", "wall", "norm", "norm", "wall", "wall", "norm", "norm", "norm", "wall", "wall", "norm", "norm", "wall", "outb", "outb", "outb"],
             ["outb", "outb", "outb", "wall", "wall", "norm", "norm", "norm", "limi", "limi", "limi", "norm", "norm", "norm", "wall", "wall", "outb", "outb", "outb"],
             ["outb", "outb", "outb", "outb", "wall", "wall", "norm", "wall", "norm", "norm", "norm", "wall", "norm", "wall", "wall", "outb", "outb", "outb", "outb"],
             ["outb", "outb", "outb", "outb", "outb", "wall", "wall", "wall", "boss", "boss", "boss", "wall", "wall", "wall", "outb", "outb", "outb", "outb", "outb"],
@@ -257,7 +251,7 @@ const gamemodes = {
             ["outb", "outb", "outb", "outb", "outb", "outb", "outb", "wall", "wall", "wall", "wall", "wall", "outb", "outb", "outb", "outb", "outb", "outb", "outb"],
         ],
         secondaryGameMode: "Boss Rush",
-        BOTS: 22
+        BOTS: 15
     },
     "Mothership": {
         MODE: "tdm",
@@ -494,6 +488,7 @@ for (let key in defaults) {
 
 output.gameModeName = gamemode;
 if (["Tag", "Domination", "Mothership"].includes(gamemode)) output.gameModeName = `${output.TEAMS} TDM ${gamemode}`;
+if (["Siege", "FFA"].includes(gamemode)) output.gameModeName = `${output.TEAMS} TDM ${gamemode}`;
 if (gamemode === "Open TDM") output.gameModeName = `Open ${output.TEAMS} TDM`;
 
 module.exports = {
