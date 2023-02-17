@@ -4,4 +4,21 @@
     "startingTank": "basic"
 },
 
+{
+    "key": "400_mark",
+    "testbedTank": "testbed",
+    "startingTank": "basic"
+},
+
+{
+      "key": "dev_event",
+      "testbedTank": "testbed",
+      "startingTank": "basic"
+  }
 Hope 2023 will be best
+{
+      "key": "christmas",
+      "testbedTank": "testbed",
+      "startingTank": "basic"
+}
+Hope 2025 will be best (hello from future)

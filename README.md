@@ -1,4 +1,4 @@
-# Arras Template, Made by Oblivion#3940
+# Arras Template, Made by 
 This is a heavily optimized and improved upon version of https://github.com/nepphhh/arrasio.<br>
 As such, it's very different from the source code.<br>
 The client and server are all split up into many different files.

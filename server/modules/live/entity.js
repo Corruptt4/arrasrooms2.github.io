@@ -685,6 +685,7 @@ class Entity {
         this.team = this.id;
         this.team = master.team;
         this.turnAngle = 0;
+        this.polylvl = null
         // This is for collisions
         this.updateAABB = () => {};
         this.getAABB = (() => {
@@ -932,6 +933,24 @@ class Entity {
         if (set.RESET_UPGRADES) {
             this.upgrades = [];
         }
+        if (set.SPLIT != null && set.SPLIT_TYPE !== "None") switch(set.SPLIT) {
+          case "sqclus":
+            this.onDead = () => {
+              //square cluster
+              let x = this.x,
+                  y = this.y
+              for (let i = 0; i < 20; i++) {
+                let o = new Entity({
+                  x: x,
+                  y: y
+                })
+                o.define(Class.square)
+                o.color = 13
+                o.team = -100
+              }
+            }
+            break;
+        }
         if (set.UPGRADES_TIER_1 != null) {
             set.UPGRADES_TIER_1.forEach((e) => {
                 this.upgrades.push({
@@ -962,6 +981,26 @@ class Entity {
                 });
             });
         }
+        if (set.UPGRADES_TIER_4 != null) {
+            set.UPGRADES_TIER_4.forEach((e) => {
+                this.upgrades.push({
+                    class: e,
+                    level: c.TIER_4,
+                    index: e.index,
+                    tier: 4
+                });
+            });
+        }
+        if (set.UPGRADES_TIER_5 != null) {
+            set.UPGRADES_TIER_5.forEach((e) => {
+                this.upgrades.push({
+                    class: e,
+                    level: c.TIER_5,
+                    index: e.index,
+                    tier: 5
+                });
+            });
+        }
         if (set.SIZE != null) {
             this.SIZE = set.SIZE * this.squiggle;
             if (this.coreSize == null) {
@@ -973,6 +1012,11 @@ class Entity {
                 throw ('Inappropiate skill raws.');
             }
             this.skill.set(set.SKILL);
+        }
+        if (set.POLYLVL != null && set.POLYLVL != null && !isNaN(set.POLYLVL)) {
+           this.polylvl = set.POLYLVL
+           let level = this.polylvl
+           this.master.skill.score += this.master.skill.score + 10 * 4**level
         }
         if (set.LEVEL != null) {
             if (set.LEVEL === -1) {
@@ -1364,6 +1408,9 @@ class Entity {
             case 'autospin':
                 this.facing += 0.02 / roomSpeed;
                 break;
+            case 'auto2spin':
+                this.facing += 0.2 / roomSpeed;
+                break;
             case 'turnWithSpeed':
                 this.facing += this.velocity.length / 90 * Math.PI / roomSpeed;
                 break;
@@ -1375,6 +1422,9 @@ class Entity {
                 break;
             case 'fastspin':
                 this.facing += 0.1 / roomSpeed;
+                break;
+            case 'theia':
+                this.facing += 0.4 / roomSpeed;
                 break;
             case 'withMotion':
                 this.facing = this.velocity.direction;

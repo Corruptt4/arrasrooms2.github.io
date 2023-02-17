@@ -171,6 +171,12 @@ import * as socketStuff from "./lib/socketInit.js";
             return "#33F912";
         case 40:
             return "#adff2f";
+        case 41:
+            return "#01a783";
+        case 42:
+            return "#403645";
+        case 43:
+            return "#060011";
         default:
             return '#FF0000';
         }
@@ -203,11 +209,19 @@ import * as socketStuff from "./lib/socketInit.js";
         case 'dom4':
             return color.magenta;
         case 'nest':
-            return "#100000";
+            return "#545454";
+        case 'outb':
+            return "#000000";
         case 'norm':
             return color.yellow
+        case 'como':
+            return "#141414";
+        case 'unco':
+            return "#070707";
+        case 'rare':
+            return "#000000";
         case 'cent':
-            return "#ff0000"
+            return "#ff0000";
         case 'dom0':
             return color.gold;
         default:
@@ -381,7 +395,7 @@ import * as socketStuff from "./lib/socketInit.js";
     var ctx = c.getContext('2d');
     var c2 = document.createElement('canvas');
     var ctx2 = c2.getContext('2d');
-    ctx2.imageSmoothingEnabled = false;
+    ctx2.imageSmoothingEnabled = true;
     // Animation things
     function Smoothbar(value, speed, sharpness = 3, lerpValue = .025) {
         let time = Date.now();
@@ -997,7 +1011,7 @@ import * as socketStuff from "./lib/socketInit.js";
             }
         };
     })();
-    /*function drawHealth(x, y, instance, ratio) {
+    function drawHealth(x, y, instance, ratio) {
         // Draw health bar
         ctx.globalAlpha = Math.pow(instance.render.status.getFade(), 2) * (instance.alpha);
         let size = instance.size * ratio;
@@ -1031,7 +1045,7 @@ import * as socketStuff from "./lib/socketInit.js";
                 instance.render.textobjs[1].draw(util.handleLargeNumber(instance.score, true), x, y - realSize - 16, 8, color.lavender, 'center');
             }
         }
-    }*/
+    }
     function drawHealth(x, y, instance, ratio, alpha) {
         let fade = instance.render.status.getFade();
         ctx.globalAlpha = fade * fade;
@@ -1144,11 +1158,11 @@ import * as socketStuff from "./lib/socketInit.js";
                         if (t > 150 && t < 1000) {
                             t = 150;
                         }
-                        if (t > 1000) {
+                        if (t > 1000) {//test here ig
                             t = 1000 * 1000 * Math.sin(t / 1000 - 1) / t + 1000;
                         }
-                        tt = t / interval;
-                        ts = config.roomSpeed * 30 * t / 1000;
+                        tt = t / interval;//here? 
+                        ts = config.roomSpeed * 15 * t / 1000;
                     },
                     predict: (p1, p2, v1, v2) => {
                         return (t >= 0) ? extrapolate(p1, p2, v1, v2, ts, tt) : interpolate(p1, p2, v1, v2, ts, tt);
@@ -1531,7 +1545,6 @@ import * as socketStuff from "./lib/socketInit.js";
                         drawGuiRect(ax, ay, size, size, true);
                     }
                 } while (false);
-              
             } { // Draw messages
                 if (global.showTree) return;
                 let vspacing = 4;

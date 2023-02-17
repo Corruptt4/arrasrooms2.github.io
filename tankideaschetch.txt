@@ -1,2 +1,1 @@
-Celestial: Select a god name, first layer 5 twin turrets, 2nd layer 7 skimmer turrets
-Name: Shiva
+add new tanks... First, I need to dig deeper into the code

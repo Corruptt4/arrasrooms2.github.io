@@ -8,7 +8,7 @@ goog.require('goog.structs.PriorityQueue');
 goog.require('goog.structs.QuadTree');
 
 function generateWaves() {
-    let bosses = [Class.elite_gunner, Class.elite_sprayer, Class.elite_battleship, Class.palisade, Class.skimboss, Class.summoner, Class.nestKeeper, Class.eliterifle, Class.pleistoros, Class.bossCele, Class.derzelas, Class.sabazios, Class.zaphkiel, Class.paladin, Class.enyo, Class.freyja, Class.fiolnir, Class.alviss, Class.tyr, Class.xukmes, Class.magmaporous, Class.thedisease, Class.kronos, Class.ragnarok, Class.glitchton, Class.legion_crash].sort(() => 1.25 - Math.random());
+    let bosses = [Class.elite_gunner, Class.elite_spinner, Class.elite_devourer, Class.elite_sprayer, Class.elite_battleship, Class.super_uzi, Class.egger, Class.palisade, Class.skimboss, Class.abyssling, Class.summoner, Class.nestKeeper, Class.eliterifle, Class.pleistoros, Class.bossCele, Class.trimurti, Class.derzelas, Class.sabazios, Class.nyx, Class.theia, Class.zaphkiel, Class.paladin, Class.enyo, Class.freyja, Class.ganymede, Class.ridan, Class.fiolnir, Class.alviss, Class.tyr, Class.xukmes, Class.magmaporous, Class.thedisease, Class.kronos, Class.ragnarok, Class.glitchton, Class.legion_crash].sort(() => 1.25 - Math.random());
     let waves = [];
     for (let i = 0; i < 45; i++) {
         let wave = [];
@@ -76,7 +76,7 @@ const bossRush = (function() {
             }
           }
         }
-        for (let i = 0; i < 3; i ++) {
+        for (let i = 0; i < (Math.floor(Math.random() * waves[index])); i ++) {
             let n = new Entity(room.randomType("boss"));
             n.define(ran.choose(bosses));
             n.controllers.push(new ioTypes.bossRushAI(n), new ioTypes.pathFind(n));
@@ -122,7 +122,7 @@ const bossRush = (function() {
     };
     let maxSanctuaries = 4;
     let sanctuaries = 4;
-    let spawn = (loc, team, type = false) => {
+    let spawn = (loc, team, type = false, type2 = false) => {
         type = type ? type : Class.sanctuary, Class.dominator;
         let o = new Entity(loc);
         o.define(type);
@@ -133,73 +133,36 @@ const bossRush = (function() {
         o.SIZE = c.WIDTH / c.X_GRID / 10;
         o.isDominator = true;
         o.controllers = [new ioTypes.nearestDifferentMaster(o), new ioTypes.spinWhenIdle(o)];
-        o.onDead = function() {
-            if (o.team === -100) {
-                spawn(loc, -1, type);
-                room.setType("bas1", loc);
-                sockets.broadcast("A dominator has been captured by BLUE!");
-                if (sanctuaries < 1) {
-                    sockets.broadcast("Your team may now respawn.");
-                    for (const socket of sockets.clients) {
-                        if (socket.awaitingSpawn) {
-                            socket.reallySpawn();
-                        }
-                    }
-                }
-                sanctuaries ++;
-            } else {
-                sanctuaries --;
-                if (sanctuaries < 1) {
-                    sockets.broadcast("Your team can no longer respawn. Capture a dominator to allow respawning.");
-                    sockets.broadcast("Your team will lose in 90 seconds");
-                    function tick(i) {
-                        if (sanctuaries > 0) {
-                            return;
-                        }
-                        if (i <= 0) {
-                            sockets.broadcast("Your team has lost!");
-                            setTimeout(process.exit(), 2500);
-                            return;
-                        }
-                        if (i % 15 === 0 || i <= 10) {
-                            sockets.broadcast(`${i} seconds until your team loses!`);
-                        }
-                        setTimeout(function retick() {
-                            tick(i - 1);
-                        }, 1000);
-                    }
-                    tick(91);
-                }
-                spawn(loc, -100, type);
+        o.onDead = () => {
+                let e = new Entity(loc)
+                e.define(Class.dominator);
+                e.team = -100;
+                e.color = 13;
+                e.skill.score = 111069;
+                e.name = "Dominator";
+                e.SIZE = c.WIDTH / c.X_GRID / 10;
+                e.isDominator = true;
+                e.controllers = [new ioTypes.nearestDifferentMaster(o), new ioTypes.spinWhenIdle(o)];
                 room.setType("dom0", loc);
                 sockets.broadcast("A dominator has been captured by the bosses!");
+                e.onDead = () =>  {
+                  let d = new Entity(loc);
+                  d.define(Class.sanctuary);
+                  d.team = team;
+                  d.color = [10, 11, 12, 15][-team - 1] || 3;
+                  d.skill.score = 111069;
+                  d.name = "Dominator";
+                  d.SIZE = c.WIDTH / c.X_GRID / 10;
+                  d.isDominator = true;
+                  d.controllers = [new ioTypes.nearestDifferentMaster(o), new ioTypes.spinWhenIdle(o)];
+                  room.setType("bas1", loc);
+                  sockets.broadcast("A dominator has been captured by BLUE!");
+                  d.onDead = o.onDead
+                  o = d
+                }
             }
-        }
     };
-    if (room["moth"]) {
-      for (let loc of room["moth"]) {
-        let o = new Entity(loc)
-        o.define(Class.mothership)
-        o.color = 10
-        o.team = -1
-        o.isMothership = true
-        o.controllers.push(new ioTypes.nearestDifferentMaster(o));
-        o.controllers.push(new ioTypes.mapTargetToGoal(o));
-        o.controllers.push(new ioTypes.canRepel(o))
-        o.onDead = () => {
-          let e = new Entity(loc)
-          e.define(Class.mothership)
-          e.color = 10
-          e.team = -1
-          e.isMothership = true
-          e.controllers.push(new ioTypes.nearestDifferentMaster(e));
-          e.controllers.push(new ioTypes.mapTargetToGoal(e));
-          o.controllers.push(new ioTypes.canRepel(e))
-          e.onDead = o.onDead
-          o = e
-        }
-      }
-    }
+    
     function init() {
         for (let loc of room["bas1"]) spawn(loc, -1);
         console.log("Boss rush initialized.");
@@ -246,7 +209,7 @@ const bossRush = (function() {
                 o.refreshBodyAttributes();
                 o.isBoss = true;
                 o.controllers.push(new ioTypes.bossRushAI(o));
-                for (let i = 0; i < 10; i++) {
+                for (let i = 0; i < 2; i++) {
                     let n = new Entity(room.randomType("boss"));
                     n.define(ran.choose([Class.sentryGun, Class.sentrySwarm, Class.sentryTrap]));
                     n.team = -100;
@@ -254,21 +217,13 @@ const bossRush = (function() {
                     n.refreshBodyAttributes();
                     n.controllers.push(new ioTypes.bossRushAI(n));
                 }
-                for (let i = 0; i < 10; i++) {
+                for (let i = 0; i < 3; i++) {
                     let n = new Entity(room.randomType("boss"));
                     n.define(Class.crasher);
                     n.team = -100;
                     n.FOV = 10;
                     n.refreshBodyAttributes();
                     n.controllers.push(new ioTypes.bossRushAI(n));
-                }
-                for (let i = 0; i < 1; i++) {
-                    let n = new Entity(room.randomType("moth"));
-                    n.define(Class.smasher);
-                    n.team = -1;
-                    n.FOV = 10;
-                    n.refreshBodyAttributes();
-                    n.controllers.push(new ioTypes.goto(n));
                 }
             }
         } else if (census.bosses > 0) timer = 5;
